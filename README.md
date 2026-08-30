@@ -164,3 +164,83 @@ model does not represent. The four poetry items behave the same way. A further
 lens-blind screen — requiring the model itself to name the concept when asked
 directly — would remove these, and should be applied before the battery is used
 for a quantitative claim.
+
+### Layer 12, where the battery actually carries signal
+
+Layer 6 is early enough that no lens recovers much, so it discriminates poorly.
+Refitting at layer 12 — the median layer at which J-lens first reaches the top
+10 — gives a far healthier comparison (same 31 held-out cases, same eight-sample
+development set):
+
+| method | geometric-mean rank | median | pass@10 | pass@100 |
+|---|---:|---:|---:|---:|
+| logit lens | 14831.0 | 34004 | 0.0% | 6.5% |
+| J-lens | 210.9 | 161 | 22.6% | 45.2% |
+| J² (real diagonal) | 223.7 | 147 | 16.1% | 48.4% |
+| J² (shuffled control) | 212.6 | 135 | 16.1% | 45.2% |
+| R-lens | 241.8 | 231 | 16.1% | 41.9% |
+
+Two independent checks that the measurement is sound. J-lens improves sharply
+from layer 6 to layer 12 (geometric-mean rank 1506.8 to 210.9), as the
+first-hit-layer analysis predicts. And R-lens beats J-lens at layer 6 but not at
+layer 12, which is exactly the early-layer claim the R-lens post makes; that
+qualitative result is reproduced here independently.
+
+J² wins 14 and loses 14 (sign test p = 1.00) and the shuffled control also wins
+14 and loses 14, with a better geometric mean. The sharpest number is on the
+development set rather than the held-out set: the normalized residual error rises
+from 0.914183 for J-lens to 0.914238 for J². With the Taylor coefficient fixed at
+1/2 the correction has no freedom to overfit, so this is not overfitting — the
+second-order term is harmful at these displacement magnitudes, which is the
+"relevant displacement is too large" alternative in `PROJECT_IDEA.md`.
+
+## Fitting on pretraining text instead of the evaluation prompts
+
+Both results above share a serious limitation. The development set was two
+9-token prompts; after `skip_first=4` and the final-position exclusion that is
+**eight** (prompt, position) samples, from which mu, the per-coordinate variance,
+and the whole 2560x2560 averaged Hessian were estimated. Since the correction is
+`0.5 * D @ (delta^2 - Var[delta])`, a variance estimated from 8 samples in 2560
+dimensions is close to noise and is subtracted from every prediction. "The
+diagonal correction does not help" could not be separated from "the correction
+was fitted on eight points".
+
+Two changes address this.
+
+**A per-row reduction endpoint.** The batched reduction summed each row up to
+`input_ids.shape[1] - 1`, one batch-wide endpoint, so a padded short prompt would
+have summed straight through its padding and silently produced the wrong
+operator. Guards therefore required every development prompt to share a length.
+The endpoint is now a per-row `ends` tensor (`pad_pair_batch`,
+`reduce_target_sums`). Right padding is exact, not approximate: attention is
+causal, so a real position never attends to a token that follows it, and each row
+stops at its own penultimate token. Verified on Qwen3.5-4B at relative error
+3.9e-6, and in tests against a toy model with a causal mixing layer plus a test
+that garbage in the padding region cannot change the result.
+
+**A pretraining development corpus.** `configs/evaluation_split_pile.json` takes
+development data from `NeelNanda/pile-10k` — the corpus the published J-lens was
+fitted on, at its recorded 25 documents, `t_max` 128, `skip_first` 4 — so the
+first- and second-order operators are estimated on the same distribution. Every
+one of the 33 battery cases is then held out, including `typo_aganst` and
+`multihop_sushi`, and no evaluation prompt informs the fit.
+
+The two estimation costs differ by orders of magnitude and are decoupled. The
+activation moments are forward passes only and use every pair, 2947 instead of 8.
+The averaged Hessian costs one forward-over-forward pass per (coordinate, pair),
+so it is capped by `--hessian-pairs` with a seeded subsample.
+
+```bash
+uv run j2-evaluate --offline --estimator forward --layer 12 \
+  --cases configs/battery_cases.json \
+  --split configs/evaluation_split_pile.json \
+  --hessian-pairs 32 --coordinate-batch-size 4 \
+  --artifact results/hessian_pile_l12_qwen3.5-4b.pt \
+  --output results/evaluation_pile_l12_qwen3.5-4b.json
+```
+
+Work scales as `n_coordinates x n_hessian_pairs x t_max`, so the full fit runs on
+an H100 (`j2_fit.slurm`, Jean Zay `gpu_p6`) rather than locally. Batch rows are
+`coordinate_batch_size x hessian_pairs` full-length sequences and
+forward-over-forward roughly triples activation memory, so the coordinate batch
+must stay small.
