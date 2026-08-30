@@ -1,0 +1,286 @@
+{
+  "contexts": [
+    {
+      "id": "association_jordan",
+      "layers": [
+        {
+          "diagonal_energy": 0.0335005841785187,
+          "diagonal_fraction": 0.0032684402158894453,
+          "diagonal_probes_per_output": 8,
+          "diagonal_samples": [
+            {
+              "coordinate": 1353,
+              "natural_weighted_value": 0.09635411437241004,
+              "output_probe": 0,
+              "probe": 0,
+              "squared": 5.4333333094660195e-06,
+              "value": 0.0023309511598199606
+            },
+            {
+              "coordinate": 1,
+              "natural_weighted_value": 0.02668753791793585,
+              "output_probe": 0,
+              "probe": 1,
+              "squared": 2.95200409548941e-05,
+              "value": 0.005433234851807356
+            },
+            {
+              "coordinate": 2215,
+              "natural_weighted_value": -0.043342507334798164,
+              "output_probe": 0,
+              "probe": 2,
+              "squared": 1.7817291692297268e-07,
+              "value": -0.00042210533865727484
+            },
+            {
+              "coordinate": 1017,
+              "natural_weighted_value": -0.00024118775831111217,
+              "output_probe": 0,
+              "probe": 3,
+              "squared": 9.7148090127952e-07,
+              "value": -0.0009856373071670532
+            },
+            {
+              "coordinate": 1927,
+              "natural_weighted_value": 0.12238764331279794,
+              "output_probe": 0,
+              "probe": 4,
+              "squared": 9.854466514428112e-06,
+              "value": 0.003139182459563017
+            },
+            {
+              "coordinate": 1448,
+              "natural_weighted_value": 0.03931338446182958,
+              "output_probe": 0,
+              "probe": 5,
+              "squared": 7.22781369553706e-06,
+              "value": 0.0026884593535214663
+            },
+            {
+              "coordinate": 2498,
+              "natural_weighted_value": 0.06025561814659852,
+              "output_probe": 0,
+              "probe": 6,
+              "squared": 4.385946198240398e-06,
+              "value": 0.0020942650735378265
+            },
+            {
+              "coordinate": 799,
+              "natural_weighted_value": -0.003339167415907715,
+              "output_probe": 0,
+              "probe": 7,
+              "squared": 3.4065217050179323e-07,
+              "value": -0.0005836541531607509
+            },
+            {
+              "coordinate": 2000,
+              "natural_weighted_value": 0.025551922124587012,
+              "output_probe": 1,
+              "probe": 0,
+              "squared": 6.169065342807196e-07,
+              "value": 0.0007854339783079922
+            },
+            {
+              "coordinate": 871,
+              "natural_weighted_value": 0.0024804585000316043,
+              "output_probe": 1,
+              "probe": 1,
+              "squared": 7.274271974471244e-09,
+              "value": 8.528934267815202e-05
+            },
+            {
+              "coordinate": 2289,
+              "natural_weighted_value": 0.006670212490814398,
+              "output_probe": 1,
+              "probe": 2,
+              "squared": 4.177284840540705e-06,
+              "value": 0.0020438407082110643
+            },
+            {
+              "coordinate": 2385,
+              "natural_weighted_value": 0.0014810682369546368,
+              "output_probe": 1,
+              "probe": 3,
+              "squared": 3.571665412841645e-05,
+              "value": 0.00597634119912982
+            },
+            {
+              "coordinate": 868,
+              "natural_weighted_value": 0.5035486612707674,
+              "output_probe": 1,
+              "probe": 4,
+              "squared": 3.585613795354368e-05,
+              "value": 0.005987999495118856
+            },
+            {
+              "coordinate": 290,
+              "natural_weighted_value": -0.571681435348852,
+              "output_probe": 1,
+              "probe": 5,
+              "squared": 3.323402107199285e-06,
+              "value": -0.0018230200512334704
+            },
+            {
+              "coordinate": 1437,
+              "natural_weighted_value": 0.006985515685248855,
+              "output_probe": 1,
+              "probe": 6,
+              "squared": 5.5122921283567994e-05,
+              "value": 0.007424481213092804
+            },
+            {
+              "coordinate": 2268,
+              "natural_weighted_value": 0.09631244686959639,
+              "output_probe": 1,
+              "probe": 7,
+              "squared": 1.6646163334948583e-05,
+              "value": 0.004079970996826887
+            }
+          ],
+          "elapsed_seconds": 92.55203774385154,
+          "input_diagonal_directions": "uniform coordinate basis vectors",
+          "input_total_directions": "independent unnormalized Rademacher",
+          "natural_displacement": {
+            "approximation_error_energy_unbiased": 0.0796728354532573,
+            "coordinate_estimator": "d * delta_j^2 * w^T H[e_j,e_j], sampled uniformly in j",
+            "definition": "probe activation minus the mean activation over token positions in the same prompt",
+            "diagonal_energy_unbiased": -0.007535927019567078,
+            "explained_fraction": 0.017142327778975064,
+            "full_diagonal_cross_energy": -0.0030731641003564633,
+            "full_energy": 0.08106243427211146,
+            "per_output_probe": [
+              {
+                "diagonal_estimate": 0.03725942946281937,
+                "diagonal_split_a": 0.058913717124252085,
+                "diagonal_split_b": 0.015605141801386651,
+                "full_value": -0.24199162423610687,
+                "output_probe": 0
+              },
+              {
+                "diagonal_estimate": 0.008918606228643537,
+                "diagonal_split_a": 0.1356890778928544,
+                "diagonal_split_b": -0.11785186543556733,
+                "full_value": 0.32181504368782043,
+                "output_probe": 1
+              }
+            ],
+            "relative_approximation_error": 0.9828576722210249,
+            "rms": 0.1602984517812729
+          },
+          "output_aggregation": "mean over positions probe_position..end",
+          "output_direction": "normalized Rademacher (covariance I/d_model)",
+          "output_probes": 2,
+          "per_output_probe": [
+            {
+              "diagonal_energy": 0.01853181013160639,
+              "diagonal_fraction": 0.0010423253313303171,
+              "output_probe": 0,
+              "total_energy": 17.779295556363664
+            },
+            {
+              "diagonal_energy": 0.048469358225431004,
+              "diagonal_fraction": 0.017818722339820757,
+              "output_probe": 1,
+              "total_energy": 2.7201365676546354
+            }
+          ],
+          "source_activation_rms": 0.18781249225139618,
+          "source_layer": 6,
+          "symmetry_checks_per_output": 1,
+          "symmetry_max_relative_error": 2.054944021091231e-06,
+          "target_layer": 30,
+          "total_energy": 10.24971606200915,
+          "total_probes_per_output": 4,
+          "total_samples": [
+            {
+              "output_probe": 0,
+              "probe": 0,
+              "squared": 1.7802217188036593,
+              "swapped_value": -1.3342522382736206,
+              "symmetry_absolute_error": 2.7418136596679688e-06,
+              "symmetry_relative_error": 2.054944021091231e-06,
+              "value": -1.334249496459961
+            },
+            {
+              "output_probe": 0,
+              "probe": 1,
+              "squared": 33.94664572952843,
+              "value": 5.8263750076293945
+            },
+            {
+              "output_probe": 0,
+              "probe": 2,
+              "squared": 20.855942049421174,
+              "value": 4.566830635070801
+            },
+            {
+              "output_probe": 0,
+              "probe": 3,
+              "squared": 14.534372727701395,
+              "value": -3.8123972415924072
+            },
+            {
+              "output_probe": 1,
+              "probe": 0,
+              "squared": 9.05750514244852,
+              "swapped_value": -3.00956654548645,
+              "symmetry_absolute_error": 2.384185791015625e-06,
+              "symmetry_relative_error": 7.922017560419446e-07,
+              "value": -3.009568929672241
+            },
+            {
+              "output_probe": 1,
+              "probe": 1,
+              "squared": 0.8342114634629638,
+              "value": -0.9133517742156982
+            },
+            {
+              "output_probe": 1,
+              "probe": 2,
+              "squared": 0.12426176997593075,
+              "value": 0.3525078296661377
+            },
+            {
+              "output_probe": 1,
+              "probe": 3,
+              "squared": 0.8645678947311275,
+              "value": 0.9298214316368103
+            }
+          ],
+          "zero_intervention_max_abs_error": 0.0
+        }
+      ],
+      "probe_position": 3,
+      "probe_text": "Jordan",
+      "probe_token": {
+        "decoded": " Jordan",
+        "id": 16586,
+        "offset": [
+          19,
+          26
+        ],
+        "token": "\u0120Jordan"
+      },
+      "prompt": "The athlete Michael Jordan plays the sport of"
+    }
+  ],
+  "metadata": {
+    "created_at": "2026-08-29T16:57:04.047124+00:00",
+    "cuda_runtime": "13.0",
+    "device": "cuda",
+    "estimator": "E[w,u,v](w^T H[u,v])^2 for total; d E[w,j](w^T H[e_j,e_j])^2 for diagonal",
+    "gpu": "Quadro RTX 8000",
+    "layers": [
+      6
+    ],
+    "model_dtype": "torch.float32",
+    "model_id": "Qwen/Qwen3.5-4B",
+    "model_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "platform": "Linux-6.17.10-100.fc41.x86_64-x86_64-with-glibc2.40",
+    "python": "3.13.9 (main, Oct 14 2025, 00:00:00) [GCC 14.3.1 20250808 (Red Hat 14.3.1-3)]",
+    "seed": 2,
+    "target_layer": 30,
+    "torch": "2.13.0+cu130",
+    "transformers": "5.16.1"
+  }
+}

@@ -1,0 +1,1964 @@
+{
+  "contexts": [
+    {
+      "id": "typo_aganst",
+      "layers": [
+        {
+          "diagonal_energy": 0.1258161784235837,
+          "diagonal_fraction": 0.001894060425423425,
+          "diagonal_probes_per_output": 32,
+          "diagonal_samples": [
+            {
+              "coordinate": 451,
+              "natural_weighted_value": -2.3647625673135764,
+              "output_probe": 0,
+              "probe": 0,
+              "squared": 8.711209348596406e-06,
+              "value": -0.002951475791633129
+            },
+            {
+              "coordinate": 1406,
+              "natural_weighted_value": 0.030217874969620806,
+              "output_probe": 0,
+              "probe": 1,
+              "squared": 1.1738397780316703e-06,
+              "value": 0.0010834388667717576
+            },
+            {
+              "coordinate": 2480,
+              "natural_weighted_value": 0.0002255171222630744,
+              "output_probe": 0,
+              "probe": 2,
+              "squared": 3.1905413446035044e-07,
+              "value": 0.0005648487713187933
+            },
+            {
+              "coordinate": 236,
+              "natural_weighted_value": 0.5279542068226739,
+              "output_probe": 0,
+              "probe": 3,
+              "squared": 6.973193027588233e-06,
+              "value": 0.0026406804099678993
+            },
+            {
+              "coordinate": 2264,
+              "natural_weighted_value": -0.01717847369199499,
+              "output_probe": 0,
+              "probe": 4,
+              "squared": 9.336019676141555e-06,
+              "value": -0.0030554900877177715
+            },
+            {
+              "coordinate": 620,
+              "natural_weighted_value": -2.6303460192014327,
+              "output_probe": 0,
+              "probe": 5,
+              "squared": 2.0989786680398895e-05,
+              "value": -0.0045814611949026585
+            },
+            {
+              "coordinate": 1455,
+              "natural_weighted_value": 0.6030651812862775,
+              "output_probe": 0,
+              "probe": 6,
+              "squared": 1.532073017728613e-05,
+              "value": 0.003914170432835817
+            },
+            {
+              "coordinate": 2485,
+              "natural_weighted_value": 0.030809654736252412,
+              "output_probe": 0,
+              "probe": 7,
+              "squared": 3.3315128655786452e-06,
+              "value": 0.0018252432346343994
+            },
+            {
+              "coordinate": 766,
+              "natural_weighted_value": -0.06075958578843965,
+              "output_probe": 0,
+              "probe": 8,
+              "squared": 3.228112836826968e-05,
+              "value": -0.005681648384779692
+            },
+            {
+              "coordinate": 18,
+              "natural_weighted_value": -9.755258277352254,
+              "output_probe": 0,
+              "probe": 9,
+              "squared": 0.00017533053071575825,
+              "value": -0.013241243548691273
+            },
+            {
+              "coordinate": 2219,
+              "natural_weighted_value": 0.10942672974615375,
+              "output_probe": 0,
+              "probe": 10,
+              "squared": 5.996604990710173e-05,
+              "value": 0.0077437749132514
+            },
+            {
+              "coordinate": 1497,
+              "natural_weighted_value": 0.167793311067872,
+              "output_probe": 0,
+              "probe": 11,
+              "squared": 4.513272435861652e-05,
+              "value": 0.006718089338392019
+            },
+            {
+              "coordinate": 79,
+              "natural_weighted_value": -0.0006865534451542046,
+              "output_probe": 0,
+              "probe": 12,
+              "squared": 7.548536598030024e-07,
+              "value": -0.0008688231464475393
+            },
+            {
+              "coordinate": 1915,
+              "natural_weighted_value": 0.22774660034047933,
+              "output_probe": 0,
+              "probe": 13,
+              "squared": 9.102409355334984e-06,
+              "value": 0.00301701994612813
+            },
+            {
+              "coordinate": 894,
+              "natural_weighted_value": -0.14501981799835306,
+              "output_probe": 0,
+              "probe": 14,
+              "squared": 5.962265413064771e-06,
+              "value": -0.0024417750537395477
+            },
+            {
+              "coordinate": 1521,
+              "natural_weighted_value": -0.3580754296159405,
+              "output_probe": 0,
+              "probe": 15,
+              "squared": 6.469614891441502e-05,
+              "value": -0.00804339163005352
+            },
+            {
+              "coordinate": 342,
+              "natural_weighted_value": 0.19235351534113487,
+              "output_probe": 0,
+              "probe": 16,
+              "squared": 1.7302954047164693e-05,
+              "value": 0.004159681964665651
+            },
+            {
+              "coordinate": 2346,
+              "natural_weighted_value": -0.08431568033029191,
+              "output_probe": 0,
+              "probe": 17,
+              "squared": 4.4549568080417623e-05,
+              "value": -0.006674546282738447
+            },
+            {
+              "coordinate": 455,
+              "natural_weighted_value": 0.5336021561680448,
+              "output_probe": 0,
+              "probe": 18,
+              "squared": 4.1879917912643555e-05,
+              "value": 0.006471469532698393
+            },
+            {
+              "coordinate": 2096,
+              "natural_weighted_value": -0.08582594670312638,
+              "output_probe": 0,
+              "probe": 19,
+              "squared": 1.6820231275306054e-05,
+              "value": -0.004101247526705265
+            },
+            {
+              "coordinate": 314,
+              "natural_weighted_value": 0.00027868816006120217,
+              "output_probe": 0,
+              "probe": 20,
+              "squared": 3.6400225136786835e-05,
+              "value": 0.0060332599096000195
+            },
+            {
+              "coordinate": 1402,
+              "natural_weighted_value": -0.28667594340936464,
+              "output_probe": 0,
+              "probe": 21,
+              "squared": 1.839263166846742e-05,
+              "value": -0.0042886631563305855
+            },
+            {
+              "coordinate": 1858,
+              "natural_weighted_value": 0.09773375604057999,
+              "output_probe": 0,
+              "probe": 22,
+              "squared": 1.4189803449448908e-05,
+              "value": 0.0037669355515390635
+            },
+            {
+              "coordinate": 650,
+              "natural_weighted_value": 0.46828749879104237,
+              "output_probe": 0,
+              "probe": 23,
+              "squared": 1.0474803160909207e-05,
+              "value": 0.0032364800572395325
+            },
+            {
+              "coordinate": 518,
+              "natural_weighted_value": 10.859058114088498,
+              "output_probe": 0,
+              "probe": 24,
+              "squared": 0.00025708197616763906,
+              "value": 0.016033776104450226
+            },
+            {
+              "coordinate": 2045,
+              "natural_weighted_value": 1.4369198621579556e-07,
+              "output_probe": 0,
+              "probe": 25,
+              "squared": 7.88043468444283e-11,
+              "value": 8.87718124431558e-06
+            },
+            {
+              "coordinate": 1456,
+              "natural_weighted_value": -0.05223155388477618,
+              "output_probe": 0,
+              "probe": 26,
+              "squared": 2.5014548256930592e-05,
+              "value": -0.00500145461410284
+            },
+            {
+              "coordinate": 2038,
+              "natural_weighted_value": 0.00024071656955708442,
+              "output_probe": 0,
+              "probe": 27,
+              "squared": 6.306665555200559e-08,
+              "value": 0.00025113075389526784
+            },
+            {
+              "coordinate": 2504,
+              "natural_weighted_value": 0.041035651300762865,
+              "output_probe": 0,
+              "probe": 28,
+              "squared": 1.2347875152796865e-05,
+              "value": 0.003513954346999526
+            },
+            {
+              "coordinate": 111,
+              "natural_weighted_value": -2.732128343813187,
+              "output_probe": 0,
+              "probe": 29,
+              "squared": 0.0009206047259940342,
+              "value": -0.03034146875143051
+            },
+            {
+              "coordinate": 401,
+              "natural_weighted_value": -0.027122876656328343,
+              "output_probe": 0,
+              "probe": 30,
+              "squared": 3.27608667817725e-06,
+              "value": -0.0018099963199347258
+            },
+            {
+              "coordinate": 1003,
+              "natural_weighted_value": -0.04870456163556636,
+              "output_probe": 0,
+              "probe": 31,
+              "squared": 4.2539713335319057e-07,
+              "value": -0.0006522247567772865
+            },
+            {
+              "coordinate": 238,
+              "natural_weighted_value": 0.15459305396424705,
+              "output_probe": 1,
+              "probe": 0,
+              "squared": 1.5676480514443614e-05,
+              "value": 0.003959353547543287
+            },
+            {
+              "coordinate": 1346,
+              "natural_weighted_value": -0.005363003170104491,
+              "output_probe": 1,
+              "probe": 1,
+              "squared": 4.881393457269054e-07,
+              "value": -0.0006986696971580386
+            },
+            {
+              "coordinate": 1276,
+              "natural_weighted_value": -0.20462576127622256,
+              "output_probe": 1,
+              "probe": 2,
+              "squared": 1.2339397237107945e-05,
+              "value": -0.0035127478186041117
+            },
+            {
+              "coordinate": 1663,
+              "natural_weighted_value": -0.013385137932529975,
+              "output_probe": 1,
+              "probe": 3,
+              "squared": 2.5780852010432164e-06,
+              "value": -0.0016056416789069772
+            },
+            {
+              "coordinate": 1820,
+              "natural_weighted_value": 0.04754441949646082,
+              "output_probe": 1,
+              "probe": 4,
+              "squared": 1.3240782417781255e-05,
+              "value": 0.003638788592070341
+            },
+            {
+              "coordinate": 1559,
+              "natural_weighted_value": -0.2194774330583238,
+              "output_probe": 1,
+              "probe": 5,
+              "squared": 1.6271952871095525e-06,
+              "value": -0.001275615650229156
+            },
+            {
+              "coordinate": 2494,
+              "natural_weighted_value": 0.042715726170869106,
+              "output_probe": 1,
+              "probe": 6,
+              "squared": 1.4593175452690436e-05,
+              "value": 0.00382010149769485
+            },
+            {
+              "coordinate": 601,
+              "natural_weighted_value": 0.1347707850740676,
+              "output_probe": 1,
+              "probe": 7,
+              "squared": 1.2465446209974917e-05,
+              "value": 0.003530643880367279
+            },
+            {
+              "coordinate": 565,
+              "natural_weighted_value": 0.05499417347997526,
+              "output_probe": 1,
+              "probe": 8,
+              "squared": 0.0006550882932433583,
+              "value": 0.025594692677259445
+            },
+            {
+              "coordinate": 1587,
+              "natural_weighted_value": -0.01166282590603862,
+              "output_probe": 1,
+              "probe": 9,
+              "squared": 1.1720785016614867e-05,
+              "value": -0.003423563204705715
+            },
+            {
+              "coordinate": 1786,
+              "natural_weighted_value": 0.11754435445896105,
+              "output_probe": 1,
+              "probe": 10,
+              "squared": 0.00019054616999030025,
+              "value": 0.013803846202790737
+            },
+            {
+              "coordinate": 892,
+              "natural_weighted_value": 0.44889236568089075,
+              "output_probe": 1,
+              "probe": 11,
+              "squared": 2.17853479141418e-05,
+              "value": 0.004667477682232857
+            },
+            {
+              "coordinate": 925,
+              "natural_weighted_value": 0.002894375242083226,
+              "output_probe": 1,
+              "probe": 12,
+              "squared": 7.180155568386107e-08,
+              "value": 0.00026795812300406396
+            },
+            {
+              "coordinate": 530,
+              "natural_weighted_value": -0.00988893181992856,
+              "output_probe": 1,
+              "probe": 13,
+              "squared": 1.4015223038380334e-06,
+              "value": -0.001183859072625637
+            },
+            {
+              "coordinate": 25,
+              "natural_weighted_value": -0.04249927143729626,
+              "output_probe": 1,
+              "probe": 14,
+              "squared": 2.3916403705474126e-05,
+              "value": -0.004890440031886101
+            },
+            {
+              "coordinate": 2126,
+              "natural_weighted_value": 0.020536785520678946,
+              "output_probe": 1,
+              "probe": 15,
+              "squared": 2.816677125212991e-06,
+              "value": 0.001678295899182558
+            },
+            {
+              "coordinate": 1185,
+              "natural_weighted_value": -0.13053696880314547,
+              "output_probe": 1,
+              "probe": 16,
+              "squared": 2.087283867438592e-05,
+              "value": -0.004568680189549923
+            },
+            {
+              "coordinate": 2516,
+              "natural_weighted_value": -0.0636166322789461,
+              "output_probe": 1,
+              "probe": 17,
+              "squared": 1.4138295052750155e-05,
+              "value": -0.0037600924260914326
+            },
+            {
+              "coordinate": 1208,
+              "natural_weighted_value": -0.0004992514904164679,
+              "output_probe": 1,
+              "probe": 18,
+              "squared": 2.86249553925049e-06,
+              "value": -0.0016918911132961512
+            },
+            {
+              "coordinate": 1134,
+              "natural_weighted_value": 0.0476125870184968,
+              "output_probe": 1,
+              "probe": 19,
+              "squared": 1.241294188665537e-05,
+              "value": 0.0035232005175203085
+            },
+            {
+              "coordinate": 841,
+              "natural_weighted_value": 0.5508045128433614,
+              "output_probe": 1,
+              "probe": 20,
+              "squared": 5.4781794031769646e-05,
+              "value": 0.007401472423225641
+            },
+            {
+              "coordinate": 693,
+              "natural_weighted_value": 7.221233578214568e-05,
+              "output_probe": 1,
+              "probe": 21,
+              "squared": 4.834557525417111e-06,
+              "value": 0.0021987627260386944
+            },
+            {
+              "coordinate": 2415,
+              "natural_weighted_value": -0.0022255437560116803,
+              "output_probe": 1,
+              "probe": 22,
+              "squared": 4.2629751925796775e-07,
+              "value": -0.0006529146339744329
+            },
+            {
+              "coordinate": 1860,
+              "natural_weighted_value": 0.03057521340523006,
+              "output_probe": 1,
+              "probe": 23,
+              "squared": 4.192765349662398e-05,
+              "value": 0.0064751566387712955
+            },
+            {
+              "coordinate": 1291,
+              "natural_weighted_value": -3.932035729291869e-05,
+              "output_probe": 1,
+              "probe": 24,
+              "squared": 1.4684601425551997e-10,
+              "value": -1.2118003724026494e-05
+            },
+            {
+              "coordinate": 710,
+              "natural_weighted_value": -0.0548905821566692,
+              "output_probe": 1,
+              "probe": 25,
+              "squared": 2.786390218713201e-05,
+              "value": -0.005278626922518015
+            },
+            {
+              "coordinate": 1000,
+              "natural_weighted_value": 0.7355518462432542,
+              "output_probe": 1,
+              "probe": 26,
+              "squared": 1.7191296095096092e-05,
+              "value": 0.004146238788962364
+            },
+            {
+              "coordinate": 1865,
+              "natural_weighted_value": 0.035777571041337164,
+              "output_probe": 1,
+              "probe": 27,
+              "squared": 2.277419744198348e-05,
+              "value": 0.004772231914103031
+            },
+            {
+              "coordinate": 2407,
+              "natural_weighted_value": -0.0017812071875396643,
+              "output_probe": 1,
+              "probe": 28,
+              "squared": 2.022907405325406e-05,
+              "value": -0.00449767429381609
+            },
+            {
+              "coordinate": 1157,
+              "natural_weighted_value": -0.06218486377208121,
+              "output_probe": 1,
+              "probe": 29,
+              "squared": 2.429837426381012e-05,
+              "value": -0.004929338116198778
+            },
+            {
+              "coordinate": 652,
+              "natural_weighted_value": -0.007048954531929108,
+              "output_probe": 1,
+              "probe": 30,
+              "squared": 4.5733081594399264e-06,
+              "value": -0.0021385294385254383
+            },
+            {
+              "coordinate": 1115,
+              "natural_weighted_value": -0.0066325354357146815,
+              "output_probe": 1,
+              "probe": 31,
+              "squared": 1.7656239341829784e-05,
+              "value": -0.004201932810246944
+            }
+          ],
+          "elapsed_seconds": 190.44524973258376,
+          "input_diagonal_directions": "uniform coordinate basis vectors",
+          "input_total_directions": "independent unnormalized Rademacher",
+          "natural_displacement": {
+            "approximation_error_energy_unbiased": 0.23304968699203554,
+            "coordinate_estimator": "d * delta_j^2 * w^T H[e_j,e_j], sampled uniformly in j",
+            "definition": "probe activation minus the mean activation over token positions in the same prompt",
+            "diagonal_energy_unbiased": -0.27650359128626045,
+            "explained_fraction": 0.4004610968155885,
+            "full_diagonal_cross_energy": -0.0604192039883951,
+            "full_energy": 0.38871487030150575,
+            "per_output_probe": [
+              {
+                "diagonal_estimate": -0.14872694733114147,
+                "diagonal_split_a": 0.6105636175296971,
+                "diagonal_split_b": -0.90801751219198,
+                "full_value": 0.5954307317733765,
+                "output_probe": 0
+              },
+              {
+                "diagonal_estimate": 0.049641304925172026,
+                "diagonal_split_a": 0.08233663644120988,
+                "diagonal_split_b": 0.016945973409134178,
+                "full_value": -0.650301456451416,
+                "output_probe": 1
+              }
+            ],
+            "relative_approximation_error": 0.5995389031844115,
+            "rms": 0.1584579348564148
+          },
+          "output_aggregation": "mean over positions probe_position..end",
+          "output_direction": "normalized Rademacher (covariance I/d_model)",
+          "output_probes": 2,
+          "per_output_probe": [
+            {
+              "diagonal_energy": 0.1502564276763536,
+              "diagonal_fraction": 0.0014754389746715964,
+              "output_probe": 0,
+              "total_energy": 101.8384563887488
+            },
+            {
+              "diagonal_energy": 0.10137592917081378,
+              "diagonal_fraction": 0.0032686162038448154,
+              "output_probe": 1,
+              "total_energy": 31.01493808039227
+            }
+          ],
+          "source_activation_rms": 0.18896591663360596,
+          "source_layer": 12,
+          "symmetry_checks_per_output": 1,
+          "symmetry_max_relative_error": 2.0432702451435686e-06,
+          "target_layer": 30,
+          "total_energy": 66.42669723457053,
+          "total_probes_per_output": 4,
+          "total_samples": [
+            {
+              "output_probe": 0,
+              "probe": 0,
+              "squared": 33.92210726318103,
+              "swapped_value": 5.824268341064453,
+              "symmetry_absolute_error": 4.76837158203125e-07,
+              "symmetry_relative_error": 8.18707331532341e-08,
+              "value": 5.824268817901611
+            },
+            {
+              "output_probe": 0,
+              "probe": 1,
+              "squared": 170.25541465102378,
+              "value": 13.048195838928223
+            },
+            {
+              "output_probe": 0,
+              "probe": 2,
+              "squared": 2.0710054568737633,
+              "value": 1.439098834991455
+            },
+            {
+              "output_probe": 0,
+              "probe": 3,
+              "squared": 201.1052981839166,
+              "value": -14.181159973144531
+            },
+            {
+              "output_probe": 1,
+              "probe": 0,
+              "squared": 28.810064644909517,
+              "swapped_value": -5.367489814758301,
+              "symmetry_absolute_error": 1.0967254638671875e-05,
+              "symmetry_relative_error": 2.0432702451435686e-06,
+              "value": -5.3675007820129395
+            },
+            {
+              "output_probe": 1,
+              "probe": 1,
+              "squared": 52.260496789153876,
+              "value": 7.229142189025879
+            },
+            {
+              "output_probe": 1,
+              "probe": 2,
+              "squared": 13.865716536498041,
+              "value": 3.7236697673797607
+            },
+            {
+              "output_probe": 1,
+              "probe": 3,
+              "squared": 29.123474351007644,
+              "value": -5.3966169357299805
+            }
+          ],
+          "zero_intervention_max_abs_error": 0.0
+        }
+      ],
+      "probe_position": 8,
+      "probe_text": "aganst",
+      "probe_token": {
+        "decoded": "anst",
+        "id": 59130,
+        "offset": [
+          33,
+          37
+        ],
+        "token": "anst"
+      },
+      "prompt": "The final vote was nine to two aganst"
+    },
+    {
+      "id": "multihop_sushi",
+      "layers": [
+        {
+          "diagonal_energy": 0.015098084782700317,
+          "diagonal_fraction": 0.003424056432541327,
+          "diagonal_probes_per_output": 32,
+          "diagonal_samples": [
+            {
+              "coordinate": 1653,
+              "natural_weighted_value": -0.000356383660716289,
+              "output_probe": 0,
+              "probe": 0,
+              "squared": 4.405861489843732e-07,
+              "value": -0.0006637666374444962
+            },
+            {
+              "coordinate": 2035,
+              "natural_weighted_value": -0.0156590171109805,
+              "output_probe": 0,
+              "probe": 1,
+              "squared": 7.644343600504179e-06,
+              "value": -0.0027648406103253365
+            },
+            {
+              "coordinate": 1467,
+              "natural_weighted_value": -0.01884713374807806,
+              "output_probe": 0,
+              "probe": 2,
+              "squared": 7.265743986823245e-07,
+              "value": -0.0008523933356627822
+            },
+            {
+              "coordinate": 1881,
+              "natural_weighted_value": -0.563055892476716,
+              "output_probe": 0,
+              "probe": 3,
+              "squared": 8.704746800784898e-06,
+              "value": -0.002950380789116025
+            },
+            {
+              "coordinate": 1138,
+              "natural_weighted_value": -0.002111035602602278,
+              "output_probe": 0,
+              "probe": 4,
+              "squared": 1.0423821258402773e-05,
+              "value": -0.0032285943161696196
+            },
+            {
+              "coordinate": 948,
+              "natural_weighted_value": -0.008985899186204904,
+              "output_probe": 0,
+              "probe": 5,
+              "squared": 4.327541080697975e-06,
+              "value": -0.0020802742801606655
+            },
+            {
+              "coordinate": 1435,
+              "natural_weighted_value": -0.23628528461774323,
+              "output_probe": 0,
+              "probe": 6,
+              "squared": 8.590803113176816e-06,
+              "value": -0.00293100718408823
+            },
+            {
+              "coordinate": 508,
+              "natural_weighted_value": -0.08226598917807415,
+              "output_probe": 0,
+              "probe": 7,
+              "squared": 1.3043785032952615e-06,
+              "value": -0.001142093911767006
+            },
+            {
+              "coordinate": 779,
+              "natural_weighted_value": -0.0024444567473316803,
+              "output_probe": 0,
+              "probe": 8,
+              "squared": 8.83224038949527e-06,
+              "value": -0.0029719085432589054
+            },
+            {
+              "coordinate": 1499,
+              "natural_weighted_value": -0.2441242111058406,
+              "output_probe": 0,
+              "probe": 9,
+              "squared": 1.263262559749717e-06,
+              "value": -0.0011239495361223817
+            },
+            {
+              "coordinate": 1467,
+              "natural_weighted_value": -0.01884713374807806,
+              "output_probe": 0,
+              "probe": 10,
+              "squared": 7.265743986823245e-07,
+              "value": -0.0008523933356627822
+            },
+            {
+              "coordinate": 61,
+              "natural_weighted_value": -0.005625997710387749,
+              "output_probe": 0,
+              "probe": 11,
+              "squared": 6.690102800904296e-06,
+              "value": -0.0025865233037620783
+            },
+            {
+              "coordinate": 1994,
+              "natural_weighted_value": -0.03977202627661436,
+              "output_probe": 0,
+              "probe": 12,
+              "squared": 2.79663260491312e-06,
+              "value": -0.0016723135486245155
+            },
+            {
+              "coordinate": 339,
+              "natural_weighted_value": -0.051952249509312765,
+              "output_probe": 0,
+              "probe": 13,
+              "squared": 2.7852031805886135e-06,
+              "value": -0.0016688928008079529
+            },
+            {
+              "coordinate": 1087,
+              "natural_weighted_value": -0.01899328989928617,
+              "output_probe": 0,
+              "probe": 14,
+              "squared": 1.8701102758714172e-05,
+              "value": -0.004324477165937424
+            },
+            {
+              "coordinate": 801,
+              "natural_weighted_value": -0.014465187969311954,
+              "output_probe": 0,
+              "probe": 15,
+              "squared": 2.0567309014538982e-05,
+              "value": -0.004535119514912367
+            },
+            {
+              "coordinate": 1125,
+              "natural_weighted_value": -0.0006409083619445281,
+              "output_probe": 0,
+              "probe": 16,
+              "squared": 1.8939873885985424e-09,
+              "value": -4.351996540208347e-05
+            },
+            {
+              "coordinate": 1312,
+              "natural_weighted_value": -0.324836221649516,
+              "output_probe": 0,
+              "probe": 17,
+              "squared": 1.7071833051845184e-05,
+              "value": -0.00413180748000741
+            },
+            {
+              "coordinate": 1303,
+              "natural_weighted_value": 0.0007801023150177423,
+              "output_probe": 0,
+              "probe": 18,
+              "squared": 4.056330748691786e-10,
+              "value": 2.0140334527241066e-05
+            },
+            {
+              "coordinate": 1966,
+              "natural_weighted_value": -0.03882564168200098,
+              "output_probe": 0,
+              "probe": 19,
+              "squared": 4.430042722047833e-06,
+              "value": -0.0021047666668891907
+            },
+            {
+              "coordinate": 2055,
+              "natural_weighted_value": -0.01445304647398657,
+              "output_probe": 0,
+              "probe": 20,
+              "squared": 1.959674236825943e-06,
+              "value": -0.001399883651174605
+            },
+            {
+              "coordinate": 1131,
+              "natural_weighted_value": -0.5505096086986461,
+              "output_probe": 0,
+              "probe": 21,
+              "squared": 2.325537919705065e-06,
+              "value": -0.001524971448816359
+            },
+            {
+              "coordinate": 2513,
+              "natural_weighted_value": -0.09601745091074365,
+              "output_probe": 0,
+              "probe": 22,
+              "squared": 1.0236553134157023e-05,
+              "value": -0.003199461381882429
+            },
+            {
+              "coordinate": 1277,
+              "natural_weighted_value": -0.05018267634405715,
+              "output_probe": 0,
+              "probe": 23,
+              "squared": 9.03152656266332e-07,
+              "value": -0.0009503434412181377
+            },
+            {
+              "coordinate": 551,
+              "natural_weighted_value": -0.38873838527255344,
+              "output_probe": 0,
+              "probe": 24,
+              "squared": 4.92665991145072e-06,
+              "value": -0.0022196080535650253
+            },
+            {
+              "coordinate": 937,
+              "natural_weighted_value": -0.0025354108301656533,
+              "output_probe": 0,
+              "probe": 25,
+              "squared": 2.6087520710993254e-06,
+              "value": -0.0016151631716638803
+            },
+            {
+              "coordinate": 642,
+              "natural_weighted_value": 0.9198812655121635,
+              "output_probe": 0,
+              "probe": 26,
+              "squared": 0.00015801457627874493,
+              "value": 0.01257038488984108
+            },
+            {
+              "coordinate": 1259,
+              "natural_weighted_value": -0.04061912151290481,
+              "output_probe": 0,
+              "probe": 27,
+              "squared": 6.730088476592519e-06,
+              "value": -0.0025942414067685604
+            },
+            {
+              "coordinate": 2459,
+              "natural_weighted_value": -0.019654696735838945,
+              "output_probe": 0,
+              "probe": 28,
+              "squared": 2.1511958907288227e-06,
+              "value": -0.001466695568524301
+            },
+            {
+              "coordinate": 2553,
+              "natural_weighted_value": -0.0024621704265387692,
+              "output_probe": 0,
+              "probe": 29,
+              "squared": 2.2728130440425134e-06,
+              "value": -0.0015075851697474718
+            },
+            {
+              "coordinate": 1607,
+              "natural_weighted_value": -0.012514893665824256,
+              "output_probe": 0,
+              "probe": 30,
+              "squared": 8.857719781821954e-06,
+              "value": -0.0029761921614408493
+            },
+            {
+              "coordinate": 593,
+              "natural_weighted_value": -0.20304462629417763,
+              "output_probe": 0,
+              "probe": 31,
+              "squared": 2.831994925687437e-06,
+              "value": -0.001682853209786117
+            },
+            {
+              "coordinate": 2070,
+              "natural_weighted_value": 2.090080488888519e-05,
+              "output_probe": 1,
+              "probe": 0,
+              "squared": 3.368002105393381e-08,
+              "value": 0.00018352117331232876
+            },
+            {
+              "coordinate": 936,
+              "natural_weighted_value": 0.003492769053561745,
+              "output_probe": 1,
+              "probe": 1,
+              "squared": 3.4794190093877894e-08,
+              "value": 0.00018653200822882354
+            },
+            {
+              "coordinate": 593,
+              "natural_weighted_value": 0.24177673003134004,
+              "output_probe": 1,
+              "probe": 2,
+              "squared": 4.0154892704381915e-06,
+              "value": 0.0020038685761392117
+            },
+            {
+              "coordinate": 46,
+              "natural_weighted_value": 0.4247852608635272,
+              "output_probe": 1,
+              "probe": 3,
+              "squared": 2.68542025799591e-07,
+              "value": 0.0005182104068808258
+            },
+            {
+              "coordinate": 2002,
+              "natural_weighted_value": 1.0025004657736016e-05,
+              "output_probe": 1,
+              "probe": 4,
+              "squared": 1.1487906007192405e-10,
+              "value": 1.071816495823441e-05
+            },
+            {
+              "coordinate": 11,
+              "natural_weighted_value": 0.0039509786778013645,
+              "output_probe": 1,
+              "probe": 5,
+              "squared": 5.242450349111222e-06,
+              "value": 0.002289639785885811
+            },
+            {
+              "coordinate": 2133,
+              "natural_weighted_value": -0.08584734418778384,
+              "output_probe": 1,
+              "probe": 6,
+              "squared": 2.866095560981731e-06,
+              "value": -0.001692954683676362
+            },
+            {
+              "coordinate": 2168,
+              "natural_weighted_value": -0.005824473641955277,
+              "output_probe": 1,
+              "probe": 7,
+              "squared": 1.1108955353971435e-07,
+              "value": -0.00033330099540762603
+            },
+            {
+              "coordinate": 217,
+              "natural_weighted_value": 0.00041882075669655034,
+              "output_probe": 1,
+              "probe": 8,
+              "squared": 2.896947917064545e-07,
+              "value": 0.0005382330273278058
+            },
+            {
+              "coordinate": 2366,
+              "natural_weighted_value": 0.009069518327051856,
+              "output_probe": 1,
+              "probe": 9,
+              "squared": 1.315704580808687e-07,
+              "value": 0.00036272642319090664
+            },
+            {
+              "coordinate": 2494,
+              "natural_weighted_value": -0.06019065902966414,
+              "output_probe": 1,
+              "probe": 10,
+              "squared": 6.171292023674033e-07,
+              "value": -0.0007855757139623165
+            },
+            {
+              "coordinate": 1742,
+              "natural_weighted_value": 9.586185469858546e-07,
+              "output_probe": 1,
+              "probe": 11,
+              "squared": 4.5774561853857994e-07,
+              "value": 0.0006765690050087869
+            },
+            {
+              "coordinate": 1733,
+              "natural_weighted_value": 0.042967477220795525,
+              "output_probe": 1,
+              "probe": 12,
+              "squared": 2.564921479554375e-06,
+              "value": 0.001601537223905325
+            },
+            {
+              "coordinate": 1862,
+              "natural_weighted_value": -0.015996794295796563,
+              "output_probe": 1,
+              "probe": 13,
+              "squared": 5.207256627128943e-07,
+              "value": -0.0007216132362373173
+            },
+            {
+              "coordinate": 760,
+              "natural_weighted_value": 0.05632298791884649,
+              "output_probe": 1,
+              "probe": 14,
+              "squared": 1.9392958796678493e-06,
+              "value": 0.0013925860403105617
+            },
+            {
+              "coordinate": 2514,
+              "natural_weighted_value": 0.004667072455798171,
+              "output_probe": 1,
+              "probe": 15,
+              "squared": 7.112202510718842e-08,
+              "value": 0.00026668712962418795
+            },
+            {
+              "coordinate": 1514,
+              "natural_weighted_value": -0.0011066277135222003,
+              "output_probe": 1,
+              "probe": 16,
+              "squared": 3.3911919627009724e-07,
+              "value": -0.0005823394167236984
+            },
+            {
+              "coordinate": 759,
+              "natural_weighted_value": 0.06788175038098088,
+              "output_probe": 1,
+              "probe": 17,
+              "squared": 6.712902775792062e-07,
+              "value": 0.0008193230605684221
+            },
+            {
+              "coordinate": 1853,
+              "natural_weighted_value": 0.0007691820404579332,
+              "output_probe": 1,
+              "probe": 18,
+              "squared": 2.1809175044063036e-07,
+              "value": 0.0004670029447879642
+            },
+            {
+              "coordinate": 1783,
+              "natural_weighted_value": -0.0008343138229529971,
+              "output_probe": 1,
+              "probe": 19,
+              "squared": 1.8322587417817539e-09,
+              "value": -4.280489156371914e-05
+            },
+            {
+              "coordinate": 930,
+              "natural_weighted_value": 0.002057617986031164,
+              "output_probe": 1,
+              "probe": 20,
+              "squared": 6.8646056087502166e-09,
+              "value": 8.285291551146656e-05
+            },
+            {
+              "coordinate": 1111,
+              "natural_weighted_value": 0.009429227459493983,
+              "output_probe": 1,
+              "probe": 21,
+              "squared": 8.734566215685762e-08,
+              "value": 0.0002955429954454303
+            },
+            {
+              "coordinate": 1081,
+              "natural_weighted_value": 0.0009906619443895114,
+              "output_probe": 1,
+              "probe": 22,
+              "squared": 4.904503862508946e-07,
+              "value": 0.0007003216305747628
+            },
+            {
+              "coordinate": 309,
+              "natural_weighted_value": -0.03924770207934608,
+              "output_probe": 1,
+              "probe": 23,
+              "squared": 8.452275278637961e-08,
+              "value": -0.0002907279704231769
+            },
+            {
+              "coordinate": 121,
+              "natural_weighted_value": 0.03800131516539684,
+              "output_probe": 1,
+              "probe": 24,
+              "squared": 2.7954838160300073e-07,
+              "value": 0.000528723350726068
+            },
+            {
+              "coordinate": 1962,
+              "natural_weighted_value": -0.0023682810749120486,
+              "output_probe": 1,
+              "probe": 25,
+              "squared": 2.584098971212276e-06,
+              "value": -0.0016075132880359888
+            },
+            {
+              "coordinate": 302,
+              "natural_weighted_value": -0.45210337863931915,
+              "output_probe": 1,
+              "probe": 26,
+              "squared": 2.921252336573045e-06,
+              "value": -0.0017091671470552683
+            },
+            {
+              "coordinate": 1839,
+              "natural_weighted_value": -0.016619080393589503,
+              "output_probe": 1,
+              "probe": 27,
+              "squared": 4.2984538214333595e-07,
+              "value": -0.0006556259468197823
+            },
+            {
+              "coordinate": 1716,
+              "natural_weighted_value": 0.0023018557164694413,
+              "output_probe": 1,
+              "probe": 28,
+              "squared": 4.594793853563748e-08,
+              "value": 0.00021435470262076706
+            },
+            {
+              "coordinate": 1050,
+              "natural_weighted_value": 0.014505589411170222,
+              "output_probe": 1,
+              "probe": 29,
+              "squared": 2.972782852843719e-06,
+              "value": 0.0017241759924218059
+            },
+            {
+              "coordinate": 379,
+              "natural_weighted_value": 0.3417533635743464,
+              "output_probe": 1,
+              "probe": 30,
+              "squared": 1.365795990648875e-05,
+              "value": 0.0036956677213311195
+            },
+            {
+              "coordinate": 2142,
+              "natural_weighted_value": -0.000399161316809336,
+              "output_probe": 1,
+              "probe": 31,
+              "squared": 3.648589606865477e-06,
+              "value": -0.00191012816503644
+            }
+          ],
+          "elapsed_seconds": 207.28210547566414,
+          "input_diagonal_directions": "uniform coordinate basis vectors",
+          "input_total_directions": "independent unnormalized Rademacher",
+          "natural_displacement": {
+            "approximation_error_energy_unbiased": 0.20437203843333882,
+            "coordinate_estimator": "d * delta_j^2 * w^T H[e_j,e_j], sampled uniformly in j",
+            "definition": "probe activation minus the mean activation over token positions in the same prompt",
+            "diagonal_energy_unbiased": -0.00010474179775827604,
+            "explained_fraction": -0.011133335910757935,
+            "full_diagonal_cross_energy": -0.0011775155627108515,
+            "full_energy": 0.20212174910567537,
+            "per_output_probe": [
+              {
+                "diagonal_estimate": -0.06713014623684362,
+                "diagonal_split_a": 0.003186577631614985,
+                "diagonal_split_b": -0.13744687010530224,
+                "full_value": 0.19938980042934418,
+                "output_probe": 0
+              },
+              {
+                "diagonal_estimate": 0.01826988272551868,
+                "diagonal_split_a": 0.008008933037126699,
+                "diagonal_split_b": 0.02853083241391066,
+                "full_value": 0.6037277579307556,
+                "output_probe": 1
+              }
+            ],
+            "relative_approximation_error": 1.011133335910758,
+            "rms": 0.19659820199012756
+          },
+          "output_aggregation": "mean over positions probe_position..end",
+          "output_direction": "normalized Rademacher (covariance I/d_model)",
+          "output_probes": 2,
+          "per_output_probe": [
+            {
+              "diagonal_energy": 0.026387849306687534,
+              "diagonal_fraction": 0.004585119985126031,
+              "output_probe": 0,
+              "total_energy": 5.755105513550092
+            },
+            {
+              "diagonal_energy": 0.003808320258713103,
+              "diagonal_fraction": 0.0012430363794721524,
+              "output_probe": 1,
+              "total_energy": 3.0637238954585406
+            }
+          ],
+          "source_activation_rms": 0.23351050913333893,
+          "source_layer": 12,
+          "symmetry_checks_per_output": 1,
+          "symmetry_max_relative_error": 6.656643030195198e-07,
+          "target_layer": 30,
+          "total_energy": 4.409414704504316,
+          "total_probes_per_output": 4,
+          "total_samples": [
+            {
+              "output_probe": 0,
+              "probe": 0,
+              "squared": 2.942433502237293,
+              "swapped_value": -1.7153527736663818,
+              "symmetry_absolute_error": 4.76837158203125e-07,
+              "symmetry_relative_error": 2.7798197870630243e-07,
+              "value": -1.7153522968292236
+            },
+            {
+              "output_probe": 0,
+              "probe": 1,
+              "squared": 15.714280694656054,
+              "value": -3.9641242027282715
+            },
+            {
+              "output_probe": 0,
+              "probe": 2,
+              "squared": 0.0004532871230935598,
+              "value": 0.02129054069519043
+            },
+            {
+              "output_probe": 0,
+              "probe": 3,
+              "squared": 4.363254570183926,
+              "value": -2.0888404846191406
+            },
+            {
+              "output_probe": 1,
+              "probe": 0,
+              "squared": 1.5714666370515715,
+              "swapped_value": -1.2535823583602905,
+              "symmetry_absolute_error": 8.344650268554688e-07,
+              "symmetry_relative_error": 6.656643030195198e-07,
+              "value": -1.2535815238952637
+            },
+            {
+              "output_probe": 1,
+              "probe": 1,
+              "squared": 7.272890947716405,
+              "value": -2.6968297958374023
+            },
+            {
+              "output_probe": 1,
+              "probe": 2,
+              "squared": 3.236763961500401,
+              "value": -1.7991008758544922
+            },
+            {
+              "output_probe": 1,
+              "probe": 3,
+              "squared": 0.17377403556578486,
+              "value": -0.4168621301651001
+            }
+          ],
+          "zero_intervention_max_abs_error": 0.0
+        }
+      ],
+      "probe_position": 6,
+      "probe_text": "sushi",
+      "probe_token": {
+        "decoded": " sushi",
+        "id": 63986,
+        "offset": [
+          32,
+          38
+        ],
+        "token": "\u0120sushi"
+      },
+      "prompt": "The capital of the country where sushi originated is"
+    },
+    {
+      "id": "association_jordan",
+      "layers": [
+        {
+          "diagonal_energy": 0.009961832473974004,
+          "diagonal_fraction": 0.011182015493464509,
+          "diagonal_probes_per_output": 32,
+          "diagonal_samples": [
+            {
+              "coordinate": 912,
+              "natural_weighted_value": 0.050483840436930105,
+              "output_probe": 0,
+              "probe": 0,
+              "squared": 7.289489929210866e-06,
+              "value": 0.002699905540794134
+            },
+            {
+              "coordinate": 335,
+              "natural_weighted_value": 0.6130219252162483,
+              "output_probe": 0,
+              "probe": 1,
+              "squared": 1.8247469271726068e-06,
+              "value": 0.001350831938907504
+            },
+            {
+              "coordinate": 2211,
+              "natural_weighted_value": 0.06779173504915803,
+              "output_probe": 0,
+              "probe": 2,
+              "squared": 5.785031459243589e-06,
+              "value": 0.002405209233984351
+            },
+            {
+              "coordinate": 2503,
+              "natural_weighted_value": 0.008371154417523563,
+              "output_probe": 0,
+              "probe": 3,
+              "squared": 1.050936473481279e-06,
+              "value": 0.001025151927024126
+            },
+            {
+              "coordinate": 2278,
+              "natural_weighted_value": 0.003289073129820394,
+              "output_probe": 0,
+              "probe": 4,
+              "squared": 7.315779879807577e-06,
+              "value": 0.002704769838601351
+            },
+            {
+              "coordinate": 2479,
+              "natural_weighted_value": 0.040390806634256204,
+              "output_probe": 0,
+              "probe": 5,
+              "squared": 4.9505677728332365e-06,
+              "value": 0.0022249871399253607
+            },
+            {
+              "coordinate": 1166,
+              "natural_weighted_value": 0.012719088619372182,
+              "output_probe": 0,
+              "probe": 6,
+              "squared": 8.793024425664045e-08,
+              "value": 0.00029653034289367497
+            },
+            {
+              "coordinate": 1584,
+              "natural_weighted_value": 0.00014616533431334108,
+              "output_probe": 0,
+              "probe": 7,
+              "squared": 3.3762488918413167e-06,
+              "value": 0.001837457180954516
+            },
+            {
+              "coordinate": 2309,
+              "natural_weighted_value": 0.0012994408399215947,
+              "output_probe": 0,
+              "probe": 8,
+              "squared": 1.4971852889347515e-06,
+              "value": 0.0012235952308401465
+            },
+            {
+              "coordinate": 2396,
+              "natural_weighted_value": 0.0669658721462546,
+              "output_probe": 0,
+              "probe": 9,
+              "squared": 1.4803790749903843e-05,
+              "value": 0.0038475694600492716
+            },
+            {
+              "coordinate": 1115,
+              "natural_weighted_value": 0.09076612256284866,
+              "output_probe": 0,
+              "probe": 10,
+              "squared": 2.0594439126929358e-07,
+              "value": 0.00045381096424534917
+            },
+            {
+              "coordinate": 2115,
+              "natural_weighted_value": 0.20237970874461553,
+              "output_probe": 0,
+              "probe": 11,
+              "squared": 9.709952111650912e-06,
+              "value": 0.003116079606115818
+            },
+            {
+              "coordinate": 611,
+              "natural_weighted_value": -0.06184079060390757,
+              "output_probe": 0,
+              "probe": 12,
+              "squared": 1.805332028926524e-05,
+              "value": -0.0042489198967814445
+            },
+            {
+              "coordinate": 967,
+              "natural_weighted_value": 0.14127715884335146,
+              "output_probe": 0,
+              "probe": 13,
+              "squared": 5.2650866294023935e-06,
+              "value": 0.002294577658176422
+            },
+            {
+              "coordinate": 861,
+              "natural_weighted_value": 0.05001678019033173,
+              "output_probe": 0,
+              "probe": 14,
+              "squared": 1.7861819695004348e-06,
+              "value": 0.0013364811893552542
+            },
+            {
+              "coordinate": 1137,
+              "natural_weighted_value": 6.160073092826668e-05,
+              "output_probe": 0,
+              "probe": 15,
+              "squared": 2.8081860950430527e-06,
+              "value": 0.0016757643315941095
+            },
+            {
+              "coordinate": 1082,
+              "natural_weighted_value": 0.008797120760804383,
+              "output_probe": 0,
+              "probe": 16,
+              "squared": 1.8500458553213618e-06,
+              "value": 0.001360163907520473
+            },
+            {
+              "coordinate": 1992,
+              "natural_weighted_value": 0.11321264559135513,
+              "output_probe": 0,
+              "probe": 17,
+              "squared": 2.9266768733574993e-06,
+              "value": 0.0017107533058151603
+            },
+            {
+              "coordinate": 1140,
+              "natural_weighted_value": 0.023733065115127405,
+              "output_probe": 0,
+              "probe": 18,
+              "squared": 1.0153173460564267e-05,
+              "value": 0.0031864044722169638
+            },
+            {
+              "coordinate": 1706,
+              "natural_weighted_value": 0.013268699382069649,
+              "output_probe": 0,
+              "probe": 19,
+              "squared": 3.0845452538247496e-07,
+              "value": 0.0005553868249990046
+            },
+            {
+              "coordinate": 1117,
+              "natural_weighted_value": 0.08936556028470655,
+              "output_probe": 0,
+              "probe": 20,
+              "squared": 8.408425272738633e-06,
+              "value": 0.0028997284825891256
+            },
+            {
+              "coordinate": 1443,
+              "natural_weighted_value": 0.06450745353556997,
+              "output_probe": 0,
+              "probe": 21,
+              "squared": 2.2128561921088953e-06,
+              "value": 0.0014875672059133649
+            },
+            {
+              "coordinate": 163,
+              "natural_weighted_value": 0.7117275401787548,
+              "output_probe": 0,
+              "probe": 22,
+              "squared": 1.02197379760563e-05,
+              "value": 0.0031968324910849333
+            },
+            {
+              "coordinate": 2224,
+              "natural_weighted_value": 0.014103285970924473,
+              "output_probe": 0,
+              "probe": 23,
+              "squared": 8.509142192032965e-06,
+              "value": 0.002917043399065733
+            },
+            {
+              "coordinate": 1153,
+              "natural_weighted_value": 0.00012558414271324734,
+              "output_probe": 0,
+              "probe": 24,
+              "squared": 1.2934093992732524e-05,
+              "value": 0.0035964001435786486
+            },
+            {
+              "coordinate": 564,
+              "natural_weighted_value": 0.02501551983119521,
+              "output_probe": 0,
+              "probe": 25,
+              "squared": 3.840450485024464e-07,
+              "value": 0.0006197136826813221
+            },
+            {
+              "coordinate": 2128,
+              "natural_weighted_value": 0.03215649023768183,
+              "output_probe": 0,
+              "probe": 26,
+              "squared": 2.92861221132334e-06,
+              "value": 0.0017113188514485955
+            },
+            {
+              "coordinate": 1254,
+              "natural_weighted_value": 0.11443198287366618,
+              "output_probe": 0,
+              "probe": 27,
+              "squared": 2.8909116556939153e-05,
+              "value": 0.005376719869673252
+            },
+            {
+              "coordinate": 109,
+              "natural_weighted_value": 0.3014726513785426,
+              "output_probe": 0,
+              "probe": 28,
+              "squared": 4.308367511548768e-06,
+              "value": 0.002075660740956664
+            },
+            {
+              "coordinate": 256,
+              "natural_weighted_value": 0.20057614546624247,
+              "output_probe": 0,
+              "probe": 29,
+              "squared": 9.150654481989795e-06,
+              "value": 0.0030250048730522394
+            },
+            {
+              "coordinate": 352,
+              "natural_weighted_value": 0.11742804046729782,
+              "output_probe": 0,
+              "probe": 30,
+              "squared": 4.709579037734792e-06,
+              "value": 0.002170156454667449
+            },
+            {
+              "coordinate": 974,
+              "natural_weighted_value": 0.11891920335997952,
+              "output_probe": 0,
+              "probe": 31,
+              "squared": 3.882098546795915e-06,
+              "value": 0.001970304176211357
+            },
+            {
+              "coordinate": 2307,
+              "natural_weighted_value": -0.0008685667583799902,
+              "output_probe": 1,
+              "probe": 0,
+              "squared": 1.6838545465148802e-06,
+              "value": -0.0012976342113688588
+            },
+            {
+              "coordinate": 1540,
+              "natural_weighted_value": 0.06077506118706888,
+              "output_probe": 1,
+              "probe": 1,
+              "squared": 3.0834888728286164e-07,
+              "value": 0.000555291713681072
+            },
+            {
+              "coordinate": 1069,
+              "natural_weighted_value": 0.06442836943609143,
+              "output_probe": 1,
+              "probe": 2,
+              "squared": 7.74142178278309e-07,
+              "value": 0.0008798534981906414
+            },
+            {
+              "coordinate": 2496,
+              "natural_weighted_value": 0.0027759110533679895,
+              "output_probe": 1,
+              "probe": 3,
+              "squared": 2.7385633560577757e-09,
+              "value": 5.233128467807546e-05
+            },
+            {
+              "coordinate": 2520,
+              "natural_weighted_value": -0.005804177413347225,
+              "output_probe": 1,
+              "probe": 4,
+              "squared": 3.154980390893811e-06,
+              "value": -0.0017762264469638467
+            },
+            {
+              "coordinate": 1280,
+              "natural_weighted_value": -0.03378283386484826,
+              "output_probe": 1,
+              "probe": 5,
+              "squared": 1.69278113678752e-07,
+              "value": -0.00041143421549350023
+            },
+            {
+              "coordinate": 7,
+              "natural_weighted_value": 0.028473080921253002,
+              "output_probe": 1,
+              "probe": 6,
+              "squared": 3.203988340931153e-08,
+              "value": 0.0001789968810044229
+            },
+            {
+              "coordinate": 1081,
+              "natural_weighted_value": -0.005855420991482049,
+              "output_probe": 1,
+              "probe": 7,
+              "squared": 1.2362767527717002e-06,
+              "value": -0.0011118798283860087
+            },
+            {
+              "coordinate": 1072,
+              "natural_weighted_value": -0.004131265971379881,
+              "output_probe": 1,
+              "probe": 8,
+              "squared": 1.5112140975501875e-06,
+              "value": -0.0012293144827708602
+            },
+            {
+              "coordinate": 1667,
+              "natural_weighted_value": -0.0013589680381077829,
+              "output_probe": 1,
+              "probe": 9,
+              "squared": 7.678098252430206e-08,
+              "value": -0.0002770938153844327
+            },
+            {
+              "coordinate": 1801,
+              "natural_weighted_value": 0.015390443018830635,
+              "output_probe": 1,
+              "probe": 10,
+              "squared": 6.596331231496864e-07,
+              "value": 0.000812178011983633
+            },
+            {
+              "coordinate": 480,
+              "natural_weighted_value": 0.4770068111141512,
+              "output_probe": 1,
+              "probe": 11,
+              "squared": 2.524825547826578e-05,
+              "value": 0.005024764221161604
+            },
+            {
+              "coordinate": 1949,
+              "natural_weighted_value": 0.08833342559155133,
+              "output_probe": 1,
+              "probe": 12,
+              "squared": 4.7553212105014254e-07,
+              "value": 0.0006895883707329631
+            },
+            {
+              "coordinate": 1127,
+              "natural_weighted_value": -0.0040394081990414304,
+              "output_probe": 1,
+              "probe": 13,
+              "squared": 6.38493313789173e-06,
+              "value": -0.002526842523366213
+            },
+            {
+              "coordinate": 2117,
+              "natural_weighted_value": -0.001503863184014638,
+              "output_probe": 1,
+              "probe": 14,
+              "squared": 7.288815769094381e-07,
+              "value": -0.0008537456160411239
+            },
+            {
+              "coordinate": 2120,
+              "natural_weighted_value": 5.806874206003938e-05,
+              "output_probe": 1,
+              "probe": 15,
+              "squared": 4.841720681325736e-07,
+              "value": 0.000695824739523232
+            },
+            {
+              "coordinate": 2218,
+              "natural_weighted_value": -0.07675783556137794,
+              "output_probe": 1,
+              "probe": 16,
+              "squared": 1.357653930833766e-06,
+              "value": -0.0011651840759441257
+            },
+            {
+              "coordinate": 258,
+              "natural_weighted_value": -0.005775647140939255,
+              "output_probe": 1,
+              "probe": 17,
+              "squared": 4.894432361444916e-10,
+              "value": -2.2123364033177495e-05
+            },
+            {
+              "coordinate": 1826,
+              "natural_weighted_value": -0.018125891594774762,
+              "output_probe": 1,
+              "probe": 18,
+              "squared": 1.2251427292952315e-07,
+              "value": -0.00035002038930542767
+            },
+            {
+              "coordinate": 1660,
+              "natural_weighted_value": 0.0009590541922748982,
+              "output_probe": 1,
+              "probe": 19,
+              "squared": 1.2180967072704088e-10,
+              "value": 1.103674185287673e-05
+            },
+            {
+              "coordinate": 999,
+              "natural_weighted_value": -8.255779937553758e-05,
+              "output_probe": 1,
+              "probe": 20,
+              "squared": 6.049668354423488e-11,
+              "value": -7.77796140027931e-06
+            },
+            {
+              "coordinate": 426,
+              "natural_weighted_value": -1.1820031498617212,
+              "output_probe": 1,
+              "probe": 21,
+              "squared": 1.251574388198441e-06,
+              "value": -0.0011187378549948335
+            },
+            {
+              "coordinate": 2092,
+              "natural_weighted_value": -4.8134091469132314e-05,
+              "output_probe": 1,
+              "probe": 22,
+              "squared": 2.2620133294199243e-06,
+              "value": -0.001503999112173915
+            },
+            {
+              "coordinate": 688,
+              "natural_weighted_value": -0.011623451931064774,
+              "output_probe": 1,
+              "probe": 23,
+              "squared": 4.913987722921064e-07,
+              "value": -0.0007009984110482037
+            },
+            {
+              "coordinate": 2032,
+              "natural_weighted_value": -0.00022998319265274793,
+              "output_probe": 1,
+              "probe": 24,
+              "squared": 1.0189481814585513e-07,
+              "value": -0.00031920967740006745
+            },
+            {
+              "coordinate": 2413,
+              "natural_weighted_value": -4.7855366007882065e-05,
+              "output_probe": 1,
+              "probe": 25,
+              "squared": 1.649915983568884e-10,
+              "value": -1.2844905540987384e-05
+            },
+            {
+              "coordinate": 1582,
+              "natural_weighted_value": -0.030831803487847698,
+              "output_probe": 1,
+              "probe": 26,
+              "squared": 1.3663999745534186e-07,
+              "value": -0.0003696484782267362
+            },
+            {
+              "coordinate": 986,
+              "natural_weighted_value": -5.047887000731539e-08,
+              "output_probe": 1,
+              "probe": 27,
+              "squared": 7.940233310229022e-18,
+              "value": -2.817841959767975e-09
+            },
+            {
+              "coordinate": 1136,
+              "natural_weighted_value": -0.001448297927473946,
+              "output_probe": 1,
+              "probe": 28,
+              "squared": 2.4098950882948958e-09,
+              "value": -4.909068229608238e-05
+            },
+            {
+              "coordinate": 2531,
+              "natural_weighted_value": 0.0004421569792931396,
+              "output_probe": 1,
+              "probe": 29,
+              "squared": 1.405535252454988e-07,
+              "value": 0.0003749046882148832
+            },
+            {
+              "coordinate": 2529,
+              "natural_weighted_value": 2.3553864590619906e-06,
+              "output_probe": 1,
+              "probe": 30,
+              "squared": 1.613337382585546e-06,
+              "value": 0.0012701721861958504
+            },
+            {
+              "coordinate": 440,
+              "natural_weighted_value": -0.2783991727894586,
+              "output_probe": 1,
+              "probe": 31,
+              "squared": 1.0284640563533936e-06,
+              "value": -0.0010141321690753102
+            }
+          ],
+          "elapsed_seconds": 209.68006213195622,
+          "input_diagonal_directions": "uniform coordinate basis vectors",
+          "input_total_directions": "independent unnormalized Rademacher",
+          "natural_displacement": {
+            "approximation_error_energy_unbiased": 0.017847376320223034,
+            "coordinate_estimator": "d * delta_j^2 * w^T H[e_j,e_j], sampled uniformly in j",
+            "definition": "probe activation minus the mean activation over token positions in the same prompt",
+            "diagonal_energy_unbiased": 0.004976765680520625,
+            "explained_fraction": 0.5946380572944496,
+            "full_diagonal_cross_energy": 0.015578818898498437,
+            "full_energy": 0.04402824843669928,
+            "per_output_probe": [
+              {
+                "diagonal_estimate": 0.10112439596464368,
+                "diagonal_split_a": 0.09370820892438149,
+                "diagonal_split_b": 0.10854058300490586,
+                "full_value": 0.28948572278022766,
+                "output_probe": 0
+              },
+              {
+                "diagonal_estimate": -0.028877299938163535,
+                "diagonal_split_a": 0.0035497060857557473,
+                "diagonal_split_b": -0.06130430596208281,
+                "full_value": -0.06522662937641144,
+                "output_probe": 1
+              }
+            ],
+            "relative_approximation_error": 0.4053619427055504,
+            "rms": 0.17910605669021606
+          },
+          "output_aggregation": "mean over positions probe_position..end",
+          "output_direction": "normalized Rademacher (covariance I/d_model)",
+          "output_probes": 2,
+          "per_output_probe": [
+            {
+              "diagonal_energy": 0.015808436707035693,
+              "diagonal_fraction": 0.010127845317723903,
+              "output_probe": 0,
+              "total_energy": 1.5608884428132663
+            },
+            {
+              "diagonal_energy": 0.004115228240912314,
+              "diagonal_fraction": 0.01863179331388835,
+              "output_probe": 1,
+              "total_energy": 0.220871290894193
+            }
+          ],
+          "source_activation_rms": 0.22316321730613708,
+          "source_layer": 12,
+          "symmetry_checks_per_output": 1,
+          "symmetry_max_relative_error": 4.2537122558506385e-06,
+          "target_layer": 30,
+          "total_energy": 0.8908798668537297,
+          "total_probes_per_output": 4,
+          "total_samples": [
+            {
+              "output_probe": 0,
+              "probe": 0,
+              "squared": 3.935247925023887,
+              "swapped_value": 1.9837465286254883,
+              "symmetry_absolute_error": 5.960464477539062e-07,
+              "symmetry_relative_error": 3.004650237078922e-07,
+              "value": 1.9837459325790405
+            },
+            {
+              "output_probe": 0,
+              "probe": 1,
+              "squared": 0.37450969741782103,
+              "value": -0.6119719743728638
+            },
+            {
+              "output_probe": 0,
+              "probe": 2,
+              "squared": 1.5765127385275832,
+              "value": -1.2555925846099854
+            },
+            {
+              "output_probe": 0,
+              "probe": 3,
+              "squared": 0.35728341028377386,
+              "value": -0.59773188829422
+            },
+            {
+              "output_probe": 1,
+              "probe": 0,
+              "squared": 0.18868774053914095,
+              "swapped_value": -0.4343838691711426,
+              "symmetry_absolute_error": 1.8477439880371094e-06,
+              "symmetry_relative_error": 4.2537122558506385e-06,
+              "value": -0.43438202142715454
+            },
+            {
+              "output_probe": 1,
+              "probe": 1,
+              "squared": 0.27081608515915434,
+              "value": -0.5203999280929565
+            },
+            {
+              "output_probe": 1,
+              "probe": 2,
+              "squared": 0.24381646829374404,
+              "value": -0.4937777519226074
+            },
+            {
+              "output_probe": 1,
+              "probe": 3,
+              "squared": 0.18016486958473266,
+              "value": 0.4244583249092102
+            }
+          ],
+          "zero_intervention_max_abs_error": 0.0
+        }
+      ],
+      "probe_position": 3,
+      "probe_text": "Jordan",
+      "probe_token": {
+        "decoded": " Jordan",
+        "id": 16586,
+        "offset": [
+          19,
+          26
+        ],
+        "token": "\u0120Jordan"
+      },
+      "prompt": "The athlete Michael Jordan plays the sport of"
+    }
+  ],
+  "metadata": {
+    "created_at": "2026-08-29T17:07:53.417642+00:00",
+    "cuda_runtime": "13.0",
+    "device": "cuda",
+    "estimator": "E[w,u,v](w^T H[u,v])^2 for total; d E[w,j](w^T H[e_j,e_j])^2 for diagonal",
+    "gpu": "Quadro RTX 8000",
+    "layers": [
+      12
+    ],
+    "model_dtype": "torch.float32",
+    "model_id": "Qwen/Qwen3.5-4B",
+    "model_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "platform": "Linux-6.17.10-100.fc41.x86_64-x86_64-with-glibc2.40",
+    "python": "3.13.9 (main, Oct 14 2025, 00:00:00) [GCC 14.3.1 20250808 (Red Hat 14.3.1-3)]",
+    "seed": 4,
+    "target_layer": 30,
+    "torch": "2.13.0+cu130",
+    "transformers": "5.16.1"
+  }
+}

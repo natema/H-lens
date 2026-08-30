@@ -1,0 +1,1277 @@
+{
+  "contexts": [
+    {
+      "id": "typo_aganst",
+      "layers": [
+        {
+          "diagonal_energy": 0.1351736806692468,
+          "diagonal_fraction": 0.0016281659557519953,
+          "diagonal_probes_per_output": 8,
+          "diagonal_samples": [
+            {
+              "coordinate": 1432,
+              "output_probe": 0,
+              "probe": 0,
+              "squared": 5.056138538045638e-09,
+              "value": 7.110652950359508e-05
+            },
+            {
+              "coordinate": 418,
+              "output_probe": 0,
+              "probe": 1,
+              "squared": 8.824558632393323e-06,
+              "value": 0.002970615867525339
+            },
+            {
+              "coordinate": 1520,
+              "output_probe": 0,
+              "probe": 2,
+              "squared": 4.572647947732845e-06,
+              "value": -0.002138375071808696
+            },
+            {
+              "coordinate": 10,
+              "output_probe": 0,
+              "probe": 3,
+              "squared": 1.0217097297289502e-05,
+              "value": -0.0031964194495230913
+            },
+            {
+              "coordinate": 1495,
+              "output_probe": 0,
+              "probe": 4,
+              "squared": 1.9013994983600952e-05,
+              "value": -0.004360503982752562
+            },
+            {
+              "coordinate": 1459,
+              "output_probe": 0,
+              "probe": 5,
+              "squared": 2.7927223132801805e-05,
+              "value": -0.0052846213802695274
+            },
+            {
+              "coordinate": 1810,
+              "output_probe": 0,
+              "probe": 6,
+              "squared": 2.2019540479027196e-06,
+              "value": -0.0014838982606306672
+            },
+            {
+              "coordinate": 2249,
+              "output_probe": 0,
+              "probe": 7,
+              "squared": 5.839858819690381e-06,
+              "value": -0.002416579984128475
+            },
+            {
+              "coordinate": 457,
+              "output_probe": 1,
+              "probe": 0,
+              "squared": 7.913398649959469e-06,
+              "value": -0.0028130763676017523
+            },
+            {
+              "coordinate": 691,
+              "output_probe": 1,
+              "probe": 1,
+              "squared": 8.948516906638095e-06,
+              "value": 0.0029914071783423424
+            },
+            {
+              "coordinate": 2228,
+              "output_probe": 1,
+              "probe": 2,
+              "squared": 2.6728873709676174e-05,
+              "value": 0.0051699974574148655
+            },
+            {
+              "coordinate": 934,
+              "output_probe": 1,
+              "probe": 3,
+              "squared": 8.707771211518504e-05,
+              "value": 0.009331543929874897
+            },
+            {
+              "coordinate": 352,
+              "output_probe": 1,
+              "probe": 4,
+              "squared": 3.344152746770357e-05,
+              "value": -0.005782864987850189
+            },
+            {
+              "coordinate": 2364,
+              "output_probe": 1,
+              "probe": 5,
+              "squared": 5.8884461978436775e-05,
+              "value": 0.00767362117767334
+            },
+            {
+              "coordinate": 227,
+              "output_probe": 1,
+              "probe": 6,
+              "squared": 0.0005408352177480348,
+              "value": 0.023255864158272743
+            },
+            {
+              "coordinate": 589,
+              "output_probe": 1,
+              "probe": 7,
+              "squared": 2.403404607208859e-06,
+              "value": -0.0015502917813137174
+            }
+          ],
+          "elapsed_seconds": 86.29564398340881,
+          "input_diagonal_directions": "uniform coordinate basis vectors",
+          "input_total_directions": "independent unnormalized Rademacher",
+          "output_aggregation": "mean over positions probe_position..end",
+          "output_direction": "normalized Rademacher (covariance I/d_model)",
+          "output_probes": 2,
+          "per_output_probe": [
+            {
+              "diagonal_energy": 0.025152765119983864,
+              "diagonal_fraction": 0.00032207001354223947,
+              "output_probe": 0,
+              "total_energy": 78.09719645534489
+            },
+            {
+              "diagonal_energy": 0.2451945962185097,
+              "diagonal_fraction": 0.0027879842068919253,
+              "output_probe": 1,
+              "total_energy": 87.94691003355979
+            }
+          ],
+          "source_activation_rms": 0.18214307725429535,
+          "source_layer": 6,
+          "symmetry_checks_per_output": 1,
+          "symmetry_max_relative_error": 1.9801194031801313e-07,
+          "target_layer": 30,
+          "total_energy": 83.02205324445234,
+          "total_probes_per_output": 4,
+          "total_samples": [
+            {
+              "output_probe": 0,
+              "probe": 0,
+              "squared": 107.22123592917706,
+              "swapped_value": 10.354769706726074,
+              "symmetry_absolute_error": 9.5367431640625e-07,
+              "symmetry_relative_error": 9.210000255117007e-08,
+              "value": 10.354768753051758
+            },
+            {
+              "output_probe": 0,
+              "probe": 1,
+              "squared": 164.28451985213906,
+              "value": 12.817352294921875
+            },
+            {
+              "output_probe": 0,
+              "probe": 2,
+              "squared": 20.609157785665047,
+              "value": 4.539731025695801
+            },
+            {
+              "output_probe": 0,
+              "probe": 3,
+              "squared": 20.273872254398384,
+              "value": 4.502651691436768
+            },
+            {
+              "output_probe": 1,
+              "probe": 0,
+              "squared": 92.78492176308737,
+              "swapped_value": 9.632491111755371,
+              "symmetry_absolute_error": 1.9073486328125e-06,
+              "symmetry_relative_error": 1.9801194031801313e-07,
+              "value": 9.632493019104004
+            },
+            {
+              "output_probe": 1,
+              "probe": 1,
+              "squared": 21.392768675149455,
+              "value": 4.625231742858887
+            },
+            {
+              "output_probe": 1,
+              "probe": 2,
+              "squared": 220.96033620474918,
+              "value": 14.864734649658203
+            },
+            {
+              "output_probe": 1,
+              "probe": 3,
+              "squared": 16.64961349125315,
+              "value": -4.0803937911987305
+            }
+          ],
+          "zero_intervention_max_abs_error": 0.0
+        },
+        {
+          "diagonal_energy": 0.14009384842740913,
+          "diagonal_fraction": 0.006831233773925664,
+          "diagonal_probes_per_output": 8,
+          "diagonal_samples": [
+            {
+              "coordinate": 2033,
+              "output_probe": 0,
+              "probe": 0,
+              "squared": 9.135402914527039e-07,
+              "value": -0.0009557930170558393
+            },
+            {
+              "coordinate": 434,
+              "output_probe": 0,
+              "probe": 1,
+              "squared": 5.505593764901229e-06,
+              "value": 0.002346400171518326
+            },
+            {
+              "coordinate": 1236,
+              "output_probe": 0,
+              "probe": 2,
+              "squared": 4.126750106162231e-05,
+              "value": 0.006423978600651026
+            },
+            {
+              "coordinate": 2254,
+              "output_probe": 0,
+              "probe": 3,
+              "squared": 2.1180272532037855e-06,
+              "value": 0.001455344376154244
+            },
+            {
+              "coordinate": 1678,
+              "output_probe": 0,
+              "probe": 4,
+              "squared": 5.354569529076561e-09,
+              "value": 7.317492418223992e-05
+            },
+            {
+              "coordinate": 138,
+              "output_probe": 0,
+              "probe": 5,
+              "squared": 1.4644979445628677e-05,
+              "value": 0.003826875938102603
+            },
+            {
+              "coordinate": 1304,
+              "output_probe": 0,
+              "probe": 6,
+              "squared": 6.387081307784817e-07,
+              "value": 0.000799192173872143
+            },
+            {
+              "coordinate": 1714,
+              "output_probe": 0,
+              "probe": 7,
+              "squared": 1.0260597274143175e-05,
+              "value": -0.0032032167073339224
+            },
+            {
+              "coordinate": 381,
+              "output_probe": 1,
+              "probe": 0,
+              "squared": 0.000155634379371581,
+              "value": 0.012475350871682167
+            },
+            {
+              "coordinate": 738,
+              "output_probe": 1,
+              "probe": 1,
+              "squared": 0.00016239695996957126,
+              "value": 0.012743506580591202
+            },
+            {
+              "coordinate": 753,
+              "output_probe": 1,
+              "probe": 2,
+              "squared": 7.973190170534276e-05,
+              "value": 0.008929272182285786
+            },
+            {
+              "coordinate": 348,
+              "output_probe": 1,
+              "probe": 3,
+              "squared": 3.223187850043274e-05,
+              "value": 0.005677312612533569
+            },
+            {
+              "coordinate": 1107,
+              "output_probe": 1,
+              "probe": 4,
+              "squared": 6.1305844846587e-05,
+              "value": 0.00782980490475893
+            },
+            {
+              "coordinate": 2091,
+              "output_probe": 1,
+              "probe": 5,
+              "squared": 0.00026436288493986507,
+              "value": 0.016259239986538887
+            },
+            {
+              "coordinate": 1766,
+              "output_probe": 1,
+              "probe": 6,
+              "squared": 1.786951165573731e-05,
+              "value": 0.0042272345162928104
+            },
+            {
+              "coordinate": 530,
+              "output_probe": 1,
+              "probe": 7,
+              "squared": 2.669888989093039e-05,
+              "value": 0.005167096853256226
+            }
+          ],
+          "elapsed_seconds": 67.69555287435651,
+          "input_diagonal_directions": "uniform coordinate basis vectors",
+          "input_total_directions": "independent unnormalized Rademacher",
+          "output_aggregation": "mean over positions probe_position..end",
+          "output_direction": "normalized Rademacher (covariance I/d_model)",
+          "output_probes": 2,
+          "per_output_probe": [
+            {
+              "diagonal_energy": 0.024113376573203022,
+              "diagonal_fraction": 0.0008848185584790069,
+              "output_probe": 0,
+              "total_energy": 27.25234042858871
+            },
+            {
+              "diagonal_energy": 0.2560743202816152,
+              "diagonal_fraction": 0.018605537076946628,
+              "output_probe": 1,
+              "total_energy": 13.763339334015065
+            }
+          ],
+          "source_activation_rms": 0.18896591663360596,
+          "source_layer": 12,
+          "symmetry_checks_per_output": 1,
+          "symmetry_max_relative_error": 9.252196963081999e-06,
+          "target_layer": 30,
+          "total_energy": 20.507839881301887,
+          "total_probes_per_output": 4,
+          "total_samples": [
+            {
+              "output_probe": 0,
+              "probe": 0,
+              "squared": 1.5299065007798731,
+              "swapped_value": 1.2369053363800049,
+              "symmetry_absolute_error": 1.1444091796875e-05,
+              "symmetry_relative_error": 9.252196963081999e-06,
+              "value": 1.236893892288208
+            },
+            {
+              "output_probe": 0,
+              "probe": 1,
+              "squared": 56.66979860773813,
+              "value": 7.527934551239014
+            },
+            {
+              "output_probe": 0,
+              "probe": 2,
+              "squared": 0.2997078394409982,
+              "value": -0.5474557876586914
+            },
+            {
+              "output_probe": 0,
+              "probe": 3,
+              "squared": 50.50994876639584,
+              "value": 7.107035160064697
+            },
+            {
+              "output_probe": 1,
+              "probe": 0,
+              "squared": 0.311009254786768,
+              "swapped_value": -0.5576870441436768,
+              "symmetry_absolute_error": 5.0067901611328125e-06,
+              "symmetry_relative_error": 8.977777435767209e-06,
+              "value": -0.5576820373535156
+            },
+            {
+              "output_probe": 1,
+              "probe": 1,
+              "squared": 2.0230504981867767,
+              "value": 1.4223397970199585
+            },
+            {
+              "output_probe": 1,
+              "probe": 2,
+              "squared": 50.923144749136554,
+              "value": -7.136045455932617
+            },
+            {
+              "output_probe": 1,
+              "probe": 3,
+              "squared": 1.7961528339501598,
+              "value": -1.340206265449524
+            }
+          ],
+          "zero_intervention_max_abs_error": 0.0
+        },
+        {
+          "diagonal_energy": 0.014473055606731303,
+          "diagonal_fraction": 0.001522597940346519,
+          "diagonal_probes_per_output": 8,
+          "diagonal_samples": [
+            {
+              "coordinate": 1063,
+              "output_probe": 0,
+              "probe": 0,
+              "squared": 1.0741369354857555e-05,
+              "value": 0.003277402836829424
+            },
+            {
+              "coordinate": 1948,
+              "output_probe": 0,
+              "probe": 1,
+              "squared": 2.5211181492920993e-07,
+              "value": 0.0005021073739044368
+            },
+            {
+              "coordinate": 607,
+              "output_probe": 0,
+              "probe": 2,
+              "squared": 1.6447701344265626e-07,
+              "value": -0.00040555765735916793
+            },
+            {
+              "coordinate": 2108,
+              "output_probe": 0,
+              "probe": 3,
+              "squared": 1.3177246043247909e-05,
+              "value": 0.0036300476640462875
+            },
+            {
+              "coordinate": 1789,
+              "output_probe": 0,
+              "probe": 4,
+              "squared": 7.243815711350556e-08,
+              "value": 0.00026914337649941444
+            },
+            {
+              "coordinate": 884,
+              "output_probe": 0,
+              "probe": 5,
+              "squared": 1.4421071136871326e-07,
+              "value": 0.0003797508543357253
+            },
+            {
+              "coordinate": 1244,
+              "output_probe": 0,
+              "probe": 6,
+              "squared": 9.018536104437198e-07,
+              "value": -0.0009496597340330482
+            },
+            {
+              "coordinate": 793,
+              "output_probe": 0,
+              "probe": 7,
+              "squared": 9.578356600253336e-06,
+              "value": -0.003094892017543316
+            },
+            {
+              "coordinate": 2304,
+              "output_probe": 1,
+              "probe": 0,
+              "squared": 2.4439424230152324e-05,
+              "value": 0.00494362460449338
+            },
+            {
+              "coordinate": 2082,
+              "output_probe": 1,
+              "probe": 1,
+              "squared": 3.3557520767687395e-08,
+              "value": -0.00018318711954634637
+            },
+            {
+              "coordinate": 303,
+              "output_probe": 1,
+              "probe": 2,
+              "squared": 5.40906845477668e-06,
+              "value": 0.002325740410014987
+            },
+            {
+              "coordinate": 1909,
+              "output_probe": 1,
+              "probe": 3,
+              "squared": 1.4487784064896124e-07,
+              "value": 0.000380628218408674
+            },
+            {
+              "coordinate": 268,
+              "output_probe": 1,
+              "probe": 4,
+              "squared": 9.611249263352661e-06,
+              "value": 0.0031002014875411987
+            },
+            {
+              "coordinate": 2113,
+              "output_probe": 1,
+              "probe": 5,
+              "squared": 3.5632655795781246e-06,
+              "value": 0.0018876614049077034
+            },
+            {
+              "coordinate": 1540,
+              "output_probe": 1,
+              "probe": 6,
+              "squared": 8.320235258685446e-06,
+              "value": 0.0028844818007200956
+            },
+            {
+              "coordinate": 1547,
+              "output_probe": 1,
+              "probe": 7,
+              "squared": 3.902856088452153e-06,
+              "value": 0.0019755647517740726
+            }
+          ],
+          "elapsed_seconds": 38.73138487152755,
+          "input_diagonal_directions": "uniform coordinate basis vectors",
+          "input_total_directions": "independent unnormalized Rademacher",
+          "output_aggregation": "mean over positions probe_position..end",
+          "output_direction": "normalized Rademacher (covariance I/d_model)",
+          "output_probes": 2,
+          "per_output_probe": [
+            {
+              "diagonal_energy": 0.011210260257810115,
+              "diagonal_fraction": 0.0007347734653306448,
+              "output_probe": 0,
+              "total_energy": 15.256757064254558
+            },
+            {
+              "diagonal_energy": 0.017735850955652492,
+              "diagonal_fraction": 0.004724213581489483,
+              "output_probe": 1,
+              "total_energy": 3.7542440979267937
+            }
+          ],
+          "source_activation_rms": 0.355923593044281,
+          "source_layer": 20,
+          "symmetry_checks_per_output": 1,
+          "symmetry_max_relative_error": 1.0960025370524612e-06,
+          "target_layer": 30,
+          "total_energy": 9.505500581090676,
+          "total_probes_per_output": 4,
+          "total_samples": [
+            {
+              "output_probe": 0,
+              "probe": 0,
+              "squared": 48.72904763406041,
+              "swapped_value": 6.980621814727783,
+              "symmetry_absolute_error": 2.384185791015625e-06,
+              "symmetry_relative_error": 3.415434690911699e-07,
+              "value": 6.980619430541992
+            },
+            {
+              "output_probe": 0,
+              "probe": 1,
+              "squared": 1.4535427014680522,
+              "value": 1.205629587173462
+            },
+            {
+              "output_probe": 0,
+              "probe": 2,
+              "squared": 3.0498459194577663,
+              "value": 1.7463808059692383
+            },
+            {
+              "output_probe": 0,
+              "probe": 3,
+              "squared": 7.7945920020320045,
+              "value": -2.791879653930664
+            },
+            {
+              "output_probe": 1,
+              "probe": 0,
+              "squared": 3.418967112531405,
+              "swapped_value": 1.8490428924560547,
+              "symmetry_absolute_error": 2.0265579223632812e-06,
+              "symmetry_relative_error": 1.0960025370524612e-06,
+              "value": 1.849044919013977
+            },
+            {
+              "output_probe": 1,
+              "probe": 1,
+              "squared": 3.5942537870745497,
+              "value": -1.895851731300354
+            },
+            {
+              "output_probe": 1,
+              "probe": 2,
+              "squared": 0.24238585018343883,
+              "value": -0.4923269748687744
+            },
+            {
+              "output_probe": 1,
+              "probe": 3,
+              "squared": 7.761369641917781,
+              "value": -2.785923480987549
+            }
+          ],
+          "zero_intervention_max_abs_error": 0.0
+        }
+      ],
+      "probe_position": 8,
+      "probe_text": "aganst",
+      "probe_token": {
+        "decoded": "anst",
+        "id": 59130,
+        "offset": [
+          33,
+          37
+        ],
+        "token": "anst"
+      },
+      "prompt": "The final vote was nine to two aganst"
+    },
+    {
+      "id": "association_jordan",
+      "layers": [
+        {
+          "diagonal_energy": 0.14639784900921154,
+          "diagonal_fraction": 0.010395253562478987,
+          "diagonal_probes_per_output": 8,
+          "diagonal_samples": [
+            {
+              "coordinate": 227,
+              "output_probe": 0,
+              "probe": 0,
+              "squared": 5.1791655972209744e-05,
+              "value": -0.007196641992777586
+            },
+            {
+              "coordinate": 2509,
+              "output_probe": 0,
+              "probe": 1,
+              "squared": 7.876694850853617e-07,
+              "value": 0.0008875074563547969
+            },
+            {
+              "coordinate": 1525,
+              "output_probe": 0,
+              "probe": 2,
+              "squared": 6.7506589340222294e-06,
+              "value": -0.002598203020170331
+            },
+            {
+              "coordinate": 908,
+              "output_probe": 0,
+              "probe": 3,
+              "squared": 2.9819519337532553e-05,
+              "value": 0.005460725165903568
+            },
+            {
+              "coordinate": 888,
+              "output_probe": 0,
+              "probe": 4,
+              "squared": 2.1345410810004785e-07,
+              "value": 0.00046201093937270343
+            },
+            {
+              "coordinate": 2096,
+              "output_probe": 0,
+              "probe": 5,
+              "squared": 1.7971119435565887e-07,
+              "value": -0.0004239235713612288
+            },
+            {
+              "coordinate": 605,
+              "output_probe": 0,
+              "probe": 6,
+              "squared": 1.3696818048596337e-06,
+              "value": 0.0011703340569511056
+            },
+            {
+              "coordinate": 1377,
+              "output_probe": 0,
+              "probe": 7,
+              "squared": 4.554178387913312e-06,
+              "value": -0.0021340521052479744
+            },
+            {
+              "coordinate": 795,
+              "output_probe": 1,
+              "probe": 0,
+              "squared": 7.460441120002523e-05,
+              "value": 0.0086373845115304
+            },
+            {
+              "coordinate": 2399,
+              "output_probe": 1,
+              "probe": 1,
+              "squared": 0.00024343795367815033,
+              "value": 0.015602498315274715
+            },
+            {
+              "coordinate": 397,
+              "output_probe": 1,
+              "probe": 2,
+              "squared": 0.00015742679614145442,
+              "value": 0.012546983547508717
+            },
+            {
+              "coordinate": 17,
+              "output_probe": 1,
+              "probe": 3,
+              "squared": 4.127557823180501e-05,
+              "value": 0.006424607243388891
+            },
+            {
+              "coordinate": 84,
+              "output_probe": 1,
+              "probe": 4,
+              "squared": 4.790120362687929e-06,
+              "value": 0.0021886343602091074
+            },
+            {
+              "coordinate": 577,
+              "output_probe": 1,
+              "probe": 5,
+              "squared": 4.004604439150714e-05,
+              "value": 0.00632819440215826
+            },
+            {
+              "coordinate": 2493,
+              "output_probe": 1,
+              "probe": 6,
+              "squared": 0.00019447391536985773,
+              "value": 0.013945390470325947
+            },
+            {
+              "coordinate": 1455,
+              "output_probe": 1,
+              "probe": 7,
+              "squared": 6.34652077080057e-05,
+              "value": 0.007966505363583565
+            }
+          ],
+          "elapsed_seconds": 86.30026550032198,
+          "input_diagonal_directions": "uniform coordinate basis vectors",
+          "input_total_directions": "independent unnormalized Rademacher",
+          "output_aggregation": "mean over positions probe_position..end",
+          "output_direction": "normalized Rademacher (covariance I/d_model)",
+          "output_probes": 2,
+          "per_output_probe": [
+            {
+              "diagonal_energy": 0.03054928935170513,
+              "diagonal_fraction": 0.0038256571799600413,
+              "output_probe": 0,
+              "total_energy": 7.985370333685836
+            },
+            {
+              "diagonal_energy": 0.2622464086667179,
+              "diagonal_fraction": 0.012994771723102028,
+              "output_probe": 1,
+              "total_energy": 20.180916929883253
+            }
+          ],
+          "source_activation_rms": 0.18781249225139618,
+          "source_layer": 6,
+          "symmetry_checks_per_output": 1,
+          "symmetry_max_relative_error": 2.1690963920407466e-07,
+          "target_layer": 30,
+          "total_energy": 14.083143631784544,
+          "total_probes_per_output": 4,
+          "total_samples": [
+            {
+              "output_probe": 0,
+              "probe": 0,
+              "squared": 10.87338605832889,
+              "swapped_value": 3.297482490539551,
+              "symmetry_absolute_error": 7.152557373046875e-07,
+              "symmetry_relative_error": 2.1690963920407466e-07,
+              "value": 3.2974817752838135
+            },
+            {
+              "output_probe": 0,
+              "probe": 1,
+              "squared": 19.359451145247476,
+              "value": -4.399937629699707
+            },
+            {
+              "output_probe": 0,
+              "probe": 2,
+              "squared": 1.4753778928416637,
+              "value": 1.214651346206665
+            },
+            {
+              "output_probe": 0,
+              "probe": 3,
+              "squared": 0.23326623832531368,
+              "value": -0.48297643661499023
+            },
+            {
+              "output_probe": 1,
+              "probe": 0,
+              "squared": 5.259537247234732,
+              "swapped_value": 2.293368339538574,
+              "symmetry_absolute_error": 2.384185791015625e-07,
+              "symmetry_relative_error": 1.0396000284434568e-07,
+              "value": 2.293368101119995
+            },
+            {
+              "output_probe": 1,
+              "probe": 1,
+              "squared": 67.01382592154914,
+              "value": -8.186197280883789
+            },
+            {
+              "output_probe": 1,
+              "probe": 2,
+              "squared": 0.20611621302037975,
+              "value": -0.45400023460388184
+            },
+            {
+              "output_probe": 1,
+              "probe": 3,
+              "squared": 8.244188337728758,
+              "value": -2.871269464492798
+            }
+          ],
+          "zero_intervention_max_abs_error": 0.0
+        },
+        {
+          "diagonal_energy": 0.005630338848638878,
+          "diagonal_fraction": 0.003353277907838337,
+          "diagonal_probes_per_output": 8,
+          "diagonal_samples": [
+            {
+              "coordinate": 506,
+              "output_probe": 0,
+              "probe": 0,
+              "squared": 5.137614161873737e-07,
+              "value": -0.0007167715230025351
+            },
+            {
+              "coordinate": 753,
+              "output_probe": 0,
+              "probe": 1,
+              "squared": 7.882406709016935e-08,
+              "value": 0.00028075624140910804
+            },
+            {
+              "coordinate": 1111,
+              "output_probe": 0,
+              "probe": 2,
+              "squared": 2.6510262546003726e-09,
+              "value": 5.148811760591343e-05
+            },
+            {
+              "coordinate": 658,
+              "output_probe": 0,
+              "probe": 3,
+              "squared": 3.4153788174571395e-07,
+              "value": -0.0005844124243594706
+            },
+            {
+              "coordinate": 2429,
+              "output_probe": 0,
+              "probe": 4,
+              "squared": 1.7001619756116756e-06,
+              "value": -0.0013039025943726301
+            },
+            {
+              "coordinate": 2162,
+              "output_probe": 0,
+              "probe": 5,
+              "squared": 2.7129793419621104e-06,
+              "value": -0.001647112425416708
+            },
+            {
+              "coordinate": 536,
+              "output_probe": 0,
+              "probe": 6,
+              "squared": 3.7663318247374913e-08,
+              "value": 0.00019407039508223534
+            },
+            {
+              "coordinate": 555,
+              "output_probe": 0,
+              "probe": 7,
+              "squared": 2.507202795325029e-05,
+              "value": -0.005007197614759207
+            },
+            {
+              "coordinate": 2432,
+              "output_probe": 1,
+              "probe": 0,
+              "squared": 4.4057046278483136e-07,
+              "value": -0.0006637548212893307
+            },
+            {
+              "coordinate": 6,
+              "output_probe": 1,
+              "probe": 1,
+              "squared": 3.6853319439379565e-07,
+              "value": 0.0006070693489164114
+            },
+            {
+              "coordinate": 2414,
+              "output_probe": 1,
+              "probe": 2,
+              "squared": 2.017884978704657e-07,
+              "value": -0.0004492087464313954
+            },
+            {
+              "coordinate": 2428,
+              "output_probe": 1,
+              "probe": 3,
+              "squared": 1.5737801968119478e-06,
+              "value": -0.001254503964446485
+            },
+            {
+              "coordinate": 711,
+              "output_probe": 1,
+              "probe": 4,
+              "squared": 1.7937270596529983e-07,
+              "value": 0.0004235241503920406
+            },
+            {
+              "coordinate": 1660,
+              "output_probe": 1,
+              "probe": 5,
+              "squared": 7.718030230521677e-09,
+              "value": 8.785232057562098e-05
+            },
+            {
+              "coordinate": 539,
+              "output_probe": 1,
+              "probe": 6,
+              "squared": 2.3813524204474286e-07,
+              "value": 0.00048799102660268545
+            },
+            {
+              "coordinate": 1500,
+              "output_probe": 1,
+              "probe": 7,
+              "squared": 1.7201124935420733e-06,
+              "value": -0.0013115305919200182
+            }
+          ],
+          "elapsed_seconds": 66.46431520953774,
+          "input_diagonal_directions": "uniform coordinate basis vectors",
+          "input_total_directions": "independent unnormalized Rademacher",
+          "output_aggregation": "mean over positions probe_position..end",
+          "output_direction": "normalized Rademacher (covariance I/d_model)",
+          "output_probes": 2,
+          "per_output_probe": [
+            {
+              "diagonal_energy": 0.009747074233711779,
+              "diagonal_fraction": 0.006665415816597396,
+              "output_probe": 0,
+              "total_energy": 1.4623355094277566
+            },
+            {
+              "diagonal_energy": 0.0015136034635659771,
+              "diagonal_fraction": 0.0007984088217526557,
+              "output_probe": 1,
+              "total_energy": 1.8957749743337458
+            }
+          ],
+          "source_activation_rms": 0.22316321730613708,
+          "source_layer": 12,
+          "symmetry_checks_per_output": 1,
+          "symmetry_max_relative_error": 3.6768518370798168e-06,
+          "target_layer": 30,
+          "total_energy": 1.6790552418807512,
+          "total_probes_per_output": 4,
+          "total_samples": [
+            {
+              "output_probe": 0,
+              "probe": 0,
+              "squared": 0.22869084897856684,
+              "swapped_value": -0.47821807861328125,
+              "symmetry_absolute_error": 1.7583370208740234e-06,
+              "symmetry_relative_error": 3.6768518370798168e-06,
+              "value": -0.4782163202762604
+            },
+            {
+              "output_probe": 0,
+              "probe": 1,
+              "squared": 1.230675597026348,
+              "value": -1.1093581914901733
+            },
+            {
+              "output_probe": 0,
+              "probe": 2,
+              "squared": 3.962790696143692e-07,
+              "value": -0.0006295070052146912
+            },
+            {
+              "output_probe": 0,
+              "probe": 3,
+              "squared": 4.389975195427041,
+              "value": -2.095226764678955
+            },
+            {
+              "output_probe": 1,
+              "probe": 0,
+              "squared": 0.06472743476173548,
+              "swapped_value": 0.2544158697128296,
+              "symmetry_absolute_error": 0.0,
+              "symmetry_relative_error": 0.0,
+              "value": 0.2544158697128296
+            },
+            {
+              "output_probe": 1,
+              "probe": 1,
+              "squared": 0.01497776608980761,
+              "value": -0.12238368391990662
+            },
+            {
+              "output_probe": 1,
+              "probe": 2,
+              "squared": 4.688072434482876,
+              "value": -2.1651957035064697
+            },
+            {
+              "output_probe": 1,
+              "probe": 3,
+              "squared": 2.8153222620005636,
+              "value": 1.6778922080993652
+            }
+          ],
+          "zero_intervention_max_abs_error": 0.0
+        },
+        {
+          "diagonal_energy": 0.0004675772196799736,
+          "diagonal_fraction": 0.005671418650966769,
+          "diagonal_probes_per_output": 8,
+          "diagonal_samples": [
+            {
+              "coordinate": 1765,
+              "output_probe": 0,
+              "probe": 0,
+              "squared": 4.31359271975978e-08,
+              "value": -0.0002076919045066461
+            },
+            {
+              "coordinate": 771,
+              "output_probe": 0,
+              "probe": 1,
+              "squared": 6.167004535119232e-07,
+              "value": -0.0007853027782402933
+            },
+            {
+              "coordinate": 1722,
+              "output_probe": 0,
+              "probe": 2,
+              "squared": 9.361189023201845e-10,
+              "value": 3.059606024180539e-05
+            },
+            {
+              "coordinate": 2226,
+              "output_probe": 0,
+              "probe": 3,
+              "squared": 2.5850923960932956e-07,
+              "value": -0.0005084380391053855
+            },
+            {
+              "coordinate": 2425,
+              "output_probe": 0,
+              "probe": 4,
+              "squared": 3.856688853499903e-08,
+              "value": -0.00019638454250525683
+            },
+            {
+              "coordinate": 1386,
+              "output_probe": 0,
+              "probe": 5,
+              "squared": 9.273605478589972e-08,
+              "value": -0.00030452595092356205
+            },
+            {
+              "coordinate": 1453,
+              "output_probe": 0,
+              "probe": 6,
+              "squared": 9.375427141204308e-08,
+              "value": -0.0003061931929551065
+            },
+            {
+              "coordinate": 629,
+              "output_probe": 0,
+              "probe": 7,
+              "squared": 4.968015593677422e-07,
+              "value": -0.0007048415136523545
+            },
+            {
+              "coordinate": 593,
+              "output_probe": 1,
+              "probe": 0,
+              "squared": 1.029897308335372e-08,
+              "value": 0.00010148385626962408
+            },
+            {
+              "coordinate": 2404,
+              "output_probe": 1,
+              "probe": 1,
+              "squared": 1.1520758814000795e-07,
+              "value": 0.0003394224331714213
+            },
+            {
+              "coordinate": 1909,
+              "output_probe": 1,
+              "probe": 2,
+              "squared": 3.7213471197411206e-07,
+              "value": 0.0006100284517742693
+            },
+            {
+              "coordinate": 1953,
+              "output_probe": 1,
+              "probe": 3,
+              "squared": 4.513285262122696e-07,
+              "value": 0.0006718098884448409
+            },
+            {
+              "coordinate": 849,
+              "output_probe": 1,
+              "probe": 4,
+              "squared": 2.4023145192412533e-07,
+              "value": 0.0004901341162621975
+            },
+            {
+              "coordinate": 22,
+              "output_probe": 1,
+              "probe": 5,
+              "squared": 1.4229663602505108e-08,
+              "value": 0.00011928815365536138
+            },
+            {
+              "coordinate": 85,
+              "output_probe": 1,
+              "probe": 6,
+              "squared": 6.17955648414548e-08,
+              "value": 0.00024858713732101023
+            },
+            {
+              "coordinate": 2400,
+              "output_probe": 1,
+              "probe": 7,
+              "squared": 1.599062990015158e-08,
+              "value": 0.00012645406241063029
+            }
+          ],
+          "elapsed_seconds": 38.289948511868715,
+          "input_diagonal_directions": "uniform coordinate basis vectors",
+          "input_total_directions": "independent unnormalized Rademacher",
+          "output_aggregation": "mean over positions probe_position..end",
+          "output_direction": "normalized Rademacher (covariance I/d_model)",
+          "output_probes": 2,
+          "per_output_probe": [
+            {
+              "diagonal_energy": 0.0005251649642629935,
+              "diagonal_fraction": 0.004934959210693483,
+              "output_probe": 0,
+              "total_energy": 0.1064172857042105
+            },
+            {
+              "diagonal_energy": 0.0004099894750969537,
+              "diagonal_fraction": 0.007011759732847185,
+              "output_probe": 1,
+              "total_energy": 0.058471694798143625
+            }
+          ],
+          "source_activation_rms": 0.3911610245704651,
+          "source_layer": 20,
+          "symmetry_checks_per_output": 1,
+          "symmetry_max_relative_error": 6.9563750961771555e-06,
+          "target_layer": 30,
+          "total_energy": 0.08244449025117706,
+          "total_probes_per_output": 4,
+          "total_samples": [
+            {
+              "output_probe": 0,
+              "probe": 0,
+              "squared": 0.0022614184619129674,
+              "swapped_value": 0.047554194927215576,
+              "symmetry_absolute_error": 1.7881393432617188e-07,
+              "symmetry_relative_error": 3.760199541255656e-06,
+              "value": 0.0475543737411499
+            },
+            {
+              "output_probe": 0,
+              "probe": 1,
+              "squared": 0.4114915801007477,
+              "value": -0.6414760947227478
+            },
+            {
+              "output_probe": 0,
+              "probe": 2,
+              "squared": 0.007792167904413283,
+              "value": 0.08827325701713562
+            },
+            {
+              "output_probe": 0,
+              "probe": 3,
+              "squared": 0.0041239763497680215,
+              "value": 0.0642181932926178
+            },
+            {
+              "output_probe": 1,
+              "probe": 0,
+              "squared": 0.019987667363441375,
+              "swapped_value": 0.14137676358222961,
+              "symmetry_absolute_error": 9.834766387939453e-07,
+              "symmetry_relative_error": 6.9563750961771555e-06,
+              "value": 0.1413777470588684
+            },
+            {
+              "output_probe": 1,
+              "probe": 1,
+              "squared": 0.16178760194464203,
+              "value": 0.40222829580307007
+            },
+            {
+              "output_probe": 1,
+              "probe": 2,
+              "squared": 0.011936586855335385,
+              "value": 0.10925468802452087
+            },
+            {
+              "output_probe": 1,
+              "probe": 3,
+              "squared": 0.04017492302915571,
+              "value": 0.20043683052062988
+            }
+          ],
+          "zero_intervention_max_abs_error": 0.0
+        }
+      ],
+      "probe_position": 3,
+      "probe_text": "Jordan",
+      "probe_token": {
+        "decoded": " Jordan",
+        "id": 16586,
+        "offset": [
+          19,
+          26
+        ],
+        "token": "\u0120Jordan"
+      },
+      "prompt": "The athlete Michael Jordan plays the sport of"
+    }
+  ],
+  "metadata": {
+    "created_at": "2026-08-29T16:50:47.585809+00:00",
+    "cuda_runtime": "13.0",
+    "device": "cuda",
+    "estimator": "E[w,u,v](w^T H[u,v])^2 for total; d E[w,j](w^T H[e_j,e_j])^2 for diagonal",
+    "gpu": "Quadro RTX 8000",
+    "layers": [
+      6,
+      12,
+      20
+    ],
+    "model_dtype": "torch.float32",
+    "model_id": "Qwen/Qwen3.5-4B",
+    "model_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "platform": "Linux-6.17.10-100.fc41.x86_64-x86_64-with-glibc2.40",
+    "python": "3.13.9 (main, Oct 14 2025, 00:00:00) [GCC 14.3.1 20250808 (Red Hat 14.3.1-3)]",
+    "seed": 1,
+    "target_layer": 30,
+    "torch": "2.13.0+cu130",
+    "transformers": "5.16.1"
+  }
+}

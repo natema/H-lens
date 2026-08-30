@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "typo_aganst",
+      "category": "typo",
+      "prompt": "The final vote was nine to two aganst",
+      "probe_text": "aganst",
+      "probe_occurrence": 0,
+      "probe_token_within_span": -1,
+      "target_text": " against",
+      "reference_model": "deepseek-ai/DeepSeek-V4-Flash",
+      "reference_note": "The published figure probes the final subtoken 'anst'."
+    },
+    {
+      "id": "multihop_sushi",
+      "category": "multihop",
+      "prompt": "The capital of the country where sushi originated is",
+      "probe_text": "sushi",
+      "probe_occurrence": 0,
+      "probe_token_within_span": -1,
+      "target_text": " Japan",
+      "reference_model": "deepseek-ai/DeepSeek-V4-Flash",
+      "reference_note": "The published figure probes the sushi token."
+    },
+    {
+      "id": "association_jordan",
+      "category": "association",
+      "prompt": "The athlete Michael Jordan plays the sport of",
+      "probe_text": "Jordan",
+      "probe_occurrence": 0,
+      "probe_token_within_span": -1,
+      "target_text": " basketball",
+      "reference_model": "deepseek-ai/DeepSeek-V4-Flash",
+      "reference_note": "The post reports ranks on the Jordan token."
+    },
+    {
+      "id": "factual_verona",
+      "category": "association",
+      "prompt": "The author of the tragedy about the star-crossed lovers of Verona was born in the town of",
+      "probe_text": "Verona",
+      "probe_occurrence": 0,
+      "probe_token_within_span": -1,
+      "target_text": " Italy",
+      "reference_model": "deepseek-ai/DeepSeek-V4-Flash",
+      "reference_note": "Association readout, not completion accuracy: the published figure probes the final Verona subtoken and tracks the associated country Italy."
+    },
+    {
+      "id": "association_einstein",
+      "category": "association",
+      "prompt": "Although Einstein was mentioned once in the lecture, the topic that day was gardening, and the students learned how to",
+      "probe_text": "the",
+      "probe_occurrence": 2,
+      "probe_token_within_span": -1,
+      "target_text": " physicists",
+      "reference_model": "deepseek-ai/DeepSeek-V4-Flash",
+      "reference_note": "Association readout, not completion accuracy: the published figure probes the third 'the' (before students) and tracks the profession associated with the earlier Einstein mention."
+    }
+  ]
+}

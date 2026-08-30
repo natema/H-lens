@@ -146,7 +146,7 @@ Estimate their ratio at a few early, middle, and late layers, and also measure t
 
 If the premise survives, estimate $D_\ell$ for the selected layers.
 Claude suggests initially using Hutchinson-style diagonal estimation or another checked second-order estimator.
-Not clear to me that we should do that instead of just using autodiff. I don't think 5k diagonal entries are a bottleneck here.
+Not clear to me that we should do that instead of just using autodiff on [e_j,e_j].
 If we go for Hutchinson, we should increase the number of probes until the lens-level metrics stabilize; do not require entrywise convergence when it is irrelevant to the conclusion.
 
 Start with a small set of early layers where J-lens fails. Expand across every layer only if the implementation already works and the early result warrants it.

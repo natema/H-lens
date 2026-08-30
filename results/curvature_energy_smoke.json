@@ -1,0 +1,87 @@
+{
+  "contexts": [
+    {
+      "id": "multihop_sushi",
+      "layers": [
+        {
+          "diagonal_energy": 7.143457100813237e-05,
+          "diagonal_fraction": 2.4786844140928435e-05,
+          "diagonal_probes_per_output": 1,
+          "diagonal_samples": [
+            {
+              "coordinate": 2345,
+              "output_probe": 0,
+              "probe": 0,
+              "squared": 2.7904129300051708e-08,
+              "value": -0.0001670452911639586
+            }
+          ],
+          "elapsed_seconds": 9.3239342328161,
+          "input_diagonal_directions": "uniform coordinate basis vectors",
+          "input_total_directions": "independent unnormalized Rademacher",
+          "output_aggregation": "mean over positions probe_position..end",
+          "output_direction": "normalized Rademacher (covariance I/d_model)",
+          "output_probes": 1,
+          "per_output_probe": [
+            {
+              "diagonal_energy": 7.143457100813237e-05,
+              "diagonal_fraction": 2.4786844140928435e-05,
+              "output_probe": 0,
+              "total_energy": 2.8819550646295653
+            }
+          ],
+          "source_activation_rms": 0.23410113155841827,
+          "source_layer": 10,
+          "symmetry_checks_per_output": 1,
+          "symmetry_max_relative_error": 1.3341956450449728e-06,
+          "target_layer": 30,
+          "total_energy": 2.8819550646295653,
+          "total_probes_per_output": 1,
+          "total_samples": [
+            {
+              "output_probe": 0,
+              "probe": 0,
+              "squared": 2.8819550646295653,
+              "swapped_value": 1.6976344585418701,
+              "symmetry_absolute_error": 2.2649765014648438e-06,
+              "symmetry_relative_error": 1.3341956450449728e-06,
+              "value": 1.6976321935653687
+            }
+          ],
+          "zero_intervention_max_abs_error": 0.0
+        }
+      ],
+      "probe_position": 6,
+      "probe_text": "sushi",
+      "probe_token": {
+        "decoded": " sushi",
+        "id": 63986,
+        "offset": [
+          32,
+          38
+        ],
+        "token": "\u0120sushi"
+      },
+      "prompt": "The capital of the country where sushi originated is"
+    }
+  ],
+  "metadata": {
+    "created_at": "2026-08-29T16:39:05.838196+00:00",
+    "cuda_runtime": "13.0",
+    "device": "cuda",
+    "estimator": "E[w,u,v](w^T H[u,v])^2 for total; d E[w,j](w^T H[e_j,e_j])^2 for diagonal",
+    "gpu": "Quadro RTX 8000",
+    "layers": [
+      10
+    ],
+    "model_dtype": "torch.float32",
+    "model_id": "Qwen/Qwen3.5-4B",
+    "model_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "platform": "Linux-6.17.10-100.fc41.x86_64-x86_64-with-glibc2.40",
+    "python": "3.13.9 (main, Oct 14 2025, 00:00:00) [GCC 14.3.1 20250808 (Red Hat 14.3.1-3)]",
+    "seed": 0,
+    "target_layer": 30,
+    "torch": "2.13.0+cu130",
+    "transformers": "5.16.1"
+  }
+}

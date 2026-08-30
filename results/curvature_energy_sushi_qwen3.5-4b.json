@@ -1,0 +1,651 @@
+{
+  "contexts": [
+    {
+      "id": "multihop_sushi",
+      "layers": [
+        {
+          "diagonal_energy": 0.058483780421756115,
+          "diagonal_fraction": 0.0025816975230737575,
+          "diagonal_probes_per_output": 8,
+          "diagonal_samples": [
+            {
+              "coordinate": 2492,
+              "output_probe": 0,
+              "probe": 0,
+              "squared": 1.5442071837867312e-05,
+              "value": -0.003929640166461468
+            },
+            {
+              "coordinate": 106,
+              "output_probe": 0,
+              "probe": 1,
+              "squared": 9.212688167681944e-06,
+              "value": -0.003035241039469838
+            },
+            {
+              "coordinate": 1154,
+              "output_probe": 0,
+              "probe": 2,
+              "squared": 1.91901500171632e-06,
+              "value": -0.0013852851698175073
+            },
+            {
+              "coordinate": 1360,
+              "output_probe": 0,
+              "probe": 3,
+              "squared": 0.00010923271002969207,
+              "value": -0.01045144535601139
+            },
+            {
+              "coordinate": 2143,
+              "output_probe": 0,
+              "probe": 4,
+              "squared": 4.406749242264266e-05,
+              "value": -0.0066383350640535355
+            },
+            {
+              "coordinate": 1744,
+              "output_probe": 0,
+              "probe": 5,
+              "squared": 8.68431351092186e-05,
+              "value": -0.009318966418504715
+            },
+            {
+              "coordinate": 629,
+              "output_probe": 0,
+              "probe": 6,
+              "squared": 4.2995871683274706e-05,
+              "value": -0.006557123735547066
+            },
+            {
+              "coordinate": 533,
+              "output_probe": 0,
+              "probe": 7,
+              "squared": 3.97910000258031e-06,
+              "value": -0.0019947681576013565
+            },
+            {
+              "coordinate": 1765,
+              "output_probe": 1,
+              "probe": 0,
+              "squared": 6.6035549810101405e-06,
+              "value": 0.002569738309830427
+            },
+            {
+              "coordinate": 396,
+              "output_probe": 1,
+              "probe": 1,
+              "squared": 1.240225228094625e-05,
+              "value": 0.0035216831602156162
+            },
+            {
+              "coordinate": 1852,
+              "output_probe": 1,
+              "probe": 2,
+              "squared": 5.434073600475936e-06,
+              "value": 0.0023311099503189325
+            },
+            {
+              "coordinate": 2496,
+              "output_probe": 1,
+              "probe": 3,
+              "squared": 1.9252912087175736e-06,
+              "value": -0.0013875486329197884
+            },
+            {
+              "coordinate": 1528,
+              "output_probe": 1,
+              "probe": 4,
+              "squared": 1.4688400399894398e-05,
+              "value": 0.0038325448986142874
+            },
+            {
+              "coordinate": 1127,
+              "output_probe": 1,
+              "probe": 5,
+              "squared": 2.7906621441498047e-06,
+              "value": 0.0016705275047570467
+            },
+            {
+              "coordinate": 303,
+              "output_probe": 1,
+              "probe": 6,
+              "squared": 1.8007217831229107e-06,
+              "value": -0.001341909752227366
+            },
+            {
+              "coordinate": 347,
+              "output_probe": 1,
+              "probe": 7,
+              "squared": 6.186586982984826e-06,
+              "value": 0.0024872850626707077
+            }
+          ],
+          "elapsed_seconds": 88.8969579897821,
+          "input_diagonal_directions": "uniform coordinate basis vectors",
+          "input_total_directions": "independent unnormalized Rademacher",
+          "output_aggregation": "mean over positions probe_position..end",
+          "output_direction": "normalized Rademacher (covariance I/d_model)",
+          "output_probes": 2,
+          "per_output_probe": [
+            {
+              "diagonal_energy": 0.10038146696149565,
+              "diagonal_fraction": 0.00283595644745654,
+              "output_probe": 0,
+              "total_energy": 35.395983267487736
+            },
+            {
+              "diagonal_energy": 0.016586093882016588,
+              "diagonal_fraction": 0.0016735928927025375,
+              "output_probe": 1,
+              "total_energy": 9.910471031717378
+            }
+          ],
+          "source_activation_rms": 0.17831937968730927,
+          "source_layer": 6,
+          "symmetry_checks_per_output": 1,
+          "symmetry_max_relative_error": 7.34285554840851e-07,
+          "target_layer": 30,
+          "total_energy": 22.653227149602557,
+          "total_probes_per_output": 4,
+          "total_samples": [
+            {
+              "output_probe": 0,
+              "probe": 0,
+              "squared": 1.686823202989217,
+              "swapped_value": -1.2987785339355469,
+              "symmetry_absolute_error": 9.5367431640625e-07,
+              "symmetry_relative_error": 7.34285554840851e-07,
+              "value": -1.2987775802612305
+            },
+            {
+              "output_probe": 0,
+              "probe": 1,
+              "squared": 33.57756058615996,
+              "value": -5.794614791870117
+            },
+            {
+              "output_probe": 0,
+              "probe": 2,
+              "squared": 84.39985259030072,
+              "value": 9.186939239501953
+            },
+            {
+              "output_probe": 0,
+              "probe": 3,
+              "squared": 21.91969669050104,
+              "value": -4.68184757232666
+            },
+            {
+              "output_probe": 1,
+              "probe": 0,
+              "squared": 9.831362953182406,
+              "swapped_value": -3.135499954223633,
+              "symmetry_absolute_error": 4.76837158203125e-07,
+              "symmetry_relative_error": 1.520768912928528e-07,
+              "value": -3.135500431060791
+            },
+            {
+              "output_probe": 1,
+              "probe": 1,
+              "squared": 13.32247632981398,
+              "value": -3.649996757507324
+            },
+            {
+              "output_probe": 1,
+              "probe": 2,
+              "squared": 4.521995703655705,
+              "value": -2.1264984607696533
+            },
+            {
+              "output_probe": 1,
+              "probe": 3,
+              "squared": 11.966049140217422,
+              "value": -3.459197759628296
+            }
+          ],
+          "zero_intervention_max_abs_error": 0.0
+        },
+        {
+          "diagonal_energy": 0.00440571268192398,
+          "diagonal_fraction": 0.001808920880661212,
+          "diagonal_probes_per_output": 8,
+          "diagonal_samples": [
+            {
+              "coordinate": 1283,
+              "output_probe": 0,
+              "probe": 0,
+              "squared": 4.1506748965931665e-06,
+              "value": -0.0020373205188661814
+            },
+            {
+              "coordinate": 1862,
+              "output_probe": 0,
+              "probe": 1,
+              "squared": 2.72445536545755e-06,
+              "value": -0.0016505924286320806
+            },
+            {
+              "coordinate": 580,
+              "output_probe": 0,
+              "probe": 2,
+              "squared": 5.769516258165698e-06,
+              "value": -0.0024019817356020212
+            },
+            {
+              "coordinate": 178,
+              "output_probe": 0,
+              "probe": 3,
+              "squared": 2.5475674102091046e-08,
+              "value": -0.00015961100871209055
+            },
+            {
+              "coordinate": 835,
+              "output_probe": 0,
+              "probe": 4,
+              "squared": 3.1614778645795098e-06,
+              "value": -0.001778054516762495
+            },
+            {
+              "coordinate": 1390,
+              "output_probe": 0,
+              "probe": 5,
+              "squared": 2.168583784956503e-06,
+              "value": -0.0014726112131029367
+            },
+            {
+              "coordinate": 1667,
+              "output_probe": 0,
+              "probe": 6,
+              "squared": 1.4942082405078414e-06,
+              "value": 0.001222378108650446
+            },
+            {
+              "coordinate": 1269,
+              "output_probe": 0,
+              "probe": 7,
+              "squared": 2.963652262150465e-07,
+              "value": 0.0005443943664431572
+            },
+            {
+              "coordinate": 1235,
+              "output_probe": 1,
+              "probe": 0,
+              "squared": 4.065211662716145e-06,
+              "value": -0.0020162370055913925
+            },
+            {
+              "coordinate": 1655,
+              "output_probe": 1,
+              "probe": 1,
+              "squared": 7.258143839064287e-09,
+              "value": -8.519474067725241e-05
+            },
+            {
+              "coordinate": 856,
+              "output_probe": 1,
+              "probe": 2,
+              "squared": 2.2721637181789822e-06,
+              "value": -0.001507369801402092
+            },
+            {
+              "coordinate": 854,
+              "output_probe": 1,
+              "probe": 3,
+              "squared": 2.7498355340039064e-07,
+              "value": 0.0005243887426331639
+            },
+            {
+              "coordinate": 2339,
+              "output_probe": 1,
+              "probe": 4,
+              "squared": 4.355944504038764e-08,
+              "value": 0.00020870899606961757
+            },
+            {
+              "coordinate": 799,
+              "output_probe": 1,
+              "probe": 5,
+              "squared": 9.43527501936362e-07,
+              "value": 0.0009713534382171929
+            },
+            {
+              "coordinate": 1599,
+              "output_probe": 1,
+              "probe": 6,
+              "squared": 2.5866038744153894e-08,
+              "value": 0.00016082922229543328
+            },
+            {
+              "coordinate": 2337,
+              "output_probe": 1,
+              "probe": 7,
+              "squared": 1.1237688759198592e-07,
+              "value": -0.00033522662124596536
+            }
+          ],
+          "elapsed_seconds": 77.83757383190095,
+          "input_diagonal_directions": "uniform coordinate basis vectors",
+          "input_total_directions": "independent unnormalized Rademacher",
+          "output_aggregation": "mean over positions probe_position..end",
+          "output_direction": "normalized Rademacher (covariance I/d_model)",
+          "output_probes": 2,
+          "per_output_probe": [
+            {
+              "diagonal_energy": 0.00633304233938477,
+              "diagonal_fraction": 0.023331127769072542,
+              "output_probe": 0,
+              "total_energy": 0.27144175806965376
+            },
+            {
+              "diagonal_energy": 0.002478383024463191,
+              "diagonal_fraction": 0.0005388195418020303,
+              "output_probe": 1,
+              "total_energy": 4.599653190332475
+            }
+          ],
+          "source_activation_rms": 0.23351050913333893,
+          "source_layer": 12,
+          "symmetry_checks_per_output": 1,
+          "symmetry_max_relative_error": 3.270199301642399e-07,
+          "target_layer": 30,
+          "total_energy": 2.4355474742010643,
+          "total_probes_per_output": 4,
+          "total_samples": [
+            {
+              "output_probe": 0,
+              "probe": 0,
+              "squared": 0.20763066671659747,
+              "swapped_value": -0.4556652307510376,
+              "symmetry_absolute_error": 1.4901161193847656e-07,
+              "symmetry_relative_error": 3.270199301642399e-07,
+              "value": -0.45566508173942566
+            },
+            {
+              "output_probe": 0,
+              "probe": 1,
+              "squared": 0.5802960000012867,
+              "value": 0.7617716193199158
+            },
+            {
+              "output_probe": 0,
+              "probe": 2,
+              "squared": 0.2911858012581092,
+              "value": 0.5396163463592529
+            },
+            {
+              "output_probe": 0,
+              "probe": 3,
+              "squared": 0.006654564302621679,
+              "value": 0.08157551288604736
+            },
+            {
+              "output_probe": 1,
+              "probe": 0,
+              "squared": 4.9394239697545,
+              "swapped_value": -2.2224814891815186,
+              "symmetry_absolute_error": 0.0,
+              "symmetry_relative_error": 0.0,
+              "value": -2.2224814891815186
+            },
+            {
+              "output_probe": 1,
+              "probe": 1,
+              "squared": 6.783242944384483,
+              "value": -2.604465961456299
+            },
+            {
+              "output_probe": 1,
+              "probe": 2,
+              "squared": 0.92855559178156,
+              "value": -0.963615894317627
+            },
+            {
+              "output_probe": 1,
+              "probe": 3,
+              "squared": 5.747390255409357,
+              "value": 2.397371530532837
+            }
+          ],
+          "zero_intervention_max_abs_error": 0.0
+        },
+        {
+          "diagonal_energy": 0.0022479115667038245,
+          "diagonal_fraction": 0.0037376926567761802,
+          "diagonal_probes_per_output": 8,
+          "diagonal_samples": [
+            {
+              "coordinate": 1771,
+              "output_probe": 0,
+              "probe": 0,
+              "squared": 8.494935578538061e-09,
+              "value": -9.216797479894012e-05
+            },
+            {
+              "coordinate": 1891,
+              "output_probe": 0,
+              "probe": 1,
+              "squared": 7.503931702478961e-08,
+              "value": 0.00027393305208534
+            },
+            {
+              "coordinate": 590,
+              "output_probe": 0,
+              "probe": 2,
+              "squared": 7.397064058184457e-10,
+              "value": -2.7197544113732874e-05
+            },
+            {
+              "coordinate": 54,
+              "output_probe": 0,
+              "probe": 3,
+              "squared": 1.1196180596108783e-07,
+              "value": 0.0003346069424878806
+            },
+            {
+              "coordinate": 1537,
+              "output_probe": 0,
+              "probe": 4,
+              "squared": 3.98074813362913e-08,
+              "value": 0.0001995181228267029
+            },
+            {
+              "coordinate": 2333,
+              "output_probe": 0,
+              "probe": 5,
+              "squared": 2.768848984742884e-07,
+              "value": -0.0005261985352262855
+            },
+            {
+              "coordinate": 2189,
+              "output_probe": 0,
+              "probe": 6,
+              "squared": 3.2925232250439543e-07,
+              "value": 0.0005738051258958876
+            },
+            {
+              "coordinate": 1645,
+              "output_probe": 0,
+              "probe": 7,
+              "squared": 4.2284002108880994e-08,
+              "value": -0.00020563074212986976
+            },
+            {
+              "coordinate": 1943,
+              "output_probe": 1,
+              "probe": 0,
+              "squared": 6.708523278445877e-08,
+              "value": -0.00025900817126967013
+            },
+            {
+              "coordinate": 2369,
+              "output_probe": 1,
+              "probe": 1,
+              "squared": 1.23370856207444e-07,
+              "value": -0.0003512418770696968
+            },
+            {
+              "coordinate": 745,
+              "output_probe": 1,
+              "probe": 2,
+              "squared": 1.7279973940273607e-08,
+              "value": -0.0001314533146796748
+            },
+            {
+              "coordinate": 607,
+              "output_probe": 1,
+              "probe": 3,
+              "squared": 1.1939499542165536e-05,
+              "value": 0.0034553580917418003
+            },
+            {
+              "coordinate": 541,
+              "output_probe": 1,
+              "probe": 4,
+              "squared": 1.283998208893996e-10,
+              "value": 1.1331364476063754e-05
+            },
+            {
+              "coordinate": 388,
+              "output_probe": 1,
+              "probe": 5,
+              "squared": 2.2149320866568091e-07,
+              "value": -0.0004706306499429047
+            },
+            {
+              "coordinate": 1253,
+              "output_probe": 1,
+              "probe": 6,
+              "squared": 8.494800963290112e-08,
+              "value": -0.00029145841835998
+            },
+            {
+              "coordinate": 93,
+              "output_probe": 1,
+              "probe": 7,
+              "squared": 7.111775992876293e-07,
+              "value": 0.0008433134644292295
+            }
+          ],
+          "elapsed_seconds": 53.522645335644484,
+          "input_diagonal_directions": "uniform coordinate basis vectors",
+          "input_total_directions": "independent unnormalized Rademacher",
+          "output_aggregation": "mean over positions probe_position..end",
+          "output_direction": "normalized Rademacher (covariance I/d_model)",
+          "output_probes": 2,
+          "per_output_probe": [
+            {
+              "diagonal_energy": 0.0002830286302061088,
+              "diagonal_fraction": 0.0017904357838461188,
+              "output_probe": 0,
+              "total_energy": 0.15807806834497118
+            },
+            {
+              "diagonal_energy": 0.00421279450320154,
+              "diagonal_fraction": 0.004032324779918326,
+              "output_probe": 1,
+              "total_energy": 1.0447557508715528
+            }
+          ],
+          "source_activation_rms": 0.40636634826660156,
+          "source_layer": 20,
+          "symmetry_checks_per_output": 1,
+          "symmetry_max_relative_error": 9.916815765991708e-07,
+          "target_layer": 30,
+          "total_energy": 0.601416909608262,
+          "total_probes_per_output": 4,
+          "total_samples": [
+            {
+              "output_probe": 0,
+              "probe": 0,
+              "squared": 0.36125582352178753,
+              "swapped_value": -0.6010462045669556,
+              "symmetry_absolute_error": 5.960464477539062e-07,
+              "symmetry_relative_error": 9.916815765991708e-07,
+              "value": -0.6010456085205078
+            },
+            {
+              "output_probe": 0,
+              "probe": 1,
+              "squared": 6.186497216731368e-07,
+              "value": 0.0007865428924560547
+            },
+            {
+              "output_probe": 0,
+              "probe": 2,
+              "squared": 0.19114119056490608,
+              "value": -0.4371969699859619
+            },
+            {
+              "output_probe": 0,
+              "probe": 3,
+              "squared": 0.07991464064346943,
+              "value": -0.2826917767524719
+            },
+            {
+              "output_probe": 1,
+              "probe": 0,
+              "squared": 3.3280519724176116,
+              "swapped_value": 1.8242945671081543,
+              "symmetry_absolute_error": 3.5762786865234375e-07,
+              "symmetry_relative_error": 1.9603621311619492e-07,
+              "value": 1.824294924736023
+            },
+            {
+              "output_probe": 1,
+              "probe": 1,
+              "squared": 0.3982051337207082,
+              "value": -0.6310349702835083
+            },
+            {
+              "output_probe": 1,
+              "probe": 2,
+              "squared": 0.2727477360733701,
+              "value": -0.5222525596618652
+            },
+            {
+              "output_probe": 1,
+              "probe": 3,
+              "squared": 0.1800181612745213,
+              "value": -0.4242854714393616
+            }
+          ],
+          "zero_intervention_max_abs_error": 0.0
+        }
+      ],
+      "probe_position": 6,
+      "probe_text": "sushi",
+      "probe_token": {
+        "decoded": " sushi",
+        "id": 63986,
+        "offset": [
+          32,
+          38
+        ],
+        "token": "\u0120sushi"
+      },
+      "prompt": "The capital of the country where sushi originated is"
+    }
+  ],
+  "metadata": {
+    "created_at": "2026-08-29T16:43:19.722681+00:00",
+    "cuda_runtime": "13.0",
+    "device": "cuda",
+    "estimator": "E[w,u,v](w^T H[u,v])^2 for total; d E[w,j](w^T H[e_j,e_j])^2 for diagonal",
+    "gpu": "Quadro RTX 8000",
+    "layers": [
+      6,
+      12,
+      20
+    ],
+    "model_dtype": "torch.float32",
+    "model_id": "Qwen/Qwen3.5-4B",
+    "model_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "platform": "Linux-6.17.10-100.fc41.x86_64-x86_64-with-glibc2.40",
+    "python": "3.13.9 (main, Oct 14 2025, 00:00:00) [GCC 14.3.1 20250808 (Red Hat 14.3.1-3)]",
+    "seed": 0,
+    "target_layer": 30,
+    "torch": "2.13.0+cu130",
+    "transformers": "5.16.1"
+  }
+}

@@ -1,0 +1,2348 @@
+{
+  "contexts": [
+    {
+      "id": "typo_aganst",
+      "layers": [
+        {
+          "diagonal_energy": 0.2020845276192336,
+          "diagonal_fraction": 0.003042218505996449,
+          "diagonal_probes_per_output": 32,
+          "diagonal_samples": [
+            {
+              "coordinate": 439,
+              "energy_weighted": 0.018141827819450437,
+              "natural_weighted_value": 0.10172555517494437,
+              "output_probe": 0,
+              "probability": 0.00029646549955941737,
+              "probe": 0,
+              "squared": 5.378426047414309e-06,
+              "value": 0.0023191433865576982
+            },
+            {
+              "coordinate": 1067,
+              "energy_weighted": 0.16508879048045966,
+              "natural_weighted_value": -0.007784897517015036,
+              "output_probe": 0,
+              "probability": 0.0001974065089598298,
+              "probe": 1,
+              "squared": 3.2589601797148324e-05,
+              "value": -0.005708730313926935
+            },
+            {
+              "coordinate": 2517,
+              "energy_weighted": 0.046868564199515676,
+              "natural_weighted_value": 0.19035471744917273,
+              "output_probe": 0,
+              "probability": 0.00031710704206489027,
+              "probe": 2,
+              "squared": 1.4862351759136827e-05,
+              "value": 0.0038551720790565014
+            },
+            {
+              "coordinate": 530,
+              "energy_weighted": 0.03966122148414151,
+              "natural_weighted_value": 0.043741887808913894,
+              "output_probe": 0,
+              "probability": 0.00022069366241339594,
+              "probe": 3,
+              "squared": 8.752980225124052e-06,
+              "value": 0.002958543598651886
+            },
+            {
+              "coordinate": 2015,
+              "energy_weighted": 0.0007932545773252195,
+              "natural_weighted_value": 0.018599808742066248,
+              "output_probe": 0,
+              "probability": 0.00028149981517344713,
+              "probe": 4,
+              "squared": 2.233010169025402e-07,
+              "value": 0.0004725473700091243
+            },
+            {
+              "coordinate": 261,
+              "energy_weighted": 4.650628895738854e-05,
+              "natural_weighted_value": 0.21123002276526515,
+              "output_probe": 0,
+              "probability": 0.058440178632736206,
+              "probe": 5,
+              "squared": 2.7178358342154333e-06,
+              "value": 0.0016485860105603933
+            },
+            {
+              "coordinate": 42,
+              "energy_weighted": 0.00015514630103014812,
+              "natural_weighted_value": 0.1023924904458898,
+              "output_probe": 0,
+              "probability": 0.004470921121537685,
+              "probe": 6,
+              "squared": 6.936468742041333e-07,
+              "value": 0.0008328546537086368
+            },
+            {
+              "coordinate": 2367,
+              "energy_weighted": 0.06204525533850668,
+              "natural_weighted_value": -0.20486020910664687,
+              "output_probe": 0,
+              "probability": 0.00030749477446079254,
+              "probe": 7,
+              "squared": 1.9078591796676397e-05,
+              "value": -0.0043679047375917435
+            },
+            {
+              "coordinate": 1740,
+              "energy_weighted": 0.0013678073111099485,
+              "natural_weighted_value": -0.00909191898682672,
+              "output_probe": 0,
+              "probability": 0.00022392786922864616,
+              "probe": 8,
+              "squared": 3.062901766922147e-07,
+              "value": -0.0005534348892979324
+            },
+            {
+              "coordinate": 22,
+              "energy_weighted": 0.19922373488900078,
+              "natural_weighted_value": -2.6028295503950916,
+              "output_probe": 0,
+              "probability": 0.002432512817904353,
+              "probe": 9,
+              "squared": 0.0004846142887482731,
+              "value": -0.022013956680893898
+            },
+            {
+              "coordinate": 2540,
+              "energy_weighted": 0.13395772932797217,
+              "natural_weighted_value": -0.3912287145500559,
+              "output_probe": 0,
+              "probability": 0.0003511146060191095,
+              "probe": 10,
+              "squared": 4.703451535620546e-05,
+              "value": -0.006858171429485083
+            },
+            {
+              "coordinate": 5,
+              "energy_weighted": 0.00039817088582918766,
+              "natural_weighted_value": -0.06475907226700775,
+              "output_probe": 0,
+              "probability": 0.0009893558453768492,
+              "probe": 11,
+              "squared": 3.9393269335398487e-07,
+              "value": -0.0006276405765675008
+            },
+            {
+              "coordinate": 2065,
+              "energy_weighted": 0.0003254403110431527,
+              "natural_weighted_value": 0.004943072920163103,
+              "output_probe": 0,
+              "probability": 0.00022745750902686268,
+              "probe": 12,
+              "squared": 7.40238424868029e-08,
+              "value": 0.00027207323000766337
+            },
+            {
+              "coordinate": 2511,
+              "energy_weighted": 0.07630489194986596,
+              "natural_weighted_value": -0.6719398621332997,
+              "output_probe": 0,
+              "probability": 0.0006936552235856652,
+              "probe": 13,
+              "squared": 5.29292868861643e-05,
+              "value": -0.007275251671671867
+            },
+            {
+              "coordinate": 510,
+              "energy_weighted": 8.294148706302849,
+              "natural_weighted_value": 5.541708096646535,
+              "output_probe": 0,
+              "probability": 0.000544618465937674,
+              "probe": 14,
+              "squared": 0.004517146544685602,
+              "value": 0.06720972061157227
+            },
+            {
+              "coordinate": 242,
+              "energy_weighted": 0.006672487980335218,
+              "natural_weighted_value": -0.24062251565286577,
+              "output_probe": 0,
+              "probability": 0.0008719096658751369,
+              "probe": 15,
+              "squared": 5.817806765489946e-06,
+              "value": -0.0024120130110532045
+            },
+            {
+              "coordinate": 23,
+              "energy_weighted": 0.021670210355214825,
+              "natural_weighted_value": -1.0698886473874483,
+              "output_probe": 0,
+              "probability": 0.003576041664928198,
+              "probe": 16,
+              "squared": 7.74935751180067e-05,
+              "value": -0.008803043514490128
+            },
+            {
+              "coordinate": 261,
+              "energy_weighted": 4.650628895738854e-05,
+              "natural_weighted_value": 0.21123002276526515,
+              "output_probe": 0,
+              "probability": 0.058440178632736206,
+              "probe": 17,
+              "squared": 2.7178358342154333e-06,
+              "value": 0.0016485860105603933
+            },
+            {
+              "coordinate": 1398,
+              "energy_weighted": 0.021737016817197734,
+              "natural_weighted_value": 0.00914292279568805,
+              "output_probe": 0,
+              "probability": 0.00020217128621879965,
+              "probe": 18,
+              "squared": 4.394600648492545e-06,
+              "value": 0.0020963302813470364
+            },
+            {
+              "coordinate": 1002,
+              "energy_weighted": 0.006485494254032821,
+              "natural_weighted_value": 0.17088909027691054,
+              "output_probe": 0,
+              "probability": 0.0005994390812702477,
+              "probe": 19,
+              "squared": 3.887658717220905e-06,
+              "value": 0.0019717146642506123
+            },
+            {
+              "coordinate": 0,
+              "energy_weighted": 0.0006673289215093397,
+              "natural_weighted_value": -0.43926554469121243,
+              "output_probe": 0,
+              "probability": 0.017883677035570145,
+              "probe": 20,
+              "squared": 1.193429490876837e-05,
+              "value": -0.00345460488460958
+            },
+            {
+              "coordinate": 184,
+              "energy_weighted": 0.5923480280340592,
+              "natural_weighted_value": -1.064806953868609,
+              "output_probe": 0,
+              "probability": 0.00041438406333327293,
+              "probe": 21,
+              "squared": 0.0002454595827642049,
+              "value": -0.015667149797081947
+            },
+            {
+              "coordinate": 66,
+              "energy_weighted": 0.03890508636130549,
+              "natural_weighted_value": -0.4585806983360869,
+              "output_probe": 0,
+              "probability": 0.0006598772015422583,
+              "probe": 22,
+              "squared": 2.5672579513858146e-05,
+              "value": -0.0050668115727603436
+            },
+            {
+              "coordinate": 1861,
+              "energy_weighted": 0.042944126571945254,
+              "natural_weighted_value": -0.18965327457580153,
+              "output_probe": 0,
+              "probability": 0.00032331683905795217,
+              "probe": 23,
+              "squared": 1.388455925934595e-05,
+              "value": -0.003726199036464095
+            },
+            {
+              "coordinate": 764,
+              "energy_weighted": 0.003683142179933885,
+              "natural_weighted_value": 0.17235572134356905,
+              "output_probe": 0,
+              "probability": 0.0008328409167006612,
+              "probe": 24,
+              "squared": 3.067471509475008e-06,
+              "value": 0.0017514198552817106
+            },
+            {
+              "coordinate": 2198,
+              "energy_weighted": 0.0002653516868237039,
+              "natural_weighted_value": 0.0002402853034459424,
+              "output_probe": 0,
+              "probability": 0.0001969226577784866,
+              "probe": 25,
+              "squared": 5.22537594153284e-08,
+              "value": 0.0002285908121848479
+            },
+            {
+              "coordinate": 21,
+              "energy_weighted": 1.2036597446176989,
+              "natural_weighted_value": 1.4409960268485098,
+              "output_probe": 0,
+              "probability": 0.0003995266743004322,
+              "probe": 26,
+              "squared": 0.00048089417475641674,
+              "value": 0.02192929945886135
+            },
+            {
+              "coordinate": 34,
+              "energy_weighted": 0.009476423833086363,
+              "natural_weighted_value": 0.7550141598071881,
+              "output_probe": 0,
+              "probability": 0.004020873922854662,
+              "probe": 27,
+              "squared": 3.810350547237538e-05,
+              "value": 0.006172803696244955
+            },
+            {
+              "coordinate": 1068,
+              "energy_weighted": 0.0551126523992627,
+              "natural_weighted_value": 0.4938580326168052,
+              "output_probe": 0,
+              "probability": 0.0005941923591308296,
+              "probe": 28,
+              "squared": 3.274751694707528e-05,
+              "value": 0.005722544621676207
+            },
+            {
+              "coordinate": 261,
+              "energy_weighted": 4.650628895738854e-05,
+              "natural_weighted_value": 0.21123002276526515,
+              "output_probe": 0,
+              "probability": 0.058440178632736206,
+              "probe": 29,
+              "squared": 2.7178358342154333e-06,
+              "value": 0.0016485860105603933
+            },
+            {
+              "coordinate": 997,
+              "energy_weighted": 0.0345343141843463,
+              "natural_weighted_value": 0.009420082479886504,
+              "output_probe": 0,
+              "probability": 0.0002009013551287353,
+              "probe": 30,
+              "squared": 6.937990518076677e-06,
+              "value": 0.002634006552398205
+            },
+            {
+              "coordinate": 508,
+              "energy_weighted": 0.009897364063961496,
+              "natural_weighted_value": 0.18496079361872195,
+              "output_probe": 0,
+              "probability": 0.0005274441209621727,
+              "probe": 31,
+              "squared": 5.2203064885587695e-06,
+              "value": 0.0022847990039736032
+            },
+            {
+              "coordinate": 1120,
+              "energy_weighted": 0.13018621864758956,
+              "natural_weighted_value": -0.043868353538408844,
+              "output_probe": 1,
+              "probability": 0.00020898437651339918,
+              "probe": 0,
+              "squared": 2.720688573470357e-05,
+              "value": -0.0052160220220685005
+            },
+            {
+              "coordinate": 18,
+              "energy_weighted": 0.008508168888225,
+              "natural_weighted_value": 0.5380685520551582,
+              "output_probe": 1,
+              "probability": 0.0024338900111615658,
+              "probe": 1,
+              "squared": 2.0707947270326432e-05,
+              "value": 0.004550598561763763
+            },
+            {
+              "coordinate": 2368,
+              "energy_weighted": 0.05582812552164851,
+              "natural_weighted_value": 0.01991050956079849,
+              "output_probe": 1,
+              "probability": 0.00020469042647164315,
+              "probe": 2,
+              "squared": 1.1427482822138658e-05,
+              "value": 0.003380456008017063
+            },
+            {
+              "coordinate": 1594,
+              "energy_weighted": 0.06528831763492199,
+              "natural_weighted_value": 0.1427658013354818,
+              "output_probe": 1,
+              "probability": 0.0002662269107531756,
+              "probe": 3,
+              "squared": 1.738150711221736e-05,
+              "value": 0.004169113468378782
+            },
+            {
+              "coordinate": 1648,
+              "energy_weighted": 0.0013596851517615825,
+              "natural_weighted_value": 0.01718712861700875,
+              "output_probe": 1,
+              "probability": 0.0002529797493480146,
+              "probe": 4,
+              "squared": 3.4397280888486234e-07,
+              "value": 0.0005864919512532651
+            },
+            {
+              "coordinate": 40,
+              "energy_weighted": 0.047210719191824735,
+              "natural_weighted_value": -1.4557707674327998,
+              "output_probe": 1,
+              "probability": 0.003094421001151204,
+              "probe": 5,
+              "squared": 0.00014608984094663467,
+              "value": -0.012086763046681881
+            },
+            {
+              "coordinate": 1472,
+              "energy_weighted": 0.007888235725088672,
+              "natural_weighted_value": 0.05504248459599757,
+              "output_probe": 1,
+              "probability": 0.00027529807994142175,
+              "probe": 6,
+              "squared": 2.17161614924224e-06,
+              "value": 0.0014736404409632087
+            },
+            {
+              "coordinate": 66,
+              "energy_weighted": 0.002306024577800733,
+              "natural_weighted_value": 0.11164635408171875,
+              "output_probe": 1,
+              "probability": 0.0006598772015422583,
+              "probe": 7,
+              "squared": 1.5216930450868152e-06,
+              "value": 0.001233569229952991
+            },
+            {
+              "coordinate": 402,
+              "energy_weighted": 0.013174360948480963,
+              "natural_weighted_value": 0.16143108631903708,
+              "output_probe": 1,
+              "probability": 0.0004193444037809968,
+              "probe": 8,
+              "squared": 5.524594537136397e-06,
+              "value": 0.002350445603951812
+            },
+            {
+              "coordinate": 1452,
+              "energy_weighted": 0.0005396537349031293,
+              "natural_weighted_value": -0.0027671547657438494,
+              "output_probe": 1,
+              "probability": 0.0002086980821331963,
+              "probe": 9,
+              "squared": 1.1262469949029942e-07,
+              "value": -0.0003355960361659527
+            },
+            {
+              "coordinate": 261,
+              "energy_weighted": 9.374107316020901e-06,
+              "natural_weighted_value": 0.09483415165397477,
+              "output_probe": 1,
+              "probability": 0.058440178632736206,
+              "probe": 10,
+              "squared": 5.478245060707008e-07,
+              "value": 0.0007401516777463257
+            },
+            {
+              "coordinate": 2472,
+              "energy_weighted": 0.1986983557427686,
+              "natural_weighted_value": -0.13462314844007356,
+              "output_probe": 1,
+              "probability": 0.00023101911938283592,
+              "probe": 11,
+              "squared": 4.590311916651186e-05,
+              "value": -0.006775184068828821
+            },
+            {
+              "coordinate": 253,
+              "energy_weighted": 0.0001086342978551949,
+              "natural_weighted_value": -0.01974921515208569,
+              "output_probe": 1,
+              "probability": 0.0005367998965084553,
+              "probe": 12,
+              "squared": 5.8314879845937324e-08,
+              "value": -0.00024148474039975554
+            },
+            {
+              "coordinate": 1967,
+              "energy_weighted": 0.15836351402984683,
+              "natural_weighted_value": -0.02983947217955728,
+              "output_probe": 1,
+              "probability": 0.0002036357473116368,
+              "probe": 13,
+              "squared": 3.224847252636474e-05,
+              "value": -0.005678773857653141
+            },
+            {
+              "coordinate": 289,
+              "energy_weighted": 0.0007929523074387569,
+              "natural_weighted_value": -0.16805327190200955,
+              "output_probe": 1,
+              "probability": 0.0025305694434791803,
+              "probe": 14,
+              "squared": 2.006620879340827e-06,
+              "value": -0.0014165524626150727
+            },
+            {
+              "coordinate": 0,
+              "energy_weighted": 0.00016977397318178246,
+              "natural_weighted_value": -0.22156069655179955,
+              "output_probe": 1,
+              "probability": 0.017883677035570145,
+              "probe": 15,
+              "squared": 3.0361829054285444e-06,
+              "value": -0.0017424646066501737
+            },
+            {
+              "coordinate": 390,
+              "energy_weighted": 0.06111403687731177,
+              "natural_weighted_value": 1.0156625830022294,
+              "output_probe": 1,
+              "probability": 0.001384390634484589,
+              "probe": 16,
+              "squared": 8.460570028849621e-05,
+              "value": 0.009198135696351528
+            },
+            {
+              "coordinate": 1002,
+              "energy_weighted": 0.029796439999078855,
+              "natural_weighted_value": -0.36628993719312336,
+              "output_probe": 1,
+              "probability": 0.0005994390812702477,
+              "probe": 17,
+              "squared": 1.786115061817189e-05,
+              "value": -0.004226245451718569
+            },
+            {
+              "coordinate": 241,
+              "energy_weighted": 0.00025246087443532106,
+              "natural_weighted_value": -0.005657165252676807,
+              "output_probe": 1,
+              "probability": 0.00023804231022950262,
+              "probe": 18,
+              "squared": 6.009636979314421e-08,
+              "value": -0.00024514560936950147
+            },
+            {
+              "coordinate": 2331,
+              "energy_weighted": 0.007478894900892565,
+              "natural_weighted_value": 0.031164354298126907,
+              "output_probe": 1,
+              "probability": 0.00023861252702772617,
+              "probe": 19,
+              "squared": 1.7845580116767506e-06,
+              "value": 0.0013358735013753176
+            },
+            {
+              "coordinate": 132,
+              "energy_weighted": 0.7843048937561412,
+              "natural_weighted_value": -0.5564279804971649,
+              "output_probe": 1,
+              "probability": 0.0002765936078503728,
+              "probe": 20,
+              "squared": 0.0002169337202187144,
+              "value": -0.014728670008480549
+            },
+            {
+              "coordinate": 370,
+              "energy_weighted": 0.005617602289298517,
+              "natural_weighted_value": 0.11852913612119657,
+              "output_probe": 1,
+              "probability": 0.00045880285324528813,
+              "probe": 21,
+              "squared": 2.577371958727422e-06,
+              "value": 0.0016054195584729314
+            },
+            {
+              "coordinate": 379,
+              "energy_weighted": 0.006171957636731028,
+              "natural_weighted_value": -0.08712894147125089,
+              "output_probe": 1,
+              "probability": 0.000358699937351048,
+              "probe": 22,
+              "squared": 2.213880817628742e-06,
+              "value": -0.001487911562435329
+            },
+            {
+              "coordinate": 1350,
+              "energy_weighted": 0.011229463752209876,
+              "natural_weighted_value": 0.1014000105778334,
+              "output_probe": 1,
+              "probability": 0.0003306604630779475,
+              "probe": 23,
+              "squared": 3.7131396844227436e-06,
+              "value": 0.001926950877532363
+            },
+            {
+              "coordinate": 2349,
+              "energy_weighted": 0.20621760513875143,
+              "natural_weighted_value": -0.17387290225784563,
+              "output_probe": 1,
+              "probability": 0.00024160658358596265,
+              "probe": 24,
+              "squared": 4.982353105285279e-05,
+              "value": -0.007058578543365002
+            },
+            {
+              "coordinate": 182,
+              "energy_weighted": 0.0024003109157754053,
+              "natural_weighted_value": -0.28699078052224397,
+              "output_probe": 1,
+              "probability": 0.002451278967782855,
+              "probe": 25,
+              "squared": 5.883831663979855e-06,
+              "value": -0.002425661077722907
+            },
+            {
+              "coordinate": 1883,
+              "energy_weighted": 0.0019969212490759773,
+              "natural_weighted_value": 0.0607227921886798,
+              "output_probe": 1,
+              "probability": 0.00040910387178882957,
+              "probe": 26,
+              "squared": 8.16948214654368e-07,
+              "value": 0.000903851876500994
+            },
+            {
+              "coordinate": 326,
+              "energy_weighted": 0.0018001433129434528,
+              "natural_weighted_value": 0.17293926204711946,
+              "output_probe": 1,
+              "probability": 0.0013680137926712632,
+              "probe": 27,
+              "squared": 2.4626208808915855e-06,
+              "value": 0.00156927399802953
+            },
+            {
+              "coordinate": 761,
+              "energy_weighted": 4.787381298410092e-05,
+              "natural_weighted_value": -0.003394932648232357,
+              "output_probe": 1,
+              "probability": 0.0002564304741099477,
+              "probe": 28,
+              "squared": 1.2276304560963969e-08,
+              "value": -0.00011079848627559841
+            },
+            {
+              "coordinate": 58,
+              "energy_weighted": 0.033543199605400434,
+              "natural_weighted_value": -1.9307822945500024,
+              "output_probe": 1,
+              "probability": 0.007109856698662043,
+              "probe": 29,
+              "squared": 0.00023848734240901424,
+              "value": -0.015443035401403904
+            },
+            {
+              "coordinate": 173,
+              "energy_weighted": 0.0012904333483587283,
+              "natural_weighted_value": 0.20465761824686474,
+              "output_probe": 1,
+              "probability": 0.0023382336366921663,
+              "probe": 30,
+              "squared": 3.0173346610416784e-06,
+              "value": 0.0017370476853102446
+            },
+            {
+              "coordinate": 504,
+              "energy_weighted": 0.003036583375224276,
+              "natural_weighted_value": 0.15841617154949614,
+              "output_probe": 1,
+              "probability": 0.0008455661009065807,
+              "probe": 31,
+              "squared": 2.5676319646661356e-06,
+              "value": 0.0016023832140490413
+            }
+          ],
+          "elapsed_seconds": 204.36878845654428,
+          "input_diagonal_directions": "coordinate basis vectors sampled from a 50/50 mixture of uniform and natural-displacement-squared importance probabilities",
+          "input_total_directions": "independent unnormalized Rademacher",
+          "natural_displacement": {
+            "approximation_error_energy_unbiased": 0.25272074273099404,
+            "coordinate_estimator": "delta_j^2 * w^T H[e_j,e_j] / p(j), with mixture importance probability p",
+            "definition": "probe activation minus the mean activation over token positions in the same prompt",
+            "diagonal_energy_unbiased": -0.039797074029843886,
+            "explained_fraction": 0.34985573735583664,
+            "full_diagonal_cross_energy": 0.04809852677033391,
+            "full_energy": 0.38871487030150575,
+            "per_output_probe": [
+              {
+                "diagonal_estimate": 0.07683502978456995,
+                "diagonal_split_a": 0.357340062719475,
+                "diagonal_split_b": -0.20367000315033507,
+                "full_value": 0.5954307317733765,
+                "output_probe": 0
+              },
+              {
+                "diagonal_estimate": -0.07757496931575926,
+                "diagonal_split_a": 0.035705974466557246,
+                "diagonal_split_b": -0.19085591309807579,
+                "full_value": -0.650301456451416,
+                "output_probe": 1
+              }
+            ],
+            "relative_approximation_error": 0.6501442626441634,
+            "rms": 0.1584579348564148
+          },
+          "output_aggregation": "mean over positions probe_position..end",
+          "output_direction": "normalized Rademacher (covariance I/d_model)",
+          "output_probes": 2,
+          "per_output_probe": [
+            {
+              "diagonal_energy": 0.34645871350955265,
+              "diagonal_fraction": 0.0034020420752157994,
+              "output_probe": 0,
+              "total_energy": 101.8384563887488
+            },
+            {
+              "diagonal_energy": 0.05771034172891453,
+              "diagonal_fraction": 0.0018607272914531198,
+              "output_probe": 1,
+              "total_energy": 31.01493808039227
+            }
+          ],
+          "source_activation_rms": 0.18896591663360596,
+          "source_layer": 12,
+          "symmetry_checks_per_output": 1,
+          "symmetry_max_relative_error": 2.0432702451435686e-06,
+          "target_layer": 30,
+          "total_energy": 66.42669723457053,
+          "total_probes_per_output": 4,
+          "total_samples": [
+            {
+              "output_probe": 0,
+              "probe": 0,
+              "squared": 33.92210726318103,
+              "swapped_value": 5.824268341064453,
+              "symmetry_absolute_error": 4.76837158203125e-07,
+              "symmetry_relative_error": 8.18707331532341e-08,
+              "value": 5.824268817901611
+            },
+            {
+              "output_probe": 0,
+              "probe": 1,
+              "squared": 170.25541465102378,
+              "value": 13.048195838928223
+            },
+            {
+              "output_probe": 0,
+              "probe": 2,
+              "squared": 2.0710054568737633,
+              "value": 1.439098834991455
+            },
+            {
+              "output_probe": 0,
+              "probe": 3,
+              "squared": 201.1052981839166,
+              "value": -14.181159973144531
+            },
+            {
+              "output_probe": 1,
+              "probe": 0,
+              "squared": 28.810064644909517,
+              "swapped_value": -5.367489814758301,
+              "symmetry_absolute_error": 1.0967254638671875e-05,
+              "symmetry_relative_error": 2.0432702451435686e-06,
+              "value": -5.3675007820129395
+            },
+            {
+              "output_probe": 1,
+              "probe": 1,
+              "squared": 52.260496789153876,
+              "value": 7.229142189025879
+            },
+            {
+              "output_probe": 1,
+              "probe": 2,
+              "squared": 13.865716536498041,
+              "value": 3.7236697673797607
+            },
+            {
+              "output_probe": 1,
+              "probe": 3,
+              "squared": 29.123474351007644,
+              "value": -5.3966169357299805
+            }
+          ],
+          "zero_intervention_max_abs_error": 0.0
+        }
+      ],
+      "probe_position": 8,
+      "probe_text": "aganst",
+      "probe_token": {
+        "decoded": "anst",
+        "id": 59130,
+        "offset": [
+          33,
+          37
+        ],
+        "token": "anst"
+      },
+      "prompt": "The final vote was nine to two aganst"
+    },
+    {
+      "id": "multihop_sushi",
+      "layers": [
+        {
+          "diagonal_energy": 0.025063548050555832,
+          "diagonal_fraction": 0.00568409862310135,
+          "diagonal_probes_per_output": 32,
+          "diagonal_samples": [
+            {
+              "coordinate": 1985,
+              "energy_weighted": 0.0013554003206341276,
+              "natural_weighted_value": -0.08203034950926545,
+              "output_probe": 0,
+              "probability": 0.000428339175414294,
+              "probe": 0,
+              "squared": 5.805710556966919e-07,
+              "value": -0.0007619521347805858
+            },
+            {
+              "coordinate": 1047,
+              "energy_weighted": 0.030963076037201394,
+              "natural_weighted_value": -0.05740303725511599,
+              "output_probe": 0,
+              "probability": 0.00021974949049763381,
+              "probe": 1,
+              "squared": 6.804120183414501e-06,
+              "value": -0.0026084708515554667
+            },
+            {
+              "coordinate": 73,
+              "energy_weighted": 0.02664666753746599,
+              "natural_weighted_value": -0.4066158971683354,
+              "output_probe": 0,
+              "probability": 0.0004674615920521319,
+              "probe": 2,
+              "squared": 1.2456293629947712e-05,
+              "value": -0.0035293474793434143
+            },
+            {
+              "coordinate": 1373,
+              "energy_weighted": 0.014339563446932758,
+              "natural_weighted_value": -0.006509733469285143,
+              "output_probe": 0,
+              "probability": 0.00019918954058084637,
+              "probe": 3,
+              "squared": 2.8562910551244337e-06,
+              "value": -0.0016900565242394805
+            },
+            {
+              "coordinate": 105,
+              "energy_weighted": 0.048012594985489494,
+              "natural_weighted_value": -0.6106120203543327,
+              "output_probe": 0,
+              "probability": 0.0005148258060216904,
+              "probe": 4,
+              "squared": 2.4718122912597597e-05,
+              "value": -0.004971732385456562
+            },
+            {
+              "coordinate": 2320,
+              "energy_weighted": 0.0004767234729340728,
+              "natural_weighted_value": -0.011387376515260682,
+              "output_probe": 0,
+              "probability": 0.00023578086984343827,
+              "probe": 5,
+              "squared": 1.1240227512318048e-07,
+              "value": -0.00033526448532938957
+            },
+            {
+              "coordinate": 115,
+              "energy_weighted": 0.0007284267273054032,
+              "natural_weighted_value": -0.2478582142304945,
+              "output_probe": 0,
+              "probability": 0.0025291305501013994,
+              "probe": 6,
+              "squared": 1.8422862895384765e-06,
+              "value": -0.001357308472506702
+            },
+            {
+              "coordinate": 392,
+              "energy_weighted": 0.02477965304596265,
+              "natural_weighted_value": -0.7936089266465712,
+              "output_probe": 0,
+              "probability": 0.001001560129225254,
+              "probe": 7,
+              "squared": 2.481831250687131e-05,
+              "value": -0.004981798119843006
+            },
+            {
+              "coordinate": 2280,
+              "energy_weighted": 0.00012724561473793854,
+              "natural_weighted_value": -0.038659211004559366,
+              "output_probe": 0,
+              "probability": 0.000629993446636945,
+              "probe": 8,
+              "squared": 8.016390339819074e-08,
+              "value": -0.00028313230723142624
+            },
+            {
+              "coordinate": 639,
+              "energy_weighted": 0.036867848386625844,
+              "natural_weighted_value": -0.1940583867640621,
+              "output_probe": 0,
+              "probability": 0.0002809104626066983,
+              "probe": 9,
+              "squared": 1.035656434560068e-05,
+              "value": -0.003218161640688777
+            },
+            {
+              "coordinate": 23,
+              "energy_weighted": 0.03516938227300226,
+              "natural_weighted_value": -0.8396596433889327,
+              "output_probe": 0,
+              "probability": 0.0008580665453337133,
+              "probe": 10,
+              "squared": 3.0177670348515784e-05,
+              "value": -0.0054934206418693066
+            },
+            {
+              "coordinate": 240,
+              "energy_weighted": 0.0012532157718970767,
+              "natural_weighted_value": -0.5071378152579263,
+              "output_probe": 0,
+              "probability": 0.0056242868304252625,
+              "probe": 11,
+              "squared": 7.048444961561958e-06,
+              "value": -0.002654890762642026
+            },
+            {
+              "coordinate": 794,
+              "energy_weighted": 0.07329889570531825,
+              "natural_weighted_value": -0.06535505337077661,
+              "output_probe": 0,
+              "probability": 0.00021312045282684267,
+              "probe": 12,
+              "squared": 1.562149384442494e-05,
+              "value": -0.003952403552830219
+            },
+            {
+              "coordinate": 22,
+              "energy_weighted": 0.0018084232915932196,
+              "natural_weighted_value": 0.8428150006521324,
+              "output_probe": 0,
+              "probability": 0.010417088866233826,
+              "probe": 13,
+              "squared": 1.8838506136293655e-05,
+              "value": 0.0043403347954154015
+            },
+            {
+              "coordinate": 316,
+              "energy_weighted": 0.007898119638880107,
+              "natural_weighted_value": -0.29738446284073444,
+              "output_probe": 0,
+              "probability": 0.0006144708022475243,
+              "probe": 14,
+              "squared": 4.853163910749586e-06,
+              "value": -0.0022029897663742304
+            },
+            {
+              "coordinate": 2484,
+              "energy_weighted": 0.009235922101402094,
+              "natural_weighted_value": -0.3659306143465023,
+              "output_probe": 0,
+              "probability": 0.0007068790728226304,
+              "probe": 15,
+              "squared": 6.528680051701152e-06,
+              "value": -0.002555128186941147
+            },
+            {
+              "coordinate": 200,
+              "energy_weighted": 1.6468274844747954e-06,
+              "natural_weighted_value": 0.004364535075764577,
+              "output_probe": 0,
+              "probability": 0.0006249581347219646,
+              "probe": 16,
+              "squared": 1.0291982329062332e-09,
+              "value": 3.20811195706483e-05
+            },
+            {
+              "coordinate": 428,
+              "energy_weighted": 0.002240574201665638,
+              "natural_weighted_value": -0.13477810883271532,
+              "output_probe": 0,
+              "probability": 0.0005249865353107452,
+              "probe": 17,
+              "squared": 1.1762712872390825e-06,
+              "value": -0.0010845604119822383
+            },
+            {
+              "coordinate": 2388,
+              "energy_weighted": 0.020875566970160193,
+              "natural_weighted_value": -0.2985089832819837,
+              "output_probe": 0,
+              "probability": 0.00040556391468271613,
+              "probe": 18,
+              "squared": 8.466376661639375e-06,
+              "value": -0.002909703878685832
+            },
+            {
+              "coordinate": 456,
+              "energy_weighted": 0.02719631925091262,
+              "natural_weighted_value": -0.2534794572173043,
+              "output_probe": 0,
+              "probability": 0.0003381379647180438,
+              "probe": 19,
+              "squared": 9.196108039325748e-06,
+              "value": -0.0030325085390359163
+            },
+            {
+              "coordinate": 643,
+              "energy_weighted": 4.545815523384349e-05,
+              "natural_weighted_value": 0.0016104468502269472,
+              "output_probe": 0,
+              "probability": 0.00021292516612447798,
+              "probe": 20,
+              "squared": 9.679185254878434e-09,
+              "value": 9.838285041041672e-05
+            },
+            {
+              "coordinate": 310,
+              "energy_weighted": 0.022369679219837353,
+              "natural_weighted_value": -0.7782282870600189,
+              "output_probe": 0,
+              "probability": 0.0010454849107190967,
+              "probe": 21,
+              "squared": 2.3387162081966485e-05,
+              "value": -0.0048360275104641914
+            },
+            {
+              "coordinate": 2162,
+              "energy_weighted": 0.0001783245578362711,
+              "natural_weighted_value": 0.005473609796119753,
+              "output_probe": 0,
+              "probability": 0.00022648402955383062,
+              "probe": 22,
+              "squared": 4.03876644271638e-08,
+              "value": 0.00020096682419534773
+            },
+            {
+              "coordinate": 1638,
+              "energy_weighted": 0.012045958989132468,
+              "natural_weighted_value": -0.013154683324141892,
+              "output_probe": 0,
+              "probability": 0.00020396229228936136,
+              "probe": 23,
+              "squared": 2.4569214082470963e-06,
+              "value": -0.0015674569876864552
+            },
+            {
+              "coordinate": 57,
+              "energy_weighted": 4.951673728626576e-05,
+              "natural_weighted_value": -0.11041437056551479,
+              "output_probe": 0,
+              "probability": 0.006671873852610588,
+              "probe": 24,
+              "squared": 3.303694247668243e-07,
+              "value": -0.0005747777177020907
+            },
+            {
+              "coordinate": 1436,
+              "energy_weighted": 0.00010244309738387143,
+              "natural_weighted_value": 0.0015326272836434871,
+              "output_probe": 0,
+              "probability": 0.0002063030406134203,
+              "probe": 25,
+              "squared": 2.11343224801494e-08,
+              "value": 0.0001453764853067696
+            },
+            {
+              "coordinate": 70,
+              "energy_weighted": 0.006250567083832842,
+              "natural_weighted_value": -1.1724620522856566,
+              "output_probe": 0,
+              "probability": 0.006000177469104528,
+              "probe": 26,
+              "squared": 3.7504511785540215e-05,
+              "value": -0.006124092731624842
+            },
+            {
+              "coordinate": 2489,
+              "energy_weighted": 0.05290678619157711,
+              "natural_weighted_value": -0.21740747550195422,
+              "output_probe": 0,
+              "probability": 0.0002744370140135288,
+              "probe": 27,
+              "squared": 1.451958042346862e-05,
+              "value": -0.003810456721112132
+            },
+            {
+              "coordinate": 532,
+              "energy_weighted": 0.02288111463567698,
+              "natural_weighted_value": 0.9761848832662517,
+              "output_probe": 0,
+              "probability": 0.0014273789711296558,
+              "probe": 28,
+              "squared": 3.266002186697232e-05,
+              "value": 0.005714894738048315
+            },
+            {
+              "coordinate": 536,
+              "energy_weighted": 0.007462558859205055,
+              "natural_weighted_value": -0.3857846016821316,
+              "output_probe": 0,
+              "probability": 0.0008552888757549226,
+              "probe": 29,
+              "squared": 6.38264357694443e-06,
+              "value": -0.0025263894349336624
+            },
+            {
+              "coordinate": 2263,
+              "energy_weighted": 0.005131743081965339,
+              "natural_weighted_value": -0.0030595754080119373,
+              "output_probe": 0,
+              "probability": 0.00019835212151519954,
+              "probe": 30,
+              "squared": 1.0178921273787736e-06,
+              "value": -0.001008906401693821
+            },
+            {
+              "coordinate": 1356,
+              "energy_weighted": 0.01649231638253346,
+              "natural_weighted_value": -0.05816672145367614,
+              "output_probe": 0,
+              "probability": 0.00023002555826678872,
+              "probe": 31,
+              "squared": 3.7936542830047646e-06,
+              "value": -0.0019477305468171835
+            },
+            {
+              "coordinate": 2077,
+              "energy_weighted": 0.002172090348867438,
+              "natural_weighted_value": -0.012087146010924815,
+              "output_probe": 1,
+              "probability": 0.00021450698841363192,
+              "probe": 0,
+              "squared": 4.659285592978693e-07,
+              "value": -0.0006825895980000496
+            },
+            {
+              "coordinate": 1691,
+              "energy_weighted": 0.0003237687394924818,
+              "natural_weighted_value": -0.05184944192851082,
+              "output_probe": 1,
+              "probability": 0.0005307850078679621,
+              "probe": 1,
+              "squared": 1.7185159293891712e-07,
+              "value": -0.00041454986785538495
+            },
+            {
+              "coordinate": 1065,
+              "energy_weighted": 1.6639285355834263e-05,
+              "natural_weighted_value": 0.006919870402459767,
+              "output_probe": 1,
+              "probability": 0.00035736593417823315,
+              "probe": 2,
+              "squared": 5.946313755245906e-09,
+              "value": 7.711234502494335e-05
+            },
+            {
+              "coordinate": 1043,
+              "energy_weighted": 0.00038829388231769894,
+              "natural_weighted_value": 0.02128640072630406,
+              "output_probe": 1,
+              "probability": 0.0002879410167224705,
+              "probe": 3,
+              "squared": 1.1180573526167355e-07,
+              "value": 0.0003343736461829394
+            },
+            {
+              "coordinate": 2486,
+              "energy_weighted": 0.005248280672836457,
+              "natural_weighted_value": 0.023106422222467303,
+              "output_probe": 1,
+              "probability": 0.00021917354024481028,
+              "probe": 4,
+              "squared": 1.1502842552639812e-06,
+              "value": 0.0010725130559876561
+            },
+            {
+              "coordinate": 522,
+              "energy_weighted": 0.00047768191173776757,
+              "natural_weighted_value": -0.036265119077085455,
+              "output_probe": 1,
+              "probability": 0.0003528041415847838,
+              "probe": 5,
+              "squared": 1.6852815682122155e-07,
+              "value": -0.00041052181040868163
+            },
+            {
+              "coordinate": 102,
+              "energy_weighted": 0.9015218796096551,
+              "natural_weighted_value": -2.486218965251311,
+              "output_probe": 1,
+              "probability": 0.00048744998639449477,
+              "probe": 6,
+              "squared": 0.00043944682795006573,
+              "value": -0.02096298709511757
+            },
+            {
+              "coordinate": 1708,
+              "energy_weighted": 0.002955536370126863,
+              "natural_weighted_value": -0.007252380310092287,
+              "output_probe": 1,
+              "probability": 0.00020496349316090345,
+              "probe": 7,
+              "squared": 6.057770585852987e-07,
+              "value": -0.0007783168111927807
+            },
+            {
+              "coordinate": 2186,
+              "energy_weighted": 0.006911314554977487,
+              "natural_weighted_value": -0.012310733077857109,
+              "output_probe": 1,
+              "probability": 0.00020605401368811727,
+              "probe": 8,
+              "squared": 1.4241041039142152e-06,
+              "value": -0.0011933583300560713
+            },
+            {
+              "coordinate": 4,
+              "energy_weighted": 0.00029219556035939433,
+              "natural_weighted_value": 0.23619437318632863,
+              "output_probe": 1,
+              "probability": 0.005258738994598389,
+              "probe": 9,
+              "squared": 1.536580187310474e-06,
+              "value": 0.0012395887169986963
+            },
+            {
+              "coordinate": 1391,
+              "energy_weighted": 0.0008965791719628735,
+              "natural_weighted_value": -0.0330970031303822,
+              "output_probe": 1,
+              "probability": 0.00029051533783786,
+              "probe": 10,
+              "squared": 2.6047000104118296e-07,
+              "value": -0.0005103626172058284
+            },
+            {
+              "coordinate": 261,
+              "energy_weighted": 0.00014973054652911097,
+              "natural_weighted_value": 0.4375801122195363,
+              "output_probe": 1,
+              "probability": 0.033044248819351196,
+              "probe": 11,
+              "squared": 4.947733435365384e-06,
+              "value": 0.0022243501152843237
+            },
+            {
+              "coordinate": 1026,
+              "energy_weighted": 0.0018063733708920415,
+              "natural_weighted_value": 0.0936624175107301,
+              "output_probe": 1,
+              "probability": 0.0004248476470820606,
+              "probe": 12,
+              "squared": 7.674334763751741e-07,
+              "value": 0.0008760328055359423
+            },
+            {
+              "coordinate": 1086,
+              "energy_weighted": 0.0041200482223484715,
+              "natural_weighted_value": 0.0002001716610304201,
+              "output_probe": 1,
+              "probability": 0.0001955328625626862,
+              "probe": 13,
+              "squared": 8.056048228121033e-07,
+              "value": 0.0008975549135357141
+            },
+            {
+              "coordinate": 403,
+              "energy_weighted": 0.00025746649100871603,
+              "natural_weighted_value": 0.04103957395289624,
+              "output_probe": 1,
+              "probability": 0.00047783443005755544,
+              "probe": 14,
+              "squared": 1.2302635399006856e-07,
+              "value": 0.00035075112828053534
+            },
+            {
+              "coordinate": 1659,
+              "energy_weighted": 0.00038867117837085367,
+              "natural_weighted_value": -0.006151886696929885,
+              "output_probe": 1,
+              "probability": 0.00021862779976800084,
+              "probe": 15,
+              "squared": 8.497432456045593e-08,
+              "value": -0.0002915035584010184
+            },
+            {
+              "coordinate": 531,
+              "energy_weighted": 0.005645234957634402,
+              "natural_weighted_value": 0.027378390915969573,
+              "output_probe": 1,
+              "probability": 0.00022279733093455434,
+              "probe": 16,
+              "squared": 1.2577432810593868e-06,
+              "value": 0.0011214915430173278
+            },
+            {
+              "coordinate": 953,
+              "energy_weighted": 0.0003738923005502122,
+              "natural_weighted_value": 0.0026716302349634154,
+              "output_probe": 1,
+              "probability": 0.00020531679911073297,
+              "probe": 17,
+              "squared": 7.67663703611177e-08,
+              "value": 0.00027706744731403887
+            },
+            {
+              "coordinate": 766,
+              "energy_weighted": 0.0011174537120093183,
+              "natural_weighted_value": 0.1304625484685117,
+              "output_probe": 1,
+              "probability": 0.0007271019276231527,
+              "probe": 18,
+              "squared": 8.125027480316228e-07,
+              "value": 0.0009013893431983888
+            },
+            {
+              "coordinate": 1502,
+              "energy_weighted": 0.00945431294869534,
+              "natural_weighted_value": -0.0033498623840104223,
+              "output_probe": 1,
+              "probability": 0.0001977607316803187,
+              "probe": 19,
+              "squared": 1.869691846268702e-06,
+              "value": -0.0013673667563125491
+            },
+            {
+              "coordinate": 2329,
+              "energy_weighted": 0.013568766248342263,
+              "natural_weighted_value": -0.06259650253913447,
+              "output_probe": 1,
+              "probability": 0.00023712852271273732,
+              "probe": 20,
+              "squared": 3.217541495503852e-06,
+              "value": -0.0017937506781890988
+            },
+            {
+              "coordinate": 1140,
+              "energy_weighted": 0.008737951313712494,
+              "natural_weighted_value": -0.006279414194284311,
+              "output_probe": 1,
+              "probability": 0.0002001145330723375,
+              "probe": 21,
+              "squared": 1.7485910471523938e-06,
+              "value": -0.0013223430141806602
+            },
+            {
+              "coordinate": 724,
+              "energy_weighted": 0.001375917366599803,
+              "natural_weighted_value": 0.12439052208921685,
+              "output_probe": 1,
+              "probability": 0.0006158424075692892,
+              "probe": 22,
+              "squared": 8.473482636632189e-07,
+              "value": 0.0009205152164213359
+            },
+            {
+              "coordinate": 1444,
+              "energy_weighted": 0.0016862059828854816,
+              "natural_weighted_value": -0.040129889853527924,
+              "output_probe": 1,
+              "probability": 0.00027759099612012506,
+              "probe": 23,
+              "squared": 4.680755984528954e-07,
+              "value": -0.0006841605063527822
+            },
+            {
+              "coordinate": 1150,
+              "energy_weighted": 0.000282482556246586,
+              "natural_weighted_value": 0.005588185204813791,
+              "output_probe": 1,
+              "probability": 0.00022024702047929168,
+              "probe": 24,
+              "squared": 6.221594135068448e-08,
+              "value": 0.0002494312357157469
+            },
+            {
+              "coordinate": 371,
+              "energy_weighted": 0.023723613088461278,
+              "natural_weighted_value": 0.1258725605269996,
+              "output_probe": 1,
+              "probability": 0.0002621793537400663,
+              "probe": 25,
+              "squared": 6.2198415479121556e-06,
+              "value": 0.002493961015716195
+            },
+            {
+              "coordinate": 639,
+              "energy_weighted": 0.005835885099601327,
+              "natural_weighted_value": 0.0772079260433404,
+              "output_probe": 1,
+              "probability": 0.0002809104626066983,
+              "probe": 26,
+              "squared": 1.6393611830485463e-06,
+              "value": 0.001280375407077372
+            },
+            {
+              "coordinate": 4,
+              "energy_weighted": 0.00029219556035939433,
+              "natural_weighted_value": 0.23619437318632863,
+              "output_probe": 1,
+              "probability": 0.005258738994598389,
+              "probe": 27,
+              "squared": 1.536580187310474e-06,
+              "value": 0.0012395887169986963
+            },
+            {
+              "coordinate": 2556,
+              "energy_weighted": 0.003242571370462617,
+              "natural_weighted_value": 0.02557436644377313,
+              "output_probe": 1,
+              "probability": 0.00022970950521994382,
+              "probe": 28,
+              "squared": 7.448494651493228e-07,
+              "value": 0.0008630466181784868
+            },
+            {
+              "coordinate": 2262,
+              "energy_weighted": 0.0008498372654807884,
+              "natural_weighted_value": 0.011457667030609606,
+              "output_probe": 1,
+              "probability": 0.00022511124552693218,
+              "probe": 29,
+              "squared": 1.913079253275824e-07,
+              "value": 0.0004373876145109534
+            },
+            {
+              "coordinate": 611,
+              "energy_weighted": 0.08917356772777474,
+              "natural_weighted_value": -1.5810197964451882,
+              "output_probe": 1,
+              "probability": 0.0010707811452448368,
+              "probe": 30,
+              "squared": 9.548537497711465e-05,
+              "value": -0.009771661832928658
+            },
+            {
+              "coordinate": 22,
+              "energy_weighted": 0.001588905220812076,
+              "natural_weighted_value": -0.7900074862680798,
+              "output_probe": 1,
+              "probability": 0.010417088866233826,
+              "probe": 31,
+              "squared": 1.6551766885222275e-05,
+              "value": -0.004068386275321245
+            }
+          ],
+          "elapsed_seconds": 238.45585960149765,
+          "input_diagonal_directions": "coordinate basis vectors sampled from a 50/50 mixture of uniform and natural-displacement-squared importance probabilities",
+          "input_total_directions": "independent unnormalized Rademacher",
+          "natural_displacement": {
+            "approximation_error_energy_unbiased": 0.32362766318064856,
+            "coordinate_estimator": "delta_j^2 * w^T H[e_j,e_j] / p(j), with mixture importance probability p",
+            "definition": "probe activation minus the mean activation over token positions in the same prompt",
+            "diagonal_energy_unbiased": 0.017319894520161954,
+            "explained_fraction": -0.6011521007145362,
+            "full_diagonal_cross_energy": -0.05209300977740562,
+            "full_energy": 0.20212174910567537,
+            "per_output_probe": [
+              {
+                "diagonal_estimate": -0.19117731111909766,
+                "diagonal_split_a": -0.1990616474012647,
+                "diagonal_split_b": -0.18329297483693063,
+                "full_value": 0.19938980042934418,
+                "output_probe": 0
+              },
+              {
+                "diagonal_estimate": -0.10943212859815747,
+                "diagonal_split_a": -0.2269999952000387,
+                "diagonal_split_b": 0.008135738003723735,
+                "full_value": 0.6037277579307556,
+                "output_probe": 1
+              }
+            ],
+            "relative_approximation_error": 1.6011521007145362,
+            "rms": 0.19659820199012756
+          },
+          "output_aggregation": "mean over positions probe_position..end",
+          "output_direction": "normalized Rademacher (covariance I/d_model)",
+          "output_probes": 2,
+          "per_output_probe": [
+            {
+              "diagonal_energy": 0.015912241643722076,
+              "diagonal_fraction": 0.0027648913831827314,
+              "output_probe": 0,
+              "total_energy": 5.755105513550092
+            },
+            {
+              "diagonal_energy": 0.03421485445738959,
+              "diagonal_fraction": 0.011167734307947071,
+              "output_probe": 1,
+              "total_energy": 3.0637238954585406
+            }
+          ],
+          "source_activation_rms": 0.23351050913333893,
+          "source_layer": 12,
+          "symmetry_checks_per_output": 1,
+          "symmetry_max_relative_error": 6.656643030195198e-07,
+          "target_layer": 30,
+          "total_energy": 4.409414704504316,
+          "total_probes_per_output": 4,
+          "total_samples": [
+            {
+              "output_probe": 0,
+              "probe": 0,
+              "squared": 2.942433502237293,
+              "swapped_value": -1.7153527736663818,
+              "symmetry_absolute_error": 4.76837158203125e-07,
+              "symmetry_relative_error": 2.7798197870630243e-07,
+              "value": -1.7153522968292236
+            },
+            {
+              "output_probe": 0,
+              "probe": 1,
+              "squared": 15.714280694656054,
+              "value": -3.9641242027282715
+            },
+            {
+              "output_probe": 0,
+              "probe": 2,
+              "squared": 0.0004532871230935598,
+              "value": 0.02129054069519043
+            },
+            {
+              "output_probe": 0,
+              "probe": 3,
+              "squared": 4.363254570183926,
+              "value": -2.0888404846191406
+            },
+            {
+              "output_probe": 1,
+              "probe": 0,
+              "squared": 1.5714666370515715,
+              "swapped_value": -1.2535823583602905,
+              "symmetry_absolute_error": 8.344650268554688e-07,
+              "symmetry_relative_error": 6.656643030195198e-07,
+              "value": -1.2535815238952637
+            },
+            {
+              "output_probe": 1,
+              "probe": 1,
+              "squared": 7.272890947716405,
+              "value": -2.6968297958374023
+            },
+            {
+              "output_probe": 1,
+              "probe": 2,
+              "squared": 3.236763961500401,
+              "value": -1.7991008758544922
+            },
+            {
+              "output_probe": 1,
+              "probe": 3,
+              "squared": 0.17377403556578486,
+              "value": -0.4168621301651001
+            }
+          ],
+          "zero_intervention_max_abs_error": 0.0
+        }
+      ],
+      "probe_position": 6,
+      "probe_text": "sushi",
+      "probe_token": {
+        "decoded": " sushi",
+        "id": 63986,
+        "offset": [
+          32,
+          38
+        ],
+        "token": "\u0120sushi"
+      },
+      "prompt": "The capital of the country where sushi originated is"
+    },
+    {
+      "id": "association_jordan",
+      "layers": [
+        {
+          "diagonal_energy": 0.02092886265795302,
+          "diagonal_fraction": 0.023492351142546646,
+          "diagonal_probes_per_output": 32,
+          "diagonal_samples": [
+            {
+              "coordinate": 875,
+              "energy_weighted": 0.04885452524207359,
+              "natural_weighted_value": 0.197703516066847,
+              "output_probe": 0,
+              "probability": 0.00028768181800842285,
+              "probe": 0,
+              "squared": 1.4054558639578117e-05,
+              "value": 0.0037489410024136305
+            },
+            {
+              "coordinate": 2091,
+              "energy_weighted": 0.004691519426168361,
+              "natural_weighted_value": 0.0011918620737238258,
+              "output_probe": 0,
+              "probability": 0.00019679874822031707,
+              "probe": 1,
+              "squared": 9.232851503212337e-07,
+              "value": 0.0009608772816136479
+            },
+            {
+              "coordinate": 47,
+              "energy_weighted": 0.0017624039883850785,
+              "natural_weighted_value": 0.6905460664881239,
+              "output_probe": 0,
+              "probability": 0.010416917502880096,
+              "probe": 2,
+              "squared": 1.8358816953754215e-05,
+              "value": 0.004284719005227089
+            },
+            {
+              "coordinate": 2205,
+              "energy_weighted": 0.005613127927176836,
+              "natural_weighted_value": 0.13602104362458783,
+              "output_probe": 0,
+              "probability": 0.00042253013816662133,
+              "probe": 3,
+              "squared": 2.3717157186169493e-06,
+              "value": 0.0015400375705212355
+            },
+            {
+              "coordinate": 92,
+              "energy_weighted": 0.0003002083181981886,
+              "natural_weighted_value": 0.2010946855240674,
+              "output_probe": 0,
+              "probability": 0.0053769443184137344,
+              "probe": 4,
+              "squared": 1.6142034108762929e-06,
+              "value": 0.0012705130502581596
+            },
+            {
+              "coordinate": 870,
+              "energy_weighted": 0.02055686287153095,
+              "natural_weighted_value": 0.08954478242560297,
+              "output_probe": 0,
+              "probability": 0.0002561734290793538,
+              "probe": 5,
+              "squared": 5.266122052914135e-06,
+              "value": 0.0022948032710701227
+            },
+            {
+              "coordinate": 465,
+              "energy_weighted": 0.005905819846024045,
+              "natural_weighted_value": -0.7513645517019952,
+              "output_probe": 0,
+              "probability": 0.003924468532204628,
+              "probe": 6,
+              "squared": 2.3177204142590946e-05,
+              "value": -0.004814270883798599
+            },
+            {
+              "coordinate": 248,
+              "energy_weighted": 0.08693324373290616,
+              "natural_weighted_value": -1.8641594219906197,
+              "output_probe": 0,
+              "probability": 0.001851858920417726,
+              "probe": 7,
+              "squared": 0.00016098810288763064,
+              "value": -0.01268810871988535
+            },
+            {
+              "coordinate": 38,
+              "energy_weighted": 0.0007649754680807475,
+              "natural_weighted_value": 0.10254898051864861,
+              "output_probe": 0,
+              "probability": 0.0008556481334380805,
+              "probe": 8,
+              "squared": 6.545498313892136e-07,
+              "value": 0.0008090425399132073
+            },
+            {
+              "coordinate": 208,
+              "energy_weighted": 0.005584960922726525,
+              "natural_weighted_value": 0.4733824982032844,
+              "output_probe": 0,
+              "probability": 0.0018574728164821863,
+              "probe": 9,
+              "squared": 1.0373913095079788e-05,
+              "value": 0.0032208559568971395
+            },
+            {
+              "coordinate": 2081,
+              "energy_weighted": 0.001337179486935738,
+              "natural_weighted_value": 0.16224924597854407,
+              "output_probe": 0,
+              "probability": 0.0010852597188204527,
+              "probe": 10,
+              "squared": 1.4511870340043562e-06,
+              "value": 0.0012046522460877895
+            },
+            {
+              "coordinate": 357,
+              "energy_weighted": 0.027462185945631348,
+              "natural_weighted_value": -1.377003859566228,
+              "output_probe": 0,
+              "probability": 0.002937132492661476,
+              "probe": 11,
+              "squared": 8.066007866042516e-05,
+              "value": -0.008981095626950264
+            },
+            {
+              "coordinate": 265,
+              "energy_weighted": 0.5942445284818082,
+              "natural_weighted_value": -0.5353590513773168,
+              "output_probe": 0,
+              "probability": 0.00026401752256788313,
+              "probe": 12,
+              "squared": 0.00015689096820928686,
+              "value": -0.012525612488389015
+            },
+            {
+              "coordinate": 582,
+              "energy_weighted": 0.024624400766065577,
+              "natural_weighted_value": 0.014344593727969406,
+              "output_probe": 0,
+              "probability": 0.00020324713841546327,
+              "probe": 13,
+              "squared": 5.00483899089837e-06,
+              "value": 0.0022371497470885515
+            },
+            {
+              "coordinate": 2481,
+              "energy_weighted": 0.0023601193049852575,
+              "natural_weighted_value": 0.058555099952022176,
+              "output_probe": 0,
+              "probability": 0.00032827386166900396,
+              "probe": 14,
+              "squared": 7.747654782470762e-07,
+              "value": 0.0008802076335996389
+            },
+            {
+              "coordinate": 463,
+              "energy_weighted": 0.014927368080729812,
+              "natural_weighted_value": 0.13961118565261618,
+              "output_probe": 0,
+              "probability": 0.00031971163116395473,
+              "probe": 15,
+              "squared": 4.7724531980748806e-06,
+              "value": 0.002184594515711069
+            },
+            {
+              "coordinate": 369,
+              "energy_weighted": 0.01287015705208574,
+              "natural_weighted_value": 0.5857888204137189,
+              "output_probe": 0,
+              "probability": 0.0013507488183677197,
+              "probe": 16,
+              "squared": 1.7384349430311788e-05,
+              "value": 0.0041694543324410915
+            },
+            {
+              "coordinate": 783,
+              "energy_weighted": 0.01367379868420473,
+              "natural_weighted_value": 0.007506589259790354,
+              "output_probe": 0,
+              "probability": 0.00020085167489014566,
+              "probe": 17,
+              "squared": 2.74640536783319e-06,
+              "value": 0.0016572282183915377
+            },
+            {
+              "coordinate": 1805,
+              "energy_weighted": 0.02527602939169663,
+              "natural_weighted_value": 0.09881831242207807,
+              "output_probe": 0,
+              "probability": 0.00025584379909560084,
+              "probe": 18,
+              "squared": 6.466715385623734e-06,
+              "value": 0.002542973728850484
+            },
+            {
+              "coordinate": 116,
+              "energy_weighted": 0.0018158351843729074,
+              "natural_weighted_value": 0.4320240824212919,
+              "output_probe": 0,
+              "probability": 0.004191819578409195,
+              "probe": 19,
+              "squared": 7.611653477018624e-06,
+              "value": 0.0027589225210249424
+            },
+            {
+              "coordinate": 275,
+              "energy_weighted": 0.030938132690191782,
+              "natural_weighted_value": 0.7663290380475868,
+              "output_probe": 0,
+              "probability": 0.001058225054293871,
+              "probe": 20,
+              "squared": 3.273950714582918e-05,
+              "value": 0.005721844732761383
+            },
+            {
+              "coordinate": 363,
+              "energy_weighted": 0.03220167547866556,
+              "natural_weighted_value": 0.19255762030631565,
+              "output_probe": 0,
+              "probability": 0.0003104207571595907,
+              "probe": 21,
+              "squared": 9.996068483894788e-06,
+              "value": 0.0031616559717804193
+            },
+            {
+              "coordinate": 1129,
+              "energy_weighted": 0.010780025976135393,
+              "natural_weighted_value": 0.13269307290891635,
+              "output_probe": 0,
+              "probability": 0.0003384674491826445,
+              "probe": 22,
+              "squared": 3.648687894265194e-06,
+              "value": 0.0019101538928225636
+            },
+            {
+              "coordinate": 291,
+              "energy_weighted": 0.042094084993039356,
+              "natural_weighted_value": 0.5679941838874272,
+              "output_probe": 0,
+              "probability": 0.0006124485516920686,
+              "probe": 23,
+              "squared": 2.578046138878979e-05,
+              "value": 0.005077446345239878
+            },
+            {
+              "coordinate": 728,
+              "energy_weighted": 0.08499234714669054,
+              "natural_weighted_value": 0.06638092971227136,
+              "output_probe": 0,
+              "probability": 0.00021567165094893426,
+              "probe": 24,
+              "squared": 1.833043982715169e-05,
+              "value": 0.004281406290829182
+            },
+            {
+              "coordinate": 881,
+              "energy_weighted": 0.0261364589725752,
+              "natural_weighted_value": 0.007754363642171365,
+              "output_probe": 0,
+              "probability": 0.0001994366612052545,
+              "probe": 25,
+              "squared": 5.212568113218514e-06,
+              "value": 0.0022831049282103777
+            },
+            {
+              "coordinate": 887,
+              "energy_weighted": 0.016399474629939525,
+              "natural_weighted_value": 0.17598693358916742,
+              "output_probe": 0,
+              "probability": 0.00035237736301496625,
+              "probe": 26,
+              "squared": 5.778803624928929e-06,
+              "value": 0.0024039142299443483
+            },
+            {
+              "coordinate": 1563,
+              "energy_weighted": 0.022354697333050275,
+              "natural_weighted_value": 0.030473198046787192,
+              "output_probe": 0,
+              "probability": 0.00021344189008232206,
+              "probe": 27,
+              "squared": 4.7714288509844945e-06,
+              "value": 0.0021843600552529097
+            },
+            {
+              "coordinate": 2317,
+              "energy_weighted": 0.0112736213658412,
+              "natural_weighted_value": 0.1990916872571503,
+              "output_probe": 0,
+              "probability": 0.0004328254726715386,
+              "probe": 28,
+              "squared": 4.879510496390174e-06,
+              "value": 0.002208961406722665
+            },
+            {
+              "coordinate": 1498,
+              "energy_weighted": 0.027246971823060382,
+              "natural_weighted_value": 0.16899694879270674,
+              "output_probe": 0,
+              "probability": 0.00030399588285945356,
+              "probe": 29,
+              "squared": 8.282967254597895e-06,
+              "value": 0.002878014463931322
+            },
+            {
+              "coordinate": 2312,
+              "energy_weighted": 0.03329811895542491,
+              "natural_weighted_value": 0.29892431929781904,
+              "output_probe": 0,
+              "probability": 0.0003930474631488323,
+              "probe": 30,
+              "squared": 1.3087741183057805e-05,
+              "value": 0.0036176983267068863
+            },
+            {
+              "coordinate": 2189,
+              "energy_weighted": 0.00994786254372199,
+              "natural_weighted_value": 0.06489639457607606,
+              "output_probe": 0,
+              "probability": 0.00025907711824402213,
+              "probe": 31,
+              "squared": 2.5772635605151407e-06,
+              "value": 0.0016053857980296016
+            },
+            {
+              "coordinate": 1751,
+              "energy_weighted": 0.0019479781224748243,
+              "natural_weighted_value": 0.003823203798203058,
+              "output_probe": 1,
+              "probability": 0.00020282361947465688,
+              "probe": 0,
+              "squared": 3.950959734577903e-07,
+              "value": 0.0006285666022449732
+            },
+            {
+              "coordinate": 261,
+              "energy_weighted": 0.0002864274177775045,
+              "natural_weighted_value": 0.6453334641193076,
+              "output_probe": 1,
+              "probability": 0.05428795516490936,
+              "probe": 1,
+              "squared": 1.5549558814305928e-05,
+              "value": 0.003943292889744043
+            },
+            {
+              "coordinate": 1012,
+              "energy_weighted": 0.0013269062285234455,
+              "natural_weighted_value": 0.029959820211953377,
+              "output_probe": 1,
+              "probability": 0.00027894790400750935,
+              "probe": 2,
+              "squared": 3.7013771126112434e-07,
+              "value": 0.0006083894404582679
+            },
+            {
+              "coordinate": 275,
+              "energy_weighted": 3.744572503301026e-07,
+              "natural_weighted_value": 0.002666056539957749,
+              "output_probe": 1,
+              "probability": 0.001058225054293871,
+              "probe": 3,
+              "squared": 3.962600440613065e-10,
+              "value": 1.9906281522708014e-05
+            },
+            {
+              "coordinate": 788,
+              "energy_weighted": 4.8730995246713045e-06,
+              "natural_weighted_value": -0.008212968013058656,
+              "output_probe": 1,
+              "probability": 0.0008593486272729933,
+              "probe": 4,
+              "squared": 4.1876913870909615e-09,
+              "value": -6.4712374296505e-05
+            },
+            {
+              "coordinate": 1814,
+              "energy_weighted": 0.002458881106645472,
+              "natural_weighted_value": 0.09228843665603967,
+              "output_probe": 1,
+              "probability": 0.0004303960595279932,
+              "probe": 5,
+              "squared": 1.0582927391480424e-06,
+              "value": 0.0010287335608154535
+            },
+            {
+              "coordinate": 261,
+              "energy_weighted": 0.0002864274177775045,
+              "natural_weighted_value": 0.6453334641193076,
+              "output_probe": 1,
+              "probability": 0.05428795516490936,
+              "probe": 6,
+              "squared": 1.5549558814305928e-05,
+              "value": 0.003943292889744043
+            },
+            {
+              "coordinate": 394,
+              "energy_weighted": 0.003856614291357978,
+              "natural_weighted_value": 0.1199261498674764,
+              "output_probe": 1,
+              "probability": 0.00044269789941608906,
+              "probe": 7,
+              "squared": 1.7073150456422458e-06,
+              "value": 0.0013066426618024707
+            },
+            {
+              "coordinate": 1113,
+              "energy_weighted": 0.0017943860623194684,
+              "natural_weighted_value": -0.038464202997611587,
+              "output_probe": 1,
+              "probability": 0.00028935493901371956,
+              "probe": 8,
+              "squared": 5.192144696295182e-07,
+              "value": -0.0007205653819255531
+            },
+            {
+              "coordinate": 440,
+              "energy_weighted": 0.0012125155158724933,
+              "natural_weighted_value": -0.12821125807702094,
+              "output_probe": 1,
+              "probability": 0.0008482069242745638,
+              "probe": 9,
+              "squared": 1.0284640563533936e-06,
+              "value": -0.0010141321690753102
+            },
+            {
+              "coordinate": 1016,
+              "energy_weighted": 0.00011544789690197753,
+              "natural_weighted_value": -0.03139223187861056,
+              "output_probe": 1,
+              "probability": 0.0006482046446762979,
+              "probe": 10,
+              "squared": 7.483386298997221e-08,
+              "value": -0.0002735577872954309
+            },
+            {
+              "coordinate": 163,
+              "energy_weighted": 0.0034161045495458607,
+              "natural_weighted_value": 0.18880242604195105,
+              "output_probe": 1,
+              "probability": 0.0007248094771057367,
+              "probe": 11,
+              "squared": 2.4760249522948636e-06,
+              "value": 0.0015735389897599816
+            },
+            {
+              "coordinate": 236,
+              "energy_weighted": 0.0015811556126611441,
+              "natural_weighted_value": 0.1306054852527653,
+              "output_probe": 1,
+              "probability": 0.0007389139500446618,
+              "probe": 12,
+              "squared": 1.1683379393867332e-06,
+              "value": 0.0010808968218043447
+            },
+            {
+              "coordinate": 1188,
+              "energy_weighted": 5.513724588707265e-06,
+              "natural_weighted_value": 0.005522269439595793,
+              "output_probe": 1,
+              "probability": 0.0005226657376624644,
+              "probe": 13,
+              "squared": 2.8818349294243505e-09,
+              "value": 5.36827246833127e-05
+            },
+            {
+              "coordinate": 0,
+              "energy_weighted": 4.658943473242126e-08,
+              "natural_weighted_value": -0.001242907569515707,
+              "output_probe": 1,
+              "probability": 0.0015958843287080526,
+              "probe": 14,
+              "squared": 7.435134877283773e-11,
+              "value": -8.62272281665355e-06
+            },
+            {
+              "coordinate": 2081,
+              "energy_weighted": 0.008630420569796156,
+              "natural_weighted_value": -0.4121960391702577,
+              "output_probe": 1,
+              "probability": 0.0010852597188204527,
+              "probe": 15,
+              "squared": 9.366247800879227e-06,
+              "value": -0.003060432616621256
+            },
+            {
+              "coordinate": 773,
+              "energy_weighted": 0.0003337426104146191,
+              "natural_weighted_value": 0.026499062996765486,
+              "output_probe": 1,
+              "probability": 0.00036374846240505576,
+              "probe": 16,
+              "squared": 1.2139836137736726e-07,
+              "value": 0.00034842267632484436
+            },
+            {
+              "coordinate": 2551,
+              "energy_weighted": 0.00011554521441145484,
+              "natural_weighted_value": -4.126491592141683e-06,
+              "output_probe": 1,
+              "probability": 0.00019534517196007073,
+              "probe": 17,
+              "squared": 2.2571199778368888e-08,
+              "value": -0.00015023714513517916
+            },
+            {
+              "coordinate": 94,
+              "energy_weighted": 0.002095309079262286,
+              "natural_weighted_value": 0.2773252667520726,
+              "output_probe": 1,
+              "probability": 0.0017292257398366928,
+              "probe": 18,
+              "squared": 3.623262392773866e-06,
+              "value": 0.001903486903756857
+            },
+            {
+              "coordinate": 2162,
+              "energy_weighted": 2.1172337441850348e-05,
+              "natural_weighted_value": 0.009230361038963473,
+              "output_probe": 1,
+              "probability": 0.00045617326395586133,
+              "probe": 19,
+              "squared": 9.658254276423764e-09,
+              "value": 9.827641770243645e-05
+            },
+            {
+              "coordinate": 2474,
+              "energy_weighted": 0.000615332679466035,
+              "natural_weighted_value": 0.041822279387756546,
+              "output_probe": 1,
+              "probability": 0.00040082589839585125,
+              "probe": 20,
+              "squared": 2.4664127405929983e-07,
+              "value": 0.0004966299165971577
+            },
+            {
+              "coordinate": 508,
+              "energy_weighted": 0.004498576207317857,
+              "natural_weighted_value": 0.053416792031428004,
+              "output_probe": 1,
+              "probability": 0.00027584744384512305,
+              "probe": 21,
+              "squared": 1.2409207477311193e-06,
+              "value": 0.001113966223783791
+            },
+            {
+              "coordinate": 1983,
+              "energy_weighted": 0.00036670386965746975,
+              "natural_weighted_value": -0.00026836586748353364,
+              "output_probe": 1,
+              "probability": 0.0001965086121344939,
+              "probe": 22,
+              "squared": 7.206046849073772e-08,
+              "value": -0.0002684408100321889
+            },
+            {
+              "coordinate": 2109,
+              "energy_weighted": 0.0009654412075117307,
+              "natural_weighted_value": -0.0039991909000605145,
+              "output_probe": 1,
+              "probability": 0.00020657561253756285,
+              "probe": 23,
+              "squared": 1.994366088107401e-07,
+              "value": -0.000446583260782063
+            },
+            {
+              "coordinate": 479,
+              "energy_weighted": 0.007780413264434212,
+              "natural_weighted_value": -0.13750510539629016,
+              "output_probe": 1,
+              "probability": 0.00038043956737965345,
+              "probe": 24,
+              "squared": 2.959977056356269e-06,
+              "value": -0.0017204583855345845
+            },
+            {
+              "coordinate": 248,
+              "energy_weighted": 1.4728955292280332e-05,
+              "natural_weighted_value": -0.02426476445549243,
+              "output_probe": 1,
+              "probability": 0.001851858920417726,
+              "probe": 25,
+              "squared": 2.727594724644321e-08,
+              "value": -0.00016515431343577802
+            },
+            {
+              "coordinate": 111,
+              "energy_weighted": 0.043891450129607726,
+              "natural_weighted_value": 0.509361201767694,
+              "output_probe": 1,
+              "probability": 0.0005389722646214068,
+              "probe": 26,
+              "squared": 2.3656274273872215e-05,
+              "value": 0.0048637716099619865
+            },
+            {
+              "coordinate": 390,
+              "energy_weighted": 5.527500681220178e-05,
+              "natural_weighted_value": 0.05204114515448883,
+              "output_probe": 1,
+              "probability": 0.0021894872188568115,
+              "probe": 27,
+              "squared": 1.2102392093753899e-07,
+              "value": 0.0003478849248494953
+            },
+            {
+              "coordinate": 97,
+              "energy_weighted": 0.001760056514753995,
+              "natural_weighted_value": -0.06314934472229546,
+              "output_probe": 1,
+              "probability": 0.000372096459614113,
+              "probe": 28,
+              "squared": 6.549107978607163e-07,
+              "value": -0.0008092655916698277
+            },
+            {
+              "coordinate": 2487,
+              "energy_weighted": 0.0003688613335030773,
+              "natural_weighted_value": -0.0023995773610981626,
+              "output_probe": 1,
+              "probability": 0.0002062368585029617,
+              "probe": 29,
+              "squared": 7.607280264488792e-08,
+              "value": -0.0002758129849098623
+            },
+            {
+              "coordinate": 1422,
+              "energy_weighted": 0.0006551236585015423,
+              "natural_weighted_value": 0.014140565161196566,
+              "output_probe": 1,
+              "probability": 0.00024831772316247225,
+              "probe": 30,
+              "squared": 1.62678815268972e-07,
+              "value": 0.00040333461947739124
+            },
+            {
+              "coordinate": 181,
+              "energy_weighted": 0.00176268334803015,
+              "natural_weighted_value": 0.16645116714495212,
+              "output_probe": 1,
+              "probability": 0.000932375667616725,
+              "probe": 31,
+              "squared": 1.643483063416495e-06,
+              "value": 0.0012819840339943767
+            }
+          ],
+          "elapsed_seconds": 259.5071899127215,
+          "input_diagonal_directions": "coordinate basis vectors sampled from a 50/50 mixture of uniform and natural-displacement-squared importance probabilities",
+          "input_total_directions": "independent unnormalized Rademacher",
+          "natural_displacement": {
+            "approximation_error_energy_unbiased": 0.0322611948477849,
+            "coordinate_estimator": "delta_j^2 * w^T H[e_j,e_j] / p(j), with mixture importance probability p",
+            "definition": "probe activation minus the mean activation over token positions in the same prompt",
+            "diagonal_energy_unbiased": -0.002289069766144151,
+            "explained_fraction": 0.26726145160719317,
+            "full_diagonal_cross_energy": 0.004738991911385115,
+            "full_energy": 0.04402824843669928,
+            "per_output_probe": [
+              {
+                "diagonal_estimate": 0.04797259906816102,
+                "diagonal_split_a": 0.1531241940686031,
+                "diagonal_split_b": -0.05717899593228103,
+                "full_value": 0.28948572278022766,
+                "output_probe": 0
+              },
+              {
+                "diagonal_estimate": 0.06760120420567149,
+                "diagonal_split_a": 0.08741470143767804,
+                "diagonal_split_b": 0.047787706973664926,
+                "full_value": -0.06522662937641144,
+                "output_probe": 1
+              }
+            ],
+            "relative_approximation_error": 0.7327385483928068,
+            "rms": 0.17910605669021606
+          },
+          "output_aggregation": "mean over positions probe_position..end",
+          "output_direction": "normalized Rademacher (covariance I/d_model)",
+          "output_probes": 2,
+          "per_output_probe": [
+            {
+              "diagonal_energy": 0.03897571006344133,
+              "diagonal_fraction": 0.024970208628871313,
+              "output_probe": 0,
+              "total_energy": 1.5608884428132663
+            },
+            {
+              "diagonal_energy": 0.0028820152524647114,
+              "diagonal_fraction": 0.013048392304843831,
+              "output_probe": 1,
+              "total_energy": 0.220871290894193
+            }
+          ],
+          "source_activation_rms": 0.22316321730613708,
+          "source_layer": 12,
+          "symmetry_checks_per_output": 1,
+          "symmetry_max_relative_error": 4.2537122558506385e-06,
+          "target_layer": 30,
+          "total_energy": 0.8908798668537297,
+          "total_probes_per_output": 4,
+          "total_samples": [
+            {
+              "output_probe": 0,
+              "probe": 0,
+              "squared": 3.935247925023887,
+              "swapped_value": 1.9837465286254883,
+              "symmetry_absolute_error": 5.960464477539062e-07,
+              "symmetry_relative_error": 3.004650237078922e-07,
+              "value": 1.9837459325790405
+            },
+            {
+              "output_probe": 0,
+              "probe": 1,
+              "squared": 0.37450969741782103,
+              "value": -0.6119719743728638
+            },
+            {
+              "output_probe": 0,
+              "probe": 2,
+              "squared": 1.5765127385275832,
+              "value": -1.2555925846099854
+            },
+            {
+              "output_probe": 0,
+              "probe": 3,
+              "squared": 0.35728341028377386,
+              "value": -0.59773188829422
+            },
+            {
+              "output_probe": 1,
+              "probe": 0,
+              "squared": 0.18868774053914095,
+              "swapped_value": -0.4343838691711426,
+              "symmetry_absolute_error": 1.8477439880371094e-06,
+              "symmetry_relative_error": 4.2537122558506385e-06,
+              "value": -0.43438202142715454
+            },
+            {
+              "output_probe": 1,
+              "probe": 1,
+              "squared": 0.27081608515915434,
+              "value": -0.5203999280929565
+            },
+            {
+              "output_probe": 1,
+              "probe": 2,
+              "squared": 0.24381646829374404,
+              "value": -0.4937777519226074
+            },
+            {
+              "output_probe": 1,
+              "probe": 3,
+              "squared": 0.18016486958473266,
+              "value": 0.4244583249092102
+            }
+          ],
+          "zero_intervention_max_abs_error": 0.0
+        }
+      ],
+      "probe_position": 3,
+      "probe_text": "Jordan",
+      "probe_token": {
+        "decoded": " Jordan",
+        "id": 16586,
+        "offset": [
+          19,
+          26
+        ],
+        "token": "\u0120Jordan"
+      },
+      "prompt": "The athlete Michael Jordan plays the sport of"
+    }
+  ],
+  "metadata": {
+    "created_at": "2026-08-29T17:21:41.189922+00:00",
+    "cuda_runtime": "13.0",
+    "device": "cuda",
+    "estimator": "E[w,u,v](w^T H[u,v])^2 for total; d E[w,j](w^T H[e_j,e_j])^2 for diagonal",
+    "gpu": "Quadro RTX 8000",
+    "layers": [
+      12
+    ],
+    "model_dtype": "torch.float32",
+    "model_id": "Qwen/Qwen3.5-4B",
+    "model_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "platform": "Linux-6.17.10-100.fc41.x86_64-x86_64-with-glibc2.40",
+    "python": "3.13.9 (main, Oct 14 2025, 00:00:00) [GCC 14.3.1 20250808 (Red Hat 14.3.1-3)]",
+    "seed": 4,
+    "target_layer": 30,
+    "torch": "2.13.0+cu130",
+    "transformers": "5.16.1"
+  }
+}

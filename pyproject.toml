@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "j2-lens"
+version = "0.1.0"
+description = "Reproducible baselines for the J-squared lens project"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+  "huggingface-hub>=0.36",
+  "jlens @ git+https://github.com/anthropics/jacobian-lens.git@581d398613e5602a5af361e1c34d3a92ea82ba8e",
+  "torch>=2.8",
+  "transformers>=5.5",
+]
+
+[project.scripts]
+j2-baselines = "j2_lens.baselines:main"
+j2-curvature = "j2_lens.curvature:main"
+
+[dependency-groups]
+dev = ["pytest>=8.4", "ruff>=0.12"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/j2_lens"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["B", "E", "F", "I", "UP", "W"]
