@@ -20,6 +20,7 @@ j2-baselines = "j2_lens.baselines:main"
 j2-curvature = "j2_lens.curvature:main"
 j2-evaluate = "j2_lens.evaluation:main"
 j2-screen = "j2_lens.screening:main"
+j2-merge = "j2_lens.merge:main"
 
 [dependency-groups]
 dev = ["pytest>=8.4", "ruff>=0.12"]

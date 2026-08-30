@@ -751,21 +751,33 @@ def fit_forward_operator(
     target_layer: int,
     coordinate_batch_size: int,
     max_coordinates: int,
+    coordinate_offset: int = 0,
 ) -> dict[str, Any]:
-    """Compute every development-averaged diagonal with forward-mode AD."""
+    """Compute every development-averaged diagonal with forward-mode AD.
+
+    ``coordinate_offset`` selects the half-open coordinate range
+    ``[offset, offset + max_coordinates)``. Coordinates are independent, so a
+    long fit can be split into disjoint shards run concurrently on separate
+    GPUs and merged afterwards with ``j2-merge``.
+    """
     if coordinate_batch_size < 1:
         raise ValueError("coordinate_batch_size must be positive")
     if not 1 <= max_coordinates <= model.d_model:
         raise ValueError("max_coordinates must lie in [1, d_model]")
+    if not 0 <= coordinate_offset < model.d_model:
+        raise ValueError("coordinate_offset must lie in [0, d_model)")
+    stop = coordinate_offset + max_coordinates
+    if stop > model.d_model:
+        raise ValueError("coordinate shard runs past d_model")
     pair_input_ids, pair_positions, pair_ends = pad_pair_batch(prepared, pairs)
     rows: list[torch.Tensor] = []
     records: list[dict[str, Any]] = []
     started = time.perf_counter()
     n_pairs = len(pairs)
-    for batch_start in range(0, max_coordinates, coordinate_batch_size):
+    for batch_start in range(coordinate_offset, stop, coordinate_batch_size):
         batch_coordinates = torch.arange(
             batch_start,
-            min(batch_start + coordinate_batch_size, max_coordinates),
+            min(batch_start + coordinate_batch_size, stop),
             device=pair_input_ids.device,
         )
         n_coordinates = batch_coordinates.numel()
@@ -809,12 +821,12 @@ def fit_forward_operator(
         records.append(record)
         print(
             f"L{source_layer} forward coordinates {batch_start}:"
-            f"{batch_start + n_coordinates}/{max_coordinates} "
+            f"{batch_start + n_coordinates}/{stop} "
             f"rms={record['mean_curvature_rms']:.3e}",
             flush=True,
         )
     return {
-        "coordinates": torch.arange(max_coordinates),
+        "coordinates": torch.arange(coordinate_offset, stop),
         "diagonal_rows": torch.cat(rows, dim=0),
         "samples": records,
         "elapsed_seconds": time.perf_counter() - started,
@@ -1112,6 +1124,17 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--layer", action="append", type=int, default=[])
     parser.add_argument("--coordinate-batch-size", type=int, default=16)
     parser.add_argument("--max-coordinates", type=int)
+    parser.add_argument(
+        "--coordinate-offset",
+        type=int,
+        default=0,
+        help="first coordinate of this shard; see j2-merge to combine shards",
+    )
+    parser.add_argument(
+        "--fit-only",
+        action="store_true",
+        help="stop after fitting; skip held-out evaluation (for shard jobs)",
+    )
     parser.add_argument("--device", default="cuda")
     parser.add_argument("--offline", action="store_true")
     parser.add_argument(
@@ -1286,6 +1309,7 @@ def main(argv: list[str] | None = None) -> None:
                 target_layer=target_layer,
                 coordinate_batch_size=args.coordinate_batch_size,
                 max_coordinates=args.max_coordinates or model.d_model,
+                coordinate_offset=args.coordinate_offset,
             )
         elif args.estimator == "gaussian":
             operators[layer] = fit_diagonal_operator(
@@ -1324,19 +1348,6 @@ def main(argv: list[str] | None = None) -> None:
             flush=True,
         )
 
-    heldout = evaluate_heldout(
-        model,
-        tokenizer,
-        prepared,
-        config["heldout_case_ids"],
-        layers,
-        target_layer,
-        stats_by_layer,
-        operators,
-        lenses,
-        int(config["top_k"]),
-    )
-    aggregate = aggregate_results(heldout, layers)
     metadata = {
         "created_at": datetime.now(UTC).isoformat(),
         "python": sys.version,
@@ -1361,6 +1372,7 @@ def main(argv: list[str] | None = None) -> None:
         "effective_estimator": args.estimator,
         "effective_coordinate_batch_size": args.coordinate_batch_size,
         "effective_max_coordinates": args.max_coordinates or model.d_model,
+        "effective_coordinate_offset": args.coordinate_offset,
         "hessian_scalar_calibration": None,
         "reused_operator": reused_from,
         "development_corpus": corpus_metadata,
@@ -1412,6 +1424,26 @@ def main(argv: list[str] | None = None) -> None:
         "size_bytes": args.artifact.stat().st_size,
         "sha256": sha256_file(args.artifact),
     }
+    if args.fit_only:
+        print(
+            f"Wrote {args.artifact} (fit only; merge shards with j2-merge)",
+            flush=True,
+        )
+        return
+
+    heldout = evaluate_heldout(
+        model,
+        tokenizer,
+        prepared,
+        config["heldout_case_ids"],
+        layers,
+        target_layer,
+        stats_by_layer,
+        operators,
+        lenses,
+        int(config["top_k"]),
+    )
+    aggregate = aggregate_results(heldout, layers)
 
     payload = {
         "metadata": metadata,
