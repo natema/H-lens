@@ -35,6 +35,15 @@ from j2_lens.baselines import (
     rank_and_topk,
     sha256_file,
 )
+from j2_lens.development import (
+    DEFAULT_N_DOCS,
+    DEFAULT_T_MAX,
+    PILE_FILE,
+    PILE_REPO_ID,
+    PILE_REVISION,
+    build_development_cases,
+    load_pile_documents,
+)
 
 
 def valid_positions(seq_len: int, skip_first: int) -> list[int]:
@@ -102,10 +111,19 @@ def cosine_similarity(prediction: torch.Tensor, target: torch.Tensor) -> float:
 def load_split(path: Path, cases: list[BaselineCase]) -> dict[str, Any]:
     config = json.loads(path.read_text())
     known = {case.id for case in cases}
-    development = list(config["development_case_ids"])
+    development = list(config.get("development_case_ids", []))
     heldout = list(config["heldout_case_ids"])
-    if not development or not heldout:
-        raise ValueError("development and held-out splits must be nonempty")
+    source = config.get("development_source", "cases")
+    if source not in ("cases", "pile"):
+        raise ValueError(f"unknown development_source {source!r}")
+    if source == "cases" and not development:
+        raise ValueError("development split must be nonempty")
+    if source == "pile" and development:
+        raise ValueError(
+            "a pile development corpus must not also list development_case_ids"
+        )
+    if not heldout:
+        raise ValueError("held-out split must be nonempty")
     if set(development) & set(heldout):
         raise ValueError("development and held-out cases must be disjoint")
     unknown = (set(development) | set(heldout)) - known
@@ -157,6 +175,56 @@ def capture_activations(
     return {layer: recorder.activations[layer].detach() for layer in layers}
 
 
+def pad_pair_batch(
+    prepared: dict[str, dict[str, Any]],
+    pairs: list[tuple[str, int]],
+    pad_id: int = 0,
+) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
+    """Right-pad the development prompts into one rectangular batch.
+
+    Returns the padded ``input_ids``, the probed ``positions``, and the
+    per-row exclusive reduction end ``length - 1``.
+
+    Right padding is exact rather than approximate here: attention is causal,
+    so a real position never attends to a token that follows it, and the
+    reduction stops at each row's own penultimate token. The residuals at the
+    positions actually read are therefore bit-identical to an unpadded forward
+    pass, and ``pad_id`` cannot affect the result.
+    """
+    lengths = [int(prepared[case_id]["input_ids"].shape[1]) for case_id, _ in pairs]
+    width = max(lengths)
+    device = prepared[pairs[0][0]]["input_ids"].device
+    padded = torch.full(
+        (len(pairs), width), pad_id, dtype=torch.long, device=device
+    )
+    for row, ((case_id, _), length) in enumerate(zip(pairs, lengths, strict=True)):
+        padded[row, :length] = prepared[case_id]["input_ids"][0, :length]
+    positions = torch.tensor(
+        [position for _, position in pairs], dtype=torch.long, device=device
+    )
+    ends = torch.tensor(
+        [length - 1 for length in lengths], dtype=torch.long, device=device
+    )
+    if not bool((positions < ends).all()):
+        raise ValueError("every probed position must precede its reduction end")
+    return padded, positions, ends
+
+
+def reduce_target_sums(
+    target: torch.Tensor, positions: torch.Tensor, ends: torch.Tensor
+) -> torch.Tensor:
+    """Sum target-layer residuals over ``[position, end)`` for each row.
+
+    ``ends`` is per row, so prompts of different lengths may share a batch:
+    each row stops at its own penultimate token instead of at the padded
+    batch width. Built as a mask-and-matmul so it stays differentiable under
+    ``torch.func.jvp``.
+    """
+    index = torch.arange(target.shape[1], device=target.device)[None, :]
+    mask = (index >= positions[:, None]) & (index < ends[:, None])
+    return (target * mask[:, :, None].to(target.dtype)).sum(dim=1)
+
+
 def intervened_target_sum(
     model: Any,
     input_ids: torch.Tensor,
@@ -185,9 +253,12 @@ def batched_intervened_target_sums(
     positions: torch.Tensor,
     coordinates: torch.Tensor,
     step: float,
+    ends: torch.Tensor,
 ) -> torch.Tensor:
     if input_ids.shape[0] != positions.numel() or positions.shape != coordinates.shape:
         raise ValueError("batched interventions must have one position and coordinate")
+    if ends.shape != positions.shape:
+        raise ValueError("batched interventions must have one end per row")
 
     def hook(module: Any, inputs: Any, output: Any) -> Any:
         hidden = output if torch.is_tensor(output) else output[0]
@@ -211,12 +282,7 @@ def batched_intervened_target_sums(
     finally:
         handle.remove()
     target = recorder.activations[target_layer].detach().float()
-    return torch.stack(
-        [
-            target[row, int(position) : input_ids.shape[1] - 1].sum(dim=0)
-            for row, position in enumerate(positions.tolist())
-        ]
-    )
+    return reduce_target_sums(target, positions, ends)
 
 
 def batched_forward_diagonal_curvature(
@@ -227,6 +293,7 @@ def batched_forward_diagonal_curvature(
     target_layer: int,
     positions: torch.Tensor,
     directions: torch.Tensor,
+    ends: torch.Tensor,
 ) -> torch.Tensor:
     """Return vector-valued ``H[e_j,e_j]`` using forward-over-forward AD."""
     if input_ids.shape[0] != positions.numel() or directions.shape != (
@@ -234,6 +301,8 @@ def batched_forward_diagonal_curvature(
         model.d_model,
     ):
         raise ValueError("forward directions must match the intervention batch")
+    if ends.shape != positions.shape:
+        raise ValueError("forward directions must have one end per row")
 
     def downstream(perturbations: torch.Tensor) -> torch.Tensor:
         def hook(module: Any, inputs: Any, output: Any) -> Any:
@@ -257,12 +326,7 @@ def batched_forward_diagonal_curvature(
         finally:
             handle.remove()
         target = recorder.activations[target_layer].float()
-        return torch.stack(
-            [
-                target[row, int(position) : input_ids.shape[1] - 1].sum(dim=0)
-                for row, position in enumerate(positions.tolist())
-            ]
-        )
+        return reduce_target_sums(target, positions, ends)
 
     zero = torch.zeros_like(directions)
 
@@ -292,6 +356,7 @@ def batched_coordinate_curvature(
     step: float,
     n_coordinates: int,
     n_pairs: int,
+    ends: torch.Tensor,
 ) -> torch.Tensor:
     plus = batched_intervened_target_sums(
         model,
@@ -301,6 +366,7 @@ def batched_coordinate_curvature(
         positions=positions,
         coordinates=coordinates,
         step=step,
+        ends=ends,
     )
     minus = batched_intervened_target_sums(
         model,
@@ -310,6 +376,7 @@ def batched_coordinate_curvature(
         positions=positions,
         coordinates=coordinates,
         step=-step,
+        ends=ends,
     )
     per_pair = (plus - 2 * repeated_clean + minus) / (step * step)
     return per_pair.reshape(n_coordinates, n_pairs, model.d_model).mean(dim=1)
@@ -366,6 +433,56 @@ def prepare_cases(
             "activations": capture_activations(model, input_ids, record_layers),
         }
     return prepared
+
+
+def prepare_development_cases(
+    model: Any,
+    tokenizer: Any,
+    corpus: list[dict[str, Any]],
+    layers: list[int],
+    target_layer: int,
+) -> dict[str, dict[str, Any]]:
+    """Prepare corpus documents used only to estimate moments and curvature.
+
+    Unlike evaluation cases these have no probe span and no target token, so
+    they skip ``encode_case`` entirely. Only ``input_ids`` and the recorded
+    activations are needed downstream.
+    """
+    prepared: dict[str, dict[str, Any]] = {}
+    record_layers = sorted({*layers, target_layer, model.n_layers - 1})
+    for document in corpus:
+        input_ids = model.encode(document["prompt"], max_length=512)
+        if input_ids.shape[1] < 8:
+            continue
+        prepared[document["id"]] = {
+            "case": None,
+            "tokenization": None,
+            "input_ids": input_ids,
+            "activations": capture_activations(model, input_ids, record_layers),
+        }
+    if not prepared:
+        raise ValueError("no usable development documents after encoding")
+    return prepared
+
+
+def subsample_pairs(
+    pairs: list[tuple[str, int]], limit: int | None, seed: int
+) -> list[tuple[str, int]]:
+    """Take a deterministic, spread-out subsample of development pairs.
+
+    The averaged Hessian costs one forward-over-forward pass per (coordinate,
+    pair), so its sample count is the binding compute constraint while the
+    activation moments are nearly free. Subsampling here lets the moments use
+    every pair while the curvature average uses as many as the budget allows.
+    """
+    if limit is None or limit >= len(pairs):
+        return list(pairs)
+    if limit < 1:
+        raise ValueError("hessian pair limit must be positive")
+    generator = torch.Generator()
+    generator.manual_seed(seed)
+    order = torch.randperm(len(pairs), generator=generator)[:limit]
+    return [pairs[index] for index in sorted(order.tolist())]
 
 
 def development_statistics(
@@ -520,19 +637,7 @@ def fit_coordinate_operator(
         raise ValueError("coordinate_batch_size must be positive")
     if not 1 <= max_coordinates <= model.d_model:
         raise ValueError("max_coordinates must lie in [1, d_model]")
-    sequence_lengths = {
-        int(prepared[case_id]["input_ids"].shape[1]) for case_id, _ in pairs
-    }
-    if len(sequence_lengths) != 1:
-        raise ValueError("batched coordinate estimator requires equal prompt lengths")
-    pair_input_ids = torch.cat(
-        [prepared[case_id]["input_ids"] for case_id, _ in pairs], dim=0
-    )
-    pair_positions = torch.tensor(
-        [position for _, position in pairs],
-        device=pair_input_ids.device,
-        dtype=torch.long,
-    )
+    pair_input_ids, pair_positions, pair_ends = pad_pair_batch(prepared, pairs)
     clean_sums = torch.stack(
         [
             prepared[case_id]["activations"][target_layer][
@@ -556,6 +661,7 @@ def fit_coordinate_operator(
         n_coordinates = batch_coordinates.numel()
         input_ids = pair_input_ids.repeat(n_coordinates, 1)
         positions = pair_positions.repeat(n_coordinates)
+        ends = pair_ends.repeat(n_coordinates)
         coordinates = batch_coordinates.repeat_interleave(n_pairs)
         repeated_clean = clean_sums.repeat(n_coordinates, 1)
 
@@ -570,6 +676,7 @@ def fit_coordinate_operator(
             step=epsilon,
             n_coordinates=n_coordinates,
             n_pairs=n_pairs,
+            ends=ends,
         )
         record: dict[str, Any] = {
             "coordinate_start": batch_start,
@@ -590,6 +697,7 @@ def fit_coordinate_operator(
                 step=epsilon / 2,
                 n_coordinates=n_coordinates,
                 n_pairs=n_pairs,
+                ends=ends,
             )
             per_coordinate_norm = torch.linalg.vector_norm(half_curvature, dim=1)
             per_coordinate_error = torch.linalg.vector_norm(
@@ -649,19 +757,7 @@ def fit_forward_operator(
         raise ValueError("coordinate_batch_size must be positive")
     if not 1 <= max_coordinates <= model.d_model:
         raise ValueError("max_coordinates must lie in [1, d_model]")
-    sequence_lengths = {
-        int(prepared[case_id]["input_ids"].shape[1]) for case_id, _ in pairs
-    }
-    if len(sequence_lengths) != 1:
-        raise ValueError("batched forward estimator requires equal prompt lengths")
-    pair_input_ids = torch.cat(
-        [prepared[case_id]["input_ids"] for case_id, _ in pairs], dim=0
-    )
-    pair_positions = torch.tensor(
-        [position for _, position in pairs],
-        device=pair_input_ids.device,
-        dtype=torch.long,
-    )
+    pair_input_ids, pair_positions, pair_ends = pad_pair_batch(prepared, pairs)
     rows: list[torch.Tensor] = []
     records: list[dict[str, Any]] = []
     started = time.perf_counter()
@@ -675,6 +771,7 @@ def fit_forward_operator(
         n_coordinates = batch_coordinates.numel()
         input_ids = pair_input_ids.repeat(n_coordinates, 1)
         positions = pair_positions.repeat(n_coordinates)
+        ends = pair_ends.repeat(n_coordinates)
         coordinates = batch_coordinates.repeat_interleave(n_pairs)
         directions = torch.zeros(
             input_ids.shape[0],
@@ -692,6 +789,7 @@ def fit_forward_operator(
             target_layer=target_layer,
             positions=positions,
             directions=directions,
+            ends=ends,
         )
         curvature = per_pair.reshape(
             n_coordinates, n_pairs, model.d_model
@@ -743,10 +841,18 @@ def load_reusable_operators(
     stored = artifact["metadata"]
     stored_split = stored["split"]
     mismatches = []
-    if list(stored_split["development_case_ids"]) != list(
-        config["development_case_ids"]
+    if list(stored_split.get("development_case_ids", [])) != list(
+        config.get("development_case_ids", [])
     ):
         mismatches.append("development_case_ids")
+    if stored_split.get("development_source", "cases") != config.get(
+        "development_source", "cases"
+    ):
+        mismatches.append("development_source")
+    stored_corpus = stored.get("development_corpus")
+    if stored_corpus is not None:
+        if stored_corpus.get("revision") != PILE_REVISION:
+            mismatches.append("development_corpus_revision")
     if int(stored_split["target_layer"]) != int(config["target_layer"]):
         mismatches.append("target_layer")
     if int(stored_split["skip_first"]) != int(config["skip_first"]):
@@ -1014,6 +1120,24 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         default=root / "results" / "hessian_lens_qwen3.5-4b.pt",
     )
     parser.add_argument(
+        "--pile-docs",
+        type=int,
+        help="number of pile-10k documents for a corpus development set",
+    )
+    parser.add_argument(
+        "--pile-t-max",
+        type=int,
+        help="token budget per development document (J-lens used 128)",
+    )
+    parser.add_argument(
+        "--hessian-pairs",
+        type=int,
+        help=(
+            "cap the (document, position) samples used for the averaged "
+            "Hessian; the activation moments always use every pair"
+        ),
+    )
+    parser.add_argument(
         "--reuse-artifact",
         type=Path,
         help=(
@@ -1055,7 +1179,7 @@ def main(argv: list[str] | None = None) -> None:
     if args.device.startswith("cuda") and not torch.cuda.is_available():
         raise RuntimeError("CUDA requested but unavailable")
 
-    selected_ids = set(config["development_case_ids"]) | set(
+    selected_ids = set(config.get("development_case_ids", [])) | set(
         config["heldout_case_ids"]
     )
     cases = [case for case in all_cases if case.id in selected_ids]
@@ -1082,12 +1206,54 @@ def main(argv: list[str] | None = None) -> None:
     pair_checks = check_lens_pair(lenses, lens_metadata)
 
     prepared = prepare_cases(model, tokenizer, cases, layers, target_layer)
+    corpus_metadata: dict[str, Any] | None = None
+    if config.get("development_source") == "pile":
+        n_docs = args.pile_docs or int(config.get("pile_docs", DEFAULT_N_DOCS))
+        t_max = args.pile_t_max or int(config.get("pile_t_max", DEFAULT_T_MAX))
+        documents = load_pile_documents(n_docs, offline=args.offline)
+        corpus = build_development_cases(documents, tokenizer, t_max=t_max)
+        prepared.update(
+            prepare_development_cases(
+                model, tokenizer, corpus, layers, target_layer
+            )
+        )
+        development_case_ids = [
+            document["id"] for document in corpus if document["id"] in prepared
+        ]
+        corpus_metadata = {
+            "source": "pile",
+            "repo_id": PILE_REPO_ID,
+            "revision": PILE_REVISION,
+            "file": PILE_FILE,
+            "n_docs_requested": n_docs,
+            "t_max": t_max,
+            "document_ids": development_case_ids,
+            "token_lengths": [
+                int(prepared[case_id]["input_ids"].shape[1])
+                for case_id in development_case_ids
+            ],
+        }
+    else:
+        development_case_ids = list(config["development_case_ids"])
+
     stats_by_layer, development_pairs = development_statistics(
         prepared,
-        config["development_case_ids"],
+        development_case_ids,
         layers,
         target_layer,
         int(config["skip_first"]),
+    )
+    hessian_limit = args.hessian_pairs or config.get("hessian_pairs")
+    hessian_pairs = subsample_pairs(
+        development_pairs,
+        int(hessian_limit) if hessian_limit else None,
+        int(config["seed"]),
+    )
+    print(
+        f"Development: {len(development_case_ids)} documents, "
+        f"{len(development_pairs)} pairs for moments, "
+        f"{len(hessian_pairs)} pairs for the averaged Hessian",
+        flush=True,
     )
     generator = torch.Generator(device=args.device)
     generator.manual_seed(int(config["seed"]))
@@ -1115,7 +1281,7 @@ def main(argv: list[str] | None = None) -> None:
             operators[layer] = fit_forward_operator(
                 model,
                 prepared,
-                development_pairs,
+                hessian_pairs,
                 source_layer=layer,
                 target_layer=target_layer,
                 coordinate_batch_size=args.coordinate_batch_size,
@@ -1125,7 +1291,7 @@ def main(argv: list[str] | None = None) -> None:
             operators[layer] = fit_diagonal_operator(
                 model,
                 prepared,
-                development_pairs,
+                hessian_pairs,
                 source_layer=layer,
                 target_layer=target_layer,
                 directions=directions,
@@ -1137,7 +1303,7 @@ def main(argv: list[str] | None = None) -> None:
             operators[layer] = fit_coordinate_operator(
                 model,
                 prepared,
-                development_pairs,
+                hessian_pairs,
                 source_layer=layer,
                 target_layer=target_layer,
                 epsilon=epsilon,
@@ -1197,6 +1363,10 @@ def main(argv: list[str] | None = None) -> None:
         "effective_max_coordinates": args.max_coordinates or model.d_model,
         "hessian_scalar_calibration": None,
         "reused_operator": reused_from,
+        "development_corpus": corpus_metadata,
+        "development_case_ids": development_case_ids,
+        "n_moment_pairs": len(development_pairs),
+        "n_hessian_pairs": len(hessian_pairs),
         "quadratic_coefficient": 0.5,
         "diagonal_estimator": (
             "Forward: compute all vector-valued H[e_j,e_j] by nested JVPs. "

@@ -48,3 +48,14 @@ In the meantime, the calculation with autodiff finished. Let's see if anything c
 ## 2026-08-30 17:39
 We switched to Claude right now (instead of buing pro/max of one of them, we bought the cheap ones of both atm). 
 We are enlarging the battery of tests, adding those used to compare R-lens and J-lens. 
+
+## 2026-08-30 18:00
+Our battery of test now has ~30 cases taken from the R-lens work. 
+To do a serious falsification, we need to recompute the diagonal H at layer 12 (so far we did it at layer 6). 
+This will take ~30m probably. We will work on a systematic falsification why we think if we might be missing a proper implementation of the idea of leveraging the Hessian. 
+>4h into the project so far. 
+
+## 2026-08-30 18:19
+Well, regarding how the J-lens is computed... it turns out that the number of input-output token pairs I was using for estimating the diagonal Hessian was redicolously small compared to the thousend of pairs used for the J-lens... my bad, I trusted Codex too naively. 
+We are now scheduling a job on the Jean Zay cluster to compute the H-lens in a decently noise-robust way.
+Towards 4h30 into the project. 

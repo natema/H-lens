@@ -8,6 +8,7 @@ from j2_lens.evaluation import (
     apply_diagonal_operator,
     apply_low_rank_diagonal,
     batched_forward_diagonal_curvature,
+    reduce_target_sums,
     valid_positions,
 )
 
@@ -84,5 +85,100 @@ def test_forward_over_forward_returns_vector_hessian_diagonal() -> None:
         target_layer=1,
         positions=positions,
         directions=directions,
+        ends=torch.tensor([2, 2]),
     )
     assert torch.equal(result, torch.tensor([[12.0, 0.0], [0.0, 114.0]]))
+
+
+def test_reduce_target_sums_respects_per_row_end() -> None:
+    target = torch.tensor(
+        [
+            [[1.0, 1.0], [2.0, 2.0], [4.0, 4.0], [8.0, 8.0]],
+            [[1.0, 1.0], [2.0, 2.0], [4.0, 4.0], [8.0, 8.0]],
+        ]
+    )
+    result = reduce_target_sums(
+        target, positions=torch.tensor([0, 1]), ends=torch.tensor([2, 4])
+    )
+    # Row 0 stops at its own penultimate token; row 1 runs further.
+    assert torch.equal(result, torch.tensor([[3.0, 3.0], [14.0, 14.0]]))
+
+
+class _CausalMixLayer(nn.Module):
+    """Crude causal mixer: position i depends only on positions <= i."""
+
+    def forward(self, hidden: torch.Tensor) -> torch.Tensor:
+        return torch.cumsum(hidden, dim=1)
+
+
+class _ToyCausalModel:
+    d_model = 2
+
+    def __init__(self) -> None:
+        self.layers = nn.ModuleList([_IdentityLayer(), _CausalMixLayer(), _CubeLayer()])
+
+    def forward(self, values: torch.Tensor) -> torch.Tensor:
+        hidden = values
+        for layer in self.layers:
+            hidden = layer(hidden)
+        return hidden
+
+
+def test_right_padding_does_not_change_mixed_length_curvature() -> None:
+    """A padded mixed-length batch must equal per-prompt unpadded results.
+
+    This is the property that lets the development set contain prompts of
+    different lengths: under causal mixing, a real position never sees the
+    padding, and each row's reduction stops at its own penultimate token.
+    """
+    model = _ToyCausalModel()
+    short = torch.tensor([[[2.0, 3.0], [5.0, 7.0], [1.0, 4.0]]])
+    long = torch.tensor(
+        [[[11.0, 13.0], [17.0, 19.0], [23.0, 29.0], [31.0, 37.0], [41.0, 43.0]]]
+    )
+    kwargs = {"source_layer": 0, "target_layer": 2}
+
+    separate = [
+        batched_forward_diagonal_curvature(
+            model,
+            values,
+            positions=torch.tensor([1]),
+            directions=torch.tensor([[1.0, 0.0]]),
+            ends=torch.tensor([values.shape[1] - 1]),
+            **kwargs,
+        )
+        for values in (short, long)
+    ]
+
+    width = long.shape[1]
+    padded = torch.zeros(2, width, 2)
+    padded[0, : short.shape[1]] = short[0]
+    padded[1] = long[0]
+    together = batched_forward_diagonal_curvature(
+        model,
+        padded,
+        positions=torch.tensor([1, 1]),
+        directions=torch.tensor([[1.0, 0.0], [1.0, 0.0]]),
+        ends=torch.tensor([short.shape[1] - 1, long.shape[1] - 1]),
+        **kwargs,
+    )
+
+    assert torch.allclose(together[0], separate[0][0])
+    assert torch.allclose(together[1], separate[1][0])
+
+
+def test_padding_value_cannot_affect_the_result() -> None:
+    model = _ToyCausalModel()
+    base = torch.tensor([[[2.0, 3.0], [5.0, 7.0], [1.0, 4.0], [0.0, 0.0]]])
+    noisy = base.clone()
+    noisy[0, 3] = torch.tensor([99.0, -50.0])
+    kwargs = {
+        "source_layer": 0,
+        "target_layer": 2,
+        "positions": torch.tensor([1]),
+        "directions": torch.tensor([[1.0, 0.0]]),
+        "ends": torch.tensor([2]),
+    }
+    quiet = batched_forward_diagonal_curvature(model, base, **kwargs)
+    loud = batched_forward_diagonal_curvature(model, noisy, **kwargs)
+    assert torch.equal(quiet, loud)
