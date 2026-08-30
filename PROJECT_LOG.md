@@ -59,3 +59,17 @@ This will take ~30m probably. We will work on a systematic falsification why we 
 Well, regarding how the J-lens is computed... it turns out that the number of input-output token pairs I was using for estimating the diagonal Hessian was redicolously small compared to the thousend of pairs used for the J-lens... my bad, I trusted Codex too naively. 
 We are now scheduling a job on the Jean Zay cluster to compute the H-lens in a decently noise-robust way.
 Towards 4h30 into the project. 
+
+## 2026-08-30 18:43
+5h into the project. 
+Doing a serious fit of the H-lens will only cost few hours on a H100, so we scheduled that job. 
+The result can be predicted to be solidly negative. The Hessian/curvature provide qualitatively different information, parhaps. 
+We'll think about it while the H-lens is computed. 
+
+## 2026-08-30 18:56
+Important note: it looks like we don't have a good dataset of examples of failures for the J-lens. 
+When we are confident that the H-lens idea fails, if we still have time, we could dedicate the rest of the time to try to build such dataset, maybe adding a new model like Qwen3.8-27B who is making headlines as a strong model. 
+
+## 2026-08-30 19:27
+I spent 30 more minutes on checking the experiments that I'm running on the cluster, so I guess I should add that on the project time. 
+5h30. 

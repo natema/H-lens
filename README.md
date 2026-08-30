@@ -244,3 +244,74 @@ an H100 (`j2_fit.slurm`, Jean Zay `gpu_p6`) rather than locally. Batch rows are
 `coordinate_batch_size x hessian_pairs` full-length sequences and
 forward-over-forward roughly triples activation memory, so the coordinate batch
 must stay small.
+
+## Result with the pretraining-fitted correction
+
+Fitted on Jean Zay (`gpu_p6`, H100): four coordinate shards per layer,
+2,947 moment pairs and 128 Hessian pairs, about 28 GPU-hours total. All 33
+battery cases held out.
+
+**Layer 6**
+
+| method | geo-mean rank | median | pass@10 | pass@100 |
+|---|---:|---:|---:|---:|
+| logit lens | 3730.6 | 9733 | 6.1% | 21.2% |
+| J-lens | 1249.3 | 967 | 9.1% | 24.2% |
+| J² (real diagonal) | 842.6 | 396 | 12.1% | 30.3% |
+| J² (shuffled control) | 908.9 | 573 | 12.1% | 30.3% |
+| R-lens | 629.9 | 480 | 15.2% | 33.3% |
+
+**Layer 12**
+
+| method | geo-mean rank | median | pass@10 | pass@100 |
+|---|---:|---:|---:|---:|
+| logit lens | 12871.2 | 26626 | 0.0% | 6.1% |
+| J-lens | 177.6 | 154 | 24.2% | 48.5% |
+| J² (real diagonal) | 159.9 | 84 | 21.2% | 51.5% |
+| J² (shuffled control) | 151.6 | 103 | 24.2% | 48.5% |
+| R-lens | 202.2 | 191 | 18.2% | 45.5% |
+
+**The sample size did matter.** On the cases common to both runs, the
+eight-sample fit gave J² a geometric-mean rank of 1775.3 at layer 6 and 223.7 at
+layer 12; the properly fitted correction gives 1050.2 and 190.1. J-lens and
+R-lens are unchanged to the digit, as they must be, which also confirms the
+pipeline is deterministic. The earlier "J² is worse than J-lens" reading was an
+artifact of estimating mu, the variance, and the Hessian from eight vectors.
+
+**But the correction still shows no curvature signal.** Against J-lens, J² wins
+21 and loses 12 at layer 6 (sign test p = 0.16) and wins 16 and loses 11 at
+layer 12 (p = 0.44) — neither significant. The coordinate-shuffled control wins
+*more*, and significantly: 25-7 (p = 0.0021) at layer 6 and 23-5 (p = 0.0009) at
+layer 12. Head to head, the real diagonal does not beat its own shuffled version
+at either layer (layer 6: 16-14 for real, p = 0.86; layer 12: 8-19 against real,
+p = 0.052).
+
+So a correction of this form and magnitude does improve the rank readout, but
+scrambling which curvature vector belongs to which coordinate does not remove
+the improvement — and at layer 12 slightly increases it. The gain is not
+attributable to coordinate-specific curvature. This is the "apparent gains come
+only from an intercept, rescaling, or extra capacity" alternative in
+`PROJECT_IDEA.md`, not the primary hypothesis.
+
+The development-set number points the same way. On the very data the operator
+was estimated from, the normalized residual error rises rather than falls, at
+both layers and for both the real and the shuffled correction:
+
+| | J-lens | J² real | J² shuffled |
+|---|---:|---:|---:|
+| layer 6 | 0.972865 | 0.973037 | 0.973053 |
+| layer 12 | 0.935327 | 0.935511 | 0.935559 |
+
+With the Taylor coefficient fixed at 1/2 there is no freedom to overfit, so the
+second-order term is genuinely harmful to the approximation it is supposed to
+improve, while helping a rank readout for reasons unrelated to curvature.
+
+### Limitation of the control
+
+`j2_shuffled` is a single deterministic `torch.roll` of the diagonal rows by one
+coordinate. It preserves the row-norm distribution and destroys the coordinate
+correspondence, which is the right null, but it is one draw rather than a
+reference distribution. The comparisons above should be repeated over many
+random permutations before the sharpest claim — that shuffling is no worse than
+the real diagonal — is treated as quantitative rather than directional. This
+needs no new model passes, only repeated readouts.
