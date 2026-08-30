@@ -1,0 +1,573 @@
+{
+  "metadata": {
+    "created_at": "2026-08-30T15:44:30.489681+00:00",
+    "python": "3.13.9 (main, Oct 14 2025, 00:00:00) [GCC 14.3.1 20250808 (Red Hat 14.3.1-3)]",
+    "platform": "Linux-6.17.10-100.fc41.x86_64-x86_64-with-glibc2.40",
+    "torch": "2.13.0+cu130",
+    "transformers": "5.16.1",
+    "model_id": "Qwen/Qwen3.5-4B",
+    "model_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "device": "cuda",
+    "dry_run": false,
+    "max_new_tokens": 32,
+    "n_candidates": 35,
+    "n_accepted": 33
+  },
+  "candidates": [
+    {
+      "id": "multihop_sushi",
+      "category": "multihop",
+      "source": "R-lens post, multihop category",
+      "accepted": true,
+      "rejection_reasons": [],
+      "probe_position": 6,
+      "probe_token": " sushi",
+      "span_token_indices": [
+        6
+      ],
+      "target_token": " Japan",
+      "n_prompt_tokens": 9,
+      "continuation": " Tokyo.\nA. True\nB. False\n\n<think>\nThinking Process:\n\n1.  **Analyze the Request:** The user is asking a true",
+      "expected_answer": "Tokyo",
+      "answered_correctly": true
+    },
+    {
+      "id": "multihop_mars",
+      "category": "multihop",
+      "source": "R-lens post, multihop category",
+      "accepted": true,
+      "rejection_reasons": [],
+      "probe_position": 8,
+      "probe_token": " Sun",
+      "span_token_indices": [
+        8
+      ],
+      "target_token": " Mars",
+      "n_prompt_tokens": 10,
+      "continuation": "\n\nA. Red\nB. Reddish\nC. Blue\nD. Blueish\n\n<think>\nThe user is asking for the color of the planet that",
+      "expected_answer": "red",
+      "answered_correctly": true
+    },
+    {
+      "id": "multihop_eiffel",
+      "category": "multihop",
+      "source": "written for this project",
+      "accepted": true,
+      "rejection_reasons": [],
+      "probe_position": 9,
+      "probe_token": " Tower",
+      "span_token_indices": [
+        9
+      ],
+      "target_token": " France",
+      "n_prompt_tokens": 13,
+      "continuation": " euro.\n\nThe Eiffel Tower is located in Paris, France. France is a member of the Eurozone, which means it uses the euro (\u20ac)",
+      "expected_answer": "euro",
+      "answered_correctly": true
+    },
+    {
+      "id": "multihop_tango",
+      "category": "multihop",
+      "source": "written for this project",
+      "accepted": true,
+      "rejection_reasons": [],
+      "probe_position": 8,
+      "probe_token": "ango",
+      "span_token_indices": [
+        7,
+        8
+      ],
+      "target_token": " Argentina",
+      "n_prompt_tokens": 11,
+      "continuation": " Buenos Aires.\nA. True\nB. False\n\n<think>\nThinking Process:\n\n1.  **Analyze the Request:** The user is asking a",
+      "expected_answer": "Buenos",
+      "answered_correctly": true
+    },
+    {
+      "id": "multihop_pyramids",
+      "category": "multihop",
+      "source": "written for this project",
+      "accepted": true,
+      "rejection_reasons": [],
+      "probe_position": 12,
+      "probe_token": "iza",
+      "span_token_indices": [
+        11,
+        12
+      ],
+      "target_token": " Egypt",
+      "n_prompt_tokens": 15,
+      "continuation": ":\nA. English\nB. French\nC. Arabic\nD. Spanish\n\n<think>\nThinking Process:\n\n1.  **Analyze the Request",
+      "expected_answer": "Arabic",
+      "answered_correctly": true
+    },
+    {
+      "id": "multihop_kangaroo",
+      "category": "multihop",
+      "source": "written for this project",
+      "accepted": true,
+      "rejection_reasons": [],
+      "probe_position": 8,
+      "probe_token": "aroo",
+      "span_token_indices": [
+        7,
+        8
+      ],
+      "target_token": " Australia",
+      "n_prompt_tokens": 12,
+      "continuation": " ___\nA. Canberra\nB. Sydney\nC. Melbourne\nD. Perth\n\n<think>\nThinking Process:\n\n1.  **Analyze the Request",
+      "expected_answer": "Canberra",
+      "answered_correctly": true
+    },
+    {
+      "id": "multihop_hollywood",
+      "category": "multihop",
+      "source": "written for this project",
+      "accepted": true,
+      "rejection_reasons": [],
+      "probe_position": 6,
+      "probe_token": " Hollywood",
+      "span_token_indices": [
+        6
+      ],
+      "target_token": " California",
+      "n_prompt_tokens": 10,
+      "continuation": " ___.\nA. Sacramento\nB. Los Angeles\nC. San Francisco\nD. San Diego\n\n<think>\nThinking Process:\n\n1.  **",
+      "expected_answer": "Sacramento",
+      "answered_correctly": true
+    },
+    {
+      "id": "multihop_samba",
+      "category": "multihop",
+      "source": "written for this project",
+      "accepted": true,
+      "rejection_reasons": [],
+      "probe_position": 7,
+      "probe_token": " samba",
+      "span_token_indices": [
+        7
+      ],
+      "target_token": " Brazil",
+      "n_prompt_tokens": 10,
+      "continuation": " known as\nA. Rio de Janeiro\nB. Salvador\nC. S\u00e3o Paulo\nD. Bras\u00edlia\n\n<think>\nThe user is asking for the capital of",
+      "expected_answer": "Bras",
+      "answered_correctly": true
+    },
+    {
+      "id": "multihop_pizza",
+      "category": "multihop",
+      "source": "written for this project",
+      "accepted": true,
+      "rejection_reasons": [],
+      "probe_position": 6,
+      "probe_token": " pizza",
+      "span_token_indices": [
+        6
+      ],
+      "target_token": " Italy",
+      "n_prompt_tokens": 11,
+      "continuation": " ________.\n\n<think>\n\n</think>\n\nPizza was invented in **Italy**, specifically in the region of Naples. The official currency of Italy is the **euro** (",
+      "expected_answer": "euro",
+      "answered_correctly": true
+    },
+    {
+      "id": "multihop_shakespeare",
+      "category": "multihop",
+      "source": "written for this project",
+      "accepted": true,
+      "rejection_reasons": [],
+      "probe_position": 6,
+      "probe_token": " Shakespeare",
+      "span_token_indices": [
+        6
+      ],
+      "target_token": " England",
+      "n_prompt_tokens": 10,
+      "continuation": " London.\nA. True\nB. False\n\n<think>\nThinking Process:\n\n1.  **Analyze the Request:** The user is presenting a statement",
+      "expected_answer": "London",
+      "answered_correctly": true
+    },
+    {
+      "id": "multilingual_grande",
+      "category": "multilingual",
+      "source": "R-lens post, multilingual category",
+      "accepted": true,
+      "rejection_reasons": [],
+      "probe_position": 5,
+      "probe_token": "grande",
+      "span_token_indices": [
+        5
+      ],
+      "target_token": " small",
+      "n_prompt_tokens": 8,
+      "continuation": " 'peque\u00f1o'\nA. \u6b63\u786e\nB. \u9519\u8bef\n\n<think>\nThinking Process:\n\n1.  **Analyze the Request:**\n",
+      "expected_answer": "peque",
+      "answered_correctly": true
+    },
+    {
+      "id": "multilingual_chaud",
+      "category": "multilingual",
+      "source": "written for this project",
+      "accepted": true,
+      "rejection_reasons": [],
+      "probe_position": 5,
+      "probe_token": "ud",
+      "span_token_indices": [
+        4,
+        5
+      ],
+      "target_token": " cold",
+      "n_prompt_tokens": 8,
+      "continuation": " 'froid'\nA. Vrai\nB. Faux\n\n<think>\nThinking Process:\n\n1.  **Analyze the Request:** The user",
+      "expected_answer": "froid",
+      "answered_correctly": true
+    },
+    {
+      "id": "multilingual_schnell",
+      "category": "multilingual",
+      "source": "written for this project",
+      "accepted": true,
+      "rejection_reasons": [],
+      "probe_position": 5,
+      "probe_token": "ell",
+      "span_token_indices": [
+        4,
+        5
+      ],
+      "target_token": " slow",
+      "n_prompt_tokens": 8,
+      "continuation": "\nA. langsam\nB. schnell\nC. schnell\nD. schnell\n\n<think>\nThinking Process:\n\n1.  **Analyze the Request:**",
+      "expected_answer": "langsam",
+      "answered_correctly": true
+    },
+    {
+      "id": "multilingual_vecchio",
+      "category": "multilingual",
+      "source": "written for this project",
+      "accepted": false,
+      "rejection_reasons": [
+        "model answered \" 'nuovo'\\nA. vero\\nB. falso\\n\\n<think>\\nThinking Process:\\n\\n1.  **Analyze the Request:**\\n    *  \", expected 'giovane'"
+      ],
+      "probe_position": 5,
+      "probe_token": "chio",
+      "span_token_indices": [
+        4,
+        5
+      ],
+      "target_token": " young",
+      "n_prompt_tokens": 9,
+      "continuation": " 'nuovo'\nA. vero\nB. falso\n\n<think>\nThinking Process:\n\n1.  **Analyze the Request:**\n    *  ",
+      "expected_answer": "giovane",
+      "answered_correctly": false
+    },
+    {
+      "id": "multilingual_gato",
+      "category": "multilingual",
+      "source": "written for this project",
+      "accepted": true,
+      "rejection_reasons": [],
+      "probe_position": 6,
+      "probe_token": "u",
+      "span_token_indices": [
+        5,
+        6
+      ],
+      "target_token": " cat",
+      "n_prompt_tokens": 10,
+      "continuation": " gato.\nEl animal que dice 'guau' se llama perro.\nEl animal que dice 'mug' se llama vaca.\nEl animal",
+      "expected_answer": "gato",
+      "answered_correctly": true
+    },
+    {
+      "id": "multilingual_ciel",
+      "category": "multilingual",
+      "source": "written for this project",
+      "accepted": false,
+      "rejection_reasons": [
+        "model answered ' r\u00e9sultat de la diffusion Rayleigh.\\nTrue\\nFalse\\n\\n<think>\\nThinking Process:\\n\\n1.  **Analyze the Request:** The user is asking whether', expected 'bleu'"
+      ],
+      "probe_position": 3,
+      "probe_token": " ciel",
+      "span_token_indices": [
+        3
+      ],
+      "target_token": " blue",
+      "n_prompt_tokens": 9,
+      "continuation": " r\u00e9sultat de la diffusion Rayleigh.\nTrue\nFalse\n\n<think>\nThinking Process:\n\n1.  **Analyze the Request:** The user is asking whether",
+      "expected_answer": "bleu",
+      "answered_correctly": false
+    },
+    {
+      "id": "association_jordan",
+      "category": "association",
+      "source": "J-lens / R-lens qualitative figure",
+      "accepted": true,
+      "rejection_reasons": [],
+      "probe_position": 3,
+      "probe_token": " Jordan",
+      "span_token_indices": [
+        3
+      ],
+      "target_token": " basketball",
+      "n_prompt_tokens": 8
+    },
+    {
+      "id": "factual_verona",
+      "category": "association",
+      "source": "J-lens / R-lens qualitative figure",
+      "accepted": true,
+      "rejection_reasons": [],
+      "probe_position": 12,
+      "probe_token": " Verona",
+      "span_token_indices": [
+        12
+      ],
+      "target_token": " Italy",
+      "n_prompt_tokens": 19
+    },
+    {
+      "id": "association_einstein",
+      "category": "association",
+      "source": "J-lens / R-lens qualitative figure",
+      "accepted": true,
+      "rejection_reasons": [],
+      "probe_position": 17,
+      "probe_token": " the",
+      "span_token_indices": [
+        17
+      ],
+      "target_token": " physicists",
+      "n_prompt_tokens": 22
+    },
+    {
+      "id": "association_fame",
+      "category": "association",
+      "source": "R-lens post, association category",
+      "accepted": true,
+      "rejection_reasons": [],
+      "probe_position": 17,
+      "probe_token": " phones",
+      "span_token_indices": [
+        17
+      ],
+      "target_token": " fame",
+      "n_prompt_tokens": 19
+    },
+    {
+      "id": "association_swimming",
+      "category": "association",
+      "source": "written for this project",
+      "accepted": true,
+      "rejection_reasons": [],
+      "probe_position": 19,
+      "probe_token": " ropes",
+      "span_token_indices": [
+        19
+      ],
+      "target_token": " swimming",
+      "n_prompt_tokens": 23
+    },
+    {
+      "id": "association_wedding",
+      "category": "association",
+      "source": "written for this project",
+      "accepted": true,
+      "rejection_reasons": [],
+      "probe_position": 26,
+      "probe_token": " speech",
+      "span_token_indices": [
+        26
+      ],
+      "target_token": " wedding",
+      "n_prompt_tokens": 28
+    },
+    {
+      "id": "association_hospital",
+      "category": "association",
+      "source": "written for this project",
+      "accepted": true,
+      "rejection_reasons": [],
+      "probe_position": 23,
+      "probe_token": " curtain",
+      "span_token_indices": [
+        23
+      ],
+      "target_token": " hospital",
+      "n_prompt_tokens": 25
+    },
+    {
+      "id": "association_chess",
+      "category": "association",
+      "source": "written for this project",
+      "accepted": true,
+      "rejection_reasons": [],
+      "probe_position": 22,
+      "probe_token": " board",
+      "span_token_indices": [
+        22
+      ],
+      "target_token": " chess",
+      "n_prompt_tokens": 24
+    },
+    {
+      "id": "typo_aganst",
+      "category": "typo",
+      "source": "J-lens / R-lens qualitative figure",
+      "accepted": true,
+      "rejection_reasons": [],
+      "probe_position": 8,
+      "probe_token": "anst",
+      "span_token_indices": [
+        7,
+        8
+      ],
+      "target_token": " against",
+      "n_prompt_tokens": 9
+    },
+    {
+      "id": "typo_resturant",
+      "category": "typo",
+      "source": "R-lens post, typo category",
+      "accepted": true,
+      "rejection_reasons": [],
+      "probe_position": 8,
+      "probe_token": "urant",
+      "span_token_indices": [
+        7,
+        8
+      ],
+      "target_token": " restaurant",
+      "n_prompt_tokens": 9
+    },
+    {
+      "id": "typo_recieved",
+      "category": "typo",
+      "source": "written for this project",
+      "accepted": true,
+      "rejection_reasons": [],
+      "probe_position": 1,
+      "probe_token": " recieved",
+      "span_token_indices": [
+        1
+      ],
+      "target_token": " received",
+      "n_prompt_tokens": 2
+    },
+    {
+      "id": "typo_goverment",
+      "category": "typo",
+      "source": "written for this project",
+      "accepted": true,
+      "rejection_reasons": [],
+      "probe_position": 4,
+      "probe_token": "ment",
+      "span_token_indices": [
+        3,
+        4
+      ],
+      "target_token": " government",
+      "n_prompt_tokens": 5
+    },
+    {
+      "id": "typo_definately",
+      "category": "typo",
+      "source": "written for this project",
+      "accepted": true,
+      "rejection_reasons": [],
+      "probe_position": 2,
+      "probe_token": "ately",
+      "span_token_indices": [
+        1,
+        2
+      ],
+      "target_token": " definitely",
+      "n_prompt_tokens": 3
+    },
+    {
+      "id": "typo_seperate",
+      "category": "typo",
+      "source": "written for this project",
+      "accepted": true,
+      "rejection_reasons": [],
+      "probe_position": 4,
+      "probe_token": " seperate",
+      "span_token_indices": [
+        4
+      ],
+      "target_token": " separate",
+      "n_prompt_tokens": 5
+    },
+    {
+      "id": "typo_neccessary",
+      "category": "typo",
+      "source": "written for this project",
+      "accepted": true,
+      "rejection_reasons": [],
+      "probe_position": 7,
+      "probe_token": "ary",
+      "span_token_indices": [
+        5,
+        6,
+        7
+      ],
+      "target_token": " necessary",
+      "n_prompt_tokens": 8
+    },
+    {
+      "id": "poetry_dog",
+      "category": "poetry",
+      "source": "R-lens post, poetry category",
+      "accepted": true,
+      "rejection_reasons": [],
+      "probe_position": 18,
+      "probe_token": "\n",
+      "span_token_indices": [
+        18
+      ],
+      "target_token": " dog",
+      "n_prompt_tokens": 19
+    },
+    {
+      "id": "poetry_moon",
+      "category": "poetry",
+      "source": "written for this project",
+      "accepted": true,
+      "rejection_reasons": [],
+      "probe_position": 20,
+      "probe_token": "\n",
+      "span_token_indices": [
+        20
+      ],
+      "target_token": " moon",
+      "n_prompt_tokens": 21
+    },
+    {
+      "id": "poetry_sea",
+      "category": "poetry",
+      "source": "written for this project",
+      "accepted": true,
+      "rejection_reasons": [],
+      "probe_position": 18,
+      "probe_token": "\n",
+      "span_token_indices": [
+        18
+      ],
+      "target_token": " sea",
+      "n_prompt_tokens": 19
+    },
+    {
+      "id": "poetry_night",
+      "category": "poetry",
+      "source": "written for this project",
+      "accepted": true,
+      "rejection_reasons": [],
+      "probe_position": 17,
+      "probe_token": "\n",
+      "span_token_indices": [
+        17
+      ],
+      "target_token": " night",
+      "n_prompt_tokens": 18
+    }
+  ]
+}

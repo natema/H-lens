@@ -1,0 +1,1778 @@
+{
+  "aggregate": {
+    "6": {
+      "j2_raw": {
+        "mean_kl_model_to_lens": 9.557463963826498,
+        "mean_normalized_residual_error": 0.9791329900423685,
+        "mean_residual_cosine": 0.21238795419534048,
+        "mean_target_rank": 480.6666666666667,
+        "median_target_rank": 188,
+        "rank_losses_vs_j_lens": 2,
+        "rank_wins_vs_j_lens": 1,
+        "top_10_count": 0,
+        "top_1_count": 0
+      },
+      "j2_shuffled": {
+        "mean_kl_model_to_lens": 9.249114990234375,
+        "mean_normalized_residual_error": 0.9773020545641581,
+        "mean_residual_cosine": 0.2316033591826757,
+        "mean_target_rank": 244.0,
+        "median_target_rank": 210,
+        "rank_losses_vs_j_lens": 2,
+        "rank_wins_vs_j_lens": 1,
+        "top_10_count": 0,
+        "top_1_count": 0
+      },
+      "j_lens": {
+        "mean_kl_model_to_lens": 8.904849370320639,
+        "mean_normalized_residual_error": 0.9733390013376871,
+        "mean_residual_cosine": 0.25725926955540973,
+        "mean_target_rank": 237.66666666666666,
+        "median_target_rank": 267,
+        "top_10_count": 0,
+        "top_1_count": 0
+      },
+      "logit_lens": {
+        "mean_kl_model_to_lens": 9.43507194519043,
+        "mean_normalized_residual_error": 0.9580523371696472,
+        "mean_residual_cosine": 0.3633648455142975,
+        "mean_target_rank": 16372.666666666666,
+        "median_target_rank": 9733,
+        "top_10_count": 0,
+        "top_1_count": 0
+      },
+      "r_lens": {
+        "mean_kl_model_to_lens": 8.8085036277771,
+        "mean_normalized_residual_error": 0.9263163208961487,
+        "mean_residual_cosine": 0.44200726350148517,
+        "mean_target_rank": 1388.0,
+        "median_target_rank": 326,
+        "top_10_count": 1,
+        "top_1_count": 0
+      }
+    }
+  },
+  "artifact": {
+    "filename": "hessian_lens_forward_l6_qwen3.5-4b.pt",
+    "sha256": "3c492365a9338a3d4c89e0103b342bebed36a2a78a3d28dfec2dd57bd493eba0",
+    "size_bytes": 26274531
+  },
+  "fit": {
+    "6": {
+      "development_summary": {
+        "development_metrics": {
+          "j2_raw": {
+            "cosine": 0.27042102813720703,
+            "normalized_error": 0.968313455581665
+          },
+          "j2_shuffled": {
+            "cosine": 0.270341694355011,
+            "normalized_error": 0.9685225486755371
+          },
+          "j_lens": {
+            "cosine": 0.26750531792640686,
+            "normalized_error": 0.9690759181976318
+          }
+        }
+      },
+      "elapsed_seconds": 1789.2068509198725,
+      "samples": [
+        {
+          "coordinate_end": 32,
+          "coordinate_start": 0,
+          "mean_curvature_rms": 0.011764812283217907
+        },
+        {
+          "coordinate_end": 64,
+          "coordinate_start": 32,
+          "mean_curvature_rms": 0.0091633889824152
+        },
+        {
+          "coordinate_end": 96,
+          "coordinate_start": 64,
+          "mean_curvature_rms": 0.0075489310547709465
+        },
+        {
+          "coordinate_end": 128,
+          "coordinate_start": 96,
+          "mean_curvature_rms": 0.009843473322689533
+        },
+        {
+          "coordinate_end": 160,
+          "coordinate_start": 128,
+          "mean_curvature_rms": 0.008203782141208649
+        },
+        {
+          "coordinate_end": 192,
+          "coordinate_start": 160,
+          "mean_curvature_rms": 0.009347887709736824
+        },
+        {
+          "coordinate_end": 224,
+          "coordinate_start": 192,
+          "mean_curvature_rms": 0.007876877672970295
+        },
+        {
+          "coordinate_end": 256,
+          "coordinate_start": 224,
+          "mean_curvature_rms": 0.008347482420504093
+        },
+        {
+          "coordinate_end": 288,
+          "coordinate_start": 256,
+          "mean_curvature_rms": 0.008088241331279278
+        },
+        {
+          "coordinate_end": 320,
+          "coordinate_start": 288,
+          "mean_curvature_rms": 0.009747171774506569
+        },
+        {
+          "coordinate_end": 352,
+          "coordinate_start": 320,
+          "mean_curvature_rms": 0.007599748205393553
+        },
+        {
+          "coordinate_end": 384,
+          "coordinate_start": 352,
+          "mean_curvature_rms": 0.008635767735540867
+        },
+        {
+          "coordinate_end": 416,
+          "coordinate_start": 384,
+          "mean_curvature_rms": 0.008006926625967026
+        },
+        {
+          "coordinate_end": 448,
+          "coordinate_start": 416,
+          "mean_curvature_rms": 0.007328017149120569
+        },
+        {
+          "coordinate_end": 480,
+          "coordinate_start": 448,
+          "mean_curvature_rms": 0.008038719184696674
+        },
+        {
+          "coordinate_end": 512,
+          "coordinate_start": 480,
+          "mean_curvature_rms": 0.010510233230888844
+        },
+        {
+          "coordinate_end": 544,
+          "coordinate_start": 512,
+          "mean_curvature_rms": 0.008173844777047634
+        },
+        {
+          "coordinate_end": 576,
+          "coordinate_start": 544,
+          "mean_curvature_rms": 0.007471820339560509
+        },
+        {
+          "coordinate_end": 608,
+          "coordinate_start": 576,
+          "mean_curvature_rms": 0.00825630035251379
+        },
+        {
+          "coordinate_end": 640,
+          "coordinate_start": 608,
+          "mean_curvature_rms": 0.006035761442035437
+        },
+        {
+          "coordinate_end": 672,
+          "coordinate_start": 640,
+          "mean_curvature_rms": 0.006348625756800175
+        },
+        {
+          "coordinate_end": 704,
+          "coordinate_start": 672,
+          "mean_curvature_rms": 0.006243652198463678
+        },
+        {
+          "coordinate_end": 736,
+          "coordinate_start": 704,
+          "mean_curvature_rms": 0.009626963175833225
+        },
+        {
+          "coordinate_end": 768,
+          "coordinate_start": 736,
+          "mean_curvature_rms": 0.004682312253862619
+        },
+        {
+          "coordinate_end": 800,
+          "coordinate_start": 768,
+          "mean_curvature_rms": 0.0048513407818973064
+        },
+        {
+          "coordinate_end": 832,
+          "coordinate_start": 800,
+          "mean_curvature_rms": 0.004645007662475109
+        },
+        {
+          "coordinate_end": 864,
+          "coordinate_start": 832,
+          "mean_curvature_rms": 0.004571655765175819
+        },
+        {
+          "coordinate_end": 896,
+          "coordinate_start": 864,
+          "mean_curvature_rms": 0.0047411383129656315
+        },
+        {
+          "coordinate_end": 928,
+          "coordinate_start": 896,
+          "mean_curvature_rms": 0.0044863261282444
+        },
+        {
+          "coordinate_end": 960,
+          "coordinate_start": 928,
+          "mean_curvature_rms": 0.004416850861161947
+        },
+        {
+          "coordinate_end": 992,
+          "coordinate_start": 960,
+          "mean_curvature_rms": 0.0043646409176290035
+        },
+        {
+          "coordinate_end": 1024,
+          "coordinate_start": 992,
+          "mean_curvature_rms": 0.004515891894698143
+        },
+        {
+          "coordinate_end": 1056,
+          "coordinate_start": 1024,
+          "mean_curvature_rms": 0.004576769191771746
+        },
+        {
+          "coordinate_end": 1088,
+          "coordinate_start": 1056,
+          "mean_curvature_rms": 0.004470605403184891
+        },
+        {
+          "coordinate_end": 1120,
+          "coordinate_start": 1088,
+          "mean_curvature_rms": 0.004417650867253542
+        },
+        {
+          "coordinate_end": 1152,
+          "coordinate_start": 1120,
+          "mean_curvature_rms": 0.004450986161828041
+        },
+        {
+          "coordinate_end": 1184,
+          "coordinate_start": 1152,
+          "mean_curvature_rms": 0.004602232947945595
+        },
+        {
+          "coordinate_end": 1216,
+          "coordinate_start": 1184,
+          "mean_curvature_rms": 0.004380615893751383
+        },
+        {
+          "coordinate_end": 1248,
+          "coordinate_start": 1216,
+          "mean_curvature_rms": 0.004464759957045317
+        },
+        {
+          "coordinate_end": 1280,
+          "coordinate_start": 1248,
+          "mean_curvature_rms": 0.004424369893968105
+        },
+        {
+          "coordinate_end": 1312,
+          "coordinate_start": 1280,
+          "mean_curvature_rms": 0.004486880265176296
+        },
+        {
+          "coordinate_end": 1344,
+          "coordinate_start": 1312,
+          "mean_curvature_rms": 0.004597213119268417
+        },
+        {
+          "coordinate_end": 1376,
+          "coordinate_start": 1344,
+          "mean_curvature_rms": 0.0043326676823198795
+        },
+        {
+          "coordinate_end": 1408,
+          "coordinate_start": 1376,
+          "mean_curvature_rms": 0.004348714370280504
+        },
+        {
+          "coordinate_end": 1440,
+          "coordinate_start": 1408,
+          "mean_curvature_rms": 0.004406548570841551
+        },
+        {
+          "coordinate_end": 1472,
+          "coordinate_start": 1440,
+          "mean_curvature_rms": 0.004435867071151733
+        },
+        {
+          "coordinate_end": 1504,
+          "coordinate_start": 1472,
+          "mean_curvature_rms": 0.004396496340632439
+        },
+        {
+          "coordinate_end": 1536,
+          "coordinate_start": 1504,
+          "mean_curvature_rms": 0.004489327315241098
+        },
+        {
+          "coordinate_end": 1568,
+          "coordinate_start": 1536,
+          "mean_curvature_rms": 0.0043578976765275
+        },
+        {
+          "coordinate_end": 1600,
+          "coordinate_start": 1568,
+          "mean_curvature_rms": 0.004431900102645159
+        },
+        {
+          "coordinate_end": 1632,
+          "coordinate_start": 1600,
+          "mean_curvature_rms": 0.004522544331848621
+        },
+        {
+          "coordinate_end": 1664,
+          "coordinate_start": 1632,
+          "mean_curvature_rms": 0.004351711831986904
+        },
+        {
+          "coordinate_end": 1696,
+          "coordinate_start": 1664,
+          "mean_curvature_rms": 0.004321597516536713
+        },
+        {
+          "coordinate_end": 1728,
+          "coordinate_start": 1696,
+          "mean_curvature_rms": 0.0042182463221251965
+        },
+        {
+          "coordinate_end": 1760,
+          "coordinate_start": 1728,
+          "mean_curvature_rms": 0.0044141835533082485
+        },
+        {
+          "coordinate_end": 1792,
+          "coordinate_start": 1760,
+          "mean_curvature_rms": 0.004295990336686373
+        },
+        {
+          "coordinate_end": 1824,
+          "coordinate_start": 1792,
+          "mean_curvature_rms": 0.004272341728210449
+        },
+        {
+          "coordinate_end": 1856,
+          "coordinate_start": 1824,
+          "mean_curvature_rms": 0.0043291510082781315
+        },
+        {
+          "coordinate_end": 1888,
+          "coordinate_start": 1856,
+          "mean_curvature_rms": 0.004371263552457094
+        },
+        {
+          "coordinate_end": 1920,
+          "coordinate_start": 1888,
+          "mean_curvature_rms": 0.004274219740182161
+        },
+        {
+          "coordinate_end": 1952,
+          "coordinate_start": 1920,
+          "mean_curvature_rms": 0.0044612945057451725
+        },
+        {
+          "coordinate_end": 1984,
+          "coordinate_start": 1952,
+          "mean_curvature_rms": 0.00450257258489728
+        },
+        {
+          "coordinate_end": 2016,
+          "coordinate_start": 1984,
+          "mean_curvature_rms": 0.004594643600285053
+        },
+        {
+          "coordinate_end": 2048,
+          "coordinate_start": 2016,
+          "mean_curvature_rms": 0.004340778104960918
+        },
+        {
+          "coordinate_end": 2080,
+          "coordinate_start": 2048,
+          "mean_curvature_rms": 0.004370652139186859
+        },
+        {
+          "coordinate_end": 2112,
+          "coordinate_start": 2080,
+          "mean_curvature_rms": 0.004184277728199959
+        },
+        {
+          "coordinate_end": 2144,
+          "coordinate_start": 2112,
+          "mean_curvature_rms": 0.004284986294806004
+        },
+        {
+          "coordinate_end": 2176,
+          "coordinate_start": 2144,
+          "mean_curvature_rms": 0.0046089510433375835
+        },
+        {
+          "coordinate_end": 2208,
+          "coordinate_start": 2176,
+          "mean_curvature_rms": 0.0044273086823523045
+        },
+        {
+          "coordinate_end": 2240,
+          "coordinate_start": 2208,
+          "mean_curvature_rms": 0.004340769723057747
+        },
+        {
+          "coordinate_end": 2272,
+          "coordinate_start": 2240,
+          "mean_curvature_rms": 0.00444460567086935
+        },
+        {
+          "coordinate_end": 2304,
+          "coordinate_start": 2272,
+          "mean_curvature_rms": 0.004404885694384575
+        },
+        {
+          "coordinate_end": 2336,
+          "coordinate_start": 2304,
+          "mean_curvature_rms": 0.0043899891898036
+        },
+        {
+          "coordinate_end": 2368,
+          "coordinate_start": 2336,
+          "mean_curvature_rms": 0.004402965307235718
+        },
+        {
+          "coordinate_end": 2400,
+          "coordinate_start": 2368,
+          "mean_curvature_rms": 0.004384060390293598
+        },
+        {
+          "coordinate_end": 2432,
+          "coordinate_start": 2400,
+          "mean_curvature_rms": 0.004461788572371006
+        },
+        {
+          "coordinate_end": 2464,
+          "coordinate_start": 2432,
+          "mean_curvature_rms": 0.004355746321380138
+        },
+        {
+          "coordinate_end": 2496,
+          "coordinate_start": 2464,
+          "mean_curvature_rms": 0.004461074247956276
+        },
+        {
+          "coordinate_end": 2528,
+          "coordinate_start": 2496,
+          "mean_curvature_rms": 0.0043187132105231285
+        },
+        {
+          "coordinate_end": 2560,
+          "coordinate_start": 2528,
+          "mean_curvature_rms": 0.004540880210697651
+        }
+      ]
+    }
+  },
+  "heldout_cases": [
+    {
+      "category": "association",
+      "id": "association_jordan",
+      "layers": {
+        "6": {
+          "j2_raw": {
+            "kl_model_to_lens": 10.567188262939453,
+            "normalized_residual_error": 0.9668051600456238,
+            "residual_cosine": 0.26130157709121704,
+            "target_in_top_k": false,
+            "target_logit": 6.0793914794921875,
+            "target_rank": 138,
+            "top_tokens": [
+              {
+                "decoded": "ized",
+                "id": 1452,
+                "logit": 14.624822616577148,
+                "token": "ized"
+              },
+              {
+                "decoded": "ly",
+                "id": 391,
+                "logit": 13.044262886047363,
+                "token": "ly"
+              },
+              {
+                "decoded": " Jordan",
+                "id": 16586,
+                "logit": 10.381078720092773,
+                "token": "\u0120Jordan"
+              },
+              {
+                "decoded": "Jordan",
+                "id": 68043,
+                "logit": 9.742130279541016,
+                "token": "Jordan"
+              },
+              {
+                "decoded": "ization",
+                "id": 1954,
+                "logit": 9.488298416137695,
+                "token": "ization"
+              },
+              {
+                "decoded": "\u4e00\u4e2a",
+                "id": 96125,
+                "logit": 9.463951110839844,
+                "token": "\u00e4\u00b8\u0122\u00e4\u00b8\u00aa"
+              },
+              {
+                "decoded": "ed",
+                "id": 290,
+                "logit": 9.459724426269531,
+                "token": "ed"
+              },
+              {
+                "decoded": "rait",
+                "id": 13938,
+                "logit": 9.247397422790527,
+                "token": "rait"
+              },
+              {
+                "decoded": "\u0639",
+                "id": 22500,
+                "logit": 8.595922470092773,
+                "token": "\u00d8\u00b9"
+              },
+              {
+                "decoded": "\u4e00\u4e2a\u7b80\u5355\u7684",
+                "id": 146794,
+                "logit": 8.56971263885498,
+                "token": "\u00e4\u00b8\u0122\u00e4\u00b8\u00aa\u00e7\u00ae\u0122\u00e5\u012f\u0137\u00e7\u013c\u0126"
+              }
+            ]
+          },
+          "j2_shuffled": {
+            "kl_model_to_lens": 9.870880126953125,
+            "normalized_residual_error": 0.9657962918281555,
+            "residual_cosine": 0.26716235280036926,
+            "target_in_top_k": false,
+            "target_logit": 6.341427326202393,
+            "target_rank": 94,
+            "top_tokens": [
+              {
+                "decoded": "ized",
+                "id": 1452,
+                "logit": 13.823719024658203,
+                "token": "ized"
+              },
+              {
+                "decoded": "ly",
+                "id": 391,
+                "logit": 11.824474334716797,
+                "token": "ly"
+              },
+              {
+                "decoded": " Jordan",
+                "id": 16586,
+                "logit": 10.376970291137695,
+                "token": "\u0120Jordan"
+              },
+              {
+                "decoded": "Jordan",
+                "id": 68043,
+                "logit": 9.747963905334473,
+                "token": "Jordan"
+              },
+              {
+                "decoded": "ization",
+                "id": 1954,
+                "logit": 9.359787940979004,
+                "token": "ization"
+              },
+              {
+                "decoded": "\u4e00\u4e2a",
+                "id": 96125,
+                "logit": 8.917669296264648,
+                "token": "\u00e4\u00b8\u0122\u00e4\u00b8\u00aa"
+              },
+              {
+                "decoded": "ordan",
+                "id": 13009,
+                "logit": 8.533880233764648,
+                "token": "ordan"
+              },
+              {
+                "decoded": "\u4e00\u4e2a\u7b80\u5355\u7684",
+                "id": 146794,
+                "logit": 8.443617820739746,
+                "token": "\u00e4\u00b8\u0122\u00e4\u00b8\u00aa\u00e7\u00ae\u0122\u00e5\u012f\u0137\u00e7\u013c\u0126"
+              },
+              {
+                "decoded": "rait",
+                "id": 13938,
+                "logit": 8.42736530303955,
+                "token": "rait"
+              },
+              {
+                "decoded": "\u7b1b",
+                "id": 107789,
+                "logit": 8.28939151763916,
+                "token": "\u00e7\u00ac\u013d"
+              }
+            ]
+          },
+          "j_lens": {
+            "kl_model_to_lens": 9.088871002197266,
+            "normalized_residual_error": 0.9629029631614685,
+            "residual_cosine": 0.28715211153030396,
+            "target_in_top_k": false,
+            "target_logit": 6.983380317687988,
+            "target_rank": 58,
+            "top_tokens": [
+              {
+                "decoded": "ized",
+                "id": 1452,
+                "logit": 12.359477996826172,
+                "token": "ized"
+              },
+              {
+                "decoded": "ly",
+                "id": 391,
+                "logit": 10.541678428649902,
+                "token": "ly"
+              },
+              {
+                "decoded": " Jordan",
+                "id": 16586,
+                "logit": 9.325933456420898,
+                "token": "\u0120Jordan"
+              },
+              {
+                "decoded": "\u4e00\u4e2a\u7b80\u5355\u7684",
+                "id": 146794,
+                "logit": 9.125596046447754,
+                "token": "\u00e4\u00b8\u0122\u00e4\u00b8\u00aa\u00e7\u00ae\u0122\u00e5\u012f\u0137\u00e7\u013c\u0126"
+              },
+              {
+                "decoded": "vind",
+                "id": 238809,
+                "logit": 9.029052734375,
+                "token": "vind"
+              },
+              {
+                "decoded": "\u0627\u064b",
+                "id": 149798,
+                "logit": 8.931191444396973,
+                "token": "\u00d8\u00a7\u00d9\u012d"
+              },
+              {
+                "decoded": "oooooooo",
+                "id": 58258,
+                "logit": 8.907344818115234,
+                "token": "oooooooo"
+              },
+              {
+                "decoded": "Jordan",
+                "id": 68043,
+                "logit": 8.817291259765625,
+                "token": "Jordan"
+              },
+              {
+                "decoded": "lijk",
+                "id": 45716,
+                "logit": 8.558099746704102,
+                "token": "lijk"
+              },
+              {
+                "decoded": "ization",
+                "id": 1954,
+                "logit": 8.509269714355469,
+                "token": "ization"
+              }
+            ]
+          },
+          "logit_lens": {
+            "kl_model_to_lens": 9.8451509475708,
+            "normalized_residual_error": 0.9449188113212585,
+            "residual_cosine": 0.4006701409816742,
+            "target_in_top_k": false,
+            "target_logit": 4.892312049865723,
+            "target_rank": 590,
+            "top_tokens": [
+              {
+                "decoded": "bund",
+                "id": 163514,
+                "logit": 9.644437789916992,
+                "token": "bund"
+              },
+              {
+                "decoded": "phan",
+                "id": 9649,
+                "logit": 7.823154449462891,
+                "token": "phan"
+              },
+              {
+                "decoded": "#region",
+                "id": 28108,
+                "logit": 7.5959930419921875,
+                "token": "#region"
+              },
+              {
+                "decoded": "\u6749",
+                "id": 101276,
+                "logit": 7.508298873901367,
+                "token": "\u00e6\u013f\u012b"
+              },
+              {
+                "decoded": "\u4e13\u9898\u5b66\u4e60",
+                "id": 146391,
+                "logit": 7.432914733886719,
+                "token": "\u00e4\u00b8\u0135\u00e9\u00a2\u013a\u00e5\u0143\u00a6\u00e4\u00b9\u0142"
+              },
+              {
+                "decoded": "avad",
+                "id": 35825,
+                "logit": 7.43210506439209,
+                "token": "avad"
+              },
+              {
+                "decoded": "\u0627\u0647\u0631",
+                "id": 157428,
+                "logit": 7.34129524230957,
+                "token": "\u00d8\u00a7\u00d9\u0129\u00d8\u00b1"
+              },
+              {
+                "decoded": "\u6765\u7535\u54a8\u8be2",
+                "id": 123839,
+                "logit": 7.195180892944336,
+                "token": "\u00e6\u013f\u00a5\u00e7\u0136\u00b5\u00e5\u0134\u00a8\u00e8\u00af\u00a2"
+              },
+              {
+                "decoded": "RETURN",
+                "id": 49796,
+                "logit": 7.178779602050781,
+                "token": "RETURN"
+              },
+              {
+                "decoded": "l\u00e9s",
+                "id": 174309,
+                "logit": 7.175163745880127,
+                "token": "l\u00c3\u00a9s"
+              }
+            ]
+          },
+          "r_lens": {
+            "kl_model_to_lens": 9.253524780273438,
+            "normalized_residual_error": 0.9181936979293823,
+            "residual_cosine": 0.4525721073150635,
+            "target_in_top_k": true,
+            "target_logit": 9.055991172790527,
+            "target_rank": 5,
+            "top_tokens": [
+              {
+                "decoded": "mier",
+                "id": 163053,
+                "logit": 10.076355934143066,
+                "token": "mier"
+              },
+              {
+                "decoded": ",J",
+                "id": 56872,
+                "logit": 9.668855667114258,
+                "token": ",J"
+              },
+              {
+                "decoded": "?s",
+                "id": 53510,
+                "logit": 9.531246185302734,
+                "token": "?s"
+              },
+              {
+                "decoded": " Jordan",
+                "id": 16586,
+                "logit": 9.058408737182617,
+                "token": "\u0120Jordan"
+              },
+              {
+                "decoded": " basketball",
+                "id": 18659,
+                "logit": 9.055991172790527,
+                "token": "\u0120basketball"
+              },
+              {
+                "decoded": " ------>",
+                "id": 93849,
+                "logit": 8.902669906616211,
+                "token": "\u0120------>"
+              },
+              {
+                "decoded": "-basket",
+                "id": 91406,
+                "logit": 8.855512619018555,
+                "token": "-basket"
+              },
+              {
+                "decoded": "\u60df\u4e00",
+                "id": 146796,
+                "logit": 8.823775291442871,
+                "token": "\u00e6\u0125\u0141\u00e4\u00b8\u0122"
+              },
+              {
+                "decoded": "estand",
+                "id": 212688,
+                "logit": 8.528322219848633,
+                "token": "estand"
+              },
+              {
+                "decoded": "(J",
+                "id": 15887,
+                "logit": 8.45151424407959,
+                "token": "(J"
+              }
+            ]
+          }
+        }
+      },
+      "probe_position": 3,
+      "probe_token": {
+        "decoded": " Jordan",
+        "id": 16586,
+        "offset": [
+          19,
+          26
+        ],
+        "token": "\u0120Jordan"
+      },
+      "prompt": "The athlete Michael Jordan plays the sport of",
+      "target_token": {
+        "decoded": " basketball",
+        "id": 18659,
+        "token": "\u0120basketball"
+      }
+    },
+    {
+      "category": "association",
+      "id": "factual_verona",
+      "layers": {
+        "6": {
+          "j2_raw": {
+            "kl_model_to_lens": 10.27390193939209,
+            "normalized_residual_error": 0.9842490553855896,
+            "residual_cosine": 0.17810900509357452,
+            "target_in_top_k": false,
+            "target_logit": 5.13250732421875,
+            "target_rank": 188,
+            "top_tokens": [
+              {
+                "decoded": " Verona",
+                "id": 192972,
+                "logit": 11.662373542785645,
+                "token": "\u0120Verona"
+              },
+              {
+                "decoded": "\uc368",
+                "id": 153111,
+                "logit": 8.751070022583008,
+                "token": "\u00ec\u012f\u00a8"
+              },
+              {
+                "decoded": "Whilst",
+                "id": 93336,
+                "logit": 8.188373565673828,
+                "token": "Whilst"
+              },
+              {
+                "decoded": "Ferr",
+                "id": 238549,
+                "logit": 7.890401840209961,
+                "token": "Ferr"
+              },
+              {
+                "decoded": "isation",
+                "id": 7673,
+                "logit": 7.58962345123291,
+                "token": "isation"
+              },
+              {
+                "decoded": "ensis",
+                "id": 83686,
+                "logit": 7.5556745529174805,
+                "token": "ensis"
+              },
+              {
+                "decoded": "\uc11c",
+                "id": 25845,
+                "logit": 7.4712958335876465,
+                "token": "\u00ec\u0126\u013e"
+              },
+              {
+                "decoded": "\u017celi",
+                "id": 157711,
+                "logit": 7.076637268066406,
+                "token": "\u00c5\u00bceli"
+              },
+              {
+                "decoded": " XVII",
+                "id": 193542,
+                "logit": 7.029491424560547,
+                "token": "\u0120XVII"
+              },
+              {
+                "decoded": "ith",
+                "id": 402,
+                "logit": 6.812050819396973,
+                "token": "ith"
+              }
+            ]
+          },
+          "j2_shuffled": {
+            "kl_model_to_lens": 10.147507667541504,
+            "normalized_residual_error": 0.9837766885757446,
+            "residual_cosine": 0.1801862269639969,
+            "target_in_top_k": false,
+            "target_logit": 5.127367973327637,
+            "target_rank": 210,
+            "top_tokens": [
+              {
+                "decoded": " Verona",
+                "id": 192972,
+                "logit": 11.32723331451416,
+                "token": "\u0120Verona"
+              },
+              {
+                "decoded": "Ferr",
+                "id": 238549,
+                "logit": 8.134947776794434,
+                "token": "Ferr"
+              },
+              {
+                "decoded": "\uc368",
+                "id": 153111,
+                "logit": 8.086892127990723,
+                "token": "\u00ec\u012f\u00a8"
+              },
+              {
+                "decoded": "Whilst",
+                "id": 93336,
+                "logit": 8.069199562072754,
+                "token": "Whilst"
+              },
+              {
+                "decoded": "ensis",
+                "id": 83686,
+                "logit": 8.029768943786621,
+                "token": "ensis"
+              },
+              {
+                "decoded": "isation",
+                "id": 7673,
+                "logit": 7.662813186645508,
+                "token": "isation"
+              },
+              {
+                "decoded": " XVII",
+                "id": 193542,
+                "logit": 7.279414653778076,
+                "token": "\u0120XVII"
+              },
+              {
+                "decoded": " Defence",
+                "id": 37619,
+                "logit": 7.271495819091797,
+                "token": "\u0120Defence"
+              },
+              {
+                "decoded": "ustum",
+                "id": 72741,
+                "logit": 7.093502044677734,
+                "token": "ustum"
+              },
+              {
+                "decoded": "\u017celi",
+                "id": 157711,
+                "logit": 7.034996032714844,
+                "token": "\u00c5\u00bceli"
+              }
+            ]
+          },
+          "j_lens": {
+            "kl_model_to_lens": 10.075745582580566,
+            "normalized_residual_error": 0.975779116153717,
+            "residual_cosine": 0.22058704495429993,
+            "target_in_top_k": false,
+            "target_logit": 5.125424385070801,
+            "target_rank": 267,
+            "top_tokens": [
+              {
+                "decoded": " Verona",
+                "id": 192972,
+                "logit": 10.844419479370117,
+                "token": "\u0120Verona"
+              },
+              {
+                "decoded": "Whilst",
+                "id": 93336,
+                "logit": 8.624526023864746,
+                "token": "Whilst"
+              },
+              {
+                "decoded": "Ferr",
+                "id": 238549,
+                "logit": 8.547027587890625,
+                "token": "Ferr"
+              },
+              {
+                "decoded": " Defence",
+                "id": 37619,
+                "logit": 8.40045166015625,
+                "token": "\u0120Defence"
+              },
+              {
+                "decoded": "\uc368",
+                "id": 153111,
+                "logit": 8.230226516723633,
+                "token": "\u00ec\u012f\u00a8"
+              },
+              {
+                "decoded": "ensis",
+                "id": 83686,
+                "logit": 8.15760326385498,
+                "token": "ensis"
+              },
+              {
+                "decoded": "colour",
+                "id": 45762,
+                "logit": 8.154779434204102,
+                "token": "colour"
+              },
+              {
+                "decoded": "isation",
+                "id": 7673,
+                "logit": 7.935818672180176,
+                "token": "isation"
+              },
+              {
+                "decoded": "\u9178\u5316",
+                "id": 247753,
+                "logit": 7.710525989532471,
+                "token": "\u00e9\u0127\u00b8\u00e5\u012e\u0138"
+              },
+              {
+                "decoded": "brug",
+                "id": 198798,
+                "logit": 7.646196365356445,
+                "token": "brug"
+              }
+            ]
+          },
+          "logit_lens": {
+            "kl_model_to_lens": 10.870071411132812,
+            "normalized_residual_error": 0.9673049449920654,
+            "residual_cosine": 0.28797847032546997,
+            "target_in_top_k": false,
+            "target_logit": 2.9192724227905273,
+            "target_rank": 9733,
+            "top_tokens": [
+              {
+                "decoded": "\u010de",
+                "id": 89294,
+                "logit": 7.990072250366211,
+                "token": "\u00c4\u012fe"
+              },
+              {
+                "decoded": "\u515a\u603b\u652f\u4e66\u8bb0",
+                "id": 139437,
+                "logit": 7.8754096031188965,
+                "token": "\u00e5\u0127\u013c\u00e6\u0122\u00bb\u00e6\u0136\u00af\u00e4\u00b9\u00a6\u00e8\u00ae\u00b0"
+              },
+              {
+                "decoded": "\u548c\u4e2d\u56fd",
+                "id": 113861,
+                "logit": 7.642974853515625,
+                "token": "\u00e5\u0134\u012e\u00e4\u00b8\u0143\u00e5\u013d\u00bd"
+              },
+              {
+                "decoded": " \u00d6zellikle",
+                "id": 231954,
+                "logit": 7.595180988311768,
+                "token": "\u0120\u00c3\u0138zellikle"
+              },
+              {
+                "decoded": " \u0437\u043d\u0430\u043a\u043e\u043c",
+                "id": 188269,
+                "logit": 7.574822425842285,
+                "token": "\u0120\u00d0\u00b7\u00d0\u00bd\u00d0\u00b0\u00d0\u00ba\u00d0\u00be\u00d0\u00bc"
+              },
+              {
+                "decoded": "\u8865\u8840",
+                "id": 126793,
+                "logit": 7.384243965148926,
+                "token": "\u00e8\u00a1\u00a5\u00e8\u00a1\u0122"
+              },
+              {
+                "decoded": "Unt",
+                "id": 19634,
+                "logit": 7.341306209564209,
+                "token": "Unt"
+              },
+              {
+                "decoded": "aida",
+                "id": 34272,
+                "logit": 7.258522987365723,
+                "token": "aida"
+              },
+              {
+                "decoded": "\u30c6\u30fc",
+                "id": 162574,
+                "logit": 7.181548118591309,
+                "token": "\u00e3\u0125\u0128\u00e3\u0125\u00bc"
+              },
+              {
+                "decoded": "burg",
+                "id": 9963,
+                "logit": 7.106308937072754,
+                "token": "burg"
+              }
+            ]
+          },
+          "r_lens": {
+            "kl_model_to_lens": 10.120142936706543,
+            "normalized_residual_error": 0.9495704174041748,
+            "residual_cosine": 0.3377448320388794,
+            "target_in_top_k": false,
+            "target_logit": 5.623763084411621,
+            "target_rank": 326,
+            "top_tokens": [
+              {
+                "decoded": " Verona",
+                "id": 192972,
+                "logit": 11.165908813476562,
+                "token": "\u0120Verona"
+              },
+              {
+                "decoded": "Ferr",
+                "id": 238549,
+                "logit": 8.594759941101074,
+                "token": "Ferr"
+              },
+              {
+                "decoded": " Romeo",
+                "id": 67815,
+                "logit": 8.498812675476074,
+                "token": "\u0120Romeo"
+              },
+              {
+                "decoded": " extrav",
+                "id": 55420,
+                "logit": 8.363743782043457,
+                "token": "\u0120extrav"
+              },
+              {
+                "decoded": "\u526f\u90e8\u957f",
+                "id": 115531,
+                "logit": 8.278146743774414,
+                "token": "\u00e5\u012b\u00af\u00e9\u0125\u00a8\u00e9\u0137\u00bf"
+              },
+              {
+                "decoded": " somew",
+                "id": 8730,
+                "logit": 7.959474563598633,
+                "token": "\u0120somew"
+              },
+              {
+                "decoded": ",V",
+                "id": 38627,
+                "logit": 7.9387898445129395,
+                "token": ",V"
+              },
+              {
+                "decoded": "arco",
+                "id": 215496,
+                "logit": 7.785408973693848,
+                "token": "arco"
+              },
+              {
+                "decoded": "brug",
+                "id": 198798,
+                "logit": 7.732421875,
+                "token": "brug"
+              },
+              {
+                "decoded": " spotting",
+                "id": 86149,
+                "logit": 7.6338348388671875,
+                "token": "\u0120spotting"
+              }
+            ]
+          }
+        }
+      },
+      "probe_position": 12,
+      "probe_token": {
+        "decoded": " Verona",
+        "id": 192972,
+        "offset": [
+          58,
+          65
+        ],
+        "token": "\u0120Verona"
+      },
+      "prompt": "The author of the tragedy about the star-crossed lovers of Verona was born in the town of",
+      "target_token": {
+        "decoded": " Italy",
+        "id": 14898,
+        "token": "\u0120Italy"
+      }
+    },
+    {
+      "category": "association",
+      "id": "association_einstein",
+      "layers": {
+        "6": {
+          "j2_raw": {
+            "kl_model_to_lens": 7.831301689147949,
+            "normalized_residual_error": 0.9863447546958923,
+            "residual_cosine": 0.19775328040122986,
+            "target_in_top_k": false,
+            "target_logit": 6.1385369300842285,
+            "target_rank": 1116,
+            "top_tokens": [
+              {
+                "decoded": "\u2013and",
+                "id": 82957,
+                "logit": 13.755013465881348,
+                "token": "\u00e2\u0122\u0135and"
+              },
+              {
+                "decoded": " Somebody",
+                "id": 89886,
+                "logit": 11.013245582580566,
+                "token": "\u0120Somebody"
+              },
+              {
+                "decoded": " everybody",
+                "id": 15610,
+                "logit": 10.816343307495117,
+                "token": "\u0120everybody"
+              },
+              {
+                "decoded": "\u2026it",
+                "id": 95543,
+                "logit": 10.804542541503906,
+                "token": "\u00e2\u0122\u00a6it"
+              },
+              {
+                "decoded": " somebody",
+                "id": 17540,
+                "logit": 9.7771635055542,
+                "token": "\u0120somebody"
+              },
+              {
+                "decoded": "\ud83d\ude42",
+                "id": 169171,
+                "logit": 9.574014663696289,
+                "token": "\u00f0\u0141\u013b\u0124"
+              },
+              {
+                "decoded": " \u0443\u043c\u0430",
+                "id": 222449,
+                "logit": 9.448934555053711,
+                "token": "\u0120\u00d1\u0125\u00d0\u00bc\u00d0\u00b0"
+              },
+              {
+                "decoded": "\u2026but",
+                "id": 79815,
+                "logit": 9.268545150756836,
+                "token": "\u00e2\u0122\u00a6but"
+              },
+              {
+                "decoded": " Profesor",
+                "id": 240299,
+                "logit": 9.225193977355957,
+                "token": "\u0120Profesor"
+              },
+              {
+                "decoded": "tib",
+                "id": 164137,
+                "logit": 9.094976425170898,
+                "token": "tib"
+              }
+            ]
+          },
+          "j2_shuffled": {
+            "kl_model_to_lens": 7.728957176208496,
+            "normalized_residual_error": 0.9823331832885742,
+            "residual_cosine": 0.2474614977836609,
+            "target_in_top_k": false,
+            "target_logit": 6.920627593994141,
+            "target_rank": 428,
+            "top_tokens": [
+              {
+                "decoded": "\u2013and",
+                "id": 82957,
+                "logit": 13.505971908569336,
+                "token": "\u00e2\u0122\u0135and"
+              },
+              {
+                "decoded": " everybody",
+                "id": 15610,
+                "logit": 11.269899368286133,
+                "token": "\u0120everybody"
+              },
+              {
+                "decoded": "\u2026it",
+                "id": 95543,
+                "logit": 10.958173751831055,
+                "token": "\u00e2\u0122\u00a6it"
+              },
+              {
+                "decoded": " Somebody",
+                "id": 89886,
+                "logit": 10.841873168945312,
+                "token": "\u0120Somebody"
+              },
+              {
+                "decoded": "tib",
+                "id": 164137,
+                "logit": 9.84541130065918,
+                "token": "tib"
+              },
+              {
+                "decoded": " somebody",
+                "id": 17540,
+                "logit": 9.834087371826172,
+                "token": "\u0120somebody"
+              },
+              {
+                "decoded": "\ud83d\ude42",
+                "id": 169171,
+                "logit": 9.675600051879883,
+                "token": "\u00f0\u0141\u013b\u0124"
+              },
+              {
+                "decoded": " disastr",
+                "id": 48467,
+                "logit": 9.334552764892578,
+                "token": "\u0120disastr"
+              },
+              {
+                "decoded": " Profesor",
+                "id": 240299,
+                "logit": 9.28187370300293,
+                "token": "\u0120Profesor"
+              },
+              {
+                "decoded": "toile",
+                "id": 239350,
+                "logit": 9.27401351928711,
+                "token": "toile"
+              }
+            ]
+          },
+          "j_lens": {
+            "kl_model_to_lens": 7.549931526184082,
+            "normalized_residual_error": 0.981334924697876,
+            "residual_cosine": 0.26403865218162537,
+            "target_in_top_k": false,
+            "target_logit": 6.895411491394043,
+            "target_rank": 388,
+            "top_tokens": [
+              {
+                "decoded": "\u2013and",
+                "id": 82957,
+                "logit": 13.031595230102539,
+                "token": "\u00e2\u0122\u0135and"
+              },
+              {
+                "decoded": "\u2026it",
+                "id": 95543,
+                "logit": 10.848132133483887,
+                "token": "\u00e2\u0122\u00a6it"
+              },
+              {
+                "decoded": " everybody",
+                "id": 15610,
+                "logit": 10.809828758239746,
+                "token": "\u0120everybody"
+              },
+              {
+                "decoded": " Somebody",
+                "id": 89886,
+                "logit": 10.324387550354004,
+                "token": "\u0120Somebody"
+              },
+              {
+                "decoded": "tib",
+                "id": 164137,
+                "logit": 9.824050903320312,
+                "token": "tib"
+              },
+              {
+                "decoded": " somebody",
+                "id": 17540,
+                "logit": 9.627685546875,
+                "token": "\u0120somebody"
+              },
+              {
+                "decoded": " ought",
+                "id": 21105,
+                "logit": 9.488235473632812,
+                "token": "\u0120ought"
+              },
+              {
+                "decoded": "\ud83d\ude42",
+                "id": 169171,
+                "logit": 9.160500526428223,
+                "token": "\u00f0\u0141\u013b\u0124"
+              },
+              {
+                "decoded": "thought",
+                "id": 58523,
+                "logit": 9.142248153686523,
+                "token": "thought"
+              },
+              {
+                "decoded": "toile",
+                "id": 239350,
+                "logit": 9.0858736038208,
+                "token": "toile"
+              }
+            ]
+          },
+          "logit_lens": {
+            "kl_model_to_lens": 7.589993476867676,
+            "normalized_residual_error": 0.9619332551956177,
+            "residual_cosine": 0.4014459252357483,
+            "target_in_top_k": false,
+            "target_logit": 1.0197153091430664,
+            "target_rank": 38795,
+            "top_tokens": [
+              {
+                "decoded": "instein",
+                "id": 35191,
+                "logit": 7.372530937194824,
+                "token": "instein"
+              },
+              {
+                "decoded": "urst",
+                "id": 31534,
+                "logit": 6.797545433044434,
+                "token": "urst"
+              },
+              {
+                "decoded": "\u98de\u6765",
+                "id": 127579,
+                "logit": 6.5816192626953125,
+                "token": "\u00e9\u00a3\u0140\u00e6\u013f\u00a5"
+              },
+              {
+                "decoded": "!",
+                "id": 0,
+                "logit": 6.450451850891113,
+                "token": "!"
+              },
+              {
+                "decoded": "\u561b",
+                "id": 102915,
+                "logit": 5.913265228271484,
+                "token": "\u00e5\u013a\u013d"
+              },
+              {
+                "decoded": "ump",
+                "id": 1456,
+                "logit": 5.660041809082031,
+                "token": "ump"
+              },
+              {
+                "decoded": " sooner",
+                "id": 29286,
+                "logit": 5.621257305145264,
+                "token": "\u0120sooner"
+              },
+              {
+                "decoded": "\u662f\u4e00\u9897",
+                "id": 146671,
+                "logit": 5.6186604499816895,
+                "token": "\u00e6\u013a\u00af\u00e4\u00b8\u0122\u00e9\u00a2\u0139"
+              },
+              {
+                "decoded": "\u0e23\u0e39\u0e49",
+                "id": 149835,
+                "logit": 5.590991973876953,
+                "token": "\u00e0\u00b8\u00a3\u00e0\u00b8\u00b9\u00e0\u00b9\u012b"
+              },
+              {
+                "decoded": " riguardano",
+                "id": 227832,
+                "logit": 5.565215110778809,
+                "token": "\u0120riguardano"
+              }
+            ]
+          },
+          "r_lens": {
+            "kl_model_to_lens": 7.051843166351318,
+            "normalized_residual_error": 0.9111848473548889,
+            "residual_cosine": 0.5357048511505127,
+            "target_in_top_k": false,
+            "target_logit": 4.545293807983398,
+            "target_rank": 3833,
+            "top_tokens": [
+              {
+                "decoded": " somew",
+                "id": 8730,
+                "logit": 11.263833999633789,
+                "token": "\u0120somew"
+              },
+              {
+                "decoded": "\u2013and",
+                "id": 82957,
+                "logit": 10.714086532592773,
+                "token": "\u00e2\u0122\u0135and"
+              },
+              {
+                "decoded": " stuff",
+                "id": 6063,
+                "logit": 9.35114574432373,
+                "token": "\u0120stuff"
+              },
+              {
+                "decoded": "\u2026it",
+                "id": 95543,
+                "logit": 9.14117431640625,
+                "token": "\u00e2\u0122\u00a6it"
+              },
+              {
+                "decoded": " thems",
+                "id": 5393,
+                "logit": 8.777172088623047,
+                "token": "\u0120thems"
+              },
+              {
+                "decoded": " everybody",
+                "id": 15610,
+                "logit": 8.702987670898438,
+                "token": "\u0120everybody"
+              },
+              {
+                "decoded": " whats",
+                "id": 38777,
+                "logit": 8.578868865966797,
+                "token": "\u0120whats"
+              },
+              {
+                "decoded": " somehow",
+                "id": 16429,
+                "logit": 8.488347053527832,
+                "token": "\u0120somehow"
+              },
+              {
+                "decoded": " somebody",
+                "id": 17540,
+                "logit": 8.448589324951172,
+                "token": "\u0120somebody"
+              },
+              {
+                "decoded": "\u3059\u3059\u3081",
+                "id": 151136,
+                "logit": 8.390031814575195,
+                "token": "\u00e3\u0123\u013b\u00e3\u0123\u013b\u00e3\u0124\u0123"
+              }
+            ]
+          }
+        }
+      },
+      "probe_position": 17,
+      "probe_token": {
+        "decoded": " the",
+        "id": 279,
+        "offset": [
+          90,
+          94
+        ],
+        "token": "\u0120the"
+      },
+      "prompt": "Although Einstein was mentioned once in the lecture, the topic that day was gardening, and the students learned how to",
+      "target_token": {
+        "decoded": " physicists",
+        "id": 93960,
+        "token": "\u0120physicists"
+      }
+    }
+  ],
+  "metadata": {
+    "created_at": "2026-08-30T14:34:57.506818+00:00",
+    "cuda_runtime": "13.0",
+    "device": "cuda",
+    "diagonal_estimator": "Forward: compute all vector-valued H[e_j,e_j] by nested JVPs. Gaussian: for z~N(0,I), average H[z,z] outer (z^2-1)/2. Coordinate: directly compute every development-averaged H[e_j,e_j]. Both use centered residual interventions.",
+    "effective_coordinate_batch_size": 32,
+    "effective_directions_per_layer": 16,
+    "effective_estimator": "forward",
+    "effective_finite_difference_epsilon": 0.025,
+    "effective_max_coordinates": 2560,
+    "effective_step_check_directions": 2,
+    "gpu": "Quadro RTX 8000",
+    "hessian_scalar_calibration": null,
+    "jlens_revision": "581d398613e5602a5af361e1c34d3a92ea82ba8e",
+    "lens_artifacts": {
+      "j_lens": {
+        "d_model": 2560,
+        "filename": "qwen3.5-4b/j-lens/lens.pt",
+        "n_prompts": 25,
+        "provenance": {
+          "config_json": "{\"estimator\": \"standard\"}",
+          "corpus_mode": "pretrain",
+          "dataset_id": "NeelNanda/pile-10k",
+          "docs_consumed": 25,
+          "git_commit": "modal",
+          "model_id": "Qwen/Qwen3.5-4B",
+          "n_positions": 0.0,
+          "n_prompts": 25,
+          "skip_first": 4,
+          "t_max": 128,
+          "target_layer": 30,
+          "weighting": "uniform"
+        },
+        "sha256": "8ac16d8e5e988f19d9e19ac9b459c9e73336a866c8534d521200e4fcf2c21377",
+        "size_bytes": 406330711,
+        "source_layers": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ]
+      },
+      "r_lens": {
+        "d_model": 2560,
+        "filename": "qwen3.5-4b/r-lens/lens.pt",
+        "n_prompts": 25,
+        "provenance": {
+          "config_json": "{\"estimator\": \"relp\", \"rules\": {\"ln_rule\": true, \"identity_rule\": true, \"half_rule\": true, \"half_rule_beta\": 0.5, \"include_qk_norms\": false, \"gated_norms\": false}}",
+          "corpus_mode": "pretrain",
+          "dataset_id": "NeelNanda/pile-10k",
+          "docs_consumed": 25,
+          "git_commit": "modal",
+          "model_id": "Qwen/Qwen3.5-4B",
+          "n_positions": 0.0,
+          "n_prompts": 25,
+          "skip_first": 4,
+          "t_max": 128,
+          "target_layer": 30,
+          "weighting": "uniform"
+        },
+        "sha256": "848b9b8e76eb0448a926edc8bb374cb4369916dd6bdbd62f1d3141fa12b9f231",
+        "size_bytes": 406330839,
+        "source_layers": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ]
+      }
+    },
+    "lens_repo_id": "camilablank/workspace-lenses",
+    "lens_revision": "781b23318040be06dba7546d254742c6fa623098",
+    "model_dtype": "torch.float32",
+    "model_id": "Qwen/Qwen3.5-4B",
+    "model_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "operator_output": "sum of target-layer residuals from the sampled source position through the penultimate token, matching the J-lens fitting reduction",
+    "pair_checks": {
+      "anchor_max_abs_error": {
+        "j_lens": 0.0,
+        "r_lens": 0.0
+      },
+      "matched_fields": {
+        "dataset_id": true,
+        "model_id": true,
+        "skip_first": true,
+        "target_layer": true
+      }
+    },
+    "platform": "Linux-6.17.10-100.fc41.x86_64-x86_64-with-glibc2.40",
+    "python": "3.13.9 (main, Oct 14 2025, 00:00:00) [GCC 14.3.1 20250808 (Red Hat 14.3.1-3)]",
+    "quadratic_coefficient": 0.5,
+    "split": {
+      "development_case_ids": [
+        "typo_aganst",
+        "multihop_sushi"
+      ],
+      "directions_per_layer": 16,
+      "finite_difference_epsilon": 0.025,
+      "heldout_case_ids": [
+        "association_jordan",
+        "factual_verona",
+        "association_einstein"
+      ],
+      "layers": [
+        6,
+        12,
+        20
+      ],
+      "seed": 17,
+      "skip_first": 4,
+      "step_check_directions": 2,
+      "target_layer": 30,
+      "top_k": 10
+    },
+    "torch": "2.13.0+cu130",
+    "transformers": "5.16.1"
+  }
+}

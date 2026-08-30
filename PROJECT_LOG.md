@@ -27,4 +27,24 @@ We still have to understand the details of the method used by Codex for the rand
 We thus prioritize proceeding with adding the Hessian correction and computing such a "j^2"-lens (better to call it H-lens, from Hessian). 
 2h into the project. 
 
+## 2026-08-30 15:59
+The first test of the H-lens idea was negative: the H-lens worsen the ranking of the relevant concepts in our probe. 
+I looked at how codex did the estimate of the Hessian and I was surprised to see that it used finite differences to estimate the derivative. I am repeating the experiment using forward-mode autodiff. 
+Almost 3h into the project. 
 
+## 2026-08-30 16:17
+I want to look at more examples to further test the failure of the H-lens idea, so I'm investing some time in collecting a richer dataset (first we are searching previous works, then we could consider finding new examples ourselves). 
+Meanwhile, autodiff is half-through the calculation of the diagonal of H. 
+
+## 2026-08-30 16:29
+We are going to spend more time to build a better set of cases to test the H-lens idea. 
+So far, we spent 3h30 roughly on the project. 
+We pause here for some time. 
+
+## 2026-08-30 17:17
+Let's resume working. 
+In the meantime, the calculation with autodiff finished. Let's see if anything changes. 
+
+## 2026-08-30 17:39
+We switched to Claude right now (instead of buing pro/max of one of them, we bought the cheap ones of both atm). 
+We are enlarging the battery of tests, adding those used to compare R-lens and J-lens. 

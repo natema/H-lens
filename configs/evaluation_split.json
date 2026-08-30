@@ -1,0 +1,25 @@
+{
+  "development_case_ids": [
+    "typo_aganst",
+    "multihop_sushi"
+  ],
+  "heldout_case_ids": [
+    "association_jordan",
+    "factual_verona",
+    "association_einstein"
+  ],
+  "layers": [
+    6,
+    12,
+    20
+  ],
+  "target_layer": 30,
+  "primary_estimator": "forward",
+  "coordinate_batch_size": 32,
+  "skip_first": 4,
+  "directions_per_layer": 16,
+  "finite_difference_epsilon": 0.025,
+  "step_check_directions": 2,
+  "seed": 17,
+  "top_k": 10
+}
