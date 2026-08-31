@@ -63,7 +63,14 @@ def phase_generate(
     per_call: int,
     workers: int,
 ) -> None:
-    from j2_lens.jspace import generate_items, record_spend
+    from transformers import AutoTokenizer
+
+    from j2_lens.baselines import MODEL_ID, MODEL_REVISION
+    from j2_lens.jspace import generate_items, record_spend, structural_problems
+
+    tokenizer = AutoTokenizer.from_pretrained(
+        MODEL_ID, revision=MODEL_REVISION, local_files_only=True
+    )
 
     done = load_done(out)
     todo = [c for c in concepts if c not in done]
@@ -80,17 +87,23 @@ def phase_generate(
             return []
         with LEDGER_LOCK:
             record_spend(ledger, exchange, note=f"generate x{len(chunk)}")
+        # Only conforming items are written. A concept whose item fails the
+        # screen stays absent from the file, so a later generate pass retries
+        # it instead of banking a fragment whose evocative words get discarded.
         wanted = set(chunk)
-        return [
-            {
+        rows = []
+        for item in items:
+            if item.concept not in wanted:
+                continue
+            if structural_problems(item, tokenizer):
+                continue
+            rows.append({
                 "concept": item.concept,
                 "probe_term": item.probe_term,
                 "sentence": item.sentence,
                 "rationale": item.rationale,
-            }
-            for item in items
-            if item.concept in wanted
-        ]
+            })
+        return rows
 
     written = 0
     with ThreadPoolExecutor(max_workers=workers) as pool:
@@ -292,6 +305,7 @@ def main(argv: list[str] | None = None) -> None:
     parser.add_argument("--top-k", type=int, default=10)
     parser.add_argument("--limit", type=int, help="only the first N concepts")
     parser.add_argument("--generate-per-call", type=int, default=10)
+    parser.add_argument("--generate-passes", type=int, default=3)
     parser.add_argument("--read-batch", type=int, default=32)
     parser.add_argument("--judge-batch", type=int, default=8)
     parser.add_argument("--workers", type=int, default=4)
@@ -315,8 +329,16 @@ def main(argv: list[str] | None = None) -> None:
           f"read batch {args.read_batch}, judge batch {args.judge_batch}", flush=True)
 
     if args.phase in ("all", "generate"):
-        phase_generate(key, concepts, items_path, args.ledger,
-                       per_call=args.generate_per_call, workers=args.workers)
+        for attempt in range(args.generate_passes):
+            remaining = len(concepts) - len(load_done(items_path))
+            if not remaining:
+                break
+            print(
+                f"[generate] pass {attempt + 1}, {remaining} concepts left",
+                flush=True,
+            )
+            phase_generate(key, concepts, items_path, args.ledger,
+                           per_call=args.generate_per_call, workers=args.workers)
     if args.phase in ("all", "read"):
         wanted = set(concepts)
         items = [r for r in read_jsonl(items_path) if r["concept"] in wanted]
