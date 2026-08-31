@@ -83,3 +83,9 @@ The serious problem we have, which we should have thought about at the very begi
 I had a hindrance and i'm just resuming working on the project now. 
 Before the interruption I think I spent 30 more minutes on the project, thinking about how to do the dataset. 
 Let's consider ourselves at 6h45 into the project. 
+
+## 2026-08-31 19:50
+I have worked 1h and a bit more on producing the dataset of J-lens possible failures. 
+I'm leveraging GLM5.2 as a judge. 
+Hopefully by tomorrow we have a first version of the dataset... we are still working on setting up the script that generates examples for a possible list of concepts. 
+We can now consider ourselves at 8h into the project (halfway through it). 

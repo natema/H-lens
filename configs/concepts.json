@@ -1,9 +1,13 @@
 {
   "schema_version": 1,
-  "source": "Single-token lowercase alphabetic words with a leading space, the form a readout emits, present at least 3 times in 10000 NeelNanda/pile-10k documents, excluding plain inflections of another candidate, then filtered by the generator model to concrete common nouns.",
+  "source": "Single-token lowercase alphabetic words with a leading space, the form a readout emits, present at least 3 times in 10000 NeelNanda/pile-10k documents, excluding plain inflections of another candidate, then filtered by the generator model to concrete common nouns. Words flagged as sexually explicit were then removed; they are listed in removed_adult_content for transparency. The screen over-flagged four medical or historical terms (uterus, womb, circumcision, slave); these were restored.",
   "n_candidates": 14990,
-  "n_accepted": 3364,
+  "n_accepted": 3344,
   "concepts": [
+    {
+      "word": "file",
+      "pile_frequency": 1864
+    },
     {
       "word": "game",
       "pile_frequency": 1571
@@ -11,10 +15,6 @@
     {
       "word": "court",
       "pile_frequency": 1559
-    },
-    {
-      "word": "file",
-      "pile_frequency": 1864
     },
     {
       "word": "home",
@@ -257,16 +257,16 @@
       "pile_frequency": 725
     },
     {
-      "word": "party",
-      "pile_frequency": 691
-    },
-    {
       "word": "network",
       "pile_frequency": 697
     },
     {
       "word": "death",
       "pile_frequency": 696
+    },
+    {
+      "word": "party",
+      "pile_frequency": 691
     },
     {
       "word": "film",
@@ -277,12 +277,44 @@
       "pile_frequency": 672
     },
     {
+      "word": "review",
+      "pile_frequency": 657
+    },
+    {
+      "word": "month",
+      "pile_frequency": 650
+    },
+    {
+      "word": "region",
+      "pile_frequency": 649
+    },
+    {
+      "word": "paper",
+      "pile_frequency": 643
+    },
+    {
+      "word": "server",
+      "pile_frequency": 640
+    },
+    {
       "word": "child",
       "pile_frequency": 634
     },
     {
+      "word": "display",
+      "pile_frequency": 629
+    },
+    {
       "word": "table",
       "pile_frequency": 615
+    },
+    {
+      "word": "front",
+      "pile_frequency": 614
+    },
+    {
+      "word": "element",
+      "pile_frequency": 612
     },
     {
       "word": "color",
@@ -293,44 +325,12 @@
       "pile_frequency": 606
     },
     {
-      "word": "heart",
-      "pile_frequency": 598
-    },
-    {
-      "word": "server",
-      "pile_frequency": 640
-    },
-    {
-      "word": "website",
-      "pile_frequency": 590
-    },
-    {
-      "word": "paper",
-      "pile_frequency": 643
-    },
-    {
-      "word": "article",
-      "pile_frequency": 589
-    },
-    {
-      "word": "language",
-      "pile_frequency": 587
-    },
-    {
       "word": "plan",
       "pile_frequency": 604
     },
     {
-      "word": "region",
-      "pile_frequency": 649
-    },
-    {
-      "word": "month",
-      "pile_frequency": 650
-    },
-    {
-      "word": "review",
-      "pile_frequency": 657
+      "word": "heart",
+      "pile_frequency": 598
     },
     {
       "word": "account",
@@ -341,28 +341,28 @@
       "pile_frequency": 592
     },
     {
+      "word": "website",
+      "pile_frequency": 590
+    },
+    {
       "word": "industry",
       "pile_frequency": 590
+    },
+    {
+      "word": "article",
+      "pile_frequency": 589
     },
     {
       "word": "search",
       "pile_frequency": 589
     },
     {
-      "word": "display",
-      "pile_frequency": 629
-    },
-    {
       "word": "section",
       "pile_frequency": 589
     },
     {
-      "word": "front",
-      "pile_frequency": 614
-    },
-    {
-      "word": "element",
-      "pile_frequency": 612
+      "word": "language",
+      "pile_frequency": 587
     },
     {
       "word": "database",
@@ -497,20 +497,20 @@
       "pile_frequency": 438
     },
     {
+      "word": "woman",
+      "pile_frequency": 437
+    },
+    {
+      "word": "document",
+      "pile_frequency": 435
+    },
+    {
       "word": "metal",
       "pile_frequency": 433
     },
     {
-      "word": "engine",
-      "pile_frequency": 418
-    },
-    {
-      "word": "band",
-      "pile_frequency": 423
-    },
-    {
-      "word": "station",
-      "pile_frequency": 421
+      "word": "mother",
+      "pile_frequency": 431
     },
     {
       "word": "card",
@@ -521,24 +521,36 @@
       "pile_frequency": 428
     },
     {
+      "word": "band",
+      "pile_frequency": 423
+    },
+    {
+      "word": "station",
+      "pile_frequency": 421
+    },
+    {
+      "word": "engine",
+      "pile_frequency": 418
+    },
+    {
       "word": "election",
       "pile_frequency": 414
     },
     {
-      "word": "mother",
-      "pile_frequency": 431
-    },
-    {
-      "word": "woman",
-      "pile_frequency": 437
-    },
-    {
-      "word": "document",
-      "pile_frequency": 435
+      "word": "tool",
+      "pile_frequency": 401
     },
     {
       "word": "hospital",
       "pile_frequency": 397
+    },
+    {
+      "word": "screen",
+      "pile_frequency": 391
+    },
+    {
+      "word": "module",
+      "pile_frequency": 391
     },
     {
       "word": "construction",
@@ -553,11 +565,23 @@
       "pile_frequency": 387
     },
     {
+      "word": "formation",
+      "pile_frequency": 385
+    },
+    {
       "word": "football",
       "pile_frequency": 383
     },
     {
       "word": "tumor",
+      "pile_frequency": 383
+    },
+    {
+      "word": "liquid",
+      "pile_frequency": 383
+    },
+    {
+      "word": "culture",
       "pile_frequency": 383
     },
     {
@@ -575,30 +599,6 @@
     {
       "word": "trade",
       "pile_frequency": 376
-    },
-    {
-      "word": "tool",
-      "pile_frequency": 401
-    },
-    {
-      "word": "screen",
-      "pile_frequency": 391
-    },
-    {
-      "word": "module",
-      "pile_frequency": 391
-    },
-    {
-      "word": "liquid",
-      "pile_frequency": 383
-    },
-    {
-      "word": "formation",
-      "pile_frequency": 385
-    },
-    {
-      "word": "culture",
-      "pile_frequency": 383
     },
     {
       "word": "background",
@@ -637,12 +637,12 @@
       "pile_frequency": 361
     },
     {
-      "word": "motor",
-      "pile_frequency": 352
-    },
-    {
       "word": "port",
       "pile_frequency": 353
+    },
+    {
+      "word": "motor",
+      "pile_frequency": 352
     },
     {
       "word": "student",
@@ -677,6 +677,22 @@
       "pile_frequency": 335
     },
     {
+      "word": "vote",
+      "pile_frequency": 335
+    },
+    {
+      "word": "custom",
+      "pile_frequency": 335
+    },
+    {
+      "word": "friend",
+      "pile_frequency": 331
+    },
+    {
+      "word": "ball",
+      "pile_frequency": 330
+    },
+    {
       "word": "race",
       "pile_frequency": 329
     },
@@ -685,27 +701,55 @@
       "pile_frequency": 329
     },
     {
-      "word": "ball",
-      "pile_frequency": 330
+      "word": "echo",
+      "pile_frequency": 329
     },
     {
-      "word": "friend",
-      "pile_frequency": 331
+      "word": "piece",
+      "pile_frequency": 326
+    },
+    {
+      "word": "char",
+      "pile_frequency": 324
+    },
+    {
+      "word": "rule",
+      "pile_frequency": 322
+    },
+    {
+      "word": "shape",
+      "pile_frequency": 321
     },
     {
       "word": "watch",
       "pile_frequency": 319
     },
     {
-      "word": "radio",
-      "pile_frequency": 316
+      "word": "challenge",
+      "pile_frequency": 319
+    },
+    {
+      "word": "purchase",
+      "pile_frequency": 318
     },
     {
       "word": "credit",
       "pile_frequency": 317
     },
     {
+      "word": "radio",
+      "pile_frequency": 316
+    },
+    {
+      "word": "wait",
+      "pile_frequency": 316
+    },
+    {
       "word": "kids",
+      "pile_frequency": 315
+    },
+    {
+      "word": "transfer",
       "pile_frequency": 315
     },
     {
@@ -725,50 +769,6 @@
       "pile_frequency": 313
     },
     {
-      "word": "rule",
-      "pile_frequency": 322
-    },
-    {
-      "word": "shape",
-      "pile_frequency": 321
-    },
-    {
-      "word": "challenge",
-      "pile_frequency": 319
-    },
-    {
-      "word": "purchase",
-      "pile_frequency": 318
-    },
-    {
-      "word": "wait",
-      "pile_frequency": 316
-    },
-    {
-      "word": "transfer",
-      "pile_frequency": 315
-    },
-    {
-      "word": "echo",
-      "pile_frequency": 329
-    },
-    {
-      "word": "piece",
-      "pile_frequency": 326
-    },
-    {
-      "word": "vote",
-      "pile_frequency": 335
-    },
-    {
-      "word": "custom",
-      "pile_frequency": 335
-    },
-    {
-      "word": "char",
-      "pile_frequency": 324
-    },
-    {
       "word": "plant",
       "pile_frequency": 307
     },
@@ -781,11 +781,27 @@
       "pile_frequency": 307
     },
     {
+      "word": "diagnosis",
+      "pile_frequency": 307
+    },
+    {
+      "word": "capacity",
+      "pile_frequency": 306
+    },
+    {
+      "word": "strategy",
+      "pile_frequency": 304
+    },
+    {
       "word": "door",
       "pile_frequency": 303
     },
     {
       "word": "exposure",
+      "pile_frequency": 301
+    },
+    {
+      "word": "sentence",
       "pile_frequency": 301
     },
     {
@@ -797,11 +813,23 @@
       "pile_frequency": 300
     },
     {
+      "word": "detection",
+      "pile_frequency": 297
+    },
+    {
       "word": "letter",
       "pile_frequency": 296
     },
     {
       "word": "star",
+      "pile_frequency": 296
+    },
+    {
+      "word": "society",
+      "pile_frequency": 296
+    },
+    {
+      "word": "format",
       "pile_frequency": 296
     },
     {
@@ -822,6 +850,14 @@
     },
     {
       "word": "movie",
+      "pile_frequency": 295
+    },
+    {
+      "word": "figure",
+      "pile_frequency": 295
+    },
+    {
+      "word": "strength",
       "pile_frequency": 295
     },
     {
@@ -865,52 +901,16 @@
       "pile_frequency": 289
     },
     {
+      "word": "ratio",
+      "pile_frequency": 289
+    },
+    {
       "word": "plate",
       "pile_frequency": 288
     },
     {
       "word": "channel",
       "pile_frequency": 287
-    },
-    {
-      "word": "diagnosis",
-      "pile_frequency": 307
-    },
-    {
-      "word": "sentence",
-      "pile_frequency": 301
-    },
-    {
-      "word": "figure",
-      "pile_frequency": 295
-    },
-    {
-      "word": "society",
-      "pile_frequency": 296
-    },
-    {
-      "word": "format",
-      "pile_frequency": 296
-    },
-    {
-      "word": "capacity",
-      "pile_frequency": 306
-    },
-    {
-      "word": "detection",
-      "pile_frequency": 297
-    },
-    {
-      "word": "ratio",
-      "pile_frequency": 289
-    },
-    {
-      "word": "strategy",
-      "pile_frequency": 304
-    },
-    {
-      "word": "strength",
-      "pile_frequency": 295
     },
     {
       "word": "television",
@@ -997,16 +997,76 @@
       "pile_frequency": 268
     },
     {
-      "word": "lung",
-      "pile_frequency": 266
+      "word": "counsel",
+      "pile_frequency": 268
+    },
+    {
+      "word": "interaction",
+      "pile_frequency": 268
     },
     {
       "word": "assembly",
       "pile_frequency": 267
     },
     {
+      "word": "insurance",
+      "pile_frequency": 267
+    },
+    {
+      "word": "lung",
+      "pile_frequency": 266
+    },
+    {
       "word": "disc",
       "pile_frequency": 266
+    },
+    {
+      "word": "parameter",
+      "pile_frequency": 265
+    },
+    {
+      "word": "literature",
+      "pile_frequency": 264
+    },
+    {
+      "word": "domain",
+      "pile_frequency": 264
+    },
+    {
+      "word": "firm",
+      "pile_frequency": 263
+    },
+    {
+      "word": "fans",
+      "pile_frequency": 263
+    },
+    {
+      "word": "economy",
+      "pile_frequency": 263
+    },
+    {
+      "word": "transport",
+      "pile_frequency": 262
+    },
+    {
+      "word": "haven",
+      "pile_frequency": 262
+    },
+    {
+      "word": "activation",
+      "pile_frequency": 262
+    },
+    {
+      "word": "capital",
+      "pile_frequency": 261
+    },
+    {
+      "word": "agency",
+      "pile_frequency": 260
+    },
+    {
+      "word": "hour",
+      "pile_frequency": 260
     },
     {
       "word": "root",
@@ -1017,36 +1077,28 @@
       "pile_frequency": 257
     },
     {
+      "word": "budget",
+      "pile_frequency": 255
+    },
+    {
+      "word": "profile",
+      "pile_frequency": 255
+    },
+    {
+      "word": "demand",
+      "pile_frequency": 255
+    },
+    {
+      "word": "reality",
+      "pile_frequency": 255
+    },
+    {
       "word": "valve",
       "pile_frequency": 254
     },
     {
       "word": "church",
       "pile_frequency": 254
-    },
-    {
-      "word": "wave",
-      "pile_frequency": 253
-    },
-    {
-      "word": "camera",
-      "pile_frequency": 253
-    },
-    {
-      "word": "bone",
-      "pile_frequency": 251
-    },
-    {
-      "word": "spring",
-      "pile_frequency": 251
-    },
-    {
-      "word": "survey",
-      "pile_frequency": 251
-    },
-    {
-      "word": "ring",
-      "pile_frequency": 250
     },
     {
       "word": "console",
@@ -1069,96 +1121,44 @@
       "pile_frequency": 254
     },
     {
-      "word": "transport",
-      "pile_frequency": 262
+      "word": "protection",
+      "pile_frequency": 254
     },
     {
-      "word": "capital",
-      "pile_frequency": 261
+      "word": "wave",
+      "pile_frequency": 253
     },
     {
-      "word": "agency",
-      "pile_frequency": 260
-    },
-    {
-      "word": "budget",
-      "pile_frequency": 255
-    },
-    {
-      "word": "profile",
-      "pile_frequency": 255
-    },
-    {
-      "word": "haven",
-      "pile_frequency": 262
-    },
-    {
-      "word": "firm",
-      "pile_frequency": 263
-    },
-    {
-      "word": "fans",
-      "pile_frequency": 263
+      "word": "camera",
+      "pile_frequency": 253
     },
     {
       "word": "plaintiff",
       "pile_frequency": 252
     },
     {
-      "word": "resource",
+      "word": "girl",
+      "pile_frequency": 252
+    },
+    {
+      "word": "bone",
+      "pile_frequency": 251
+    },
+    {
+      "word": "spring",
+      "pile_frequency": 251
+    },
+    {
+      "word": "survey",
+      "pile_frequency": 251
+    },
+    {
+      "word": "ring",
       "pile_frequency": 250
     },
     {
-      "word": "protocol",
-      "pile_frequency": 249
-    },
-    {
-      "word": "transition",
-      "pile_frequency": 249
-    },
-    {
-      "word": "insurance",
-      "pile_frequency": 267
-    },
-    {
-      "word": "literature",
-      "pile_frequency": 264
-    },
-    {
-      "word": "economy",
-      "pile_frequency": 263
-    },
-    {
-      "word": "domain",
-      "pile_frequency": 264
-    },
-    {
-      "word": "parameter",
-      "pile_frequency": 265
-    },
-    {
-      "word": "activation",
-      "pile_frequency": 262
-    },
-    {
-      "word": "counsel",
-      "pile_frequency": 268
-    },
-    {
-      "word": "interaction",
-      "pile_frequency": 268
-    },
-    {
-      "word": "demand",
-      "pile_frequency": 255
-    },
-    {
-      "word": "reality",
-      "pile_frequency": 255
-    },
-    {
-      "word": "protection",
-      "pile_frequency": 254
+      "word": "resource",
+      "pile_frequency": 250
     },
     {
       "word": "travel",
@@ -1169,12 +1169,12 @@
       "pile_frequency": 250
     },
     {
-      "word": "hour",
-      "pile_frequency": 260
+      "word": "protocol",
+      "pile_frequency": 249
     },
     {
-      "word": "girl",
-      "pile_frequency": 252
+      "word": "transition",
+      "pile_frequency": 249
     },
     {
       "word": "criminal",
@@ -1333,8 +1333,24 @@
       "pile_frequency": 229
     },
     {
+      "word": "judge",
+      "pile_frequency": 228
+    },
+    {
+      "word": "terminal",
+      "pile_frequency": 228
+    },
+    {
       "word": "mission",
       "pile_frequency": 227
+    },
+    {
+      "word": "violence",
+      "pile_frequency": 227
+    },
+    {
+      "word": "chemical",
+      "pile_frequency": 226
     },
     {
       "word": "bank",
@@ -1361,6 +1377,10 @@
       "pile_frequency": 223
     },
     {
+      "word": "complaint",
+      "pile_frequency": 222
+    },
+    {
       "word": "writer",
       "pile_frequency": 221
     },
@@ -1373,32 +1393,12 @@
       "pile_frequency": 221
     },
     {
-      "word": "judge",
-      "pile_frequency": 228
-    },
-    {
-      "word": "terminal",
-      "pile_frequency": 228
-    },
-    {
-      "word": "chemical",
-      "pile_frequency": 226
-    },
-    {
-      "word": "violence",
-      "pile_frequency": 227
-    },
-    {
       "word": "birth",
       "pile_frequency": 220
     },
     {
       "word": "experiment",
       "pile_frequency": 219
-    },
-    {
-      "word": "complaint",
-      "pile_frequency": 222
     },
     {
       "word": "breast",
@@ -1461,6 +1461,10 @@
       "pile_frequency": 208
     },
     {
+      "word": "cast",
+      "pile_frequency": 207
+    },
+    {
       "word": "battle",
       "pile_frequency": 206
     },
@@ -1477,15 +1481,15 @@
       "pile_frequency": 205
     },
     {
-      "word": "cast",
-      "pile_frequency": 207
-    },
-    {
       "word": "fashion",
       "pile_frequency": 205
     },
     {
       "word": "chamber",
+      "pile_frequency": 205
+    },
+    {
+      "word": "scheme",
       "pile_frequency": 205
     },
     {
@@ -1497,6 +1501,10 @@
       "pile_frequency": 204
     },
     {
+      "word": "sale",
+      "pile_frequency": 204
+    },
+    {
       "word": "crisis",
       "pile_frequency": 203
     },
@@ -1505,20 +1513,12 @@
       "pile_frequency": 203
     },
     {
-      "word": "threat",
-      "pile_frequency": 202
-    },
-    {
-      "word": "scheme",
-      "pile_frequency": 205
-    },
-    {
       "word": "license",
       "pile_frequency": 203
     },
     {
-      "word": "sale",
-      "pile_frequency": 204
+      "word": "threat",
+      "pile_frequency": 202
     },
     {
       "word": "diabetes",
@@ -1557,16 +1557,16 @@
       "pile_frequency": 195
     },
     {
-      "word": "bridge",
-      "pile_frequency": 193
-    },
-    {
       "word": "baby",
       "pile_frequency": 194
     },
     {
       "word": "brother",
       "pile_frequency": 194
+    },
+    {
+      "word": "bridge",
+      "pile_frequency": 193
     },
     {
       "word": "owner",
@@ -1621,6 +1621,10 @@
       "pile_frequency": 185
     },
     {
+      "word": "dogs",
+      "pile_frequency": 185
+    },
+    {
       "word": "battery",
       "pile_frequency": 184
     },
@@ -1649,19 +1653,59 @@
       "pile_frequency": 181
     },
     {
-      "word": "dogs",
-      "pile_frequency": 185
+      "word": "disk",
+      "pile_frequency": 179
     },
     {
       "word": "island",
       "pile_frequency": 178
     },
     {
+      "word": "audio",
+      "pile_frequency": 178
+    },
+    {
+      "word": "noise",
+      "pile_frequency": 177
+    },
+    {
+      "word": "vision",
+      "pile_frequency": 177
+    },
+    {
+      "word": "stem",
+      "pile_frequency": 177
+    },
+    {
       "word": "flag",
       "pile_frequency": 176
     },
     {
+      "word": "beam",
+      "pile_frequency": 176
+    },
+    {
+      "word": "axis",
+      "pile_frequency": 176
+    },
+    {
       "word": "wood",
+      "pile_frequency": 175
+    },
+    {
+      "word": "semiconductor",
+      "pile_frequency": 175
+    },
+    {
+      "word": "compliance",
+      "pile_frequency": 175
+    },
+    {
+      "word": "victory",
+      "pile_frequency": 175
+    },
+    {
+      "word": "advice",
       "pile_frequency": 175
     },
     {
@@ -1689,6 +1733,18 @@
       "pile_frequency": 174
     },
     {
+      "word": "carrier",
+      "pile_frequency": 173
+    },
+    {
+      "word": "framework",
+      "pile_frequency": 173
+    },
+    {
+      "word": "scope",
+      "pile_frequency": 173
+    },
+    {
       "word": "medicine",
       "pile_frequency": 172
     },
@@ -1701,72 +1757,16 @@
       "pile_frequency": 171
     },
     {
-      "word": "carrier",
-      "pile_frequency": 173
-    },
-    {
-      "word": "beam",
-      "pile_frequency": 176
-    },
-    {
-      "word": "disk",
-      "pile_frequency": 179
-    },
-    {
-      "word": "audio",
-      "pile_frequency": 178
-    },
-    {
-      "word": "noise",
-      "pile_frequency": 177
-    },
-    {
-      "word": "vision",
-      "pile_frequency": 177
-    },
-    {
-      "word": "axis",
-      "pile_frequency": 176
-    },
-    {
-      "word": "angle",
-      "pile_frequency": 170
-    },
-    {
-      "word": "stem",
-      "pile_frequency": 177
-    },
-    {
-      "word": "semiconductor",
-      "pile_frequency": 175
-    },
-    {
       "word": "catalyst",
       "pile_frequency": 171
-    },
-    {
-      "word": "framework",
-      "pile_frequency": 173
-    },
-    {
-      "word": "compliance",
-      "pile_frequency": 175
     },
     {
       "word": "margin",
       "pile_frequency": 171
     },
     {
-      "word": "scope",
-      "pile_frequency": 173
-    },
-    {
-      "word": "victory",
-      "pile_frequency": 175
-    },
-    {
-      "word": "advice",
-      "pile_frequency": 175
+      "word": "angle",
+      "pile_frequency": 170
     },
     {
       "word": "magazine",
@@ -1797,16 +1797,20 @@
       "pile_frequency": 167
     },
     {
+      "word": "camp",
+      "pile_frequency": 167
+    },
+    {
+      "word": "university",
+      "pile_frequency": 167
+    },
+    {
       "word": "plane",
       "pile_frequency": 166
     },
     {
       "word": "hole",
       "pile_frequency": 166
-    },
-    {
-      "word": "camp",
-      "pile_frequency": 167
     },
     {
       "word": "doctor",
@@ -1825,15 +1829,23 @@
       "pile_frequency": 164
     },
     {
-      "word": "university",
-      "pile_frequency": 167
-    },
-    {
       "word": "destination",
       "pile_frequency": 161
     },
     {
+      "word": "font",
+      "pile_frequency": 160
+    },
+    {
+      "word": "tube",
+      "pile_frequency": 160
+    },
+    {
       "word": "village",
+      "pile_frequency": 159
+    },
+    {
+      "word": "iron",
       "pile_frequency": 159
     },
     {
@@ -1841,11 +1853,47 @@
       "pile_frequency": 158
     },
     {
-      "word": "iron",
-      "pile_frequency": 159
+      "word": "conflict",
+      "pile_frequency": 158
+    },
+    {
+      "word": "faith",
+      "pile_frequency": 158
+    },
+    {
+      "word": "interval",
+      "pile_frequency": 158
+    },
+    {
+      "word": "rows",
+      "pile_frequency": 158
+    },
+    {
+      "word": "strain",
+      "pile_frequency": 157
+    },
+    {
+      "word": "token",
+      "pile_frequency": 157
+    },
+    {
+      "word": "particle",
+      "pile_frequency": 157
+    },
+    {
+      "word": "edition",
+      "pile_frequency": 157
     },
     {
       "word": "journey",
+      "pile_frequency": 156
+    },
+    {
+      "word": "rotation",
+      "pile_frequency": 156
+    },
+    {
+      "word": "advertising",
       "pile_frequency": 156
     },
     {
@@ -1854,6 +1902,14 @@
     },
     {
       "word": "expert",
+      "pile_frequency": 155
+    },
+    {
+      "word": "classification",
+      "pile_frequency": 155
+    },
+    {
+      "word": "legislation",
       "pile_frequency": 155
     },
     {
@@ -1873,10 +1929,6 @@
       "pile_frequency": 154
     },
     {
-      "word": "afternoon",
-      "pile_frequency": 153
-    },
-    {
       "word": "boys",
       "pile_frequency": 154
     },
@@ -1889,56 +1941,8 @@
       "pile_frequency": 154
     },
     {
-      "word": "soil",
-      "pile_frequency": 153
-    },
-    {
-      "word": "dust",
-      "pile_frequency": 153
-    },
-    {
       "word": "peak",
       "pile_frequency": 154
-    },
-    {
-      "word": "centre",
-      "pile_frequency": 153
-    },
-    {
-      "word": "cyst",
-      "pile_frequency": 153
-    },
-    {
-      "word": "strain",
-      "pile_frequency": 157
-    },
-    {
-      "word": "font",
-      "pile_frequency": 160
-    },
-    {
-      "word": "tube",
-      "pile_frequency": 160
-    },
-    {
-      "word": "token",
-      "pile_frequency": 157
-    },
-    {
-      "word": "rotation",
-      "pile_frequency": 156
-    },
-    {
-      "word": "particle",
-      "pile_frequency": 157
-    },
-    {
-      "word": "conflict",
-      "pile_frequency": 158
-    },
-    {
-      "word": "faith",
-      "pile_frequency": 158
     },
     {
       "word": "permission",
@@ -1953,35 +1957,43 @@
       "pile_frequency": 154
     },
     {
+      "word": "afternoon",
+      "pile_frequency": 153
+    },
+    {
+      "word": "soil",
+      "pile_frequency": 153
+    },
+    {
+      "word": "dust",
+      "pile_frequency": 153
+    },
+    {
+      "word": "centre",
+      "pile_frequency": 153
+    },
+    {
+      "word": "cyst",
+      "pile_frequency": 153
+    },
+    {
       "word": "variation",
       "pile_frequency": 153
     },
     {
-      "word": "interval",
-      "pile_frequency": 158
-    },
-    {
-      "word": "classification",
-      "pile_frequency": 155
-    },
-    {
-      "word": "legislation",
-      "pile_frequency": 155
-    },
-    {
-      "word": "advertising",
-      "pile_frequency": 156
-    },
-    {
-      "word": "edition",
-      "pile_frequency": 157
-    },
-    {
-      "word": "rows",
-      "pile_frequency": 158
-    },
-    {
       "word": "testimony",
+      "pile_frequency": 151
+    },
+    {
+      "word": "stack",
+      "pile_frequency": 151
+    },
+    {
+      "word": "arrangement",
+      "pile_frequency": 151
+    },
+    {
+      "word": "patent",
       "pile_frequency": 151
     },
     {
@@ -1989,7 +2001,15 @@
       "pile_frequency": 150
     },
     {
+      "word": "schedule",
+      "pile_frequency": 150
+    },
+    {
       "word": "loan",
+      "pile_frequency": 149
+    },
+    {
+      "word": "penalty",
       "pile_frequency": 149
     },
     {
@@ -2005,22 +2025,6 @@
       "pile_frequency": 148
     },
     {
-      "word": "truck",
-      "pile_frequency": 147
-    },
-    {
-      "word": "stroke",
-      "pile_frequency": 147
-    },
-    {
-      "word": "editor",
-      "pile_frequency": 146
-    },
-    {
-      "word": "mouth",
-      "pile_frequency": 147
-    },
-    {
       "word": "poll",
       "pile_frequency": 148
     },
@@ -2033,156 +2037,44 @@
       "pile_frequency": 148
     },
     {
-      "word": "grade",
-      "pile_frequency": 147
-    },
-    {
-      "word": "schedule",
-      "pile_frequency": 150
-    },
-    {
-      "word": "penalty",
-      "pile_frequency": 149
-    },
-    {
-      "word": "compound",
-      "pile_frequency": 146
-    },
-    {
-      "word": "stack",
-      "pile_frequency": 151
-    },
-    {
-      "word": "arrangement",
-      "pile_frequency": 151
-    },
-    {
       "word": "employment",
       "pile_frequency": 148
-    },
-    {
-      "word": "recovery",
-      "pile_frequency": 147
     },
     {
       "word": "preparation",
       "pile_frequency": 148
     },
     {
-      "word": "execution",
+      "word": "truck",
+      "pile_frequency": 147
+    },
+    {
+      "word": "stroke",
+      "pile_frequency": 147
+    },
+    {
+      "word": "mouth",
+      "pile_frequency": 147
+    },
+    {
+      "word": "grade",
+      "pile_frequency": 147
+    },
+    {
+      "word": "recovery",
+      "pile_frequency": 147
+    },
+    {
+      "word": "editor",
       "pile_frequency": 146
     },
     {
-      "word": "patent",
-      "pile_frequency": 151
+      "word": "compound",
+      "pile_frequency": 146
     },
     {
-      "word": "apartment",
-      "pile_frequency": 144
-    },
-    {
-      "word": "river",
-      "pile_frequency": 142
-    },
-    {
-      "word": "crowd",
-      "pile_frequency": 139
-    },
-    {
-      "word": "rail",
-      "pile_frequency": 139
-    },
-    {
-      "word": "shaft",
-      "pile_frequency": 139
-    },
-    {
-      "word": "foot",
-      "pile_frequency": 140
-    },
-    {
-      "word": "neck",
-      "pile_frequency": 145
-    },
-    {
-      "word": "clock",
-      "pile_frequency": 145
-    },
-    {
-      "word": "minister",
-      "pile_frequency": 142
-    },
-    {
-      "word": "laboratory",
-      "pile_frequency": 142
-    },
-    {
-      "word": "decade",
-      "pile_frequency": 142
-    },
-    {
-      "word": "conversation",
-      "pile_frequency": 143
-    },
-    {
-      "word": "presentation",
-      "pile_frequency": 144
-    },
-    {
-      "word": "waste",
-      "pile_frequency": 143
-    },
-    {
-      "word": "grid",
-      "pile_frequency": 141
-    },
-    {
-      "word": "ride",
-      "pile_frequency": 141
-    },
-    {
-      "word": "theme",
-      "pile_frequency": 140
-    },
-    {
-      "word": "proposal",
-      "pile_frequency": 140
-    },
-    {
-      "word": "password",
-      "pile_frequency": 139
-    },
-    {
-      "word": "suspect",
-      "pile_frequency": 139
-    },
-    {
-      "word": "disorder",
-      "pile_frequency": 145
-    },
-    {
-      "word": "depression",
-      "pile_frequency": 139
-    },
-    {
-      "word": "personnel",
-      "pile_frequency": 144
-    },
-    {
-      "word": "assistance",
-      "pile_frequency": 142
-    },
-    {
-      "word": "healthcare",
-      "pile_frequency": 142
-    },
-    {
-      "word": "handling",
-      "pile_frequency": 142
-    },
-    {
-      "word": "cutting",
-      "pile_frequency": 138
+      "word": "execution",
+      "pile_frequency": 146
     },
     {
       "word": "bond",
@@ -2193,72 +2085,24 @@
       "pile_frequency": 146
     },
     {
-      "word": "delete",
-      "pile_frequency": 142
-    },
-    {
-      "word": "execute",
-      "pile_frequency": 143
-    },
-    {
-      "word": "parse",
-      "pile_frequency": 138
-    },
-    {
-      "word": "cache",
-      "pile_frequency": 145
-    },
-    {
-      "word": "graph",
-      "pile_frequency": 141
-    },
-    {
-      "word": "fraction",
-      "pile_frequency": 139
-    },
-    {
-      "word": "diameter",
-      "pile_frequency": 142
-    },
-    {
-      "word": "velocity",
-      "pile_frequency": 140
-    },
-    {
-      "word": "correlation",
-      "pile_frequency": 138
-    },
-    {
-      "word": "diverse",
-      "pile_frequency": 138
-    },
-    {
-      "word": "stability",
-      "pile_frequency": 141
-    },
-    {
-      "word": "consumption",
-      "pile_frequency": 141
-    },
-    {
-      "word": "involvement",
-      "pile_frequency": 143
-    },
-    {
-      "word": "determination",
-      "pile_frequency": 144
-    },
-    {
-      "word": "evolution",
-      "pile_frequency": 144
-    },
-    {
       "word": "metabolism",
       "pile_frequency": 146
     },
     {
-      "word": "encoding",
-      "pile_frequency": 142
+      "word": "neck",
+      "pile_frequency": 145
+    },
+    {
+      "word": "clock",
+      "pile_frequency": 145
+    },
+    {
+      "word": "disorder",
+      "pile_frequency": 145
+    },
+    {
+      "word": "cache",
+      "pile_frequency": 145
     },
     {
       "word": "origin",
@@ -2277,12 +2121,64 @@
       "pile_frequency": 145
     },
     {
+      "word": "therm",
+      "pile_frequency": 145
+    },
+    {
+      "word": "elect",
+      "pile_frequency": 145
+    },
+    {
+      "word": "apartment",
+      "pile_frequency": 144
+    },
+    {
+      "word": "presentation",
+      "pile_frequency": 144
+    },
+    {
+      "word": "personnel",
+      "pile_frequency": 144
+    },
+    {
+      "word": "determination",
+      "pile_frequency": 144
+    },
+    {
+      "word": "evolution",
+      "pile_frequency": 144
+    },
+    {
       "word": "basically",
       "pile_frequency": 144
     },
     {
       "word": "plenty",
       "pile_frequency": 144
+    },
+    {
+      "word": "alpha",
+      "pile_frequency": 144
+    },
+    {
+      "word": "mention",
+      "pile_frequency": 144
+    },
+    {
+      "word": "conversation",
+      "pile_frequency": 143
+    },
+    {
+      "word": "waste",
+      "pile_frequency": 143
+    },
+    {
+      "word": "execute",
+      "pile_frequency": 143
+    },
+    {
+      "word": "involvement",
+      "pile_frequency": 143
     },
     {
       "word": "ongoing",
@@ -2305,48 +2201,52 @@
       "pile_frequency": 143
     },
     {
-      "word": "optional",
-      "pile_frequency": 140
-    },
-    {
-      "word": "facing",
-      "pile_frequency": 141
-    },
-    {
-      "word": "renal",
-      "pile_frequency": 139
-    },
-    {
-      "word": "metabolic",
-      "pile_frequency": 139
-    },
-    {
-      "word": "quant",
-      "pile_frequency": 139
-    },
-    {
-      "word": "chem",
-      "pile_frequency": 142
-    },
-    {
-      "word": "therm",
-      "pile_frequency": 145
-    },
-    {
       "word": "config",
       "pile_frequency": 143
     },
     {
-      "word": "submitted",
-      "pile_frequency": 141
+      "word": "river",
+      "pile_frequency": 142
     },
     {
-      "word": "dropped",
-      "pile_frequency": 138
+      "word": "minister",
+      "pile_frequency": 142
     },
     {
-      "word": "corporate",
-      "pile_frequency": 138
+      "word": "laboratory",
+      "pile_frequency": 142
+    },
+    {
+      "word": "decade",
+      "pile_frequency": 142
+    },
+    {
+      "word": "assistance",
+      "pile_frequency": 142
+    },
+    {
+      "word": "healthcare",
+      "pile_frequency": 142
+    },
+    {
+      "word": "handling",
+      "pile_frequency": 142
+    },
+    {
+      "word": "delete",
+      "pile_frequency": 142
+    },
+    {
+      "word": "diameter",
+      "pile_frequency": 142
+    },
+    {
+      "word": "encoding",
+      "pile_frequency": 142
+    },
+    {
+      "word": "chem",
+      "pile_frequency": 142
     },
     {
       "word": "historical",
@@ -2365,48 +2265,132 @@
       "pile_frequency": 142
     },
     {
-      "word": "obviously",
-      "pile_frequency": 138
+      "word": "grid",
+      "pile_frequency": 141
     },
     {
-      "word": "elect",
-      "pile_frequency": 145
+      "word": "ride",
+      "pile_frequency": 141
     },
     {
-      "word": "alpha",
-      "pile_frequency": 144
+      "word": "graph",
+      "pile_frequency": 141
     },
     {
-      "word": "privacy",
-      "pile_frequency": 140
+      "word": "stability",
+      "pile_frequency": 141
     },
     {
-      "word": "recognize",
-      "pile_frequency": 139
+      "word": "consumption",
+      "pile_frequency": 141
+    },
+    {
+      "word": "facing",
+      "pile_frequency": 141
+    },
+    {
+      "word": "submitted",
+      "pile_frequency": 141
     },
     {
       "word": "attend",
       "pile_frequency": 141
     },
     {
-      "word": "mention",
-      "pile_frequency": 144
+      "word": "foot",
+      "pile_frequency": 140
     },
     {
-      "word": "restaurant",
-      "pile_frequency": 134
+      "word": "theme",
+      "pile_frequency": 140
     },
     {
-      "word": "shop",
-      "pile_frequency": 131
+      "word": "proposal",
+      "pile_frequency": 140
     },
     {
-      "word": "wheel",
-      "pile_frequency": 132
+      "word": "velocity",
+      "pile_frequency": 140
     },
     {
-      "word": "pool",
-      "pile_frequency": 135
+      "word": "optional",
+      "pile_frequency": 140
+    },
+    {
+      "word": "privacy",
+      "pile_frequency": 140
+    },
+    {
+      "word": "crowd",
+      "pile_frequency": 139
+    },
+    {
+      "word": "rail",
+      "pile_frequency": 139
+    },
+    {
+      "word": "shaft",
+      "pile_frequency": 139
+    },
+    {
+      "word": "password",
+      "pile_frequency": 139
+    },
+    {
+      "word": "suspect",
+      "pile_frequency": 139
+    },
+    {
+      "word": "depression",
+      "pile_frequency": 139
+    },
+    {
+      "word": "fraction",
+      "pile_frequency": 139
+    },
+    {
+      "word": "renal",
+      "pile_frequency": 139
+    },
+    {
+      "word": "metabolic",
+      "pile_frequency": 139
+    },
+    {
+      "word": "quant",
+      "pile_frequency": 139
+    },
+    {
+      "word": "recognize",
+      "pile_frequency": 139
+    },
+    {
+      "word": "cutting",
+      "pile_frequency": 138
+    },
+    {
+      "word": "parse",
+      "pile_frequency": 138
+    },
+    {
+      "word": "correlation",
+      "pile_frequency": 138
+    },
+    {
+      "word": "diverse",
+      "pile_frequency": 138
+    },
+    {
+      "word": "dropped",
+      "pile_frequency": 138
+    },
+    {
+      "word": "corporate",
+      "pile_frequency": 138
+    },
+    {
+      "word": "obviously",
+      "pile_frequency": 138
     },
     {
       "word": "seed",
@@ -2417,16 +2401,8 @@
       "pile_frequency": 136
     },
     {
-      "word": "professor",
-      "pile_frequency": 132
-    },
-    {
       "word": "sister",
       "pile_frequency": 136
-    },
-    {
-      "word": "dream",
-      "pile_frequency": 135
     },
     {
       "word": "escape",
@@ -2441,8 +2417,32 @@
       "pile_frequency": 136
     },
     {
+      "word": "pool",
+      "pile_frequency": 135
+    },
+    {
+      "word": "dream",
+      "pile_frequency": 135
+    },
+    {
+      "word": "restaurant",
+      "pile_frequency": 134
+    },
+    {
+      "word": "wheel",
+      "pile_frequency": 132
+    },
+    {
+      "word": "professor",
+      "pile_frequency": 132
+    },
+    {
       "word": "plot",
       "pile_frequency": 132
+    },
+    {
+      "word": "shop",
+      "pile_frequency": 131
     },
     {
       "word": "arms",
@@ -2477,6 +2477,10 @@
       "pile_frequency": 127
     },
     {
+      "word": "bear",
+      "pile_frequency": 127
+    },
+    {
       "word": "dinner",
       "pile_frequency": 126
     },
@@ -2491,10 +2495,6 @@
     {
       "word": "reader",
       "pile_frequency": 126
-    },
-    {
-      "word": "bear",
-      "pile_frequency": 127
     },
     {
       "word": "cloud",
@@ -2601,6 +2601,10 @@
       "pile_frequency": 117
     },
     {
+      "word": "boot",
+      "pile_frequency": 117
+    },
+    {
       "word": "pump",
       "pile_frequency": 116
     },
@@ -2615,10 +2619,6 @@
     {
       "word": "publication",
       "pile_frequency": 116
-    },
-    {
-      "word": "boot",
-      "pile_frequency": 117
     },
     {
       "word": "manual",
@@ -2673,6 +2673,10 @@
       "pile_frequency": 113
     },
     {
+      "word": "lift",
+      "pile_frequency": 113
+    },
+    {
       "word": "fabric",
       "pile_frequency": 112
     },
@@ -2689,8 +2693,16 @@
       "pile_frequency": 111
     },
     {
-      "word": "lift",
-      "pile_frequency": 113
+      "word": "processor",
+      "pile_frequency": 111
+    },
+    {
+      "word": "draft",
+      "pile_frequency": 111
+    },
+    {
+      "word": "compensation",
+      "pile_frequency": 111
     },
     {
       "word": "pilot",
@@ -2698,6 +2710,18 @@
     },
     {
       "word": "cart",
+      "pile_frequency": 110
+    },
+    {
+      "word": "integration",
+      "pile_frequency": 110
+    },
+    {
+      "word": "pitch",
+      "pile_frequency": 110
+    },
+    {
+      "word": "difficulty",
       "pile_frequency": 110
     },
     {
@@ -2710,6 +2734,34 @@
     },
     {
       "word": "finger",
+      "pile_frequency": 109
+    },
+    {
+      "word": "barrier",
+      "pile_frequency": 109
+    },
+    {
+      "word": "pointer",
+      "pile_frequency": 109
+    },
+    {
+      "word": "mutation",
+      "pile_frequency": 109
+    },
+    {
+      "word": "prevention",
+      "pile_frequency": 109
+    },
+    {
+      "word": "correction",
+      "pile_frequency": 109
+    },
+    {
+      "word": "guarantee",
+      "pile_frequency": 109
+    },
+    {
+      "word": "welcome",
       "pile_frequency": 109
     },
     {
@@ -2741,6 +2793,38 @@
       "pile_frequency": 108
     },
     {
+      "word": "territory",
+      "pile_frequency": 108
+    },
+    {
+      "word": "coast",
+      "pile_frequency": 108
+    },
+    {
+      "word": "compiler",
+      "pile_frequency": 108
+    },
+    {
+      "word": "inflammation",
+      "pile_frequency": 108
+    },
+    {
+      "word": "petitioner",
+      "pile_frequency": 108
+    },
+    {
+      "word": "revenue",
+      "pile_frequency": 108
+    },
+    {
+      "word": "provision",
+      "pile_frequency": 108
+    },
+    {
+      "word": "stretch",
+      "pile_frequency": 108
+    },
+    {
       "word": "journal",
       "pile_frequency": 107
     },
@@ -2757,96 +2841,12 @@
       "pile_frequency": 107
     },
     {
-      "word": "territory",
-      "pile_frequency": 108
-    },
-    {
-      "word": "coast",
-      "pile_frequency": 108
-    },
-    {
-      "word": "barrier",
-      "pile_frequency": 109
-    },
-    {
-      "word": "pointer",
-      "pile_frequency": 109
-    },
-    {
-      "word": "compiler",
-      "pile_frequency": 108
-    },
-    {
-      "word": "processor",
-      "pile_frequency": 111
-    },
-    {
-      "word": "mutation",
-      "pile_frequency": 109
-    },
-    {
-      "word": "inflammation",
-      "pile_frequency": 108
-    },
-    {
-      "word": "petitioner",
-      "pile_frequency": 108
-    },
-    {
       "word": "scenario",
       "pile_frequency": 107
     },
     {
-      "word": "revenue",
-      "pile_frequency": 108
-    },
-    {
       "word": "rating",
       "pile_frequency": 107
-    },
-    {
-      "word": "provision",
-      "pile_frequency": 108
-    },
-    {
-      "word": "prevention",
-      "pile_frequency": 109
-    },
-    {
-      "word": "correction",
-      "pile_frequency": 109
-    },
-    {
-      "word": "integration",
-      "pile_frequency": 110
-    },
-    {
-      "word": "pitch",
-      "pile_frequency": 110
-    },
-    {
-      "word": "draft",
-      "pile_frequency": 111
-    },
-    {
-      "word": "compensation",
-      "pile_frequency": 111
-    },
-    {
-      "word": "guarantee",
-      "pile_frequency": 109
-    },
-    {
-      "word": "welcome",
-      "pile_frequency": 109
-    },
-    {
-      "word": "difficulty",
-      "pile_frequency": 110
-    },
-    {
-      "word": "stretch",
-      "pile_frequency": 108
     },
     {
       "word": "ease",
@@ -2973,14 +2973,6 @@
       "pile_frequency": 101
     },
     {
-      "word": "mountain",
-      "pile_frequency": 100
-    },
-    {
-      "word": "silver",
-      "pile_frequency": 100
-    },
-    {
       "word": "pocket",
       "pile_frequency": 101
     },
@@ -2991,6 +2983,14 @@
     {
       "word": "council",
       "pile_frequency": 101
+    },
+    {
+      "word": "mountain",
+      "pile_frequency": 100
+    },
+    {
+      "word": "silver",
+      "pile_frequency": 100
     },
     {
       "word": "mask",
@@ -3057,12 +3057,12 @@
       "pile_frequency": 96
     },
     {
-      "word": "stone",
-      "pile_frequency": 95
-    },
-    {
       "word": "actor",
       "pile_frequency": 96
+    },
+    {
+      "word": "stone",
+      "pile_frequency": 95
     },
     {
       "word": "producer",
@@ -3297,28 +3297,12 @@
       "pile_frequency": 86
     },
     {
-      "word": "bench",
-      "pile_frequency": 85
-    },
-    {
-      "word": "kitchen",
-      "pile_frequency": 85
-    },
-    {
-      "word": "lunch",
-      "pile_frequency": 85
-    },
-    {
       "word": "amplifier",
       "pile_frequency": 86
     },
     {
       "word": "teeth",
       "pile_frequency": 86
-    },
-    {
-      "word": "shoulder",
-      "pile_frequency": 85
     },
     {
       "word": "tradition",
@@ -3331,6 +3315,22 @@
     {
       "word": "math",
       "pile_frequency": 86
+    },
+    {
+      "word": "bench",
+      "pile_frequency": 85
+    },
+    {
+      "word": "kitchen",
+      "pile_frequency": 85
+    },
+    {
+      "word": "lunch",
+      "pile_frequency": 85
+    },
+    {
+      "word": "shoulder",
+      "pile_frequency": 85
     },
     {
       "word": "libraries",
@@ -3373,28 +3373,28 @@
       "pile_frequency": 83
     },
     {
-      "word": "infant",
-      "pile_frequency": 82
-    },
-    {
       "word": "donor",
       "pile_frequency": 83
     },
     {
-      "word": "forum",
-      "pile_frequency": 81
+      "word": "infant",
+      "pile_frequency": 82
     },
     {
       "word": "bladder",
       "pile_frequency": 82
     },
     {
-      "word": "prostate",
+      "word": "enterprise",
+      "pile_frequency": 82
+    },
+    {
+      "word": "forum",
       "pile_frequency": 81
     },
     {
-      "word": "enterprise",
-      "pile_frequency": 82
+      "word": "prostate",
+      "pile_frequency": 81
     },
     {
       "word": "hall",
@@ -3513,10 +3513,6 @@
       "pile_frequency": 77
     },
     {
-      "word": "slave",
-      "pile_frequency": 77
-    },
-    {
       "word": "tournament",
       "pile_frequency": 77
     },
@@ -3538,6 +3534,10 @@
     },
     {
       "word": "mess",
+      "pile_frequency": 77
+    },
+    {
+      "word": "slave",
       "pile_frequency": 77
     },
     {
@@ -3617,6 +3617,14 @@
       "pile_frequency": 75
     },
     {
+      "word": "tract",
+      "pile_frequency": 75
+    },
+    {
+      "word": "pace",
+      "pile_frequency": 75
+    },
+    {
       "word": "casino",
       "pile_frequency": 74
     },
@@ -3639,14 +3647,6 @@
     {
       "word": "thyroid",
       "pile_frequency": 74
-    },
-    {
-      "word": "biopsy",
-      "pile_frequency": 73
-    },
-    {
-      "word": "fork",
-      "pile_frequency": 73
     },
     {
       "word": "ultrasound",
@@ -3677,20 +3677,20 @@
       "pile_frequency": 74
     },
     {
-      "word": "tract",
-      "pile_frequency": 75
-    },
-    {
-      "word": "pace",
-      "pile_frequency": 75
-    },
-    {
       "word": "pack",
       "pile_frequency": 74
     },
     {
       "word": "restriction",
       "pile_frequency": 74
+    },
+    {
+      "word": "biopsy",
+      "pile_frequency": 73
+    },
+    {
+      "word": "fork",
+      "pile_frequency": 73
     },
     {
       "word": "viruses",
@@ -3725,10 +3725,6 @@
       "pile_frequency": 72
     },
     {
-      "word": "bread",
-      "pile_frequency": 71
-    },
-    {
       "word": "comic",
       "pile_frequency": 72
     },
@@ -3747,6 +3743,10 @@
     {
       "word": "resort",
       "pile_frequency": 72
+    },
+    {
+      "word": "bread",
+      "pile_frequency": 71
     },
     {
       "word": "queue",
@@ -4017,12 +4017,12 @@
       "pile_frequency": 63
     },
     {
-      "word": "robot",
-      "pile_frequency": 62
-    },
-    {
       "word": "breakfast",
       "pile_frequency": 63
+    },
+    {
+      "word": "robot",
+      "pile_frequency": 62
     },
     {
       "word": "swing",
@@ -4141,6 +4141,38 @@
       "pile_frequency": 60
     },
     {
+      "word": "engineer",
+      "pile_frequency": 60
+    },
+    {
+      "word": "headquarters",
+      "pile_frequency": 60
+    },
+    {
+      "word": "publisher",
+      "pile_frequency": 60
+    },
+    {
+      "word": "shirt",
+      "pile_frequency": 60
+    },
+    {
+      "word": "cure",
+      "pile_frequency": 60
+    },
+    {
+      "word": "starch",
+      "pile_frequency": 60
+    },
+    {
+      "word": "ministry",
+      "pile_frequency": 60
+    },
+    {
+      "word": "coronavirus",
+      "pile_frequency": 60
+    },
+    {
       "word": "mist",
       "pile_frequency": 59
     },
@@ -4165,44 +4197,12 @@
       "pile_frequency": 59
     },
     {
-      "word": "engineer",
-      "pile_frequency": 60
-    },
-    {
-      "word": "headquarters",
-      "pile_frequency": 60
-    },
-    {
-      "word": "publisher",
-      "pile_frequency": 60
-    },
-    {
-      "word": "shirt",
-      "pile_frequency": 60
-    },
-    {
       "word": "killer",
       "pile_frequency": 59
     },
     {
       "word": "hint",
       "pile_frequency": 59
-    },
-    {
-      "word": "cure",
-      "pile_frequency": 60
-    },
-    {
-      "word": "starch",
-      "pile_frequency": 60
-    },
-    {
-      "word": "ministry",
-      "pile_frequency": 60
-    },
-    {
-      "word": "coronavirus",
-      "pile_frequency": 60
     },
     {
       "word": "yeast",
@@ -4745,18 +4745,6 @@
       "pile_frequency": 50
     },
     {
-      "word": "yard",
-      "pile_frequency": 49
-    },
-    {
-      "word": "disaster",
-      "pile_frequency": 49
-    },
-    {
-      "word": "babies",
-      "pile_frequency": 49
-    },
-    {
       "word": "clone",
       "pile_frequency": 50
     },
@@ -4777,10 +4765,6 @@
       "pile_frequency": 50
     },
     {
-      "word": "coaches",
-      "pile_frequency": 49
-    },
-    {
       "word": "bins",
       "pile_frequency": 50
     },
@@ -4791,6 +4775,22 @@
     {
       "word": "sons",
       "pile_frequency": 50
+    },
+    {
+      "word": "yard",
+      "pile_frequency": 49
+    },
+    {
+      "word": "disaster",
+      "pile_frequency": 49
+    },
+    {
+      "word": "babies",
+      "pile_frequency": 49
+    },
+    {
+      "word": "coaches",
+      "pile_frequency": 49
     },
     {
       "word": "collision",
@@ -4914,6 +4914,10 @@
     },
     {
       "word": "palm",
+      "pile_frequency": 48
+    },
+    {
+      "word": "calibration",
       "pile_frequency": 48
     },
     {
@@ -5059,10 +5063,6 @@
     {
       "word": "symmetry",
       "pile_frequency": 47
-    },
-    {
-      "word": "calibration",
-      "pile_frequency": 48
     },
     {
       "word": "fitting",
@@ -5429,10 +5429,6 @@
       "pile_frequency": 40
     },
     {
-      "word": "penis",
-      "pile_frequency": 40
-    },
-    {
       "word": "titanium",
       "pile_frequency": 40
     },
@@ -5510,6 +5506,14 @@
     },
     {
       "word": "cough",
+      "pile_frequency": 40
+    },
+    {
+      "word": "secular",
+      "pile_frequency": 40
+    },
+    {
+      "word": "priesthood",
       "pile_frequency": 40
     },
     {
@@ -5631,14 +5635,6 @@
     {
       "word": "voluntary",
       "pile_frequency": 39
-    },
-    {
-      "word": "secular",
-      "pile_frequency": 40
-    },
-    {
-      "word": "priesthood",
-      "pile_frequency": 40
     },
     {
       "word": "territories",
@@ -5794,10 +5790,6 @@
     },
     {
       "word": "allergy",
-      "pile_frequency": 37
-    },
-    {
-      "word": "prostitution",
       "pile_frequency": 37
     },
     {
@@ -6561,6 +6553,18 @@
       "pile_frequency": 28
     },
     {
+      "word": "inheritance",
+      "pile_frequency": 28
+    },
+    {
+      "word": "builder",
+      "pile_frequency": 28
+    },
+    {
+      "word": "checkbox",
+      "pile_frequency": 28
+    },
+    {
       "word": "palace",
       "pile_frequency": 27
     },
@@ -6595,18 +6599,6 @@
     {
       "word": "revenge",
       "pile_frequency": 27
-    },
-    {
-      "word": "inheritance",
-      "pile_frequency": 28
-    },
-    {
-      "word": "builder",
-      "pile_frequency": 28
-    },
-    {
-      "word": "checkbox",
-      "pile_frequency": 28
     },
     {
       "word": "citation",
@@ -6761,6 +6753,10 @@
       "pile_frequency": 26
     },
     {
+      "word": "ninja",
+      "pile_frequency": 26
+    },
+    {
       "word": "pasta",
       "pile_frequency": 25
     },
@@ -6799,10 +6795,6 @@
     {
       "word": "funeral",
       "pile_frequency": 25
-    },
-    {
-      "word": "ninja",
-      "pile_frequency": 26
     },
     {
       "word": "runner",
@@ -6905,30 +6897,6 @@
       "pile_frequency": 25
     },
     {
-      "word": "intern",
-      "pile_frequency": 24
-    },
-    {
-      "word": "forearm",
-      "pile_frequency": 24
-    },
-    {
-      "word": "ritual",
-      "pile_frequency": 24
-    },
-    {
-      "word": "merchant",
-      "pile_frequency": 24
-    },
-    {
-      "word": "naval",
-      "pile_frequency": 24
-    },
-    {
-      "word": "beverage",
-      "pile_frequency": 24
-    },
-    {
       "word": "saliva",
       "pile_frequency": 25
     },
@@ -6939,14 +6907,6 @@
     {
       "word": "perimeter",
       "pile_frequency": 25
-    },
-    {
-      "word": "leisure",
-      "pile_frequency": 24
-    },
-    {
-      "word": "footprint",
-      "pile_frequency": 24
     },
     {
       "word": "commissioner",
@@ -6971,6 +6931,42 @@
     {
       "word": "neighbour",
       "pile_frequency": 25
+    },
+    {
+      "word": "dynasty",
+      "pile_frequency": 25
+    },
+    {
+      "word": "intern",
+      "pile_frequency": 24
+    },
+    {
+      "word": "forearm",
+      "pile_frequency": 24
+    },
+    {
+      "word": "ritual",
+      "pile_frequency": 24
+    },
+    {
+      "word": "merchant",
+      "pile_frequency": 24
+    },
+    {
+      "word": "naval",
+      "pile_frequency": 24
+    },
+    {
+      "word": "beverage",
+      "pile_frequency": 24
+    },
+    {
+      "word": "leisure",
+      "pile_frequency": 24
+    },
+    {
+      "word": "footprint",
+      "pile_frequency": 24
     },
     {
       "word": "cascade",
@@ -7043,10 +7039,6 @@
     {
       "word": "patience",
       "pile_frequency": 24
-    },
-    {
-      "word": "dynasty",
-      "pile_frequency": 25
     },
     {
       "word": "memorial",
@@ -7225,6 +7217,14 @@
       "pile_frequency": 24
     },
     {
+      "word": "seam",
+      "pile_frequency": 24
+    },
+    {
+      "word": "runoff",
+      "pile_frequency": 24
+    },
+    {
       "word": "retina",
       "pile_frequency": 23
     },
@@ -7287,14 +7287,6 @@
     {
       "word": "referral",
       "pile_frequency": 23
-    },
-    {
-      "word": "seam",
-      "pile_frequency": 24
-    },
-    {
-      "word": "runoff",
-      "pile_frequency": 24
     },
     {
       "word": "subclass",
@@ -7429,14 +7421,6 @@
       "pile_frequency": 23
     },
     {
-      "word": "ladder",
-      "pile_frequency": 22
-    },
-    {
-      "word": "landmark",
-      "pile_frequency": 22
-    },
-    {
       "word": "ambassador",
       "pile_frequency": 23
     },
@@ -7451,6 +7435,26 @@
     {
       "word": "jaws",
       "pile_frequency": 23
+    },
+    {
+      "word": "automation",
+      "pile_frequency": 23
+    },
+    {
+      "word": "standpoint",
+      "pile_frequency": 23
+    },
+    {
+      "word": "sore",
+      "pile_frequency": 23
+    },
+    {
+      "word": "ladder",
+      "pile_frequency": 22
+    },
+    {
+      "word": "landmark",
+      "pile_frequency": 22
     },
     {
       "word": "recorder",
@@ -7485,10 +7489,6 @@
       "pile_frequency": 22
     },
     {
-      "word": "automation",
-      "pile_frequency": 23
-    },
-    {
       "word": "congestion",
       "pile_frequency": 22
     },
@@ -7509,16 +7509,8 @@
       "pile_frequency": 22
     },
     {
-      "word": "standpoint",
-      "pile_frequency": 23
-    },
-    {
       "word": "overhaul",
       "pile_frequency": 22
-    },
-    {
-      "word": "sore",
-      "pile_frequency": 23
     },
     {
       "word": "sanctuary",
@@ -8033,10 +8025,6 @@
       "pile_frequency": 19
     },
     {
-      "word": "uterus",
-      "pile_frequency": 19
-    },
-    {
       "word": "hometown",
       "pile_frequency": 19
     },
@@ -8101,10 +8089,6 @@
       "pile_frequency": 19
     },
     {
-      "word": "ambulance",
-      "pile_frequency": 18
-    },
-    {
       "word": "onion",
       "pile_frequency": 19
     },
@@ -8159,6 +8143,14 @@
     {
       "word": "bloom",
       "pile_frequency": 19
+    },
+    {
+      "word": "uterus",
+      "pile_frequency": 19
+    },
+    {
+      "word": "ambulance",
+      "pile_frequency": 18
     },
     {
       "word": "sickness",
@@ -8401,16 +8393,16 @@
       "pile_frequency": 18
     },
     {
+      "word": "maritime",
+      "pile_frequency": 18
+    },
+    {
       "word": "instinct",
       "pile_frequency": 17
     },
     {
       "word": "twitch",
       "pile_frequency": 17
-    },
-    {
-      "word": "maritime",
-      "pile_frequency": 18
     },
     {
       "word": "fireworks",
@@ -9189,10 +9181,6 @@
       "pile_frequency": 14
     },
     {
-      "word": "vagina",
-      "pile_frequency": 14
-    },
-    {
       "word": "postage",
       "pile_frequency": 14
     },
@@ -9677,6 +9665,10 @@
       "pile_frequency": 13
     },
     {
+      "word": "geography",
+      "pile_frequency": 13
+    },
+    {
       "word": "neuron",
       "pile_frequency": 12
     },
@@ -9703,10 +9695,6 @@
     {
       "word": "planner",
       "pile_frequency": 12
-    },
-    {
-      "word": "geography",
-      "pile_frequency": 13
     },
     {
       "word": "conditioner",
@@ -10525,10 +10513,6 @@
       "pile_frequency": 10
     },
     {
-      "word": "prostitute",
-      "pile_frequency": 10
-    },
-    {
       "word": "sentinel",
       "pile_frequency": 10
     },
@@ -10686,10 +10670,6 @@
     },
     {
       "word": "heavyweight",
-      "pile_frequency": 9
-    },
-    {
-      "word": "circumcision",
       "pile_frequency": 9
     },
     {
@@ -10862,6 +10842,10 @@
     },
     {
       "word": "dryer",
+      "pile_frequency": 9
+    },
+    {
+      "word": "circumcision",
       "pile_frequency": 9
     },
     {
@@ -11357,18 +11341,6 @@
       "pile_frequency": 7
     },
     {
-      "word": "orgasm",
-      "pile_frequency": 7
-    },
-    {
-      "word": "groin",
-      "pile_frequency": 7
-    },
-    {
-      "word": "stud",
-      "pile_frequency": 7
-    },
-    {
       "word": "satin",
       "pile_frequency": 7
     },
@@ -11669,10 +11641,6 @@
       "pile_frequency": 7
     },
     {
-      "word": "womb",
-      "pile_frequency": 7
-    },
-    {
       "word": "gourmet",
       "pile_frequency": 7
     },
@@ -11690,6 +11658,18 @@
     },
     {
       "word": "sling",
+      "pile_frequency": 7
+    },
+    {
+      "word": "fencing",
+      "pile_frequency": 7
+    },
+    {
+      "word": "sieve",
+      "pile_frequency": 7
+    },
+    {
+      "word": "womb",
       "pile_frequency": 7
     },
     {
@@ -11711,14 +11691,6 @@
     {
       "word": "commuter",
       "pile_frequency": 6
-    },
-    {
-      "word": "fencing",
-      "pile_frequency": 7
-    },
-    {
-      "word": "sieve",
-      "pile_frequency": 7
     },
     {
       "word": "gunman",
@@ -12162,10 +12134,6 @@
     },
     {
       "word": "fireplace",
-      "pile_frequency": 5
-    },
-    {
-      "word": "lingerie",
       "pile_frequency": 5
     },
     {
@@ -12833,10 +12801,6 @@
       "pile_frequency": 4
     },
     {
-      "word": "panties",
-      "pile_frequency": 4
-    },
-    {
       "word": "hitter",
       "pile_frequency": 4
     },
@@ -12913,10 +12877,6 @@
       "pile_frequency": 4
     },
     {
-      "word": "nymph",
-      "pile_frequency": 4
-    },
-    {
       "word": "meetup",
       "pile_frequency": 4
     },
@@ -12953,18 +12913,6 @@
       "pile_frequency": 4
     },
     {
-      "word": "adultery",
-      "pile_frequency": 4
-    },
-    {
-      "word": "bondage",
-      "pile_frequency": 4
-    },
-    {
-      "word": "hentai",
-      "pile_frequency": 4
-    },
-    {
       "word": "prism",
       "pile_frequency": 4
     },
@@ -12982,10 +12930,6 @@
     },
     {
       "word": "thinker",
-      "pile_frequency": 4
-    },
-    {
-      "word": "mistress",
       "pile_frequency": 4
     },
     {
@@ -13158,10 +13102,6 @@
     },
     {
       "word": "signage",
-      "pile_frequency": 3
-    },
-    {
-      "word": "condom",
       "pile_frequency": 3
     },
     {
@@ -13401,19 +13341,7 @@
       "pile_frequency": 3
     },
     {
-      "word": "voyeur",
-      "pile_frequency": 3
-    },
-    {
-      "word": "twink",
-      "pile_frequency": 3
-    },
-    {
       "word": "brunette",
-      "pile_frequency": 3
-    },
-    {
-      "word": "erotica",
       "pile_frequency": 3
     },
     {
@@ -13430,10 +13358,6 @@
     },
     {
       "word": "holster",
-      "pile_frequency": 3
-    },
-    {
-      "word": "stripper",
       "pile_frequency": 3
     },
     {
@@ -13455,10 +13379,28 @@
     {
       "word": "sled",
       "pile_frequency": 3
-    },
-    {
-      "word": "stag",
-      "pile_frequency": 3
     }
+  ],
+  "removed_adult_content": [
+    "adultery",
+    "bondage",
+    "condom",
+    "erotica",
+    "groin",
+    "hentai",
+    "lingerie",
+    "mistress",
+    "nymph",
+    "orgasm",
+    "panties",
+    "penis",
+    "prostitute",
+    "prostitution",
+    "stag",
+    "stripper",
+    "stud",
+    "twink",
+    "vagina",
+    "voyeur"
   ]
 }
