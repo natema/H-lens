@@ -95,3 +95,9 @@ We can now consider ourselves at 8h into the project (halfway through it).
 However, I'm inspecting the generated examples and I don't like them. 
 There is an important confusion regarding the fact that whatever follows the probe that we feed in the J-lens is lost (only the prefix counts). 
 So, we are trying to fix and rerun a better generative process. 
+
+## 2026-08-31 20:40
+Ok enough for today. 
+We fixed the previous problem: now the probe is always at the end of the sentence. 
+8h50. 7h10 to go before wrapping up. 
+We will refine the dataset and then test again our H-lens idea. 
