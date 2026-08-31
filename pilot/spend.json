@@ -1649,14 +1649,354 @@
       "completion_tokens": 506,
       "cost_usd": 0.002666,
       "priced": true
+    },
+    {
+      "at": "2026-08-31T17:43:50.463692+00:00",
+      "model": "glm-5-2",
+      "note": "concept filter x60",
+      "prompt_tokens": 390,
+      "cached_tokens": 0,
+      "completion_tokens": 7,
+      "cost_usd": 0.0005767999999999999,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T17:43:51.053943+00:00",
+      "model": "glm-5-2",
+      "note": "concept filter x60",
+      "prompt_tokens": 390,
+      "cached_tokens": 128,
+      "completion_tokens": 14,
+      "cost_usd": 0.00044632,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T17:43:51.637544+00:00",
+      "model": "glm-5-2",
+      "note": "concept filter x60",
+      "prompt_tokens": 392,
+      "cached_tokens": 0,
+      "completion_tokens": 20,
+      "cost_usd": 0.0006368,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T17:43:52.210966+00:00",
+      "model": "glm-5-2",
+      "note": "concept filter x60",
+      "prompt_tokens": 397,
+      "cached_tokens": 128,
+      "completion_tokens": 42,
+      "cost_usd": 0.0005793199999999999,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T17:43:52.980026+00:00",
+      "model": "glm-5-2",
+      "note": "concept filter x60",
+      "prompt_tokens": 392,
+      "cached_tokens": 0,
+      "completion_tokens": 30,
+      "cost_usd": 0.0006808,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T17:43:53.711900+00:00",
+      "model": "glm-5-2",
+      "note": "concept filter x60",
+      "prompt_tokens": 397,
+      "cached_tokens": 0,
+      "completion_tokens": 51,
+      "cost_usd": 0.0007801999999999999,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T17:43:54.410592+00:00",
+      "model": "glm-5-2",
+      "note": "concept filter x60",
+      "prompt_tokens": 396,
+      "cached_tokens": 0,
+      "completion_tokens": 37,
+      "cost_usd": 0.0007172000000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T17:43:55.002535+00:00",
+      "model": "glm-5-2",
+      "note": "concept filter x60",
+      "prompt_tokens": 398,
+      "cached_tokens": 128,
+      "completion_tokens": 52,
+      "cost_usd": 0.00062472,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T17:43:55.865669+00:00",
+      "model": "glm-5-2",
+      "note": "concept filter x60",
+      "prompt_tokens": 405,
+      "cached_tokens": 128,
+      "completion_tokens": 38,
+      "cost_usd": 0.00057292,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T17:43:56.628491+00:00",
+      "model": "glm-5-2",
+      "note": "concept filter x60",
+      "prompt_tokens": 400,
+      "cached_tokens": 128,
+      "completion_tokens": 51,
+      "cost_usd": 0.00062312,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T17:43:57.284021+00:00",
+      "model": "glm-5-2",
+      "note": "concept filter x60",
+      "prompt_tokens": 405,
+      "cached_tokens": 0,
+      "completion_tokens": 21,
+      "cost_usd": 0.0006594,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T17:43:58.186159+00:00",
+      "model": "glm-5-2",
+      "note": "concept filter x60",
+      "prompt_tokens": 402,
+      "cached_tokens": 0,
+      "completion_tokens": 65,
+      "cost_usd": 0.0008487999999999999,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T17:43:59.005285+00:00",
+      "model": "glm-5-2",
+      "note": "concept filter x60",
+      "prompt_tokens": 411,
+      "cached_tokens": 128,
+      "completion_tokens": 63,
+      "cost_usd": 0.00069132,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T17:43:59.670164+00:00",
+      "model": "glm-5-2",
+      "note": "concept filter x60",
+      "prompt_tokens": 407,
+      "cached_tokens": 0,
+      "completion_tokens": 32,
+      "cost_usd": 0.0007105999999999999,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T17:44:00.515864+00:00",
+      "model": "glm-5-2",
+      "note": "concept filter x60",
+      "prompt_tokens": 406,
+      "cached_tokens": 0,
+      "completion_tokens": 65,
+      "cost_usd": 0.0008544,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T17:44:01.202957+00:00",
+      "model": "glm-5-2",
+      "note": "concept filter x60",
+      "prompt_tokens": 412,
+      "cached_tokens": 128,
+      "completion_tokens": 24,
+      "cost_usd": 0.00052112,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T17:44:01.971802+00:00",
+      "model": "glm-5-2",
+      "note": "concept filter x60",
+      "prompt_tokens": 407,
+      "cached_tokens": 128,
+      "completion_tokens": 50,
+      "cost_usd": 0.00062852,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T17:44:03.077496+00:00",
+      "model": "glm-5-2",
+      "note": "concept filter x60",
+      "prompt_tokens": 408,
+      "cached_tokens": 128,
+      "completion_tokens": 101,
+      "cost_usd": 0.0008543200000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T17:44:03.906187+00:00",
+      "model": "glm-5-2",
+      "note": "concept filter x60",
+      "prompt_tokens": 414,
+      "cached_tokens": 128,
+      "completion_tokens": 46,
+      "cost_usd": 0.0006207200000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T17:44:04.850193+00:00",
+      "model": "glm-5-2",
+      "note": "concept filter x60",
+      "prompt_tokens": 412,
+      "cached_tokens": 0,
+      "completion_tokens": 36,
+      "cost_usd": 0.0007352,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T17:44:05.619136+00:00",
+      "model": "glm-5-2",
+      "note": "concept filter x60",
+      "prompt_tokens": 409,
+      "cached_tokens": 0,
+      "completion_tokens": 44,
+      "cost_usd": 0.0007662,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T17:44:06.266576+00:00",
+      "model": "glm-5-2",
+      "note": "concept filter x60",
+      "prompt_tokens": 420,
+      "cached_tokens": 128,
+      "completion_tokens": 41,
+      "cost_usd": 0.0006071200000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T17:44:06.980170+00:00",
+      "model": "glm-5-2",
+      "note": "concept filter x60",
+      "prompt_tokens": 415,
+      "cached_tokens": 0,
+      "completion_tokens": 29,
+      "cost_usd": 0.0007086,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T17:44:08.029178+00:00",
+      "model": "glm-5-2",
+      "note": "concept filter x60",
+      "prompt_tokens": 417,
+      "cached_tokens": 128,
+      "completion_tokens": 41,
+      "cost_usd": 0.00060292,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T17:44:08.737921+00:00",
+      "model": "glm-5-2",
+      "note": "concept filter x60",
+      "prompt_tokens": 411,
+      "cached_tokens": 0,
+      "completion_tokens": 24,
+      "cost_usd": 0.000681,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T17:44:09.611471+00:00",
+      "model": "glm-5-2",
+      "note": "concept filter x60",
+      "prompt_tokens": 422,
+      "cached_tokens": 128,
+      "completion_tokens": 49,
+      "cost_usd": 0.00064512,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T17:44:10.287906+00:00",
+      "model": "glm-5-2",
+      "note": "concept filter x60",
+      "prompt_tokens": 411,
+      "cached_tokens": 128,
+      "completion_tokens": 25,
+      "cost_usd": 0.00052412,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T17:44:11.140156+00:00",
+      "model": "glm-5-2",
+      "note": "concept filter x60",
+      "prompt_tokens": 411,
+      "cached_tokens": 128,
+      "completion_tokens": 48,
+      "cost_usd": 0.0006253200000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T17:44:11.877147+00:00",
+      "model": "glm-5-2",
+      "note": "concept filter x60",
+      "prompt_tokens": 423,
+      "cached_tokens": 0,
+      "completion_tokens": 45,
+      "cost_usd": 0.0007901999999999999,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T17:44:12.845531+00:00",
+      "model": "glm-5-2",
+      "note": "concept filter x60",
+      "prompt_tokens": 428,
+      "cached_tokens": 0,
+      "completion_tokens": 69,
+      "cost_usd": 0.0009027999999999999,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T17:44:13.601675+00:00",
+      "model": "glm-5-2",
+      "note": "concept filter x60",
+      "prompt_tokens": 422,
+      "cached_tokens": 128,
+      "completion_tokens": 47,
+      "cost_usd": 0.0006363199999999999,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T17:44:14.374334+00:00",
+      "model": "glm-5-2",
+      "note": "concept filter x60",
+      "prompt_tokens": 414,
+      "cached_tokens": 0,
+      "completion_tokens": 35,
+      "cost_usd": 0.0007335999999999999,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T17:44:15.209530+00:00",
+      "model": "glm-5-2",
+      "note": "concept filter x60",
+      "prompt_tokens": 417,
+      "cached_tokens": 128,
+      "completion_tokens": 74,
+      "cost_usd": 0.00074812,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T17:44:15.906134+00:00",
+      "model": "glm-5-2",
+      "note": "concept filter x20",
+      "prompt_tokens": 285,
+      "cached_tokens": 128,
+      "completion_tokens": 23,
+      "cost_usd": 0.00033891999999999993,
+      "priced": true
     }
   ],
   "totals": {
-    "n_calls": 165,
-    "prompt_tokens": 163030,
-    "completion_tokens": 20751,
-    "cached_tokens": 92092,
-    "cost_usd": 0.191626,
+    "n_calls": 199,
+    "prompt_tokens": 176776,
+    "completion_tokens": 22190,
+    "cached_tokens": 94396,
+    "cost_usd": 0.214299,
     "unpriced_models": [],
     "budget_eur": 100.0,
     "note": "Token counts are exact, returned by the API per call. The Mistral API exposes no billing endpoint, so cost is tokens times the rates documented at docs.mistral.ai/models/<id>: mistral-large 0.5 in / 1.5 out, zai-glm-5-2 1.4 in / 0.14 cached in / 4.4 out, USD per million tokens. Cached input is billed separately at its lower rate. Any model listed in unpriced_models contributes nothing to cost_usd and needs a rate added. console.mistral.ai remains authoritative. No USD-to-EUR conversion is applied."
