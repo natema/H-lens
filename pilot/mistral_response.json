@@ -1,0 +1,30 @@
+{
+  "model": "glm-5-2",
+  "usage": {
+    "prompt_tokens": 337,
+    "total_tokens": 699,
+    "completion_tokens": 362,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "request": {
+    "model": "glm-5-2",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You build evaluation items for a mechanistic-interpretability experiment on a language model.\n\nBackground. A \"lens\" reads out, at one token position inside a text, which concepts the model is currently representing. Attention is causal: the model's state at a token depends ONLY on that token and the text BEFORE it. Text after the probe token cannot influence the readout and is ignored entirely.\n\nYour job. Given a target concept, invent a natural sentence containing a probe term, such that everything up to and including the probe term makes a competent reader think of the target concept.\n\nHard requirements:\n- The probe term must NOT be the first word. It needs preceding context to do any work.\n- The target concept must NOT appear anywhere in the text up to and including the probe term. The concept has to be evoked, never stated.\n- The evocation must come from the text BEFORE the probe term plus the probe term itself. Never rely on what follows; it will be deleted.\n- The target concept must be a single common English word, lowercase.\n- The probe term must be a single word that appears verbatim exactly once.\n- Prefer specific, concrete associations a model would plausibly encode.\n\nAnswer with JSON only."
+      },
+      {
+        "role": "user",
+        "content": "Build one item for each of these target concepts: 'basketball', 'japan', 'chess', 'wedding', 'volcano', 'insomnia'.\n\nReturn {\"items\": [{\"concept\": ..., \"probe_term\": ..., \"sentence\": ..., \"rationale\": ...}]}. The rationale states, in one sentence, why the text up to and including the probe term evokes the concept."
+      }
+    ],
+    "response_format": {
+      "type": "json_object"
+    },
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "raw_content": "{\"items\": [{\"concept\": \"basketball\", \"probe_term\": \"dribbled\", \"sentence\": \"With seconds left on the clock, he dribbled down the hardwood court toward the hoop.\", \"rationale\": \"The combination of a clock countdown, a hardwood court, and dribbling toward a hoop evokes the sport of basketball.\"}, {\"concept\": \"japan\", \"probe_term\": \"sushi\", \"sentence\": \"After bowing politely, the chef in Tokyo served sushi on a lacquered tray.\", \"rationale\": \"The mention of bowing, a Tokyo chef, and sushi evokes Japan as the cultural setting.\"}, {\"concept\": \"chess\", \"probe_term\": \"bishop\", \"sentence\": \"He sacrificed his bishop to open a line toward the enemy king.\", \"rationale\": \"Sacrificing a bishop to attack a king directly evokes the game of chess.\"}, {\"concept\": \"wedding\", \"probe_term\": \"vows\", \"sentence\": \"Standing before the altar in her white gown, she recited her vows as the groom smiled.\", \"rationale\": \"The altar, white gown, and exchange of vows evoke a wedding ceremony.\"}, {\"concept\": \"volcano\", \"probe_term\": \"lava\", \"sentence\": \"The mountain rumbled and spewed molten lava high into the air.\", \"rationale\": \"A rumbling mountain spewing molten lava evokes an erupting volcano.\"}, {\"concept\": \"insomnia\", \"probe_term\": \"awake\", \"sentence\": \"After hours of tossing and turning, she lay awake watching the ceiling until dawn.\", \"rationale\": \"Hours of tossing and turning followed by lying awake until dawn evokes insomnia.\"}]}"
+}

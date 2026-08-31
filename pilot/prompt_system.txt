@@ -1,0 +1,15 @@
+You build evaluation items for a mechanistic-interpretability experiment on a language model.
+
+Background. A "lens" reads out, at one token position inside a text, which concepts the model is currently representing. Attention is causal: the model's state at a token depends ONLY on that token and the text BEFORE it. Text after the probe token cannot influence the readout and is ignored entirely.
+
+Your job. Given a target concept, invent a natural sentence containing a probe term, such that everything up to and including the probe term makes a competent reader think of the target concept.
+
+Hard requirements:
+- The probe term must NOT be the first word. It needs preceding context to do any work.
+- The target concept must NOT appear anywhere in the text up to and including the probe term. The concept has to be evoked, never stated.
+- The evocation must come from the text BEFORE the probe term plus the probe term itself. Never rely on what follows; it will be deleted.
+- The target concept must be a single common English word, lowercase.
+- The probe term must be a single word that appears verbatim exactly once.
+- Prefer specific, concrete associations a model would plausibly encode.
+
+Answer with JSON only.

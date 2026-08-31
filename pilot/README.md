@@ -1,0 +1,59 @@
+# J-space pilot
+
+Generates candidate probe/concept items with an API model, then validates each
+one twice against Qwen3.5-4B and keeps only items where the two checks agree.
+
+```bash
+uv run python pilot/run_pilot.py --concepts basketball,japan,chess
+```
+
+## The causal constraint
+
+Attention is causal, so the residual at the probe position depends only on the
+tokens up to and including the probe. Two consequences shape the whole design:
+
+- Everything after the probe is invisible to the lens, so it is cut. The item
+  is the **prefix**, and the rest of the generated sentence is discarded.
+- The self-report question must show the model the *same* prefix and nothing
+  more, or the two checks would not be asking about the same model state.
+
+`verify_causal_equivalence` checks this numerically by reading the probe
+position from the prefix and from the full sentence. It reports a *relative*
+deviation, because the absolute figure is dtype-dependent: on this model the
+same check gives ~7e-3 in bfloat16 and ~5e-7 in float32. Only the float32 number
+reflects the mathematics; the bfloat16 residue is rounding, not leakage.
+
+## The two checks
+
+1. **J-lens** — is the concept in the top-k readout at the probe, at any layer?
+2. **Self-report** — asked directly, does the model list the concept itself?
+
+A concept is a *token*, and which token depends on casing: the model holds Japan
+as `" Japan"`, not `" japan"`. Every single-token surface form is scored and the
+best-ranked one is used, with the per-variant ranks recorded.
+
+Thinking is disabled for the self-report. Qwen3.5 prefills a reasoning block
+that routinely runs past any sane token budget, and a truncated block yields no
+answer at all — the parser returns `None` rather than scraping words out of the
+scratchpad, which would silently manufacture a concept list.
+
+## Files
+
+| file | contents |
+|---|---|
+| `prompt_system.txt` | system prompt sent to the generator, verbatim |
+| `prompt_user.txt` | user prompt sent to the generator, verbatim |
+| `mistral_response.json` | request payload, raw reply, token usage |
+| `items.json` | parsed items, derived prefixes, discarded suffixes, screen results |
+| `results.json` | both checks per item, in full |
+| `self_report_raw/` | the model's untouched answer per item |
+| `spend.json` | running API cost ledger |
+
+## Cost tracking
+
+The Mistral API returns exact token counts per call but exposes **no billing
+endpoint** (`/v1/usage`, `/v1/billing`, `/v1/credits` all 404). `spend.json`
+therefore multiplies measured tokens by published rates. The Mistral Large rate
+is from `mistral.ai/pricing`; the `glm-5-2` rate is not listed there and comes
+from a third-party aggregator, so it is approximate. Treat the console at
+`console.mistral.ai` as authoritative.

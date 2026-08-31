@@ -1,0 +1,10 @@
+chess piece
+pawn
+king
+queen
+rook
+game
+board
+move
+capture
+strategy

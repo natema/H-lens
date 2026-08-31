@@ -1,0 +1,60 @@
+{
+  "calls": [
+    {
+      "at": "2026-08-31T15:05:19.866125+00:00",
+      "model": "mistral-large-latest",
+      "note": "API connectivity test (measured)",
+      "prompt_tokens": 17,
+      "completion_tokens": 6,
+      "cost_usd": 1.75e-05
+    },
+    {
+      "at": "2026-08-31T15:05:19.866372+00:00",
+      "model": "mistral-large-latest",
+      "note": "pre-ledger pilot generation #1 (estimated from the one measured call)",
+      "prompt_tokens": 339,
+      "completion_tokens": 470,
+      "cost_usd": 0.0008745
+    },
+    {
+      "at": "2026-08-31T15:05:19.866524+00:00",
+      "model": "mistral-large-latest",
+      "note": "pre-ledger pilot generation #2 (estimated from the one measured call)",
+      "prompt_tokens": 339,
+      "completion_tokens": 470,
+      "cost_usd": 0.0008745
+    },
+    {
+      "at": "2026-08-31T15:05:19.866804+00:00",
+      "model": "mistral-large-latest",
+      "note": "pre-ledger pilot generation #3 (estimated from the one measured call)",
+      "prompt_tokens": 339,
+      "completion_tokens": 470,
+      "cost_usd": 0.0008745
+    },
+    {
+      "at": "2026-08-31T15:05:19.866940+00:00",
+      "model": "mistral-large-latest",
+      "note": "pre-ledger pilot generation #4 (estimated from the one measured call)",
+      "prompt_tokens": 339,
+      "completion_tokens": 470,
+      "cost_usd": 0.0008745
+    },
+    {
+      "at": "2026-08-31T15:07:43.593929+00:00",
+      "model": "glm-5-2",
+      "note": "pilot generation: 6 concepts",
+      "prompt_tokens": 337,
+      "completion_tokens": 362,
+      "cost_usd": 0.00227106
+    }
+  ],
+  "totals": {
+    "n_calls": 6,
+    "prompt_tokens": 1710,
+    "completion_tokens": 2248,
+    "cost_usd": 0.005787,
+    "budget_eur": 100.0,
+    "note": "Rates are USD per million tokens from mistral.ai/pricing (Mistral Large: 0.5 in, 1.5 out). The budget is in EUR; no conversion is applied, so cost_usd is a conservative upper bound on the EUR spend at parity or better."
+  }
+}

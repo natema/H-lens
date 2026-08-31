@@ -1,0 +1,62 @@
+[
+  {
+    "concept": "basketball",
+    "probe_term": "dribbled",
+    "sentence": "With seconds left on the clock, he dribbled down the hardwood court toward the hoop.",
+    "prefix": "With seconds left on the clock, he dribbled",
+    "suffix_discarded": " down the hardwood court toward the hoop.",
+    "rationale": "The combination of a clock countdown, a hardwood court, and dribbling toward a hoop evokes the sport of basketball.",
+    "structural_problems": [],
+    "accepted": true
+  },
+  {
+    "concept": "japan",
+    "probe_term": "sushi",
+    "sentence": "After bowing politely, the chef in Tokyo served sushi on a lacquered tray.",
+    "prefix": "After bowing politely, the chef in Tokyo served sushi",
+    "suffix_discarded": " on a lacquered tray.",
+    "rationale": "The mention of bowing, a Tokyo chef, and sushi evokes Japan as the cultural setting.",
+    "structural_problems": [],
+    "accepted": true
+  },
+  {
+    "concept": "chess",
+    "probe_term": "bishop",
+    "sentence": "He sacrificed his bishop to open a line toward the enemy king.",
+    "prefix": "He sacrificed his bishop",
+    "suffix_discarded": " to open a line toward the enemy king.",
+    "rationale": "Sacrificing a bishop to attack a king directly evokes the game of chess.",
+    "structural_problems": [],
+    "accepted": true
+  },
+  {
+    "concept": "wedding",
+    "probe_term": "vows",
+    "sentence": "Standing before the altar in her white gown, she recited her vows as the groom smiled.",
+    "prefix": "Standing before the altar in her white gown, she recited her vows",
+    "suffix_discarded": " as the groom smiled.",
+    "rationale": "The altar, white gown, and exchange of vows evoke a wedding ceremony.",
+    "structural_problems": [],
+    "accepted": true
+  },
+  {
+    "concept": "volcano",
+    "probe_term": "lava",
+    "sentence": "The mountain rumbled and spewed molten lava high into the air.",
+    "prefix": "The mountain rumbled and spewed molten lava",
+    "suffix_discarded": " high into the air.",
+    "rationale": "A rumbling mountain spewing molten lava evokes an erupting volcano.",
+    "structural_problems": [],
+    "accepted": true
+  },
+  {
+    "concept": "insomnia",
+    "probe_term": "awake",
+    "sentence": "After hours of tossing and turning, she lay awake watching the ceiling until dawn.",
+    "prefix": "After hours of tossing and turning, she lay awake",
+    "suffix_discarded": " watching the ceiling until dawn.",
+    "rationale": "Hours of tossing and turning followed by lying awake until dawn evokes insomnia.",
+    "structural_problems": [],
+    "accepted": true
+  }
+]

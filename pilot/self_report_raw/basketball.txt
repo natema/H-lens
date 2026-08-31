@@ -1,0 +1,10 @@
+ball
+basket
+hoop
+court
+player
+game
+score
+team
+defense
+offense

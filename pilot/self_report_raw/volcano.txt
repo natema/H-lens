@@ -1,0 +1,10 @@
+magma
+rock
+fire
+heat
+volcano
+eruption
+silica
+minerals
+earth
+molten

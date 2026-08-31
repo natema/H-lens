@@ -1,0 +1,10 @@
+fish
+rice
+nori
+roll
+sashimi
+temaki
+maki
+wasabi
+soy
+vinegar

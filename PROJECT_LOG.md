@@ -73,3 +73,13 @@ When we are confident that the H-lens idea fails, if we still have time, we coul
 ## 2026-08-30 19:27
 I spent 30 more minutes on checking the experiments that I'm running on the cluster, so I guess I should add that on the project time. 
 5h30. 
+
+## 2026-08-31 15:45
+I have been spending 45m looking at the new results obtained from the cluster. 
+The serious problem we have, which we should have thought about at the very beginning, is that we do not have a robust way to measure if the H-lens is better or not. So now we are searching if there are more robust datasets of J-lens failures, and consideirng investing time in building a proper benchmark. 
+6h15 into the project. 
+
+## 2026-08-31 16:52
+I had a hindrance and i'm just resuming working on the project now. 
+Before the interruption I think I spent 30 more minutes on the project, thinking about how to do the dataset. 
+Let's consider ourselves at 6h45 into the project. 
