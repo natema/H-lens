@@ -1,3 +1,3 @@
-Build one item for each of these target concepts: 'japan', 'wedding', 'insomnia', 'basketball', 'chess', 'volcano'.
+Build one item for each of these target concepts: 'basketball', 'japan', 'chess', 'wedding', 'volcano', 'insomnia'.
 
 Return {"items": [{"concept": ..., "probe_term": ..., "sentence": ..., "rationale": ...}]}. The rationale states, in one sentence, why the text up to and including the probe term evokes the concept.

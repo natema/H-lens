@@ -178,18 +178,25 @@ def fragment_completions(
 
 
 def annotate_fragments(
-    tokens: list[str], words: list[str], limit: int = 12
+    tokens: list[str], words: list[str], limit: int = 10
 ) -> dict[str, dict[str, Any]]:
+    """Vocabulary evidence for the readout tokens that need it.
+
+    Tokens with no completions are already whole words, so they are omitted
+    entirely; the judge is told to read absence from this map as "whole word".
+    That keeps the payload small enough to batch many items into one call.
+    """
     # Deliberately no "is this a whole word" flag: every readout token is by
     # construction a vocabulary token, so such a flag is true for all of them
     # and would contradict the completion evidence for a genuine fragment.
     annotated: dict[str, dict[str, Any]] = {}
     for token in tokens:
         completions = fragment_completions(token, words, limit)
-        annotated[token] = {
-            "n_completions": len(completions),
-            "completions": completions,
-        }
+        if completions:
+            annotated[token] = {
+                "n_completions": len(completions),
+                "completions": completions,
+            }
     return annotated
 
 
@@ -349,9 +356,10 @@ ABSENT means no entry names it. Three specific traps, all ABSENT:
    "volcano": "mountain", "disaster" are ABSENT.
 3. Uninformative fragments. Tokenizers split words, so list A may contain a \
    truncated piece of one. Do not judge this from memory. The field \
-   "list_a_vocabulary_evidence" gives, for each entry of list A, which \
-   vocabulary words extend it. An entry with no completions is already a whole \
-   word; judge it normally. Otherwise:
+   "vocabulary_evidence" lists, for those entries of list A that are extended \
+   by longer vocabulary words, what those words are. An entry that does NOT \
+   appear in that map has no completions and is already a whole word; judge it \
+   normally. For an entry that does appear:
 
    - If "completions" all belong to one word family, the entry names that \
      word. Then apply the normal test to that word. Example: "matrim" is \
@@ -425,11 +433,20 @@ def judge_agreement(
     if ledger is not None:
         record_spend(ledger, exchange, note=f"judge: {concept}")
     verdict = json.loads(exchange["content"])
+    return verify_quoted_match(verdict, lens_tokens, self_report), exchange
 
-    # The judge must quote a real list entry. A "matched" value that is not in
-    # the list it claims is a fabrication, so the claim is discarded rather
-    # than trusted; this is what caught a subword fragment being reported as a
-    # match alongside a justification that the concept was "directly named".
+
+def verify_quoted_match(
+    verdict: dict[str, Any],
+    lens_tokens: list[str],
+    self_report: list[str] | None,
+) -> dict[str, Any]:
+    """Reject any match the judge did not copy from the list it cites.
+
+    A "matched" value absent from its own list is a fabrication, so the claim
+    is discarded rather than trusted. This caught a judge reporting the
+    fragment "noct" as a match while justifying it as "directly named".
+    """
     sources = {
         "lens": [str(x) for x in lens_tokens],
         "self_report": [str(x) for x in (self_report or [])],
@@ -440,20 +457,96 @@ def judge_agreement(
         if not isinstance(side, dict) or not side.get("present"):
             continue
         claimed = str(side.get("matched") or "").strip().lower()
-        available = {e.strip().lower() for e in entries}
-        if claimed not in available:
+        if claimed not in {e.strip().lower() for e in entries}:
             verdict["fabricated_matches"].append(
                 {"list": key, "claimed": side.get("matched")}
             )
-            side["present"] = False
             side["rejected_claim"] = side.get("matched")
+            side["present"] = False
             side["matched"] = None
-
     verdict["agree"] = bool(
         verdict.get("lens", {}).get("present")
         and verdict.get("self_report", {}).get("present")
     )
-    return verdict, exchange
+    return verdict
+
+
+def judge_batch(
+    api_key: str,
+    cases: list[dict[str, Any]],
+    ledger: Path | None = None,
+    retries: int = 2,
+) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+    """Adjudicate several items in one call.
+
+    Each case supplies ``concept``, ``lens_tokens``, ``self_report`` and
+    ``fragment_evidence``. Verdicts are matched back by index and every index
+    must come back, so a short or renumbered reply is an error rather than a
+    silent misalignment of verdicts to items.
+    """
+    payload = {
+        "items": [
+            {
+                "id": index,
+                "target_concept": case["concept"],
+                "list_a_lens_readout": case["lens_tokens"],
+                "vocabulary_evidence": case.get("fragment_evidence") or {},
+                "list_b_model_self_report": case.get("self_report") or [],
+            }
+            for index, case in enumerate(cases)
+        ],
+        "answer_format": {
+            "verdicts": [
+                {
+                    "id": "int, echoing the item id",
+                    "lens": {"present": "bool", "matched": "string or null"},
+                    "self_report": {"present": "bool", "matched": "string or null"},
+                    "reason": "one short sentence",
+                }
+            ]
+        },
+    }
+    exchange = call_mistral(
+        api_key,
+        [
+            {"role": "system", "content": JUDGE_SYSTEM},
+            {"role": "user", "content": json.dumps(payload, ensure_ascii=False)},
+        ],
+        model=JUDGE_MODEL,
+        max_tokens=350 * len(cases) + 300,
+        temperature=0.0,
+    )
+    if ledger is not None:
+        record_spend(ledger, exchange, note=f"judge batch of {len(cases)}")
+
+    try:
+        raw = json.loads(exchange["content"]).get("verdicts", [])
+    except json.JSONDecodeError:
+        raw = []
+    by_id = {int(v["id"]): v for v in raw if "id" in v}
+    missing = sorted(set(range(len(cases))) - set(by_id))
+    if missing:
+        # Malformed or short replies happen at every batch size, including one
+        # item, so this is not a batching artefact. Retry, then split: a batch
+        # that keeps failing is bisected down to singletons rather than
+        # silently returning fewer verdicts than items.
+        if retries > 0:
+            return judge_batch(api_key, cases, ledger, retries - 1)
+        if len(cases) > 1:
+            middle = len(cases) // 2
+            left, _ = judge_batch(api_key, cases[:middle], ledger)
+            right, exchange = judge_batch(api_key, cases[middle:], ledger)
+            return left + right, exchange
+        raise RuntimeError(f"judge omitted verdicts for items {missing}")
+
+    verdicts = []
+    for index, case in enumerate(cases):
+        verdicts.append(
+            verify_quoted_match(
+                by_id[index], case["lens_tokens"], case.get("self_report")
+            )
+        )
+    return verdicts, exchange
 
 
 def structural_problems(item: JSpaceItem, tokenizer: Any) -> list[str]:
@@ -587,6 +680,17 @@ def self_report_concepts(
     return parse_concept_list(raw, limit, expect_reasoning=enable_thinking), raw
 
 
+PRIMARY_LAYER = 12
+
+# Measured on 24 recorded items: two singleton passes agree perfectly (0/24
+# flips at temperature 0), and batches of 4, 8 and 16 each differ from
+# singleton on the same single borderline item (4.2%), with no growth in the
+# rate as the batch grows. Malformed replies occur at every size including
+# one, so they are a reliability problem rather than a batching one and are
+# handled by retry-then-bisect. 8 keeps prompts short and makes a bisect cheap.
+JUDGE_BATCH_SIZE = 8
+
+
 def lens_readout(
     item: JSpaceItem,
     model: Any,
@@ -594,6 +698,7 @@ def lens_readout(
     lenses: dict[str, Any],
     *,
     top_k: int,
+    primary_layer: int = PRIMARY_LAYER,
 ) -> dict[str, Any]:
     """Rank the concept in each lens's readout at the probe position.
 
@@ -622,7 +727,13 @@ def lens_readout(
         model, item.prefix, positions=[position], use_jacobian=False
     )[0]
 
+    # Adjudication happens at one fixed layer, so the dataset label matches the
+    # layer the correction is evaluated at. Every other layer is still recorded,
+    # because the readouts are free once the forward pass is done and changing
+    # the designated layer later should not require recomputing anything.
     methods: dict[str, Any] = {}
+    primary: dict[str, Any] = {}
+    key = str(primary_layer)
     for name, layer_logits in readouts.items():
         scored = {
             surface: summarize_layers(layer_logits, token_id, top_k, tokenizer)
@@ -636,11 +747,23 @@ def lens_readout(
                 s: v["best_rank"] for s, v in scored.items()
             },
         }
+        # Pick the variant that is best AT the primary layer, which need not be
+        # the one that is best somewhere else in the stack.
+        local = min(scored, key=lambda s: scored[s]["layers"][key]["target_rank"])
+        at_layer = scored[local]["layers"][key]
+        primary[name] = {
+            "variant": local,
+            "target_rank": at_layer["target_rank"],
+            "in_top_k": at_layer["target_rank"] <= top_k,
+            "top_tokens": [tok["decoded"] for tok in at_layer["top_tokens"]],
+        }
     return {
         "probe_position": position,
         "probe_token": describe_tokens(tokenizer, [input_ids[position]])[0],
         "concept_variants": [s for s, _ in variants],
         "n_prefix_tokens": len(input_ids),
+        "primary_layer": primary_layer,
+        "primary": primary,
         "methods": methods,
     }
 

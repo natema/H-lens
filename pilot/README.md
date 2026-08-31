@@ -147,3 +147,53 @@ therefore multiplies measured tokens by published rates. The Mistral Large rate
 is from `mistral.ai/pricing`; the `glm-5-2` rate is not listed there and comes
 from a third-party aggregator, so it is approximate. Treat the console at
 `console.mistral.ai` as authoritative.
+
+## Adjudication at scale
+
+**One fixed layer.** Adjudication uses the J-lens top-10 at **layer 12**, the
+layer an H-lens operator was fitted for, so the dataset's "J-lens misses this"
+label refers to the same layer the correction is evaluated at. Every other
+layer is still recorded — the readouts are free once the forward pass is done —
+so redesignating the layer later costs nothing. The concept variant is chosen by
+its rank *at that layer*, not by its best rank somewhere else in the stack.
+
+**All four outcomes are kept.** The judge returns present-in-lens and
+present-in-self-report separately, and every item is recorded under one of four
+cells:
+
+| cell | meaning | role |
+|---|---|---|
+| `self_report_only` | the model has the concept, the J-lens misses it | **the target set** |
+| `both` | both find it | positive control |
+| `lens_only` | lens finds it, self-report does not | probes self-report reliability |
+| `neither` | neither | the model likely lacks the concept |
+
+Nothing is filtered on agreement. Keeping only `both` would retain exactly the
+items the J-lens already handles, leaving no headroom and biasing the comparison
+in its favour — selection on the outcome variable. `self_report_only` is the
+scientifically useful cell precisely because the self-report independently
+establishes that the concept *is* present, so a J-lens miss is a real failure
+rather than an absent target.
+
+## Batch size
+
+Measured, not assumed (`pilot/check_batching.py`), on 24 recorded items:
+
+| batch | calls | flips vs singleton | fabrications | structural errors |
+|---|---:|---:|---:|---:|
+| 1 | 24 | — | 0 | 0 |
+| 4 | 6 | 1 (4.2%) | 0 | 0 |
+| 8 | 3 | 1 (4.2%) | 0 | 0 |
+| 16 | 2 | 1 (4.2%) | 0 | 0 |
+
+The rate does not grow with the batch, and two singleton passes agree perfectly
+(0/24 at temperature 0), so the judge itself is deterministic. The single
+difference is one genuinely ambiguous item whose lens readout contains `中日`
+(Sino-Japanese) and ` Samurai` for the target *japan* — and the batched verdict
+is arguably the better one.
+
+Malformed replies do occur, including at batch size 1, so they are a reliability
+problem rather than a batching one. `judge_batch` retries twice and then bisects
+the batch down toward singletons, rather than returning fewer verdicts than
+items. The default is **8**: no measured degradation, a third of the calls of 4,
+and small enough that a bisect is cheap.

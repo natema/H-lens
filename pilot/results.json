@@ -1,394 +1,296 @@
 [
   {
-    "concept": "japan",
-    "probe_term": "sushi",
-    "prefix": "After landing in Tokyo she craved authentic sushi",
-    "rationale": "Tokyo plus the craving for authentic sushi strongly evokes Japan as the country of origin.",
-    "probe_token": " sushi",
-    "concept_variants": [
-      " japan",
-      " Japan",
-      "Japan"
-    ],
-    "j_lens_best_variant": "Japan",
-    "j_lens_per_variant_rank": {
-      " japan": 44,
-      " Japan": 50,
-      "Japan": 33
-    },
-    "n_prefix_tokens": 9,
-    "causal_equivalence_relative_dev": 0.0,
-    "j_lens": {
-      "best_rank": 33,
-      "best_layer": 19,
-      "top10_layers": [],
-      "in_top5": false,
-      "in_top10": false
-    },
-    "r_lens_best_rank": 12,
-    "logit_lens_best_rank": 221,
-    "self_report": {
-      "parsed": true,
-      "concepts": [
-        "japan",
-        "restaurant",
-        "dinner",
-        "travel",
-        "island",
-        "rice",
-        "fish",
-        "chef",
-        "tokyo",
-        "street"
-      ],
-      "rank": 1,
-      "in_top5": true,
-      "in_top10": true
-    },
-    "best_layer_top10_tokens": [
-      " sushi",
-      "apanese",
-      " japon",
-      "Japanese",
-      " delic",
-      " gastr",
-      "\u6b63\u5b97",
-      " culinary",
-      "\u5bff\u53f8",
-      " restaurant"
-    ],
-    "judge": {
-      "lens": {
-        "present": true,
-        "matched": "Japanese"
-      },
-      "self_report": {
-        "present": true,
-        "matched": "japan"
-      },
-      "agree": true,
-      "reason": "List A contains 'Japanese' and list B contains 'japan', both naming the target concept.",
-      "fabricated_matches": []
-    },
-    "agree_exact_top10": false,
-    "agree_judged": true
-  },
-  {
-    "concept": "wedding",
-    "probe_term": "bride",
-    "prefix": "The white gown and veil made the bride",
-    "rationale": "The mention of a white gown and veil immediately frames the bride in the context of a wedding ceremony.",
-    "probe_token": " bride",
-    "concept_variants": [
-      " wedding",
-      " Wedding"
-    ],
-    "j_lens_best_variant": " wedding",
-    "j_lens_per_variant_rank": {
-      " wedding": 6,
-      " Wedding": 69
-    },
-    "n_prefix_tokens": 8,
-    "causal_equivalence_relative_dev": 0.0,
-    "j_lens": {
-      "best_rank": 6,
-      "best_layer": 13,
-      "top10_layers": [
-        12,
-        13,
-        14,
-        15
-      ],
-      "in_top5": false,
-      "in_top10": true
-    },
-    "r_lens_best_rank": 11,
-    "logit_lens_best_rank": 9,
-    "self_report": {
-      "parsed": true,
-      "concepts": [
-        "wedding",
-        "ceremony",
-        "marriage",
-        "groom",
-        "vows",
-        "church",
-        "reception",
-        "fianc\u00e9",
-        "celebration",
-        "union"
-      ],
-      "rank": 1,
-      "in_top5": true,
-      "in_top10": true
-    },
-    "best_layer_top10_tokens": [
-      " bride",
-      " brides",
-      " Bride",
-      "\u65b0\u5a18",
-      " herself",
-      " femin",
-      " wedding",
-      " betro",
-      "\u5ac1",
-      " unmarried"
-    ],
-    "judge": {
-      "lens": {
-        "present": true,
-        "matched": " wedding"
-      },
-      "self_report": {
-        "present": true,
-        "matched": "wedding"
-      },
-      "agree": true,
-      "reason": "Both lists contain the exact word \"wedding\" (with a leading space in list_a).",
-      "fabricated_matches": []
-    },
-    "agree_exact_top10": true,
-    "agree_judged": true
-  },
-  {
-    "concept": "insomnia",
-    "probe_term": "night",
-    "prefix": "After yet another sleepless night",
-    "rationale": "The phrase 'sleepless night' directly evokes the condition of insomnia, characterized by the inability to sleep.",
-    "probe_token": " night",
-    "concept_variants": [
-      " insomnia"
-    ],
-    "j_lens_best_variant": " insomnia",
-    "j_lens_per_variant_rank": {
-      " insomnia": 8
-    },
-    "n_prefix_tokens": 6,
-    "causal_equivalence_relative_dev": 0.0,
-    "j_lens": {
-      "best_rank": 8,
-      "best_layer": 20,
-      "top10_layers": [
-        19,
-        20,
-        21,
-        23,
-        24,
-        25
-      ],
-      "in_top5": false,
-      "in_top10": true
-    },
-    "r_lens_best_rank": 10,
-    "logit_lens_best_rank": 21,
-    "self_report": {
-      "parsed": true,
-      "concepts": [
-        "insomnia",
-        "dreams",
-        "sleeplessness",
-        "restlessness",
-        "darkness",
-        "loneliness",
-        "exhaustion",
-        "anticipation",
-        "waiting",
-        "fear"
-      ],
-      "rank": 1,
-      "in_top5": true,
-      "in_top10": true
-    },
-    "best_layer_top10_tokens": [
-      " sleep",
-      " tonight",
-      " nights",
-      "night",
-      " night",
-      "-night",
-      " noct",
-      " insomnia",
-      " sleeping",
-      " due"
-    ],
-    "judge": {
-      "lens": {
-        "present": true,
-        "matched": " insomnia"
-      },
-      "self_report": {
-        "present": true,
-        "matched": "insomnia"
-      },
-      "agree": true,
-      "reason": "Both lists contain the exact word 'insomnia' (with a leading space in the lens readout).",
-      "fabricated_matches": []
-    },
-    "agree_exact_top10": true,
-    "agree_judged": true
-  },
-  {
     "concept": "basketball",
-    "probe_term": "court",
-    "prefix": "He dribbled down the court",
-    "rationale": "The act of dribbling on a court is the central action of a basketball game, evoking the sport.",
-    "probe_token": " court",
+    "probe_term": "dribbled",
+    "prefix": "The point guard faked left, drove past the defender, and dribbled",
+    "rationale": "The mention of a point guard, faking, driving past a defender, the hoop, and a shot clock together evoke basketball before the probe term even appears.",
+    "probe_token": "bled",
     "concept_variants": [
       " basketball",
       " Basketball"
     ],
-    "j_lens_best_variant": " basketball",
-    "j_lens_per_variant_rank": {
-      " basketball": 1,
-      " Basketball": 2
+    "n_prefix_tokens": 15,
+    "causal_equivalence_relative_dev": 0.005827002762430939,
+    "primary_layer": 12,
+    "primary": {
+      "j_lens": {
+        "variant": " basketball",
+        "target_rank": 1796,
+        "in_top_k": false,
+        "top_tokens": [
+          ".\u2026",
+          "?...",
+          " maneuver",
+          " drib",
+          "[\u2026",
+          "ahead",
+          "speed",
+          "mobile",
+          "until",
+          "\u9014\u4e2d"
+        ]
+      },
+      "r_lens": {
+        "variant": " basketball",
+        "target_rank": 7533,
+        "in_top_k": false,
+        "top_tokens": [
+          " videoc",
+          " camer",
+          "ahead",
+          " verboten",
+          "\uc815\uc0c1",
+          "mier",
+          "\u3059\u3059\u3081",
+          " straight",
+          "until",
+          "ori"
+        ]
+      },
+      "logit_lens": {
+        "variant": " Basketball",
+        "target_rank": 86899,
+        "in_top_k": false,
+        "top_tokens": [
+          "\u0e27\u0e19",
+          "upported",
+          " descar",
+          "andre",
+          "semble",
+          " Wi\u0119",
+          "\u76d1\u89c6",
+          "\ud718",
+          "dux",
+          "uzzi"
+        ]
+      }
     },
-    "n_prefix_tokens": 6,
-    "causal_equivalence_relative_dev": 0.0,
-    "j_lens": {
-      "best_rank": 1,
-      "best_layer": 8,
-      "top10_layers": [
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        24
-      ],
-      "in_top5": true,
-      "in_top10": true
-    },
-    "r_lens_best_rank": 1,
-    "logit_lens_best_rank": 124,
+    "j_lens_best_rank_any_layer": 11,
+    "j_lens_best_layer": 24,
     "self_report": {
       "parsed": true,
       "concepts": [
         "basketball",
-        "hoops",
-        "score",
-        "team",
+        "court",
         "player",
-        "game",
-        "arena",
+        "defense",
         "ball",
-        "dribble",
-        "win"
+        "game",
+        "team",
+        "score",
+        "hoop",
+        "sport"
       ],
-      "rank": 1,
-      "in_top5": true,
-      "in_top10": true
+      "exact_rank": 1
     },
-    "best_layer_top10_tokens": [
-      " basketball",
-      "-court",
-      ".\u2026",
-      "entimes",
-      " anyways",
-      "iers",
-      " **.**",
-      " athleticism",
-      "ICC",
-      "\u2026but"
-    ],
     "judge": {
+      "id": 0,
       "lens": {
-        "present": true,
-        "matched": " basketball"
+        "present": false,
+        "matched": null
       },
       "self_report": {
         "present": true,
         "matched": "basketball"
       },
-      "agree": true,
-      "reason": "Both lists contain the exact word 'basketball' (list A with a leading space, list B without).",
-      "fabricated_matches": []
+      "reason": "List A contains speed/travel-related tokens and 'drib' (which fragments across unrelated words like dribble/dribbling, not specifically basketball); list B explicitly contains 'basketball'.",
+      "fabricated_matches": [],
+      "agree": false
     },
-    "agree_exact_top10": true,
-    "agree_judged": true
+    "in_lens": false,
+    "in_self_report": true,
+    "cell": "self_report_only"
+  },
+  {
+    "concept": "japan",
+    "probe_term": "shinkansen",
+    "prefix": "The bullet train raced past Mount Fuji at dawn, and aboard the shinkansen",
+    "rationale": "The bullet train, Mount Fuji, and businessmen drinking green tea together evoke Japan before the probe term appears.",
+    "probe_token": "ansen",
+    "concept_variants": [
+      " japan",
+      " Japan",
+      "Japan"
+    ],
+    "n_prefix_tokens": 16,
+    "causal_equivalence_relative_dev": 0.014705882352941176,
+    "primary_layer": 12,
+    "primary": {
+      "j_lens": {
+        "variant": "Japan",
+        "target_rank": 91,
+        "in_top_k": false,
+        "top_tokens": [
+          " speed",
+          " travel",
+          " traveling",
+          "travel",
+          "\u901f\u5ea6",
+          " travelling",
+          "_speed",
+          " speeds",
+          "\u0e04\u0e27\u0e32\u0e21\u0e40\u0e23\u0e47\u0e27",
+          " aisle"
+        ]
+      },
+      "r_lens": {
+        "variant": "Japan",
+        "target_rank": 345,
+        "in_top_k": false,
+        "top_tokens": [
+          " speeds",
+          " speed",
+          " rails",
+          " aisle",
+          "\u062c\u0627\u0632",
+          " traveling",
+          " travels",
+          "jdk",
+          "\u77ed\u7bc7\u5c0f\u8bf4",
+          "EMU"
+        ]
+      },
+      "logit_lens": {
+        "variant": " japan",
+        "target_rank": 17107,
+        "in_top_k": false,
+        "top_tokens": [
+          "weichen",
+          "ESTA",
+          " tan\u0131\u015f",
+          " sayur",
+          "\u56db\u901a",
+          "ETTA",
+          "jena",
+          "\u0447\u044c",
+          "ect",
+          " pr\u00e9vo"
+        ]
+      }
+    },
+    "j_lens_best_rank_any_layer": 3,
+    "j_lens_best_layer": 9,
+    "self_report": {
+      "parsed": true,
+      "concepts": [
+        "speed",
+        "travel",
+        "journey",
+        "rail",
+        "transport",
+        "commute",
+        "leisure",
+        "scenery",
+        "mountain",
+        "nation"
+      ],
+      "exact_rank": null
+    },
+    "judge": {
+      "id": 1,
+      "lens": {
+        "present": false,
+        "matched": null
+      },
+      "self_report": {
+        "present": false,
+        "matched": null
+      },
+      "reason": "List A contains only speed/travel tokens; list B contains 'nation' (a broader category) but no entry naming Japan.",
+      "fabricated_matches": [],
+      "agree": false
+    },
+    "in_lens": false,
+    "in_self_report": false,
+    "cell": "neither"
   },
   {
     "concept": "chess",
-    "probe_term": "rook",
-    "prefix": "She sacrificed her rook",
-    "rationale": "The rook is a chess piece and sacrificing pieces is a core tactic, evoking the game of chess.",
-    "probe_token": "ok",
+    "probe_term": "checkmate",
+    "prefix": "After sacrificing her queen to open the bishop's diagonal, she advanced the rook and delivered checkmate",
+    "rationale": "Sacrificing a queen, a bishop's diagonal, and advancing a rook together evoke chess before the probe term appears.",
+    "probe_token": "mate",
     "concept_variants": [
       " chess",
       " Chess",
       "Chess"
     ],
-    "j_lens_best_variant": " chess",
-    "j_lens_per_variant_rank": {
-      " chess": 1,
-      " Chess": 3,
-      "Chess": 6
-    },
-    "n_prefix_tokens": 5,
+    "n_prefix_tokens": 20,
     "causal_equivalence_relative_dev": 0.0,
-    "j_lens": {
-      "best_rank": 1,
-      "best_layer": 11,
-      "top10_layers": [
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        24,
-        25,
-        26,
-        27,
-        28
-      ],
-      "in_top5": true,
-      "in_top10": true
+    "primary_layer": 12,
+    "primary": {
+      "j_lens": {
+        "variant": " chess",
+        "target_rank": 6,
+        "in_top_k": true,
+        "top_tokens": [
+          " deadlock",
+          "\u7a92\u606f",
+          " attack",
+          " deadly",
+          "\u6b7b\u8005",
+          " chess",
+          "\u9644\u56fe",
+          "ABCDEFG",
+          " suicide",
+          "attack"
+        ]
+      },
+      "r_lens": {
+        "variant": " chess",
+        "target_rank": 20,
+        "in_top_k": false,
+        "top_tokens": [
+          "\u9644\u56fe",
+          " deadlock",
+          "\u7a92\u606f",
+          " Diamonds",
+          " undefeated",
+          " death",
+          " attack",
+          "\u6b7b\u8005",
+          "\u5c01\u9501",
+          " suicide"
+        ]
+      },
+      "logit_lens": {
+        "variant": "Chess",
+        "target_rank": 1264,
+        "in_top_k": false,
+        "top_tokens": [
+          "\u65e0\u95f4",
+          " Immobil",
+          "elay",
+          "PLY",
+          "\u65e0\u80fd\u4e3a\u529b",
+          " imminent",
+          " virtually",
+          "\u6709\u4e00\u5957",
+          "\u65e0\u8def",
+          "\u7109"
+        ]
+      }
     },
-    "r_lens_best_rank": 1,
-    "logit_lens_best_rank": 9,
+    "j_lens_best_rank_any_layer": 1,
+    "j_lens_best_layer": 8,
     "self_report": {
       "parsed": true,
       "concepts": [
         "chess",
         "board",
-        "game",
         "king",
         "queen",
-        "pawn",
+        "rook",
         "bishop",
-        "checkmate",
-        "strategy",
-        "move"
+        "diagonal",
+        "sacrifice",
+        "game",
+        "strategy"
       ],
-      "rank": 1,
-      "in_top5": true,
-      "in_top10": true
+      "exact_rank": 1
     },
-    "best_layer_top10_tokens": [
-      " chess",
-      "\u68cb",
-      " Chess",
-      "ingly",
-      " attacking",
-      " pawn",
-      "\u727a\u7272",
-      " sacrificed",
-      " sacrifice",
-      "Chess"
-    ],
     "judge": {
+      "id": 2,
       "lens": {
         "present": true,
         "matched": " chess"
@@ -397,102 +299,314 @@
         "present": true,
         "matched": "chess"
       },
-      "agree": true,
-      "reason": "Both lists contain the word 'chess' (list A has it with a leading space, list B without).",
-      "fabricated_matches": []
+      "reason": "List A contains ' chess' (a whole word naming the target); list B contains 'chess' verbatim.",
+      "fabricated_matches": [],
+      "agree": true
     },
-    "agree_exact_top10": true,
-    "agree_judged": true
+    "in_lens": true,
+    "in_self_report": true,
+    "cell": "both"
+  },
+  {
+    "concept": "wedding",
+    "probe_term": "vows",
+    "prefix": "The bride smoothed her white gown, the organist began the processional, and the couple turned to exchange vows",
+    "rationale": "The bride in a white gown and the organist playing a processional together evoke a wedding before the probe term appears.",
+    "probe_token": " vows",
+    "concept_variants": [
+      " wedding",
+      " Wedding"
+    ],
+    "n_prefix_tokens": 22,
+    "causal_equivalence_relative_dev": 0.0,
+    "primary_layer": 12,
+    "primary": {
+      "j_lens": {
+        "variant": " wedding",
+        "target_rank": 31,
+        "in_top_k": false,
+        "top_tokens": [
+          " vows",
+          " Ceremony",
+          " ceremony",
+          " vow",
+          " heartfelt",
+          " oath",
+          " onstage",
+          " covenant",
+          " Covenant",
+          " ceremonies"
+        ]
+      },
+      "r_lens": {
+        "variant": " Wedding",
+        "target_rank": 117,
+        "in_top_k": false,
+        "top_tokens": [
+          " vows",
+          " ceremony",
+          " Ceremony",
+          " onstage",
+          "\u8a93\u8bcd",
+          " Covenant",
+          " ceremonies",
+          " covenant",
+          " oath",
+          " vow"
+        ]
+      },
+      "logit_lens": {
+        "variant": " Wedding",
+        "target_rank": 164921,
+        "in_top_k": false,
+        "top_tokens": [
+          " onstage",
+          "\u4e92\u6362",
+          "ques",
+          "ody",
+          "aska",
+          "ides",
+          "\u1eb3n",
+          " \u6700\u5f8c\u306b",
+          "\u90a3\u4e00\u523b",
+          "igs"
+        ]
+      }
+    },
+    "j_lens_best_rank_any_layer": 13,
+    "j_lens_best_layer": 9,
+    "self_report": {
+      "parsed": true,
+      "concepts": [
+        "wedding",
+        "ceremony",
+        "marriage",
+        "church",
+        "altar",
+        "ring",
+        "groom",
+        "bride",
+        "hymn"
+      ],
+      "exact_rank": 1
+    },
+    "judge": {
+      "id": 3,
+      "lens": {
+        "present": false,
+        "matched": null
+      },
+      "self_report": {
+        "present": true,
+        "matched": "wedding"
+      },
+      "reason": "List A has associations like vows, ceremony, oath, covenant but no exact synonym for wedding; list B contains 'wedding' verbatim.",
+      "fabricated_matches": [],
+      "agree": false
+    },
+    "in_lens": false,
+    "in_self_report": true,
+    "cell": "self_report_only"
   },
   {
     "concept": "volcano",
-    "probe_term": "eruption",
-    "prefix": "The mountain rumbled before the eruption",
-    "rationale": "A rumbling mountain preceding an eruption is the classic description of a volcano becoming active.",
-    "probe_token": " eruption",
+    "probe_term": "lava",
+    "prefix": "The ground trembled, sulfurous smoke rose from the crater, and molten lava",
+    "rationale": "Ground tremors, sulfurous smoke from a crater, and a mountainside setting together evoke a volcano before the probe term appears.",
+    "probe_token": " lava",
     "concept_variants": [
       " volcano"
     ],
-    "j_lens_best_variant": " volcano",
-    "j_lens_per_variant_rank": {
-      " volcano": 2
-    },
-    "n_prefix_tokens": 7,
+    "n_prefix_tokens": 17,
     "causal_equivalence_relative_dev": 0.0,
-    "j_lens": {
-      "best_rank": 2,
-      "best_layer": 8,
-      "top10_layers": [
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        23,
-        24,
-        25,
-        26,
-        27,
-        28
-      ],
-      "in_top5": true,
-      "in_top10": true
+    "primary_layer": 12,
+    "primary": {
+      "j_lens": {
+        "variant": " volcano",
+        "target_rank": 292,
+        "in_top_k": false,
+        "top_tokens": [
+          " lava",
+          "lava",
+          " Lava",
+          " magma",
+          "\u5728\u9ad8\u6e29",
+          "\u7194",
+          "\u9ad8\u6e29",
+          "\u6eda\u70eb",
+          "/fire",
+          "\u5ca9\u6d46"
+        ]
+      },
+      "r_lens": {
+        "variant": " volcano",
+        "target_rank": 103,
+        "in_top_k": false,
+        "top_tokens": [
+          " lava",
+          "lava",
+          " Lava",
+          " hotter",
+          " magma",
+          " temperatures",
+          " hottest",
+          "heat",
+          " temperature",
+          " heat"
+        ]
+      },
+      "logit_lens": {
+        "variant": " volcano",
+        "target_rank": 99929,
+        "in_top_k": false,
+        "top_tokens": [
+          "\u5937",
+          "\u00e4hn",
+          "\u9ad8\u70e7",
+          "robe",
+          " \u0441\u0438\u043b\u043e\u0439",
+          "\u8482",
+          "imals",
+          "\u8292",
+          " informiert",
+          "ifer"
+        ]
+      }
     },
-    "r_lens_best_rank": 2,
-    "logit_lens_best_rank": 6,
+    "j_lens_best_rank_any_layer": 25,
+    "j_lens_best_layer": 8,
     "self_report": {
       "parsed": true,
       "concepts": [
         "volcano",
-        "ash",
-        "lava",
-        "smoke",
+        "eruption",
+        "magma",
         "geology",
         "danger",
-        "alert",
-        "mountain",
-        "fire",
-        "earthquake"
+        "heat",
+        "ash",
+        "crater",
+        "earthquake",
+        "fire"
       ],
-      "rank": 1,
-      "in_top5": true,
-      "in_top10": true
+      "exact_rank": 1
     },
-    "best_layer_top10_tokens": [
-      " eruption",
-      " volcano",
-      " volcanic",
-      " erupt",
-      " eru",
-      "\u706b\u5c71",
-      " volcan",
-      " magma",
-      "eru",
-      " lava"
-    ],
     "judge": {
+      "id": 4,
       "lens": {
-        "present": true,
-        "matched": " volcano"
+        "present": false,
+        "matched": null
       },
       "self_report": {
         "present": true,
         "matched": "volcano"
       },
-      "agree": true,
-      "reason": "Both lists contain the exact word \"volcano\" (with a leading space in list A).",
-      "fabricated_matches": []
+      "reason": "List A has lava/magma/\u7194/\u5ca9\u6d46 (parts/associations of a volcano) but no entry naming volcano; list B contains 'volcano' verbatim.",
+      "fabricated_matches": [],
+      "agree": false
     },
-    "agree_exact_top10": true,
-    "agree_judged": true
+    "in_lens": false,
+    "in_self_report": true,
+    "cell": "self_report_only"
+  },
+  {
+    "concept": "insomnia",
+    "probe_term": "clock",
+    "prefix": "After hours of staring at the ceiling and tossing in the sheets, she glanced at the clock",
+    "rationale": "Staring at the ceiling and tossing in bed for hours evoke insomnia before the probe term appears.",
+    "probe_token": " clock",
+    "concept_variants": [
+      " insomnia"
+    ],
+    "n_prefix_tokens": 18,
+    "causal_equivalence_relative_dev": 0.0,
+    "primary_layer": 12,
+    "primary": {
+      "j_lens": {
+        "variant": " insomnia",
+        "target_rank": 482,
+        "in_top_k": false,
+        "top_tokens": [
+          " clock",
+          " clocks",
+          "clock",
+          " timer",
+          " midnight",
+          " hour",
+          " hours",
+          "timer",
+          " timers",
+          " schedule"
+        ]
+      },
+      "r_lens": {
+        "variant": " insomnia",
+        "target_rank": 789,
+        "in_top_k": false,
+        "top_tokens": [
+          " clock",
+          " clocks",
+          "clock",
+          " time",
+          " hours",
+          "\u65f6\u949f",
+          " hour",
+          " midnight",
+          " Clock",
+          "time"
+        ]
+      },
+      "logit_lens": {
+        "variant": " insomnia",
+        "target_rank": 62843,
+        "in_top_k": false,
+        "top_tokens": [
+          "\u5927\u6218",
+          "\u7684\u65f6\u95f4",
+          "\u536b\u58eb",
+          "\ufffd",
+          "enspiel",
+          "laus",
+          "\u7bc7\u4e00",
+          "Utc",
+          "\u65b0\u9648\u4ee3\u8c22",
+          "ipers"
+        ]
+      }
+    },
+    "j_lens_best_rank_any_layer": 403,
+    "j_lens_best_layer": 13,
+    "self_report": {
+      "parsed": true,
+      "concepts": [
+        "waiting",
+        "boredom",
+        "night",
+        "sleep",
+        "tension",
+        "anticipation",
+        "time",
+        "restlessness",
+        "delay"
+      ],
+      "exact_rank": null
+    },
+    "judge": {
+      "id": 5,
+      "lens": {
+        "present": false,
+        "matched": null
+      },
+      "self_report": {
+        "present": false,
+        "matched": null
+      },
+      "reason": "List A has clock/timer/hour/midnight (sleep associations) but no entry naming insomnia; list B has sleep/night/restlessness but no entry naming insomnia.",
+      "fabricated_matches": [],
+      "agree": false
+    },
+    "in_lens": false,
+    "in_self_report": false,
+    "cell": "neither"
   }
 ]

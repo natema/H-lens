@@ -1,10 +1,10 @@
 volcano
-ash
-lava
-smoke
+eruption
+magma
 geology
 danger
-alert
-mountain
-fire
+heat
+ash
+crater
 earthquake
+fire

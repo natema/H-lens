@@ -1,10 +1,10 @@
 basketball
-hoops
-score
-team
+court
 player
-game
-arena
+defense
 ball
-dribble
-win
+game
+team
+score
+hoop
+sport

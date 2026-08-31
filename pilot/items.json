@@ -1,61 +1,61 @@
 [
   {
-    "concept": "japan",
-    "probe_term": "sushi",
-    "sentence": "After landing in Tokyo she craved authentic sushi",
-    "prefix": "After landing in Tokyo she craved authentic sushi",
-    "suffix_discarded": "",
-    "rationale": "Tokyo plus the craving for authentic sushi strongly evokes Japan as the country of origin.",
-    "structural_problems": [],
-    "accepted": true
-  },
-  {
-    "concept": "wedding",
-    "probe_term": "bride",
-    "sentence": "The white gown and veil made the bride",
-    "prefix": "The white gown and veil made the bride",
-    "suffix_discarded": "",
-    "rationale": "The mention of a white gown and veil immediately frames the bride in the context of a wedding ceremony.",
-    "structural_problems": [],
-    "accepted": true
-  },
-  {
-    "concept": "insomnia",
-    "probe_term": "night",
-    "sentence": "After yet another sleepless night",
-    "prefix": "After yet another sleepless night",
-    "suffix_discarded": "",
-    "rationale": "The phrase 'sleepless night' directly evokes the condition of insomnia, characterized by the inability to sleep.",
-    "structural_problems": [],
-    "accepted": true
-  },
-  {
     "concept": "basketball",
-    "probe_term": "court",
-    "sentence": "He dribbled down the court",
-    "prefix": "He dribbled down the court",
-    "suffix_discarded": "",
-    "rationale": "The act of dribbling on a court is the central action of a basketball game, evoking the sport.",
+    "probe_term": "dribbled",
+    "sentence": "The point guard faked left, drove past the defender, and dribbled toward the hoop while the shot clock wound down.",
+    "prefix": "The point guard faked left, drove past the defender, and dribbled",
+    "suffix_discarded": " toward the hoop while the shot clock wound down.",
+    "rationale": "The mention of a point guard, faking, driving past a defender, the hoop, and a shot clock together evoke basketball before the probe term even appears.",
+    "structural_problems": [],
+    "accepted": true
+  },
+  {
+    "concept": "japan",
+    "probe_term": "shinkansen",
+    "sentence": "The bullet train raced past Mount Fuji at dawn, and aboard the shinkansen businessmen sipped green tea.",
+    "prefix": "The bullet train raced past Mount Fuji at dawn, and aboard the shinkansen",
+    "suffix_discarded": " businessmen sipped green tea.",
+    "rationale": "The bullet train, Mount Fuji, and businessmen drinking green tea together evoke Japan before the probe term appears.",
     "structural_problems": [],
     "accepted": true
   },
   {
     "concept": "chess",
-    "probe_term": "rook",
-    "sentence": "She sacrificed her rook",
-    "prefix": "She sacrificed her rook",
-    "suffix_discarded": "",
-    "rationale": "The rook is a chess piece and sacrificing pieces is a core tactic, evoking the game of chess.",
+    "probe_term": "checkmate",
+    "sentence": "After sacrificing her queen to open the bishop's diagonal, she advanced the rook and delivered checkmate.",
+    "prefix": "After sacrificing her queen to open the bishop's diagonal, she advanced the rook and delivered checkmate",
+    "suffix_discarded": ".",
+    "rationale": "Sacrificing a queen, a bishop's diagonal, and advancing a rook together evoke chess before the probe term appears.",
+    "structural_problems": [],
+    "accepted": true
+  },
+  {
+    "concept": "wedding",
+    "probe_term": "vows",
+    "sentence": "The bride smoothed her white gown, the organist began the processional, and the couple turned to exchange vows.",
+    "prefix": "The bride smoothed her white gown, the organist began the processional, and the couple turned to exchange vows",
+    "suffix_discarded": ".",
+    "rationale": "The bride in a white gown and the organist playing a processional together evoke a wedding before the probe term appears.",
     "structural_problems": [],
     "accepted": true
   },
   {
     "concept": "volcano",
-    "probe_term": "eruption",
-    "sentence": "The mountain rumbled before the eruption",
-    "prefix": "The mountain rumbled before the eruption",
-    "suffix_discarded": "",
-    "rationale": "A rumbling mountain preceding an eruption is the classic description of a volcano becoming active.",
+    "probe_term": "lava",
+    "sentence": "The ground trembled, sulfurous smoke rose from the crater, and molten lava began to ooze down the mountainside.",
+    "prefix": "The ground trembled, sulfurous smoke rose from the crater, and molten lava",
+    "suffix_discarded": " began to ooze down the mountainside.",
+    "rationale": "Ground tremors, sulfurous smoke from a crater, and a mountainside setting together evoke a volcano before the probe term appears.",
+    "structural_problems": [],
+    "accepted": true
+  },
+  {
+    "concept": "insomnia",
+    "probe_term": "clock",
+    "sentence": "After hours of staring at the ceiling and tossing in the sheets, she glanced at the clock and saw it was already four in the morning.",
+    "prefix": "After hours of staring at the ceiling and tossing in the sheets, she glanced at the clock",
+    "suffix_discarded": " and saw it was already four in the morning.",
+    "rationale": "Staring at the ceiling and tossing in bed for hours evoke insomnia before the probe term appears.",
     "structural_problems": [],
     "accepted": true
   }

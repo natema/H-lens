@@ -759,14 +759,904 @@
       "completion_tokens": 74,
       "cost_usd": 0.0020097999999999995,
       "priced": true
+    },
+    {
+      "at": "2026-08-31T15:56:58.007514+00:00",
+      "model": "glm-5-2",
+      "note": "pilot generation: 6 concepts",
+      "prompt_tokens": 337,
+      "cached_tokens": 0,
+      "completion_tokens": 449,
+      "cost_usd": 0.0024474,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:57:40.347809+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 6",
+      "prompt_tokens": 2185,
+      "cached_tokens": 0,
+      "completion_tokens": 374,
+      "cost_usd": 0.004704600000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:58:25.737166+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 971,
+      "cached_tokens": 0,
+      "completion_tokens": 57,
+      "cost_usd": 0.0016101999999999998,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:58:27.985804+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1044,
+      "cached_tokens": 0,
+      "completion_tokens": 76,
+      "cost_usd": 0.001796,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:58:31.454790+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 938,
+      "cached_tokens": 0,
+      "completion_tokens": 64,
+      "cost_usd": 0.0015947999999999997,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:58:35.090043+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 957,
+      "cached_tokens": 704,
+      "completion_tokens": 84,
+      "cost_usd": 0.0008223600000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:58:41.616465+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1057,
+      "cached_tokens": 704,
+      "completion_tokens": 58,
+      "cost_usd": 0.00084796,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:58:42.737836+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1070,
+      "cached_tokens": 0,
+      "completion_tokens": 62,
+      "cost_usd": 0.0017707999999999999,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:58:43.871428+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 940,
+      "cached_tokens": 704,
+      "completion_tokens": 72,
+      "cost_usd": 0.00074576,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:58:45.010015+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1089,
+      "cached_tokens": 704,
+      "completion_tokens": 58,
+      "cost_usd": 0.00089276,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:58:46.124193+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1036,
+      "cached_tokens": 704,
+      "completion_tokens": 67,
+      "cost_usd": 0.0008581599999999998,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:58:47.370412+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1031,
+      "cached_tokens": 0,
+      "completion_tokens": 67,
+      "cost_usd": 0.0017381999999999999,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:58:48.514233+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1126,
+      "cached_tokens": 704,
+      "completion_tokens": 73,
+      "cost_usd": 0.00101056,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:58:49.666660+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1108,
+      "cached_tokens": 704,
+      "completion_tokens": 79,
+      "cost_usd": 0.0010117599999999998,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:58:51.798449+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1026,
+      "cached_tokens": 704,
+      "completion_tokens": 68,
+      "cost_usd": 0.0008485599999999999,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:58:52.897721+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1069,
+      "cached_tokens": 704,
+      "completion_tokens": 68,
+      "cost_usd": 0.00090876,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:58:54.152276+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1078,
+      "cached_tokens": 704,
+      "completion_tokens": 58,
+      "cost_usd": 0.0008773600000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:58:55.317705+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 935,
+      "cached_tokens": 704,
+      "completion_tokens": 69,
+      "cost_usd": 0.00072556,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:58:56.375202+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 938,
+      "cached_tokens": 704,
+      "completion_tokens": 76,
+      "cost_usd": 0.00076056,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:58:57.427856+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1057,
+      "cached_tokens": 704,
+      "completion_tokens": 52,
+      "cost_usd": 0.0008215599999999999,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:58:58.460954+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1005,
+      "cached_tokens": 896,
+      "completion_tokens": 77,
+      "cost_usd": 0.00061684,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:58:59.792507+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1072,
+      "cached_tokens": 704,
+      "completion_tokens": 63,
+      "cost_usd": 0.00089096,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:59:00.806262+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1013,
+      "cached_tokens": 704,
+      "completion_tokens": 58,
+      "cost_usd": 0.00078636,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:59:02.385651+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 916,
+      "cached_tokens": 704,
+      "completion_tokens": 75,
+      "cost_usd": 0.0007253599999999999,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:59:03.671941+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1052,
+      "cached_tokens": 704,
+      "completion_tokens": 76,
+      "cost_usd": 0.00092016,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:59:04.783224+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1032,
+      "cached_tokens": 704,
+      "completion_tokens": 85,
+      "cost_usd": 0.00093176,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:59:06.956527+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 4",
+      "prompt_tokens": 1567,
+      "cached_tokens": 896,
+      "completion_tokens": 288,
+      "cost_usd": 0.00233204,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:59:09.484325+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 4",
+      "prompt_tokens": 1813,
+      "cached_tokens": 960,
+      "completion_tokens": 270,
+      "cost_usd": 0.0025166,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:59:12.818404+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 4",
+      "prompt_tokens": 1958,
+      "cached_tokens": 960,
+      "completion_tokens": 222,
+      "cost_usd": 0.0025084,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:59:14.598220+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 4",
+      "prompt_tokens": 1765,
+      "cached_tokens": 896,
+      "completion_tokens": 258,
+      "cost_usd": 0.00247724,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:59:16.141535+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 4",
+      "prompt_tokens": 1729,
+      "cached_tokens": 0,
+      "completion_tokens": 249,
+      "cost_usd": 0.0035161999999999997,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:59:17.993101+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 4",
+      "prompt_tokens": 1670,
+      "cached_tokens": 896,
+      "completion_tokens": 229,
+      "cost_usd": 0.00221664,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:59:21.328852+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 8",
+      "prompt_tokens": 2599,
+      "cached_tokens": 1472,
+      "completion_tokens": 544,
+      "cost_usd": 0.004177480000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:59:24.465056+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 8",
+      "prompt_tokens": 2942,
+      "cached_tokens": 1856,
+      "completion_tokens": 496,
+      "cost_usd": 0.00396264,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:59:26.628527+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 8",
+      "prompt_tokens": 2618,
+      "cached_tokens": 1600,
+      "completion_tokens": 504,
+      "cost_usd": 0.0038668,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:59:29.847318+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 16",
+      "prompt_tokens": 4760,
+      "cached_tokens": 0,
+      "completion_tokens": 1057,
+      "cost_usd": 0.0113148,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:59:32.749815+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 8",
+      "prompt_tokens": 2618,
+      "cached_tokens": 2560,
+      "completion_tokens": 518,
+      "cost_usd": 0.0027188000000000004,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:00:00.343055+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 971,
+      "cached_tokens": 896,
+      "completion_tokens": 73,
+      "cost_usd": 0.00055164,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:00:32.039101+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 971,
+      "cached_tokens": 704,
+      "completion_tokens": 57,
+      "cost_usd": 0.0007231599999999999,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:00:33.339549+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1044,
+      "cached_tokens": 704,
+      "completion_tokens": 107,
+      "cost_usd": 0.00104536,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:00:34.573768+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 938,
+      "cached_tokens": 704,
+      "completion_tokens": 60,
+      "cost_usd": 0.00069016,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:00:35.739617+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 957,
+      "cached_tokens": 704,
+      "completion_tokens": 83,
+      "cost_usd": 0.0008179600000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:00:36.850580+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1057,
+      "cached_tokens": 704,
+      "completion_tokens": 72,
+      "cost_usd": 0.0009095599999999999,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:00:38.052086+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1070,
+      "cached_tokens": 704,
+      "completion_tokens": 58,
+      "cost_usd": 0.00086616,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:00:39.382258+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 940,
+      "cached_tokens": 704,
+      "completion_tokens": 72,
+      "cost_usd": 0.00074576,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:00:40.365833+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1089,
+      "cached_tokens": 704,
+      "completion_tokens": 65,
+      "cost_usd": 0.0009235599999999999,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:00:41.308229+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1036,
+      "cached_tokens": 704,
+      "completion_tokens": 65,
+      "cost_usd": 0.0008493599999999999,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:00:42.155748+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1031,
+      "cached_tokens": 704,
+      "completion_tokens": 61,
+      "cost_usd": 0.00082476,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:00:43.383610+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1126,
+      "cached_tokens": 704,
+      "completion_tokens": 86,
+      "cost_usd": 0.00106776,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:00:44.225054+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1108,
+      "cached_tokens": 704,
+      "completion_tokens": 59,
+      "cost_usd": 0.0009237599999999999,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:00:45.099775+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1026,
+      "cached_tokens": 704,
+      "completion_tokens": 59,
+      "cost_usd": 0.00080896,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:00:46.475966+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1069,
+      "cached_tokens": 704,
+      "completion_tokens": 63,
+      "cost_usd": 0.00088676,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:00:47.850005+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1078,
+      "cached_tokens": 704,
+      "completion_tokens": 62,
+      "cost_usd": 0.00089496,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:00:48.810225+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 935,
+      "cached_tokens": 704,
+      "completion_tokens": 66,
+      "cost_usd": 0.00071236,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:00:50.174634+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 938,
+      "cached_tokens": 704,
+      "completion_tokens": 60,
+      "cost_usd": 0.00069016,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:00:51.141540+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1057,
+      "cached_tokens": 704,
+      "completion_tokens": 58,
+      "cost_usd": 0.00084796,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:00:52.217924+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1005,
+      "cached_tokens": 704,
+      "completion_tokens": 76,
+      "cost_usd": 0.0008543600000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:00:53.239018+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1072,
+      "cached_tokens": 704,
+      "completion_tokens": 52,
+      "cost_usd": 0.0008425599999999999,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:00:54.017182+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1013,
+      "cached_tokens": 704,
+      "completion_tokens": 62,
+      "cost_usd": 0.00080396,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:00:54.821368+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 916,
+      "cached_tokens": 704,
+      "completion_tokens": 78,
+      "cost_usd": 0.00073856,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:00:55.898403+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1052,
+      "cached_tokens": 704,
+      "completion_tokens": 85,
+      "cost_usd": 0.00095976,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:00:57.202235+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1032,
+      "cached_tokens": 1024,
+      "completion_tokens": 66,
+      "cost_usd": 0.00044496000000000005,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:00:58.369701+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 971,
+      "cached_tokens": 704,
+      "completion_tokens": 64,
+      "cost_usd": 0.00075396,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:00:59.257347+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1044,
+      "cached_tokens": 704,
+      "completion_tokens": 65,
+      "cost_usd": 0.0008605599999999999,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:01:00.342029+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 938,
+      "cached_tokens": 896,
+      "completion_tokens": 90,
+      "cost_usd": 0.00058024,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:01:01.418375+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 957,
+      "cached_tokens": 896,
+      "completion_tokens": 81,
+      "cost_usd": 0.00056724,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:01:02.494751+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1057,
+      "cached_tokens": 1024,
+      "completion_tokens": 63,
+      "cost_usd": 0.00046676000000000004,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:01:03.446715+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1070,
+      "cached_tokens": 704,
+      "completion_tokens": 58,
+      "cost_usd": 0.00086616,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:01:04.592474+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 940,
+      "cached_tokens": 704,
+      "completion_tokens": 95,
+      "cost_usd": 0.00084696,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:01:05.566017+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1089,
+      "cached_tokens": 704,
+      "completion_tokens": 59,
+      "cost_usd": 0.0008971599999999999,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:01:06.703505+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1036,
+      "cached_tokens": 704,
+      "completion_tokens": 71,
+      "cost_usd": 0.00087576,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:01:07.493268+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1031,
+      "cached_tokens": 1024,
+      "completion_tokens": 62,
+      "cost_usd": 0.00042596,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:01:08.637847+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1126,
+      "cached_tokens": 1088,
+      "completion_tokens": 86,
+      "cost_usd": 0.00058392,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:01:09.442386+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1108,
+      "cached_tokens": 1088,
+      "completion_tokens": 67,
+      "cost_usd": 0.00047512,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:01:10.961593+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1026,
+      "cached_tokens": 704,
+      "completion_tokens": 70,
+      "cost_usd": 0.0008573599999999999,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:01:11.949480+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1069,
+      "cached_tokens": 704,
+      "completion_tokens": 59,
+      "cost_usd": 0.00086916,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:01:12.795242+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1078,
+      "cached_tokens": 704,
+      "completion_tokens": 58,
+      "cost_usd": 0.0008773600000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:01:13.720392+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 935,
+      "cached_tokens": 896,
+      "completion_tokens": 65,
+      "cost_usd": 0.00046604000000000003,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:01:14.553762+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 938,
+      "cached_tokens": 704,
+      "completion_tokens": 60,
+      "cost_usd": 0.00069016,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:01:15.302609+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1057,
+      "cached_tokens": 1024,
+      "completion_tokens": 67,
+      "cost_usd": 0.00048436000000000003,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:01:16.242992+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1005,
+      "cached_tokens": 960,
+      "completion_tokens": 81,
+      "cost_usd": 0.0005538,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:01:17.214828+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1072,
+      "cached_tokens": 704,
+      "completion_tokens": 62,
+      "cost_usd": 0.00088656,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:01:18.027490+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1013,
+      "cached_tokens": 704,
+      "completion_tokens": 66,
+      "cost_usd": 0.0008215599999999999,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:01:18.895545+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 916,
+      "cached_tokens": 704,
+      "completion_tokens": 78,
+      "cost_usd": 0.00073856,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:01:19.919139+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1052,
+      "cached_tokens": 1024,
+      "completion_tokens": 76,
+      "cost_usd": 0.00051696,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:01:20.768724+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 1",
+      "prompt_tokens": 1032,
+      "cached_tokens": 704,
+      "completion_tokens": 87,
+      "cost_usd": 0.0009405599999999999,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:01:22.634272+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 8",
+      "prompt_tokens": 2599,
+      "cached_tokens": 2496,
+      "completion_tokens": 544,
+      "cost_usd": 0.00288724,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:01:25.026726+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 8",
+      "prompt_tokens": 2942,
+      "cached_tokens": 0,
+      "completion_tokens": 505,
+      "cost_usd": 0.006340800000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T16:01:26.698984+00:00",
+      "model": "glm-5-2",
+      "note": "judge batch of 8",
+      "prompt_tokens": 2618,
+      "cached_tokens": 2560,
+      "completion_tokens": 506,
+      "cost_usd": 0.002666,
+      "priced": true
     }
   ],
   "totals": {
-    "n_calls": 76,
-    "prompt_tokens": 51659,
-    "completion_tokens": 8701,
-    "cached_tokens": 23484,
-    "cost_usd": 0.069133,
+    "n_calls": 165,
+    "prompt_tokens": 163030,
+    "completion_tokens": 20751,
+    "cached_tokens": 92092,
+    "cost_usd": 0.191626,
     "unpriced_models": [],
     "budget_eur": 100.0,
     "note": "Token counts are exact, returned by the API per call. The Mistral API exposes no billing endpoint, so cost is tokens times the rates documented at docs.mistral.ai/models/<id>: mistral-large 0.5 in / 1.5 out, zai-glm-5-2 1.4 in / 0.14 cached in / 4.4 out, USD per million tokens. Cached input is billed separately at its lower rate. Any model listed in unpriced_models contributes nothing to cost_usd and needs a rate added. console.mistral.ai remains authoritative. No USD-to-EUR conversion is applied."

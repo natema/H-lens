@@ -1,10 +1,10 @@
 wedding
 ceremony
 marriage
-groom
-vows
 church
-reception
-fiancé
-celebration
-union
+altar
+ring
+groom
+bride
+marriage license
+hymn

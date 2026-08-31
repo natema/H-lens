@@ -1,10 +1,10 @@
 chess
 board
-game
 king
 queen
-pawn
+rook
 bishop
-checkmate
+diagonal
+sacrifice
+game
 strategy
-move

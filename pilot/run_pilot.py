@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from collections import Counter
 from datetime import UTC, datetime
 from pathlib import Path
 
@@ -28,9 +29,11 @@ from j2_lens.baselines import MODEL_ID, MODEL_REVISION, load_lens
 from j2_lens.jspace import (
     GENERATOR_MODEL,
     GENERATOR_SYSTEM,
+    JUDGE_BATCH_SIZE,
+    PRIMARY_LAYER,
     annotate_fragments,
     generate_items,
-    judge_agreement,
+    judge_batch,
     lens_readout,
     load_api_key,
     record_spend,
@@ -50,6 +53,8 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--concepts", default=",".join(DEFAULT_CONCEPTS))
     parser.add_argument("--top-k", type=int, default=10)
+    parser.add_argument("--layer", type=int, default=PRIMARY_LAYER)
+    parser.add_argument("--judge-batch", type=int, default=JUDGE_BATCH_SIZE)
     parser.add_argument("--max-new-tokens", type=int, default=120)
     parser.add_argument("--device", default="cuda")
     args = parser.parse_args()
@@ -126,8 +131,12 @@ def main() -> None:
     raw_dir = HERE / "self_report_raw"
     raw_dir.mkdir(exist_ok=True)
     records = []
+    pending = []
     for item in kept:
-        readout = lens_readout(item, model, tokenizer, lenses, top_k=args.top_k)
+        readout = lens_readout(
+            item, model, tokenizer, lenses, top_k=args.top_k,
+            primary_layer=args.layer,
+        )
         drift = verify_causal_equivalence(item, model, tokenizer, lenses["j_lens"])
         reported, raw = self_report_concepts(
             hf_model,
@@ -139,6 +148,7 @@ def main() -> None:
         (raw_dir / f"{item.concept}.txt").write_text(raw)
 
         j = readout["methods"]["j_lens"]
+        primary = readout["primary"]
         rank = (
             reported.index(item.concept.lower()) + 1
             if reported and item.concept.lower() in reported
@@ -151,62 +161,55 @@ def main() -> None:
             "rationale": item.rationale,
             "probe_token": readout["probe_token"]["decoded"],
             "concept_variants": readout["concept_variants"],
-            "j_lens_best_variant": readout["methods"]["j_lens"]["best_variant"],
-            "j_lens_per_variant_rank":
-                readout["methods"]["j_lens"]["per_variant_best_rank"],
             "n_prefix_tokens": readout["n_prefix_tokens"],
             "causal_equivalence_relative_dev": drift,
-            "j_lens": {
-                "best_rank": j["best_rank"],
-                "best_layer": j["best_layer"],
-                "top10_layers": j["top10_layers"],
-                "in_top5": j["best_rank"] <= 5,
-                "in_top10": j["best_rank"] <= 10,
-            },
-            "r_lens_best_rank": readout["methods"]["r_lens"]["best_rank"],
-            "logit_lens_best_rank": readout["methods"]["logit_lens"]["best_rank"],
+            "primary_layer": readout["primary_layer"],
+            "primary": primary,
+            "j_lens_best_rank_any_layer": j["best_rank"],
+            "j_lens_best_layer": j["best_layer"],
             "self_report": {
                 "parsed": reported is not None,
                 "concepts": reported,
-                "rank": rank,
-                "in_top5": rank is not None and rank <= 5,
-                "in_top10": rank is not None,
+                "exact_rank": rank,
             },
-            "best_layer_top10_tokens": [
-                t["decoded"]
-                for t in j["layers"][str(j["best_layer"])]["top_tokens"]
-            ],
         }
-        verdict, _ = judge_agreement(
-            key,
-            item.concept,
-            record["best_layer_top10_tokens"],
-            reported,
-            ledger=HERE / "spend.json",
-            fragment_evidence=annotate_fragments(
-                record["best_layer_top10_tokens"], vocabulary
-            ),
-        )
-        record["judge"] = verdict
-        record["agree_exact_top10"] = record["j_lens"]["in_top10"] and record[
-            "self_report"
-        ]["in_top10"]
-        record["agree_judged"] = bool(verdict.get("agree"))
-
         records.append(record)
-        status2 = (
-            f"judge: lens={verdict.get('lens',{}).get('matched')!r}"
-            f" self={verdict.get('self_report',{}).get('matched')!r}"
+        pending.append(
+            {
+                "concept": item.concept,
+                "lens_tokens": primary["j_lens"]["top_tokens"],
+                "self_report": reported,
+                "fragment_evidence": annotate_fragments(
+                    primary["j_lens"]["top_tokens"], vocabulary
+                ),
+            }
         )
-        status = (
-            f"self-report #{rank}"
-            if rank
-            else ("miss" if reported is not None else "UNPARSED")
+
+    # One adjudication call for the whole batch.
+    verdicts = []
+    for start in range(0, len(pending), args.judge_batch):
+        chunk = pending[start : start + args.judge_batch]
+        got, _ = judge_batch(key, chunk, ledger=HERE / "spend.json")
+        verdicts.extend(got)
+    for record, verdict in zip(records, verdicts, strict=True):
+        record["judge"] = verdict
+        in_a = bool(verdict.get("lens", {}).get("present"))
+        in_b = bool(verdict.get("self_report", {}).get("present"))
+        record["in_lens"] = in_a
+        record["in_self_report"] = in_b
+        # All four cells are recorded and nothing is dropped. Keeping only
+        # agreement would retain exactly the items the J-lens already handles,
+        # leaving no headroom and biasing the comparison in its favour.
+        record["cell"] = (
+            "both" if in_a and in_b
+            else "self_report_only" if in_b
+            else "lens_only" if in_a
+            else "neither"
         )
         print(
-            f"  {item.concept:<12} J-lens rank {j['best_rank']:>6}"
-            f" @L{j['best_layer']:<3} | {status:<15}"
-            f" | {status2:<26} | judge_agree={record['agree_judged']}",
+            f"  {record['concept']:<12} L{record['primary_layer']}"
+            f" rank {record['primary']['j_lens']['target_rank']:>6}"
+            f" | lens={in_a!s:<5} self={in_b!s:<5} -> {record['cell']}",
             flush=True,
         )
 
@@ -226,21 +229,31 @@ def main() -> None:
                         "concept": record["concept"],
                         "probe_term": record["probe_term"],
                         "prefix": record["prefix"],
-                        "lens_top10": record["best_layer_top10_tokens"],
-                        "j_lens_best_rank": record["j_lens"]["best_rank"],
+                        "primary_layer": record["primary_layer"],
+                        "lens_top10": record["primary"]["j_lens"]["top_tokens"],
+                        "j_lens_rank_primary": record["primary"]["j_lens"][
+                            "target_rank"
+                        ],
+                        "r_lens_rank_primary": record["primary"]["r_lens"][
+                            "target_rank"
+                        ],
                         "self_report": record["self_report"]["concepts"],
                         "judge": record["judge"],
+                        "cell": record["cell"],
                     },
                     ensure_ascii=False,
                 )
                 + "\n"
             )
-    exact = sum(r["agree_exact_top10"] for r in records)
-    judged = sum(r["agree_judged"] for r in records)
+    cells = Counter(r["cell"] for r in records)
     totals = json.loads((HERE / "spend.json").read_text())["totals"]
     print(
-        f"\nagreement: {exact}/{len(records)} exact-token, "
-        f"{judged}/{len(records)} judged"
+        "\ncells: "
+        + ", ".join(
+            f"{name}={cells[name]}"
+            for name in ("both", "self_report_only", "lens_only", "neither")
+        )
+        + f"   (self_report_only = J-lens failures: {cells['self_report_only']})"
     )
     print(
         f"Mistral spend: ${totals['cost_usd']:.4f} over {totals['n_calls']} calls"
