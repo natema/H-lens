@@ -15,7 +15,16 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from j2_lens.jspace import JUDGE_MODEL, judge_agreement, load_api_key
+from transformers import AutoTokenizer
+
+from j2_lens.baselines import MODEL_ID, MODEL_REVISION
+from j2_lens.jspace import (
+    JUDGE_MODEL,
+    annotate_fragments,
+    judge_agreement,
+    load_api_key,
+    vocabulary_words,
+)
 
 HERE = Path(__file__).resolve().parent
 FIXTURES = HERE / "judge_fixtures.json"
@@ -25,6 +34,10 @@ LEDGER = HERE / "spend.json"
 def main() -> None:
     key = load_api_key(HERE.parents[1] / ".env")
     fixtures = json.loads(FIXTURES.read_text())["fixtures"]
+    tokenizer = AutoTokenizer.from_pretrained(
+        MODEL_ID, revision=MODEL_REVISION, local_files_only=True
+    )
+    vocabulary = vocabulary_words(tokenizer)
     print(f"judge = {JUDGE_MODEL}, {len(fixtures)} recorded fixtures\n")
 
     failures = 0
@@ -35,6 +48,7 @@ def main() -> None:
             fixture["lens_top10"],
             fixture["self_report"],
             ledger=LEDGER,
+            fragment_evidence=annotate_fragments(fixture["lens_top10"], vocabulary),
         )
         got = bool(verdict.get("agree"))
         expected = fixture["expected_agree"]

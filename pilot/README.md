@@ -53,8 +53,10 @@ explicitly, each one observed in the pilot before it was fixed:
 
 The fragment rule is two-step, and an earlier blanket version of it was wrong.
 Tokenizers split words, so a readout may legitimately carry a piece of one. The
-question is whether the piece identifies a word, which is checkable against the
-vocabulary:
+question is whether the piece identifies a word — which is a fact about the
+vocabulary, not a matter of the judge's recall. `annotate_fragments` enumerates,
+for every entry of the lens list, the vocabulary words that extend it, and
+passes that to the judge as `list_a_vocabulary_evidence`:
 
 | fragment | completions in the vocabulary | identifies |
 |---|---|---|
@@ -62,6 +64,11 @@ vocabulary:
 | `noct` | `noctur` | nocturnal |
 | `Vol` | `volatile`, `volcano`, `Voldemort`, `volant`, … (14) | nothing |
 | `tem` | `tema`, `temb`, `temel`, `tembre`, … (14) | nothing |
+
+The judge is instructed to use that field rather than its own knowledge, and to
+cite it. On the fixture above it answers: *"List A contains 'matrim', which per
+vocabulary evidence extends only to matrimon/matrimoni/matrimoniale/matrimonio,
+naming matrimony, an exact synonym of wedding."*
 
 If it identifies a word, the ordinary test applies to that word. So `matrim` is
 **present** for *wedding* — matrimony denotes the same thing, and `nuptials` was

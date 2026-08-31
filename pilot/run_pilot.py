@@ -28,6 +28,7 @@ from j2_lens.baselines import MODEL_ID, MODEL_REVISION, load_lens
 from j2_lens.jspace import (
     GENERATOR_MODEL,
     GENERATOR_SYSTEM,
+    annotate_fragments,
     generate_items,
     judge_agreement,
     lens_readout,
@@ -36,6 +37,7 @@ from j2_lens.jspace import (
     self_report_concepts,
     structural_problems,
     verify_causal_equivalence,
+    vocabulary_words,
 )
 
 DEFAULT_CONCEPTS = [
@@ -119,6 +121,7 @@ def main() -> None:
     ).to(args.device)
     model = from_hf(hf_model, tokenizer, compile=False, force_bos=True)
     lenses = {name: load_lens(name, True)[0] for name in ("j_lens", "r_lens")}
+    vocabulary = vocabulary_words(tokenizer)
 
     raw_dir = HERE / "self_report_raw"
     raw_dir.mkdir(exist_ok=True)
@@ -180,6 +183,9 @@ def main() -> None:
             record["best_layer_top10_tokens"],
             reported,
             ledger=HERE / "spend.json",
+            fragment_evidence=annotate_fragments(
+                record["best_layer_top10_tokens"], vocabulary
+            ),
         )
         record["judge"] = verdict
         record["agree_exact_top10"] = record["j_lens"]["in_top10"] and record[

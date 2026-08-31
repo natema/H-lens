@@ -151,6 +151,48 @@ term itself. Never rely on what follows; it will be deleted.
 Answer with JSON only."""
 
 
+def vocabulary_words(tokenizer: Any) -> list[str]:
+    """Every distinct surface string in the vocabulary, lowercased."""
+    words = {
+        tokenizer.convert_tokens_to_string([surface]).strip().lower()
+        for surface in tokenizer.get_vocab()
+    }
+    return sorted(w for w in words if w)
+
+
+def fragment_completions(
+    token: str, words: list[str], limit: int = 12
+) -> list[str]:
+    """Vocabulary words that extend ``token``, as evidence about a fragment.
+
+    A readout token may be a split piece of a longer word. Whether it names
+    anything is a fact about the vocabulary, not a matter of recall: "matrim"
+    is extended only by the matrimony family, while "Vol" is extended by
+    volatile, volcano, Voldemort and many more. Computing this and handing it
+    to the judge replaces a guess with evidence.
+    """
+    stem = token.strip().lower()
+    if not stem:
+        return []
+    return [w for w in words if w.startswith(stem) and w != stem][:limit]
+
+
+def annotate_fragments(
+    tokens: list[str], words: list[str], limit: int = 12
+) -> dict[str, dict[str, Any]]:
+    # Deliberately no "is this a whole word" flag: every readout token is by
+    # construction a vocabulary token, so such a flag is true for all of them
+    # and would contradict the completion evidence for a genuine fragment.
+    annotated: dict[str, dict[str, Any]] = {}
+    for token in tokens:
+        completions = fragment_completions(token, words, limit)
+        annotated[token] = {
+            "n_completions": len(completions),
+            "completions": completions,
+        }
+    return annotated
+
+
 def concept_variants(concept: str) -> list[str]:
     """Surface forms of a concept that could carry it in the vocabulary.
 
@@ -305,15 +347,25 @@ ABSENT means no entry names it. Three specific traps, all ABSENT:
    "wedding": "ceremony", "ceremonies", "ceremonial", "rites", "proceedings" \
    are ABSENT, because funerals and graduations are ceremonies too. For \
    "volcano": "mountain", "disaster" are ABSENT.
-3. Uninformative fragments. Tokenizers split words, so a list may contain a \
-   truncated piece. Judge it in two steps. First, does the fragment have \
-   essentially one completion in English? "Vol" does not (volume, volatile, \
-   volcano, Voldemort) and names nothing, so it is ABSENT for any target. \
-   "matrim" does: every completion is matrimony or matrimonial. Second, if it \
-   does identify a word, apply the normal test to that word. So "matrim" is \
-   PRESENT for "wedding", because matrimony denotes the same thing. But \
-   "noct" identifies only "nocturnal", and nocturnal is not insomnia, so it \
-   is ABSENT for "insomnia" on meaning rather than on being a fragment.
+3. Uninformative fragments. Tokenizers split words, so list A may contain a \
+   truncated piece of one. Do not judge this from memory. The field \
+   "list_a_vocabulary_evidence" gives, for each entry of list A, which \
+   vocabulary words extend it. An entry with no completions is already a whole \
+   word; judge it normally. Otherwise:
+
+   - If "completions" all belong to one word family, the entry names that \
+     word. Then apply the normal test to that word. Example: "matrim" is \
+     extended only by matrimon/matrimoni/matrimoniale/matrimonio, so it names \
+     matrimony, and matrimony denotes a wedding, so it is PRESENT for \
+     "wedding".
+   - If "completions" span unrelated words, the entry names nothing and is \
+     ABSENT for every target. Example: "Vol" is extended by volatile, volcano, \
+     Voldemort and others.
+   - Identifying a word is not enough on its own. "noct" is extended only by \
+     "noctur", so it names nocturnal, but nocturnal is not insomnia, so it is \
+     ABSENT for "insomnia" on meaning.
+
+   Cite the evidence you used in "reason" when an entry is a fragment.
 
 Two hard rules:
 
@@ -335,6 +387,7 @@ def judge_agreement(
     lens_tokens: list[str],
     self_report: list[str] | None,
     ledger: Path | None = None,
+    fragment_evidence: dict[str, dict[str, Any]] | None = None,
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     """Ask a judge model whether the concept is named in each list.
 
@@ -348,6 +401,7 @@ def judge_agreement(
         {
             "target_concept": concept,
             "list_a_lens_readout": lens_tokens,
+            "list_a_vocabulary_evidence": fragment_evidence or {},
             "list_b_model_self_report": self_report if self_report else [],
             "answer_format": {
                 "lens": {"present": "bool", "matched": "string or null"},
