@@ -1,61 +1,61 @@
 [
   {
-    "concept": "basketball",
-    "probe_term": "court",
-    "sentence": "He laced up his high-tops, grabbed the orange ball, and ran onto the court",
-    "prefix": "He laced up his high-tops, grabbed the orange ball, and ran onto the court",
-    "suffix_discarded": "",
-    "rationale": "High-top shoes and an orange ball combined with running onto a court evoke the sport of basketball.",
-    "structural_problems": [],
-    "accepted": true
-  },
-  {
     "concept": "japan",
-    "probe_term": "temple",
-    "sentence": "After bowing politely, the tourists in kimonos walked toward the temple",
-    "prefix": "After bowing politely, the tourists in kimonos walked toward the temple",
+    "probe_term": "sushi",
+    "sentence": "After landing in Tokyo she craved authentic sushi",
+    "prefix": "After landing in Tokyo she craved authentic sushi",
     "suffix_discarded": "",
-    "rationale": "Bowing, kimonos, and a temple together evoke the country of Japan.",
-    "structural_problems": [],
-    "accepted": true
-  },
-  {
-    "concept": "chess",
-    "probe_term": "board",
-    "sentence": "She advanced her bishop across the checkered board",
-    "prefix": "She advanced her bishop across the checkered board",
-    "suffix_discarded": "",
-    "rationale": "A bishop moving across a checkred board evokes the game of chess.",
+    "rationale": "Tokyo plus the craving for authentic sushi strongly evokes Japan as the country of origin.",
     "structural_problems": [],
     "accepted": true
   },
   {
     "concept": "wedding",
-    "probe_term": "vows",
-    "sentence": "The bride in white walked down the aisle to exchange her vows",
-    "prefix": "The bride in white walked down the aisle to exchange her vows",
+    "probe_term": "bride",
+    "sentence": "The white gown and veil made the bride",
+    "prefix": "The white gown and veil made the bride",
     "suffix_discarded": "",
-    "rationale": "A bride in white walking down an aisle to exchange vows evokes a wedding ceremony.",
+    "rationale": "The mention of a white gown and veil immediately frames the bride in the context of a wedding ceremony.",
+    "structural_problems": [],
+    "accepted": true
+  },
+  {
+    "concept": "insomnia",
+    "probe_term": "night",
+    "sentence": "After yet another sleepless night",
+    "prefix": "After yet another sleepless night",
+    "suffix_discarded": "",
+    "rationale": "The phrase 'sleepless night' directly evokes the condition of insomnia, characterized by the inability to sleep.",
+    "structural_problems": [],
+    "accepted": true
+  },
+  {
+    "concept": "basketball",
+    "probe_term": "court",
+    "sentence": "He dribbled down the court",
+    "prefix": "He dribbled down the court",
+    "suffix_discarded": "",
+    "rationale": "The act of dribbling on a court is the central action of a basketball game, evoking the sport.",
+    "structural_problems": [],
+    "accepted": true
+  },
+  {
+    "concept": "chess",
+    "probe_term": "rook",
+    "sentence": "She sacrificed her rook",
+    "prefix": "She sacrificed her rook",
+    "suffix_discarded": "",
+    "rationale": "The rook is a chess piece and sacrificing pieces is a core tactic, evoking the game of chess.",
     "structural_problems": [],
     "accepted": true
   },
   {
     "concept": "volcano",
     "probe_term": "eruption",
-    "sentence": "Molten lava surged up the mountain before the eruption",
-    "prefix": "Molten lava surged up the mountain before the eruption",
+    "sentence": "The mountain rumbled before the eruption",
+    "prefix": "The mountain rumbled before the eruption",
     "suffix_discarded": "",
-    "rationale": "Molten lava surging up a mountain before an eruption evokes a volcano.",
-    "structural_problems": [],
-    "accepted": true
-  },
-  {
-    "concept": "insomnia",
-    "probe_term": "hours",
-    "sentence": "She stared at the ceiling again, unable to sleep for hours",
-    "prefix": "She stared at the ceiling again, unable to sleep for hours",
-    "suffix_discarded": "",
-    "rationale": "Staring at the ceiling while unable to sleep for hours evokes insomnia.",
+    "rationale": "A rumbling mountain preceding an eruption is the classic description of a volcano becoming active.",
     "structural_problems": [],
     "accepted": true
   }

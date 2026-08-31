@@ -1,10 +1,10 @@
 wedding
 ceremony
 marriage
-bride
 groom
+vows
 church
-isle
-ring
-partner
-commitment
+reception
+fiancé
+celebration
+union

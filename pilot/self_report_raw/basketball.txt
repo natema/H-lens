@@ -1,10 +1,10 @@
 basketball
-sports
-competition
+hoops
+score
+team
+player
 game
-play
-athletic
-competition
-match
 arena
-gameplay
+ball
+dribble
+win

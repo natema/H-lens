@@ -329,14 +329,224 @@
       "completion_tokens": 76,
       "cost_usd": 0.00057352,
       "priced": true
+    },
+    {
+      "at": "2026-08-31T15:30:46.397324+00:00",
+      "model": "glm-5-2",
+      "note": "pilot generation: 6 concepts",
+      "prompt_tokens": 337,
+      "cached_tokens": 0,
+      "completion_tokens": 367,
+      "cost_usd": 0.0020866000000000005,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:31:00.473866+00:00",
+      "model": "glm-5-2",
+      "note": "judge: japan",
+      "prompt_tokens": 623,
+      "cached_tokens": 0,
+      "completion_tokens": 76,
+      "cost_usd": 0.0012066,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:31:06.646815+00:00",
+      "model": "glm-5-2",
+      "note": "judge: wedding",
+      "prompt_tokens": 623,
+      "cached_tokens": 0,
+      "completion_tokens": 64,
+      "cost_usd": 0.0011538,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:31:14.008545+00:00",
+      "model": "glm-5-2",
+      "note": "judge: insomnia",
+      "prompt_tokens": 622,
+      "cached_tokens": 0,
+      "completion_tokens": 74,
+      "cost_usd": 0.0011964,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:31:19.968062+00:00",
+      "model": "glm-5-2",
+      "note": "judge: basketball",
+      "prompt_tokens": 620,
+      "cached_tokens": 448,
+      "completion_tokens": 63,
+      "cost_usd": 0.0005807200000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:31:26.649575+00:00",
+      "model": "glm-5-2",
+      "note": "judge: chess",
+      "prompt_tokens": 619,
+      "cached_tokens": 448,
+      "completion_tokens": 76,
+      "cost_usd": 0.00063652,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:31:32.241815+00:00",
+      "model": "glm-5-2",
+      "note": "judge: volcano",
+      "prompt_tokens": 623,
+      "cached_tokens": 448,
+      "completion_tokens": 61,
+      "cost_usd": 0.00057612,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:31:38.910993+00:00",
+      "model": "glm-5-2",
+      "note": "pilot generation: 6 concepts",
+      "prompt_tokens": 337,
+      "cached_tokens": 320,
+      "completion_tokens": 322,
+      "cost_usd": 0.0014854,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:31:51.535569+00:00",
+      "model": "glm-5-2",
+      "note": "judge: japan",
+      "prompt_tokens": 619,
+      "cached_tokens": 448,
+      "completion_tokens": 62,
+      "cost_usd": 0.00057492,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:31:56.847647+00:00",
+      "model": "glm-5-2",
+      "note": "judge: wedding",
+      "prompt_tokens": 624,
+      "cached_tokens": 0,
+      "completion_tokens": 61,
+      "cost_usd": 0.001142,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:32:02.113966+00:00",
+      "model": "glm-5-2",
+      "note": "judge: insomnia",
+      "prompt_tokens": 624,
+      "cached_tokens": 448,
+      "completion_tokens": 63,
+      "cost_usd": 0.0005863200000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:32:07.080750+00:00",
+      "model": "glm-5-2",
+      "note": "judge: basketball",
+      "prompt_tokens": 621,
+      "cached_tokens": 448,
+      "completion_tokens": 80,
+      "cost_usd": 0.0006569200000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:32:11.887230+00:00",
+      "model": "glm-5-2",
+      "note": "judge: chess",
+      "prompt_tokens": 616,
+      "cached_tokens": 448,
+      "completion_tokens": 65,
+      "cost_usd": 0.00058392,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:32:16.647255+00:00",
+      "model": "glm-5-2",
+      "note": "judge: volcano",
+      "prompt_tokens": 621,
+      "cached_tokens": 448,
+      "completion_tokens": 61,
+      "cost_usd": 0.0005733200000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:33:19.063812+00:00",
+      "model": "glm-5-2",
+      "note": "judge: japan",
+      "prompt_tokens": 619,
+      "cached_tokens": 448,
+      "completion_tokens": 62,
+      "cost_usd": 0.00057492,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:33:20.215509+00:00",
+      "model": "glm-5-2",
+      "note": "judge: volcano",
+      "prompt_tokens": 623,
+      "cached_tokens": 448,
+      "completion_tokens": 63,
+      "cost_usd": 0.0005849200000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:33:23.323899+00:00",
+      "model": "glm-5-2",
+      "note": "judge: wedding",
+      "prompt_tokens": 623,
+      "cached_tokens": 448,
+      "completion_tokens": 60,
+      "cost_usd": 0.0005717200000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:33:25.767201+00:00",
+      "model": "glm-5-2",
+      "note": "judge: japan",
+      "prompt_tokens": 621,
+      "cached_tokens": 448,
+      "completion_tokens": 77,
+      "cost_usd": 0.0006437200000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:33:27.989539+00:00",
+      "model": "glm-5-2",
+      "note": "judge: wedding",
+      "prompt_tokens": 622,
+      "cached_tokens": 448,
+      "completion_tokens": 75,
+      "cost_usd": 0.0006363199999999999,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:33:28.917529+00:00",
+      "model": "glm-5-2",
+      "note": "judge: insomnia",
+      "prompt_tokens": 622,
+      "cached_tokens": 448,
+      "completion_tokens": 73,
+      "cost_usd": 0.00062752,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:33:30.159046+00:00",
+      "model": "glm-5-2",
+      "note": "judge: chess",
+      "prompt_tokens": 619,
+      "cached_tokens": 576,
+      "completion_tokens": 81,
+      "cost_usd": 0.00049724,
+      "priced": true
     }
   ],
   "totals": {
-    "n_calls": 33,
-    "prompt_tokens": 16492,
-    "completion_tokens": 5125,
-    "cached_tokens": 6652,
-    "cost_usd": 0.025373,
+    "n_calls": 54,
+    "prompt_tokens": 28970,
+    "completion_tokens": 7111,
+    "cached_tokens": 13820,
+    "cost_usd": 0.042549,
     "unpriced_models": [],
     "budget_eur": 100.0,
     "note": "Token counts are exact, returned by the API per call. The Mistral API exposes no billing endpoint, so cost is tokens times the rates documented at docs.mistral.ai/models/<id>: mistral-large 0.5 in / 1.5 out, zai-glm-5-2 1.4 in / 0.14 cached in / 4.4 out, USD per million tokens. Cached input is billed separately at its lower rate. Any model listed in unpriced_models contributes nothing to cost_usd and needs a rate added. console.mistral.ai remains authoritative. No USD-to-EUR conversion is applied."

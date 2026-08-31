@@ -57,19 +57,36 @@ The judge must also quote its match verbatim from the list it claims. Any
 judge reported `noct` as a match for *insomnia* while justifying it as
 "directly named in both lists".
 
-Both generation and judging use GLM-5.2. `pilot/check_judge.py` pins the
-judge's behaviour with fixtures whose answers are known, because a pilot run
-only exercises whatever the generator happens to produce — in one run every
-agreement was an exact string match, so the variant handling that motivates
-having a judge at all went untested:
+Both generation and judging use GLM-5.2.
+
+`pilot/check_judge.py` scores the judge against **real recorded readouts**. Each
+run generates different items, so `run_pilot.py` appends every observation to
+`observations.jsonl`; `judge_fixtures.json` selects from that pool and adds a
+hand-assigned expected verdict. The lists themselves are never invented — they
+are the actual J-lens top-10 and the actual Qwen3.5-4B answer.
 
 ```bash
 uv run python pilot/check_judge.py
 ```
 
-It covers the accepting cases (`Japanese`/`japan`, `火山`/`volcano`) and each
-rejecting trap (Tokyo for Japan, `ceremony`/`matrim` for wedding, `noct` for
-insomnia, chess pieces for chess). All six behave as intended.
+Seven fixtures, all behaving as intended, covering both directions of failure:
+
+| concept | lens readout | self-report | expect |
+|---|---|---|---|
+| japan | ` sushi`, `apanese`, ` japon`, `Japanese`, `寿司` | `japan`, `restaurant`, `tokyo` | agree |
+| volcano | ` lava`, ` volcan`, `火山`, ` volcano` | `volcano`, `eruption`, `magma` | agree |
+| wedding | ` bride`, ` wedding`, `新娘`, ` groom` | `wedding`, `ceremony`, `vows` | agree |
+| japan | ` temple`, ` Buddha`, ` shrine`, ` Buddhist` | `ritual`, `shrine`, `pilgrimage` | reject |
+| wedding | ` vows`, ` Ceremony`, ` covenant`, ` matrim` | `wedding`, `marriage`, `bride` | reject |
+| insomnia | ` tired`, ` fatigue`, ` exhaustion`, ` sleep` | `insomnia`, `sleeplessness` | reject |
+| chess | ` who`, ` knight`, ` chess`, ` whom` | `battle`, `war`, `castle`, `armor` | reject |
+
+The first row is the case the judge exists for: the lens names Japan only as
+`Japanese`/`japon` while the self-report says `japan`. The last three rejections
+are asymmetric on purpose — in two the *self-report* names the concept and the
+lens does not, in the last the *lens* names it and the self-report does not — so
+the judge has to assess each list separately rather than declare agreement
+because the target word appears somewhere.
 
 One coupling to keep in mind: the same model writes the items and judges the
 readouts, so a blind spot shared between the two roles would not show up here.

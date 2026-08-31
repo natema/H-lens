@@ -1,10 +1,10 @@
 chess
+board
 game
-strategy
-move
 king
 queen
 pawn
+bishop
 checkmate
-opponent
-table
+strategy
+move

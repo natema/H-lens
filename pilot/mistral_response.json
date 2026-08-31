@@ -2,10 +2,10 @@
   "model": "glm-5-2",
   "usage": {
     "prompt_tokens": 337,
-    "total_tokens": 674,
-    "completion_tokens": 337,
+    "total_tokens": 659,
+    "completion_tokens": 322,
     "prompt_tokens_details": {
-      "cached_tokens": 0
+      "cached_tokens": 320
     }
   },
   "request": {
@@ -17,7 +17,7 @@
       },
       {
         "role": "user",
-        "content": "Build one item for each of these target concepts: 'basketball', 'japan', 'chess', 'wedding', 'volcano', 'insomnia'.\n\nReturn {\"items\": [{\"concept\": ..., \"probe_term\": ..., \"sentence\": ..., \"rationale\": ...}]}. The rationale states, in one sentence, why the text up to and including the probe term evokes the concept."
+        "content": "Build one item for each of these target concepts: 'japan', 'wedding', 'insomnia', 'basketball', 'chess', 'volcano'.\n\nReturn {\"items\": [{\"concept\": ..., \"probe_term\": ..., \"sentence\": ..., \"rationale\": ...}]}. The rationale states, in one sentence, why the text up to and including the probe term evokes the concept."
       }
     ],
     "response_format": {
@@ -26,5 +26,5 @@
     "temperature": 0.7,
     "max_tokens": 1200
   },
-  "raw_content": "{\"items\": [{\"concept\": \"basketball\", \"probe_term\": \"court\", \"sentence\": \"He laced up his high-tops, grabbed the orange ball, and ran onto the court\", \"rationale\": \"High-top shoes and an orange ball combined with running onto a court evoke the sport of basketball.\"}, {\"concept\": \"japan\", \"probe_term\": \"temple\", \"sentence\": \"After bowing politely, the tourists in kimonos walked toward the temple\", \"rationale\": \"Bowing, kimonos, and a temple together evoke the country of Japan.\"}, {\"concept\": \"chess\", \"probe_term\": \"board\", \"sentence\": \"She advanced her bishop across the checkered board\", \"rationale\": \"A bishop moving across a checkred board evokes the game of chess.\"}, {\"concept\": \"wedding\", \"probe_term\": \"vows\", \"sentence\": \"The bride in white walked down the aisle to exchange her vows\", \"rationale\": \"A bride in white walking down an aisle to exchange vows evokes a wedding ceremony.\"}, {\"concept\": \"volcano\", \"probe_term\": \"eruption\", \"sentence\": \"Molten lava surged up the mountain before the eruption\", \"rationale\": \"Molten lava surging up a mountain before an eruption evokes a volcano.\"}, {\"concept\": \"insomnia\", \"probe_term\": \"hours\", \"sentence\": \"She stared at the ceiling again, unable to sleep for hours\", \"rationale\": \"Staring at the ceiling while unable to sleep for hours evokes insomnia.\"}]}"
+  "raw_content": "{\"items\": [{\"concept\": \"japan\", \"probe_term\": \"sushi\", \"sentence\": \"After landing in Tokyo she craved authentic sushi\", \"rationale\": \"Tokyo plus the craving for authentic sushi strongly evokes Japan as the country of origin.\"}, {\"concept\": \"wedding\", \"probe_term\": \"bride\", \"sentence\": \"The white gown and veil made the bride\", \"rationale\": \"The mention of a white gown and veil immediately frames the bride in the context of a wedding ceremony.\"}, {\"concept\": \"insomnia\", \"probe_term\": \"night\", \"sentence\": \"After yet another sleepless night\", \"rationale\": \"The phrase 'sleepless night' directly evokes the condition of insomnia, characterized by the inability to sleep.\"}, {\"concept\": \"basketball\", \"probe_term\": \"court\", \"sentence\": \"He dribbled down the court\", \"rationale\": \"The act of dribbling on a court is the central action of a basketball game, evoking the sport.\"}, {\"concept\": \"chess\", \"probe_term\": \"rook\", \"sentence\": \"She sacrificed her rook\", \"rationale\": \"The rook is a chess piece and sacrificing pieces is a core tactic, evoking the game of chess.\"}, {\"concept\": \"volcano\", \"probe_term\": \"eruption\", \"sentence\": \"The mountain rumbled before the eruption\", \"rationale\": \"A rumbling mountain preceding an eruption is the classic description of a volcano becoming active.\"}]}"
 }

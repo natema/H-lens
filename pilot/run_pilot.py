@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from datetime import UTC, datetime
 from pathlib import Path
 
 import torch
@@ -204,6 +205,30 @@ def main() -> None:
         )
 
     (HERE / "results.json").write_text(json.dumps(records, indent=2) + "\n")
+
+    # Append to a durable pool. Each run regenerates different items, so
+    # without this the only surviving evidence is the latest run, and judge
+    # fixtures would have to be invented rather than observed.
+    run_id = datetime.now(UTC).strftime("%Y%m%dT%H%M%SZ")
+    with (HERE / "observations.jsonl").open("a") as handle:
+        for record in records:
+            handle.write(
+                json.dumps(
+                    {
+                        "run_id": run_id,
+                        "generator": GENERATOR_MODEL,
+                        "concept": record["concept"],
+                        "probe_term": record["probe_term"],
+                        "prefix": record["prefix"],
+                        "lens_top10": record["best_layer_top10_tokens"],
+                        "j_lens_best_rank": record["j_lens"]["best_rank"],
+                        "self_report": record["self_report"]["concepts"],
+                        "judge": record["judge"],
+                    },
+                    ensure_ascii=False,
+                )
+                + "\n"
+            )
     exact = sum(r["agree_exact_top10"] for r in records)
     judged = sum(r["agree_judged"] for r in records)
     totals = json.loads((HERE / "spend.json").read_text())["totals"]
