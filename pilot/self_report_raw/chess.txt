@@ -1,10 +1,10 @@
-chess piece
+checkmate
+chess
+board
 pawn
-king
 queen
 rook
-game
-board
-move
-capture
+bishop
+king
 strategy
+game

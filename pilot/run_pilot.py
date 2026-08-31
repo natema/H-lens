@@ -28,6 +28,7 @@ from j2_lens.jspace import (
     GENERATOR_MODEL,
     GENERATOR_SYSTEM,
     generate_items,
+    judge_agreement,
     lens_readout,
     load_api_key,
     record_spend,
@@ -172,13 +173,24 @@ def main() -> None:
                 for t in j["layers"][str(j["best_layer"])]["top_tokens"]
             ],
         }
-        record["agree_top10"] = record["j_lens"]["in_top10"] and record[
+        verdict, _ = judge_agreement(
+            key,
+            item.concept,
+            record["best_layer_top10_tokens"],
+            reported,
+            ledger=HERE / "spend.json",
+        )
+        record["judge"] = verdict
+        record["agree_exact_top10"] = record["j_lens"]["in_top10"] and record[
             "self_report"
         ]["in_top10"]
-        record["agree_top5"] = record["j_lens"]["in_top5"] and record[
-            "self_report"
-        ]["in_top5"]
+        record["agree_judged"] = bool(verdict.get("agree"))
+
         records.append(record)
+        status2 = (
+            f"judge: lens={verdict.get('lens',{}).get('matched')!r}"
+            f" self={verdict.get('self_report',{}).get('matched')!r}"
+        )
         status = (
             f"self-report #{rank}"
             if rank
@@ -187,13 +199,22 @@ def main() -> None:
         print(
             f"  {item.concept:<12} J-lens rank {j['best_rank']:>6}"
             f" @L{j['best_layer']:<3} | {status:<15}"
-            f" | agree@10={record['agree_top10']}",
+            f" | {status2:<26} | judge_agree={record['agree_judged']}",
             flush=True,
         )
 
     (HERE / "results.json").write_text(json.dumps(records, indent=2) + "\n")
-    agree = sum(r["agree_top10"] for r in records)
-    print(f"\n{agree}/{len(records)} items agree at top-10; wrote {HERE}")
+    exact = sum(r["agree_exact_top10"] for r in records)
+    judged = sum(r["agree_judged"] for r in records)
+    totals = json.loads((HERE / "spend.json").read_text())["totals"]
+    print(
+        f"\nagreement: {exact}/{len(records)} exact-token, "
+        f"{judged}/{len(records)} judged"
+    )
+    print(
+        f"Mistral spend: ${totals['cost_usd']:.4f} over {totals['n_calls']} calls"
+    )
+    print(f"wrote {HERE}")
 
 
 if __name__ == "__main__":

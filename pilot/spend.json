@@ -1,60 +1,214 @@
 {
   "calls": [
     {
-      "at": "2026-08-31T15:05:19.866125+00:00",
+      "at": "2026-08-31T15:15:24.721705+00:00",
       "model": "mistral-large-latest",
       "note": "API connectivity test (measured)",
       "prompt_tokens": 17,
+      "cached_tokens": 0,
       "completion_tokens": 6,
-      "cost_usd": 1.75e-05
+      "cost_usd": 1.75e-05,
+      "priced": true
     },
     {
-      "at": "2026-08-31T15:05:19.866372+00:00",
+      "at": "2026-08-31T15:15:24.721958+00:00",
       "model": "mistral-large-latest",
-      "note": "pre-ledger pilot generation #1 (estimated from the one measured call)",
+      "note": "pre-ledger mistral-large pilot generation #1 (estimated)",
       "prompt_tokens": 339,
+      "cached_tokens": 0,
       "completion_tokens": 470,
-      "cost_usd": 0.0008745
+      "cost_usd": 0.0008745,
+      "priced": true
     },
     {
-      "at": "2026-08-31T15:05:19.866524+00:00",
+      "at": "2026-08-31T15:15:24.722140+00:00",
       "model": "mistral-large-latest",
-      "note": "pre-ledger pilot generation #2 (estimated from the one measured call)",
+      "note": "pre-ledger mistral-large pilot generation #2 (estimated)",
       "prompt_tokens": 339,
+      "cached_tokens": 0,
       "completion_tokens": 470,
-      "cost_usd": 0.0008745
+      "cost_usd": 0.0008745,
+      "priced": true
     },
     {
-      "at": "2026-08-31T15:05:19.866804+00:00",
+      "at": "2026-08-31T15:15:24.722392+00:00",
       "model": "mistral-large-latest",
-      "note": "pre-ledger pilot generation #3 (estimated from the one measured call)",
+      "note": "pre-ledger mistral-large pilot generation #3 (estimated)",
       "prompt_tokens": 339,
+      "cached_tokens": 0,
       "completion_tokens": 470,
-      "cost_usd": 0.0008745
+      "cost_usd": 0.0008745,
+      "priced": true
     },
     {
-      "at": "2026-08-31T15:05:19.866940+00:00",
+      "at": "2026-08-31T15:15:24.722539+00:00",
       "model": "mistral-large-latest",
-      "note": "pre-ledger pilot generation #4 (estimated from the one measured call)",
+      "note": "pre-ledger mistral-large pilot generation #4 (estimated)",
       "prompt_tokens": 339,
+      "cached_tokens": 0,
       "completion_tokens": 470,
-      "cost_usd": 0.0008745
+      "cost_usd": 0.0008745,
+      "priced": true
     },
     {
-      "at": "2026-08-31T15:07:43.593929+00:00",
+      "at": "2026-08-31T15:15:24.722708+00:00",
+      "model": "glm-5-2",
+      "note": "glm-5-2 pilot generation (measured)",
+      "prompt_tokens": 337,
+      "cached_tokens": 0,
+      "completion_tokens": 362,
+      "cost_usd": 0.0020646,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:15:37.183197+00:00",
       "model": "glm-5-2",
       "note": "pilot generation: 6 concepts",
       "prompt_tokens": 337,
-      "completion_tokens": 362,
-      "cost_usd": 0.00227106
+      "cached_tokens": 0,
+      "completion_tokens": 434,
+      "cost_usd": 0.0023814,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:15:50.149164+00:00",
+      "model": "mistral-large-latest",
+      "note": "judge: basketball",
+      "prompt_tokens": 456,
+      "cached_tokens": 0,
+      "completion_tokens": 74,
+      "cost_usd": 0.000339,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:15:55.561244+00:00",
+      "model": "mistral-large-latest",
+      "note": "judge: japan",
+      "prompt_tokens": 457,
+      "cached_tokens": 0,
+      "completion_tokens": 74,
+      "cost_usd": 0.0003395,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:16:00.716718+00:00",
+      "model": "mistral-large-latest",
+      "note": "judge: chess",
+      "prompt_tokens": 454,
+      "cached_tokens": 228,
+      "completion_tokens": 72,
+      "cost_usd": 0.000335,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:16:06.139668+00:00",
+      "model": "mistral-large-latest",
+      "note": "judge: wedding",
+      "prompt_tokens": 459,
+      "cached_tokens": 228,
+      "completion_tokens": 70,
+      "cost_usd": 0.0003345,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:16:11.670477+00:00",
+      "model": "mistral-large-latest",
+      "note": "judge: volcano",
+      "prompt_tokens": 452,
+      "cached_tokens": 0,
+      "completion_tokens": 73,
+      "cost_usd": 0.0003355,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:16:17.047237+00:00",
+      "model": "mistral-large-latest",
+      "note": "judge: insomnia",
+      "prompt_tokens": 462,
+      "cached_tokens": 228,
+      "completion_tokens": 73,
+      "cost_usd": 0.0003405,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:17:16.365077+00:00",
+      "model": "glm-5-2",
+      "note": "pilot generation: 6 concepts",
+      "prompt_tokens": 337,
+      "cached_tokens": 0,
+      "completion_tokens": 402,
+      "cost_usd": 0.0022406000000000006,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:17:29.691225+00:00",
+      "model": "mistral-large-latest",
+      "note": "judge: basketball",
+      "prompt_tokens": 634,
+      "cached_tokens": 0,
+      "completion_tokens": 84,
+      "cost_usd": 0.000443,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:17:36.101728+00:00",
+      "model": "mistral-large-latest",
+      "note": "judge: japan",
+      "prompt_tokens": 642,
+      "cached_tokens": 484,
+      "completion_tokens": 71,
+      "cost_usd": 0.0004275,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:17:41.347843+00:00",
+      "model": "mistral-large-latest",
+      "note": "judge: chess",
+      "prompt_tokens": 638,
+      "cached_tokens": 0,
+      "completion_tokens": 71,
+      "cost_usd": 0.0004255,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:17:47.004880+00:00",
+      "model": "mistral-large-latest",
+      "note": "judge: wedding",
+      "prompt_tokens": 640,
+      "cached_tokens": 484,
+      "completion_tokens": 79,
+      "cost_usd": 0.0004385,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:17:52.865457+00:00",
+      "model": "mistral-large-latest",
+      "note": "judge: volcano",
+      "prompt_tokens": 638,
+      "cached_tokens": 484,
+      "completion_tokens": 72,
+      "cost_usd": 0.000427,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:17:58.623075+00:00",
+      "model": "mistral-large-latest",
+      "note": "judge: insomnia",
+      "prompt_tokens": 642,
+      "cached_tokens": 484,
+      "completion_tokens": 71,
+      "cost_usd": 0.0004275,
+      "priced": true
     }
   ],
   "totals": {
-    "n_calls": 6,
-    "prompt_tokens": 1710,
-    "completion_tokens": 2248,
-    "cost_usd": 0.005787,
+    "n_calls": 20,
+    "prompt_tokens": 8958,
+    "completion_tokens": 3968,
+    "cached_tokens": 2620,
+    "cost_usd": 0.014815,
+    "unpriced_models": [],
     "budget_eur": 100.0,
-    "note": "Rates are USD per million tokens from mistral.ai/pricing (Mistral Large: 0.5 in, 1.5 out). The budget is in EUR; no conversion is applied, so cost_usd is a conservative upper bound on the EUR spend at parity or better."
+    "note": "Token counts are exact, returned by the API per call. The Mistral API exposes no billing endpoint, so cost is tokens times the rates documented at docs.mistral.ai/models/<id>: mistral-large 0.5 in / 1.5 out, zai-glm-5-2 1.4 in / 0.14 cached in / 4.4 out, USD per million tokens. Cached input is billed separately at its lower rate. Any model listed in unpriced_models contributes nothing to cost_usd and needs a rate added. console.mistral.ai remains authoritative. No USD-to-EUR conversion is applied."
   }
 }

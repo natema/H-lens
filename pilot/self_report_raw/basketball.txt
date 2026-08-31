@@ -1,10 +1,10 @@
-ball
-basket
-hoop
+basketball
 court
 player
 game
 score
+timeout
+ball
 team
-defense
-offense
+coach
+overtime

@@ -28,6 +28,36 @@ reflects the mathematics; the bfloat16 residue is rounding, not leakage.
 1. **J-lens** — is the concept in the top-k readout at the probe, at any layer?
 2. **Self-report** — asked directly, does the model list the concept itself?
 
+The self-report question asks what the *situation* is about, not what the probe
+word evokes. Asking about the word alone produced dictionary associations that
+ignored the context entirely: for a prefix ending "tossing ... she lay awake"
+the model answered "consciousness, alertness, vigilance" while the J-lens had
+insomnia at rank 2.
+
+### The judge
+
+Exact string matching is too brittle on both sides, because each readout may
+name the concept with a different surface form. `judge_agreement` asks
+`mistral-large-latest` (temperature 0) whether the concept is named in each
+list. It resolves the case this was built for: the lens surfaces `Japanese`
+while the self-report says `japan`, and those are the same concept.
+
+The judge is deliberately strict, because a liberal reading would match every
+list to every concept and destroy the measurement. Three traps are ruled out
+explicitly, each one observed in the pilot before it was fixed:
+
+| trap | example | verdict |
+|---|---|---|
+| association | `pawn`, `board`, `king` for *chess* | absent |
+| broader category | `ceremony`, `rites` for *wedding* | absent |
+| subword fragment | `noct` for *insomnia*, `Vol` for *volcano* | absent |
+
+The judge must also quote its match verbatim from the list it claims. Any
+`matched` value absent from that list is treated as a fabrication, recorded in
+`fabricated_matches`, and the claim discarded. This check was added after the
+judge reported `noct` as a match for *insomnia* while justifying it as
+"directly named in both lists".
+
 A concept is a *token*, and which token depends on casing: the model holds Japan
 as `" Japan"`, not `" japan"`. Every single-token surface form is scored and the
 best-ranked one is used, with the per-variant ranks recorded.

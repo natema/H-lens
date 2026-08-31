@@ -32,26 +32,36 @@ from typing import Any
 MISTRAL_URL = "https://api.mistral.ai/v1/chat/completions"
 GENERATOR_MODEL = "glm-5-2"
 
-# USD per million tokens, (input, output), from mistral.ai/pricing.
+# USD per million tokens, from the official per-model documentation pages at
+# docs.mistral.ai/models/<id>: (input, cached_input, output).
+# Cached input is billed at its own lower rate and the API reports the cached
+# count per call, so it is priced separately rather than folded into input.
 PRICING_USD_PER_MTOK = {
-    # mistral.ai/pricing
-    "mistral-large-latest": (0.5, 1.5),
-    "mistral-large-2512": (0.5, 1.5),
-    # GLM-5.2 served through the Mistral API. Mistral does not list a rate for
-    # it on its own pricing page; this is a third-party aggregator figure and
-    # should be treated as approximate.
-    "glm-5-2": (1.54, 4.84),
+    # docs.mistral.ai/models/mistral-large
+    "mistral-large-latest": (0.5, 0.5, 1.5),
+    "mistral-large-2512": (0.5, 0.5, 1.5),
+    # docs.mistral.ai/models/zai-glm-5-2
+    "glm-5-2": (1.4, 0.14, 4.4),
+    "zai-glm-5-2": (1.4, 0.14, 4.4),
 }
 BUDGET_EUR = 100.0
 
 
 def call_cost_usd(model: str, usage: dict[str, Any]) -> float | None:
+    """Cost of one call, or None when the model has no documented rate.
+
+    Returning None rather than guessing keeps an unpriced model visible in the
+    ledger instead of silently contributing zero to the running total.
+    """
     rates = PRICING_USD_PER_MTOK.get(model)
     if rates is None or not usage:
         return None
-    rate_in, rate_out = rates
+    rate_in, rate_cached, rate_out = rates
+    cached = (usage.get("prompt_tokens_details") or {}).get("cached_tokens", 0) or 0
+    fresh = max(0, usage.get("prompt_tokens", 0) - cached)
     return (
-        usage.get("prompt_tokens", 0) * rate_in
+        fresh * rate_in
+        + cached * rate_cached
         + usage.get("completion_tokens", 0) * rate_out
     ) / 1_000_000
 
@@ -77,27 +87,35 @@ def record_spend(
             "model": model,
             "note": note,
             "prompt_tokens": usage.get("prompt_tokens"),
+            "cached_tokens": (usage.get("prompt_tokens_details") or {}).get(
+                "cached_tokens", 0
+            ),
             "completion_tokens": usage.get("completion_tokens"),
             "cost_usd": call_cost_usd(model, usage),
+            "priced": model in PRICING_USD_PER_MTOK,
         }
     )
     total = sum(e["cost_usd"] or 0.0 for e in entries)
+    unpriced = sorted({e["model"] for e in entries if not e.get("priced")})
     payload = {
         "calls": entries,
         "totals": {
             "n_calls": len(entries),
             "prompt_tokens": sum(e["prompt_tokens"] or 0 for e in entries),
             "completion_tokens": sum(e["completion_tokens"] or 0 for e in entries),
+            "cached_tokens": sum(e.get("cached_tokens") or 0 for e in entries),
             "cost_usd": round(total, 6),
+            "unpriced_models": unpriced,
             "budget_eur": BUDGET_EUR,
             "note": (
-                "Token counts are exact, returned by the API per call. Cost is "
-                "derived: the Mistral API exposes no billing endpoint, so it is "
-                "tokens times published rates. Mistral Large (0.5/1.5 per Mtok) "
-                "comes from mistral.ai/pricing; glm-5-2 (1.54/4.84) is not on "
-                "Mistral's own pricing page and comes from a third-party "
-                "aggregator, so treat it as approximate. The console at "
-                "console.mistral.ai is the authoritative spend figure. No "
+                "Token counts are exact, returned by the API per call. The "
+                "Mistral API exposes no billing endpoint, so cost is tokens "
+                "times the rates documented at docs.mistral.ai/models/<id>: "
+                "mistral-large 0.5 in / 1.5 out, zai-glm-5-2 1.4 in / 0.14 "
+                "cached in / 4.4 out, USD per million tokens. Cached input is "
+                "billed separately at its lower rate. Any model listed in "
+                "unpriced_models contributes nothing to cost_usd and needs a "
+                "rate added. console.mistral.ai remains authoritative. No "
                 "USD-to-EUR conversion is applied."
             ),
         },
@@ -196,13 +214,18 @@ def load_api_key(env_path: Path) -> str:
 
 
 def call_mistral(
-    api_key: str, messages: list[dict[str, str]], *, max_tokens: int = 1200
+    api_key: str,
+    messages: list[dict[str, str]],
+    *,
+    max_tokens: int = 1200,
+    model: str = GENERATOR_MODEL,
+    temperature: float = 0.7,
 ) -> dict[str, Any]:
     payload = {
-        "model": GENERATOR_MODEL,
+        "model": model,
         "messages": messages,
         "response_format": {"type": "json_object"},
-        "temperature": 0.7,
+        "temperature": temperature,
         "max_tokens": max_tokens,
     }
     request = urllib.request.Request(
@@ -255,6 +278,121 @@ def generate_items(
         for item in payload["items"]
     ]
     return items, exchange
+
+
+JUDGE_MODEL = "mistral-large-latest"
+
+JUDGE_SYSTEM = """\
+You compare concept lists produced by two readouts of the same language model, \
+and decide whether a target concept is PRESENT in each list.
+
+PRESENT means an entry in the list names the target concept. Allowed as the \
+same concept: different casing; inflections and plurals; the same word in \
+another language or script; adjectival and demonymic forms; and exact synonyms \
+that denote the very same thing.
+
+PRESENT examples for target "japan": "Japan", "Japon", "Japanese", "\u65e5\u672c".
+PRESENT examples for target "wedding": "Wedding", "weddings", "nuptials".
+
+ABSENT means no entry names it. Three specific traps, all ABSENT:
+
+1. Association. Entries merely caused by, part of, or found near the concept. \
+   For "japan": "sushi", "rice", "chef", "temple", "Tokyo". For "chess": \
+   "pawn", "board", "king", "rook", "move". For "wedding": "altar", "bride", \
+   "vows", "oath".
+2. Broader or narrower categories. A superordinate is not the concept. For \
+   "wedding": "ceremony", "ceremonies", "ceremonial", "rites", "proceedings" \
+   are ABSENT, because funerals and graduations are ceremonies too. For \
+   "volcano": "mountain", "disaster" are ABSENT.
+3. Subword fragments. A truncated piece of a longer word does not name \
+   anything. For "insomnia": "noct", "insom" are ABSENT. For "volcano": \
+   "Vol" is ABSENT. Only a complete word counts.
+
+Two hard rules:
+
+- The value you put in "matched" MUST be copied verbatim from the list you \
+  claim it appears in. Never invent it, never adjust it, never take it from \
+  the other list.
+- "reason" must describe what you actually found. If the concept is absent \
+  from a list, say so; do not claim it is named.
+
+Be strict. A liberal reading makes every list match every concept and destroys \
+the measurement. When genuinely uncertain, answer false.
+
+Answer with JSON only."""
+
+
+def judge_agreement(
+    api_key: str,
+    concept: str,
+    lens_tokens: list[str],
+    self_report: list[str] | None,
+    ledger: Path | None = None,
+) -> tuple[dict[str, Any], dict[str, Any]]:
+    """Ask a judge model whether the concept is named in each list.
+
+    Exact string matching is too brittle for this: the lens may surface
+    " Japon" or " Japanese" while the self-report says "japan", and both name
+    the same concept. The judge decides semantic identity while refusing mere
+    association, which is what keeps the criterion from loosening until
+    everything matches.
+    """
+    user = json.dumps(
+        {
+            "target_concept": concept,
+            "list_a_lens_readout": lens_tokens,
+            "list_b_model_self_report": self_report if self_report else [],
+            "answer_format": {
+                "lens": {"present": "bool", "matched": "string or null"},
+                "self_report": {"present": "bool", "matched": "string or null"},
+                "agree": "bool, true only if present in BOTH",
+                "reason": "one short sentence",
+            },
+        },
+        ensure_ascii=False,
+    )
+    exchange = call_mistral(
+        api_key,
+        [
+            {"role": "system", "content": JUDGE_SYSTEM},
+            {"role": "user", "content": user},
+        ],
+        model=JUDGE_MODEL,
+        max_tokens=400,
+        temperature=0.0,  # the judge is a measurement, so make it repeatable
+    )
+    if ledger is not None:
+        record_spend(ledger, exchange, note=f"judge: {concept}")
+    verdict = json.loads(exchange["content"])
+
+    # The judge must quote a real list entry. A "matched" value that is not in
+    # the list it claims is a fabrication, so the claim is discarded rather
+    # than trusted; this is what caught a subword fragment being reported as a
+    # match alongside a justification that the concept was "directly named".
+    sources = {
+        "lens": [str(x) for x in lens_tokens],
+        "self_report": [str(x) for x in (self_report or [])],
+    }
+    verdict["fabricated_matches"] = []
+    for key, entries in sources.items():
+        side = verdict.get(key)
+        if not isinstance(side, dict) or not side.get("present"):
+            continue
+        claimed = str(side.get("matched") or "").strip().lower()
+        available = {e.strip().lower() for e in entries}
+        if claimed not in available:
+            verdict["fabricated_matches"].append(
+                {"list": key, "claimed": side.get("matched")}
+            )
+            side["present"] = False
+            side["rejected_claim"] = side.get("matched")
+            side["matched"] = None
+
+    verdict["agree"] = bool(
+        verdict.get("lens", {}).get("present")
+        and verdict.get("self_report", {}).get("present")
+    )
+    return verdict, exchange
 
 
 def structural_problems(item: JSpaceItem, tokenizer: Any) -> list[str]:
@@ -326,14 +464,18 @@ def parse_concept_list(
 
 
 SELF_REPORT_TEMPLATE = """\
-Here is the beginning of a sentence. It stops immediately after the word \
+Read this text fragment. It breaks off mid-sentence, immediately after the word \
 "{term}".
 
 {prefix}
 
-What are the first {limit} concepts you think about when you encounter the \
-word "{term}" in the sentence above? Include the things it refers to or is an \
-instance of, not only its qualities.
+Think about the whole fragment, not the word "{term}" on its own. What is the \
+situation about? Name the activity, event, place, domain, object or entity it \
+involves, including things that are strongly implied but never stated \
+anywhere in the text.
+
+Give the {limit} concepts that come to mind. Do not simply list synonyms, parts \
+or properties of "{term}".
 
 Reply with {limit} single lowercase words, one per line, nothing else."""
 
