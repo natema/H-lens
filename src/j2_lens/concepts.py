@@ -49,35 +49,69 @@ saying it.
 Answer with JSON only."""
 
 
-def frequency_ranked_candidates(
-    tokenizer: Any, documents: list[str], limit: int = 4000
-) -> list[tuple[str, int]]:
-    """Vocabulary tokens matching the candidate shape, by corpus frequency."""
+def frequency_table(
+    tokenizer: Any, documents: list[str], batch: int = 200
+) -> dict[str, int]:
+    """Corpus frequency of every word-initial lowercase alphabetic token.
+
+    The vocabulary is multilingual, so shape alone does not identify English:
+    " abogados" and " abertas" match the pattern as readily as " volcano".
+    Counting over an English corpus supplies the missing signal, and the whole
+    of pile-10k scans in seconds.
+    """
     counts: Counter[int] = Counter()
-    for document in documents:
-        encoded = tokenizer(document, truncation=True, max_length=2048)
-        counts.update(encoded["input_ids"])
-    ranked: list[tuple[str, int]] = []
-    for token_id, count in counts.most_common():
+    for start in range(0, len(documents), batch):
+        encoded = tokenizer(
+            documents[start : start + batch], truncation=True, max_length=2048
+        )["input_ids"]
+        for ids in encoded:
+            counts.update(ids)
+    frequency: dict[str, int] = {}
+    for token_id, count in counts.items():
         surface = tokenizer.convert_tokens_to_string(
             [tokenizer.convert_ids_to_tokens(token_id)]
         )
         if CANDIDATE_PATTERN.match(surface):
-            ranked.append((surface.strip(), count))
-        if len(ranked) >= limit:
-            break
-    return ranked
+            word = surface.strip()
+            frequency[word] = frequency.get(word, 0) + count
+    return frequency
+
+
+def is_inflection(word: str, vocabulary: set[str]) -> bool:
+    """True when the word is a plain inflection of another candidate.
+
+    Keeping both "abandon" and "abandoned" spends filter calls on near
+    duplicates and would later produce two items about the same concept.
+    """
+    return (
+        (word.endswith("s") and word[:-1] in vocabulary)
+        or (word.endswith("ing") and word[:-3] in vocabulary)
+        or (word.endswith("ed") and word[:-2] in vocabulary)
+    )
+
+
+def select_candidates(
+    frequency: dict[str, int], min_count: int = 3
+) -> list[tuple[str, int]]:
+    words = set(frequency)
+    kept = [
+        (word, count)
+        for word, count in frequency.items()
+        if count >= min_count and not is_inflection(word, words)
+    ]
+    return sorted(kept, key=lambda pair: -pair[1])
 
 
 def filter_to_concepts(
     api_key: str,
     words: list[str],
     ledger: Path | None = None,
-    batch_size: int = 60,
+    batch_size: int = 80,
 ) -> tuple[list[str], list[str]]:
     """Split candidate words into accepted concepts and rejects."""
     accepted: list[str] = []
     rejected: list[str] = []
+    seen: set[str] = set()
     for start in range(0, len(words), batch_size):
         chunk = words[start : start + batch_size]
         exchange = call_mistral(
@@ -108,7 +142,10 @@ def filter_to_concepts(
         # Only words actually offered may be accepted, so an invented one does
         # not enter the concept list.
         offered = set(chunk)
-        kept = [w for w in keep if w in offered]
+        # Dedupe: a word can be offered twice across batches only by mistake,
+        # but the model can also repeat one inside a single reply.
+        kept = [w for w in dict.fromkeys(keep) if w in offered and w not in seen]
+        seen.update(kept)
         accepted.extend(kept)
         rejected.extend(w for w in chunk if w not in set(kept))
         print(
@@ -116,3 +153,67 @@ def filter_to_concepts(
             flush=True,
         )
     return accepted, rejected
+
+
+def main(argv: list[str] | None = None) -> None:
+    import argparse
+
+    from transformers import AutoTokenizer
+
+    from j2_lens.baselines import MODEL_ID, MODEL_REVISION
+    from j2_lens.development import load_pile_documents
+    from j2_lens.jspace import load_api_key
+
+    root = Path(__file__).resolve().parents[2]
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--pile-docs", type=int, default=10000)
+    parser.add_argument("--min-count", type=int, default=3)
+    parser.add_argument("--batch-size", type=int, default=80)
+    parser.add_argument("--limit", type=int, help="cap the candidates filtered")
+    parser.add_argument("--output", type=Path, default=root / "configs/concepts.json")
+    parser.add_argument("--ledger", type=Path, default=root / "pilot/spend.json")
+    parser.add_argument("--offline", action="store_true")
+    args = parser.parse_args(argv)
+
+    tokenizer = AutoTokenizer.from_pretrained(
+        MODEL_ID, revision=MODEL_REVISION, local_files_only=True
+    )
+    documents = load_pile_documents(args.pile_docs, offline=args.offline)
+    print(f"scanning {len(documents)} documents", flush=True)
+    frequency = frequency_table(tokenizer, documents)
+    candidates = select_candidates(frequency, args.min_count)
+    if args.limit:
+        candidates = candidates[: args.limit]
+    print(
+        f"{len(frequency)} word-shaped tokens; {len(candidates)} candidates at "
+        f"frequency >= {args.min_count} after dropping inflections",
+        flush=True,
+    )
+
+    key = load_api_key(root.parent / ".env")
+    words = [word for word, _ in candidates]
+    accepted, rejected = filter_to_concepts(
+        key, words, ledger=args.ledger, batch_size=args.batch_size
+    )
+    counts = dict(candidates)
+    payload = {
+        "schema_version": 1,
+        "source": (
+            f"Single-token lowercase alphabetic words with a leading space, the "
+            f"form a readout emits, present at least {args.min_count} times in "
+            f"{len(documents)} NeelNanda/pile-10k documents, excluding plain "
+            f"inflections of another candidate, then filtered by the generator "
+            f"model to concrete common nouns."
+        ),
+        "n_candidates": len(words),
+        "n_accepted": len(accepted),
+        "concepts": [
+            {"word": word, "pile_frequency": counts[word]} for word in accepted
+        ],
+    }
+    args.output.write_text(json.dumps(payload, indent=2) + "\n")
+    print(f"accepted {len(accepted)}/{len(words)}; wrote {args.output}")
+
+
+if __name__ == "__main__":
+    main()
