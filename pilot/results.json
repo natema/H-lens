@@ -1,420 +1,23 @@
 [
   {
     "concept": "basketball",
-    "probe_term": "dribbled",
-    "prefix": "With three seconds left on the clock, he dribbled",
-    "rationale": "The countdown clock, court, shot, and arc terminology combined with the act of dribbling evoke basketball.",
-    "probe_token": "bled",
+    "probe_term": "court",
+    "prefix": "He laced up his high-tops, grabbed the orange ball, and ran onto the court",
+    "rationale": "High-top shoes and an orange ball combined with running onto a court evoke the sport of basketball.",
+    "probe_token": " court",
     "concept_variants": [
       " basketball",
       " Basketball"
     ],
     "j_lens_best_variant": " basketball",
     "j_lens_per_variant_rank": {
-      " basketball": 17,
-      " Basketball": 90
+      " basketball": 1,
+      " Basketball": 4
     },
-    "n_prefix_tokens": 11,
-    "causal_equivalence_relative_dev": 0.0056179775280898875,
-    "j_lens": {
-      "best_rank": 17,
-      "best_layer": 24,
-      "top10_layers": [],
-      "in_top5": false,
-      "in_top10": false
-    },
-    "r_lens_best_rank": 11,
-    "logit_lens_best_rank": 136,
-    "self_report": {
-      "parsed": true,
-      "concepts": [
-        "basketball",
-        "court",
-        "player",
-        "game",
-        "score",
-        "timeout",
-        "ball",
-        "team",
-        "coach",
-        "overtime"
-      ],
-      "rank": 1,
-      "in_top5": true,
-      "in_top10": true
-    },
-    "best_layer_top10_tokens": [
-      " toward",
-      " into",
-      " away",
-      " drib",
-      " himself",
-      " towards",
-      " past",
-      "away",
-      " ball",
-      "into"
-    ],
-    "judge": {
-      "lens": {
-        "present": false,
-        "matched": null
-      },
-      "self_report": {
-        "present": true,
-        "matched": "basketball"
-      },
-      "agree": false,
-      "reason": "The target concept 'basketball' is absent from list_a_lens_readout but present in list_b_model_self_report.",
-      "fabricated_matches": []
-    },
-    "agree_exact_top10": false,
-    "agree_judged": false
-  },
-  {
-    "concept": "japan",
-    "probe_term": "sushi",
-    "prefix": "After landing in Tokyo and checking into our ryokan, we walked to a nearby sushi",
-    "rationale": "Tokyo, ryokan, and sushi together evoke Japan as the country being visited.",
-    "probe_token": " sushi",
-    "concept_variants": [
-      " japan",
-      " Japan",
-      "Japan"
-    ],
-    "j_lens_best_variant": " Japan",
-    "j_lens_per_variant_rank": {
-      " japan": 42,
-      " Japan": 36,
-      "Japan": 39
-    },
-    "n_prefix_tokens": 18,
-    "causal_equivalence_relative_dev": 0.0,
-    "j_lens": {
-      "best_rank": 36,
-      "best_layer": 25,
-      "top10_layers": [],
-      "in_top5": false,
-      "in_top10": false
-    },
-    "r_lens_best_rank": 11,
-    "logit_lens_best_rank": 53,
-    "self_report": {
-      "parsed": true,
-      "concepts": [
-        "restaurant",
-        "meal",
-        "dinner",
-        "food",
-        "japan",
-        "tokyo",
-        "travel",
-        "vacation",
-        "culture",
-        "eating"
-      ],
-      "rank": 5,
-      "in_top5": true,
-      "in_top10": true
-    },
-    "best_layer_top10_tokens": [
-      " sushi",
-      " restaurants",
-      " restaurant",
-      "\u5bff\u53f8",
-      "Japanese",
-      " Sushi",
-      " bar",
-      " Japanese",
-      " bars",
-      " fish"
-    ],
-    "judge": {
-      "lens": {
-        "present": true,
-        "matched": "Japanese"
-      },
-      "self_report": {
-        "present": true,
-        "matched": "japan"
-      },
-      "agree": true,
-      "reason": "The target concept 'japan' is named in both lists.",
-      "fabricated_matches": []
-    },
-    "agree_exact_top10": false,
-    "agree_judged": true
-  },
-  {
-    "concept": "chess",
-    "probe_term": "knight",
-    "prefix": "After I moved my bishop to put his king in check, he sacrificed his knight",
-    "rationale": "The bishop, king, check, and knight are all chess pieces and game concepts that evoke chess.",
-    "probe_token": " knight",
-    "concept_variants": [
-      " chess",
-      " Chess",
-      "Chess"
-    ],
-    "j_lens_best_variant": " chess",
-    "j_lens_per_variant_rank": {
-      " chess": 1,
-      " Chess": 10,
-      "Chess": 16
-    },
-    "n_prefix_tokens": 16,
-    "causal_equivalence_relative_dev": 0.007352941176470588,
-    "j_lens": {
-      "best_rank": 1,
-      "best_layer": 14,
-      "top10_layers": [
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        24,
-        25,
-        26,
-        27,
-        28,
-        29
-      ],
-      "in_top5": true,
-      "in_top10": true
-    },
-    "r_lens_best_rank": 2,
-    "logit_lens_best_rank": 5,
-    "self_report": {
-      "parsed": true,
-      "concepts": [
-        "checkmate",
-        "chess",
-        "board",
-        "pawn",
-        "queen",
-        "rook",
-        "bishop",
-        "king",
-        "strategy",
-        "game"
-      ],
-      "rank": 2,
-      "in_top5": true,
-      "in_top10": true
-    },
-    "best_layer_top10_tokens": [
-      " chess",
-      " knight",
-      " pawn",
-      " sacrifice",
-      "Pawn",
-      " injured",
-      "pawn",
-      "\u727a\u7272",
-      "ly",
-      "ed"
-    ],
-    "judge": {
-      "lens": {
-        "present": true,
-        "matched": " chess"
-      },
-      "self_report": {
-        "present": true,
-        "matched": "chess"
-      },
-      "agree": true,
-      "reason": "The target concept 'chess' is named in both lists.",
-      "fabricated_matches": []
-    },
-    "agree_exact_top10": true,
-    "agree_judged": true
-  },
-  {
-    "concept": "wedding",
-    "probe_term": "vows",
-    "prefix": "Standing beside the altar in her white gown, she watched him slide the ring onto her finger before they exchanged vows",
-    "rationale": "The altar, white gown, ring exchange, and vows evoke a wedding ceremony.",
-    "probe_token": " vows",
-    "concept_variants": [
-      " wedding",
-      " Wedding"
-    ],
-    "j_lens_best_variant": " wedding",
-    "j_lens_per_variant_rank": {
-      " wedding": 11,
-      " Wedding": 15
-    },
-    "n_prefix_tokens": 22,
-    "causal_equivalence_relative_dev": 0.0,
-    "j_lens": {
-      "best_rank": 11,
-      "best_layer": 8,
-      "top10_layers": [],
-      "in_top5": false,
-      "in_top10": false
-    },
-    "r_lens_best_rank": 22,
-    "logit_lens_best_rank": 798,
-    "self_report": {
-      "parsed": true,
-      "concepts": [
-        "wedding",
-        "marriage",
-        "ceremony",
-        "altar",
-        "ring",
-        "groom",
-        "bride",
-        "church",
-        "marital",
-        "union"
-      ],
-      "rank": 1,
-      "in_top5": true,
-      "in_top10": true
-    },
-    "best_layer_top10_tokens": [
-      " vows",
-      " vow",
-      " matrim",
-      " Ceremony",
-      " Couples",
-      " ceremony",
-      "\u5a5a",
-      " Covenant",
-      " marriage",
-      " couples"
-    ],
-    "judge": {
-      "lens": {
-        "present": false,
-        "matched": null
-      },
-      "self_report": {
-        "present": true,
-        "matched": "wedding"
-      },
-      "agree": false,
-      "reason": "The target 'wedding' is absent from list_a but present in list_b as 'wedding'.",
-      "fabricated_matches": []
-    },
-    "agree_exact_top10": false,
-    "agree_judged": false
-  },
-  {
-    "concept": "volcano",
-    "probe_term": "erupted",
-    "prefix": "Beneath the smoking crater, molten lava bubbled upward through the vent until the mountain erupted",
-    "rationale": "The smoking crater, molten lava, and mountain erupting together evoke a volcano.",
-    "probe_token": " erupted",
-    "concept_variants": [
-      " volcano"
-    ],
-    "j_lens_best_variant": " volcano",
-    "j_lens_per_variant_rank": {
-      " volcano": 1
-    },
-    "n_prefix_tokens": 20,
+    "n_prefix_tokens": 19,
     "causal_equivalence_relative_dev": 0.0,
     "j_lens": {
       "best_rank": 1,
-      "best_layer": 7,
-      "top10_layers": [
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        23,
-        24,
-        25,
-        26,
-        27,
-        28
-      ],
-      "in_top5": true,
-      "in_top10": true
-    },
-    "r_lens_best_rank": 1,
-    "logit_lens_best_rank": 5,
-    "self_report": {
-      "parsed": true,
-      "concepts": [
-        "volcano",
-        "lava",
-        "fire",
-        "ash",
-        "mountain",
-        "crater",
-        "earthquake",
-        "geology",
-        "danger",
-        "eruption"
-      ],
-      "rank": 1,
-      "in_top5": true,
-      "in_top10": true
-    },
-    "best_layer_top10_tokens": [
-      " volcano",
-      " eruption",
-      " crater",
-      " bers",
-      "\u00fcnt",
-      "\u5de8\u578b",
-      " erupt",
-      " Krak",
-      " volcan",
-      " volcanic"
-    ],
-    "judge": {
-      "lens": {
-        "present": true,
-        "matched": " volcano"
-      },
-      "self_report": {
-        "present": true,
-        "matched": "volcano"
-      },
-      "agree": true,
-      "reason": "The target concept 'volcano' is explicitly named in both lists.",
-      "fabricated_matches": []
-    },
-    "agree_exact_top10": true,
-    "agree_judged": true
-  },
-  {
-    "concept": "insomnia",
-    "probe_term": "awake",
-    "prefix": "After staring at the ceiling for hours and tossing in the sheets, she lay awake",
-    "rationale": "Hours of ceiling-staring, tossing in bed, and being unable to sleep evoke insomnia.",
-    "probe_token": " awake",
-    "concept_variants": [
-      " insomnia"
-    ],
-    "j_lens_best_variant": " insomnia",
-    "j_lens_per_variant_rank": {
-      " insomnia": 2
-    },
-    "n_prefix_tokens": 16,
-    "causal_equivalence_relative_dev": 0.007751937984496124,
-    "j_lens": {
-      "best_rank": 2,
       "best_layer": 10,
       "top10_layers": [
         8,
@@ -431,27 +34,427 @@
         19,
         20,
         21,
-        22,
+        24,
         25
       ],
       "in_top5": true,
       "in_top10": true
     },
-    "r_lens_best_rank": 3,
-    "logit_lens_best_rank": 26,
+    "r_lens_best_rank": 1,
+    "logit_lens_best_rank": 562,
+    "self_report": {
+      "parsed": true,
+      "concepts": [
+        "basketball",
+        "sports",
+        "competition",
+        "game",
+        "play",
+        "athletic",
+        "match",
+        "arena",
+        "gameplay"
+      ],
+      "rank": 1,
+      "in_top5": true,
+      "in_top10": true
+    },
+    "best_layer_top10_tokens": [
+      " basketball",
+      "-court",
+      " athleticism",
+      "urf",
+      " court",
+      " agility",
+      "\u573a\u5730",
+      "Arena",
+      "loor",
+      " halftime"
+    ],
+    "judge": {
+      "lens": {
+        "present": true,
+        "matched": " basketball"
+      },
+      "self_report": {
+        "present": true,
+        "matched": "basketball"
+      },
+      "agree": true,
+      "reason": "Both lists contain the exact word 'basketball' (with a leading space in the lens readout).",
+      "fabricated_matches": []
+    },
+    "agree_exact_top10": true,
+    "agree_judged": true
+  },
+  {
+    "concept": "japan",
+    "probe_term": "temple",
+    "prefix": "After bowing politely, the tourists in kimonos walked toward the temple",
+    "rationale": "Bowing, kimonos, and a temple together evoke the country of Japan.",
+    "probe_token": " temple",
+    "concept_variants": [
+      " japan",
+      " Japan",
+      "Japan"
+    ],
+    "j_lens_best_variant": " Japan",
+    "j_lens_per_variant_rank": {
+      " japan": 30,
+      " Japan": 19,
+      "Japan": 40
+    },
+    "n_prefix_tokens": 15,
+    "causal_equivalence_relative_dev": 0.0,
+    "j_lens": {
+      "best_rank": 19,
+      "best_layer": 25,
+      "top10_layers": [],
+      "in_top5": false,
+      "in_top10": false
+    },
+    "r_lens_best_rank": 10,
+    "logit_lens_best_rank": 137,
+    "self_report": {
+      "parsed": true,
+      "concepts": [
+        "ritual",
+        "shrine",
+        "ceremony",
+        "pilgrimage",
+        "history",
+        "architecture",
+        "faith",
+        "tradition",
+        "respect",
+        "ancient"
+      ],
+      "rank": null,
+      "in_top5": false,
+      "in_top10": false
+    },
+    "best_layer_top10_tokens": [
+      " temple",
+      " Buddha",
+      "tem",
+      "Tem",
+      " priests",
+      " grounds",
+      " shrine",
+      " sanctuary",
+      " Temple",
+      " Buddhist"
+    ],
+    "judge": {
+      "lens": {
+        "present": false,
+        "matched": null
+      },
+      "self_report": {
+        "present": false,
+        "matched": null
+      },
+      "agree": false,
+      "reason": "Neither list contains an entry naming Japan; both lists only contain associated concepts like temple, shrine, Buddha, and ceremony.",
+      "fabricated_matches": []
+    },
+    "agree_exact_top10": false,
+    "agree_judged": false
+  },
+  {
+    "concept": "chess",
+    "probe_term": "board",
+    "prefix": "She advanced her bishop across the checkered board",
+    "rationale": "A bishop moving across a checkred board evokes the game of chess.",
+    "probe_token": " board",
+    "concept_variants": [
+      " chess",
+      " Chess",
+      "Chess"
+    ],
+    "j_lens_best_variant": " chess",
+    "j_lens_per_variant_rank": {
+      " chess": 1,
+      " Chess": 3,
+      "Chess": 5
+    },
+    "n_prefix_tokens": 9,
+    "causal_equivalence_relative_dev": 0.0,
+    "j_lens": {
+      "best_rank": 1,
+      "best_layer": 9,
+      "top10_layers": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        24,
+        25,
+        26,
+        27,
+        28
+      ],
+      "in_top5": true,
+      "in_top10": true
+    },
+    "r_lens_best_rank": 2,
+    "logit_lens_best_rank": 10,
+    "self_report": {
+      "parsed": true,
+      "concepts": [
+        "chess",
+        "game",
+        "strategy",
+        "move",
+        "king",
+        "queen",
+        "pawn",
+        "checkmate",
+        "opponent",
+        "table"
+      ],
+      "rank": 1,
+      "in_top5": true,
+      "in_top10": true
+    },
+    "best_layer_top10_tokens": [
+      " chess",
+      "board",
+      "boards",
+      " Chess",
+      "\u68cb\u76d8",
+      "\u68cb",
+      "-board",
+      "Chess",
+      "/board",
+      "(board"
+    ],
+    "judge": {
+      "lens": {
+        "present": true,
+        "matched": " chess"
+      },
+      "self_report": {
+        "present": true,
+        "matched": "chess"
+      },
+      "agree": true,
+      "reason": "Both lists contain the exact word 'chess' (list A has it with a leading space, list B without).",
+      "fabricated_matches": []
+    },
+    "agree_exact_top10": true,
+    "agree_judged": true
+  },
+  {
+    "concept": "wedding",
+    "probe_term": "vows",
+    "prefix": "The bride in white walked down the aisle to exchange her vows",
+    "rationale": "A bride in white walking down an aisle to exchange vows evokes a wedding ceremony.",
+    "probe_token": " vows",
+    "concept_variants": [
+      " wedding",
+      " Wedding"
+    ],
+    "j_lens_best_variant": " wedding",
+    "j_lens_per_variant_rank": {
+      " wedding": 39,
+      " Wedding": 41
+    },
+    "n_prefix_tokens": 12,
+    "causal_equivalence_relative_dev": 0.0,
+    "j_lens": {
+      "best_rank": 39,
+      "best_layer": 10,
+      "top10_layers": [],
+      "in_top5": false,
+      "in_top10": false
+    },
+    "r_lens_best_rank": 56,
+    "logit_lens_best_rank": 1434,
+    "self_report": {
+      "parsed": true,
+      "concepts": [
+        "wedding",
+        "ceremony",
+        "marriage",
+        "bride",
+        "groom",
+        "church",
+        "isle",
+        "ring",
+        "partner",
+        "commitment"
+      ],
+      "rank": 1,
+      "in_top5": true,
+      "in_top10": true
+    },
+    "best_layer_top10_tokens": [
+      " vows",
+      " vow",
+      " Ceremony",
+      " covenant",
+      " matrim",
+      " ceremony",
+      " Covenant",
+      " Couples",
+      "\u8a93\u8bcd",
+      " oath"
+    ],
+    "judge": {
+      "lens": {
+        "present": false,
+        "matched": null
+      },
+      "self_report": {
+        "present": true,
+        "matched": "wedding"
+      },
+      "agree": false,
+      "reason": "The self-report list contains \"wedding\" verbatim, while the lens list only has associated terms like vows, ceremony, and oath, but not the word wedding itself.",
+      "fabricated_matches": []
+    },
+    "agree_exact_top10": false,
+    "agree_judged": false
+  },
+  {
+    "concept": "volcano",
+    "probe_term": "eruption",
+    "prefix": "Molten lava surged up the mountain before the eruption",
+    "rationale": "Molten lava surging up a mountain before an eruption evokes a volcano.",
+    "probe_token": " eruption",
+    "concept_variants": [
+      " volcano"
+    ],
+    "j_lens_best_variant": " volcano",
+    "j_lens_per_variant_rank": {
+      " volcano": 2
+    },
+    "n_prefix_tokens": 11,
+    "causal_equivalence_relative_dev": 0.0,
+    "j_lens": {
+      "best_rank": 2,
+      "best_layer": 8,
+      "top10_layers": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        23,
+        24,
+        25,
+        26
+      ],
+      "in_top5": true,
+      "in_top10": true
+    },
+    "r_lens_best_rank": 2,
+    "logit_lens_best_rank": 8,
+    "self_report": {
+      "parsed": true,
+      "concepts": [
+        "volcano",
+        "lava",
+        "fire",
+        "mountain",
+        "geology",
+        "danger",
+        "explosion",
+        "ash",
+        "earthquake",
+        "nature"
+      ],
+      "rank": 1,
+      "in_top5": true,
+      "in_top10": true
+    },
+    "best_layer_top10_tokens": [
+      " eruption",
+      " volcano",
+      " volcanic",
+      " eru",
+      "\u706b\u5c71",
+      " lava",
+      "eru",
+      " magma",
+      " erupt",
+      " volcan"
+    ],
+    "judge": {
+      "lens": {
+        "present": true,
+        "matched": " volcano"
+      },
+      "self_report": {
+        "present": true,
+        "matched": "volcano"
+      },
+      "agree": true,
+      "reason": "Both lists contain an exact match for the target concept 'volcano'.",
+      "fabricated_matches": []
+    },
+    "agree_exact_top10": true,
+    "agree_judged": true
+  },
+  {
+    "concept": "insomnia",
+    "probe_term": "hours",
+    "prefix": "She stared at the ceiling again, unable to sleep for hours",
+    "rationale": "Staring at the ceiling while unable to sleep for hours evokes insomnia.",
+    "probe_token": " hours",
+    "concept_variants": [
+      " insomnia"
+    ],
+    "j_lens_best_variant": " insomnia",
+    "j_lens_per_variant_rank": {
+      " insomnia": 6
+    },
+    "n_prefix_tokens": 12,
+    "causal_equivalence_relative_dev": 0.0,
+    "j_lens": {
+      "best_rank": 6,
+      "best_layer": 10,
+      "top10_layers": [
+        10,
+        11,
+        12
+      ],
+      "in_top5": false,
+      "in_top10": true
+    },
+    "r_lens_best_rank": 6,
+    "logit_lens_best_rank": 720,
     "self_report": {
       "parsed": true,
       "concepts": [
         "insomnia",
+        "bedroom",
+        "ceiling",
         "night",
-        "bed",
         "sleeplessness",
         "restlessness",
         "darkness",
         "loneliness",
-        "exhaustion",
-        "silence",
-        "dreams"
+        "waiting",
+        "exhaustion"
       ],
       "rank": 1,
       "in_top5": true,
@@ -459,15 +462,15 @@
     },
     "best_layer_top10_tokens": [
       " sleep",
+      "-night",
+      " night",
+      " hours",
+      "night",
       " insomnia",
-      " awake",
+      " nights",
       " sleeping",
-      " waking",
-      "sleep",
-      " Awake",
-      " asleep",
-      "Sleep",
-      " nightly"
+      "-hour",
+      "sleep"
     ],
     "judge": {
       "lens": {
@@ -479,7 +482,7 @@
         "matched": "insomnia"
       },
       "agree": true,
-      "reason": "The target concept 'insomnia' is named in both lists.",
+      "reason": "Both lists contain the exact word \"insomnia\" (with a leading space in the lens readout).",
       "fabricated_matches": []
     },
     "agree_exact_top10": true,

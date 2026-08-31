@@ -280,7 +280,7 @@ def generate_items(
     return items, exchange
 
 
-JUDGE_MODEL = "mistral-large-latest"
+JUDGE_MODEL = "glm-5-2"
 
 JUDGE_SYSTEM = """\
 You compare concept lists produced by two readouts of the same language model, \

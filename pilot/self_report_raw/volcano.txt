@@ -1,10 +1,10 @@
 volcano
 lava
 fire
-ash
 mountain
-crater
-earthquake
 geology
 danger
-eruption
+explosion
+ash
+earthquake
+nature

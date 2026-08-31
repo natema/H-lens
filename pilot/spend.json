@@ -199,14 +199,144 @@
       "completion_tokens": 71,
       "cost_usd": 0.0004275,
       "priced": true
+    },
+    {
+      "at": "2026-08-31T15:24:20.183926+00:00",
+      "model": "glm-5-2",
+      "note": "pilot generation: 6 concepts",
+      "prompt_tokens": 337,
+      "cached_tokens": 0,
+      "completion_tokens": 337,
+      "cost_usd": 0.0019546000000000003,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:24:33.297742+00:00",
+      "model": "glm-5-2",
+      "note": "judge: basketball",
+      "prompt_tokens": 614,
+      "cached_tokens": 0,
+      "completion_tokens": 63,
+      "cost_usd": 0.0011367999999999999,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:24:38.500237+00:00",
+      "model": "glm-5-2",
+      "note": "judge: japan",
+      "prompt_tokens": 621,
+      "cached_tokens": 0,
+      "completion_tokens": 63,
+      "cost_usd": 0.0011466,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:24:44.185873+00:00",
+      "model": "glm-5-2",
+      "note": "judge: chess",
+      "prompt_tokens": 618,
+      "cached_tokens": 0,
+      "completion_tokens": 66,
+      "cost_usd": 0.0011556,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:24:49.011867+00:00",
+      "model": "glm-5-2",
+      "note": "judge: wedding",
+      "prompt_tokens": 622,
+      "cached_tokens": 448,
+      "completion_tokens": 76,
+      "cost_usd": 0.00064072,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:24:53.552995+00:00",
+      "model": "glm-5-2",
+      "note": "judge: volcano",
+      "prompt_tokens": 621,
+      "cached_tokens": 448,
+      "completion_tokens": 57,
+      "cost_usd": 0.00055572,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:24:58.301662+00:00",
+      "model": "glm-5-2",
+      "note": "judge: insomnia",
+      "prompt_tokens": 623,
+      "cached_tokens": 448,
+      "completion_tokens": 63,
+      "cost_usd": 0.0005849200000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:25:38.306806+00:00",
+      "model": "glm-5-2",
+      "note": "judge: japan",
+      "prompt_tokens": 595,
+      "cached_tokens": 448,
+      "completion_tokens": 80,
+      "cost_usd": 0.00062052,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:25:39.110730+00:00",
+      "model": "glm-5-2",
+      "note": "judge: japan",
+      "prompt_tokens": 582,
+      "cached_tokens": 448,
+      "completion_tokens": 60,
+      "cost_usd": 0.00051432,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:25:40.211197+00:00",
+      "model": "glm-5-2",
+      "note": "judge: wedding",
+      "prompt_tokens": 579,
+      "cached_tokens": 448,
+      "completion_tokens": 84,
+      "cost_usd": 0.00061572,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:25:41.070184+00:00",
+      "model": "glm-5-2",
+      "note": "judge: insomnia",
+      "prompt_tokens": 574,
+      "cached_tokens": 448,
+      "completion_tokens": 69,
+      "cost_usd": 0.00054272,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:25:41.849439+00:00",
+      "model": "glm-5-2",
+      "note": "judge: volcano",
+      "prompt_tokens": 574,
+      "cached_tokens": 448,
+      "completion_tokens": 63,
+      "cost_usd": 0.00051632,
+      "priced": true
+    },
+    {
+      "at": "2026-08-31T15:25:42.616256+00:00",
+      "model": "glm-5-2",
+      "note": "judge: chess",
+      "prompt_tokens": 574,
+      "cached_tokens": 448,
+      "completion_tokens": 76,
+      "cost_usd": 0.00057352,
+      "priced": true
     }
   ],
   "totals": {
-    "n_calls": 20,
-    "prompt_tokens": 8958,
-    "completion_tokens": 3968,
-    "cached_tokens": 2620,
-    "cost_usd": 0.014815,
+    "n_calls": 33,
+    "prompt_tokens": 16492,
+    "completion_tokens": 5125,
+    "cached_tokens": 6652,
+    "cost_usd": 0.025373,
     "unpriced_models": [],
     "budget_eur": 100.0,
     "note": "Token counts are exact, returned by the API per call. The Mistral API exposes no billing endpoint, so cost is tokens times the rates documented at docs.mistral.ai/models/<id>: mistral-large 0.5 in / 1.5 out, zai-glm-5-2 1.4 in / 0.14 cached in / 4.4 out, USD per million tokens. Cached input is billed separately at its lower rate. Any model listed in unpriced_models contributes nothing to cost_usd and needs a rate added. console.mistral.ai remains authoritative. No USD-to-EUR conversion is applied."

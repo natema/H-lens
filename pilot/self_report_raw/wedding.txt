@@ -1,10 +1,10 @@
 wedding
-marriage
 ceremony
-altar
-ring
-groom
+marriage
 bride
+groom
 church
-marital
-union
+isle
+ring
+partner
+commitment

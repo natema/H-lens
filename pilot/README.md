@@ -38,8 +38,7 @@ insomnia at rank 2.
 
 Exact string matching is too brittle on both sides, because each readout may
 name the concept with a different surface form. `judge_agreement` asks
-`mistral-large-latest` (temperature 0) whether the concept is named in each
-list. It resolves the case this was built for: the lens surfaces `Japanese`
+GLM-5.2 (temperature 0) whether the concept is named in each list. It resolves the case this was built for: the lens surfaces `Japanese`
 while the self-report says `japan`, and those are the same concept.
 
 The judge is deliberately strict, because a liberal reading would match every
@@ -54,9 +53,28 @@ explicitly, each one observed in the pilot before it was fixed:
 
 The judge must also quote its match verbatim from the list it claims. Any
 `matched` value absent from that list is treated as a fabrication, recorded in
-`fabricated_matches`, and the claim discarded. This check was added after the
+`fabricated_matches`, and the claim discarded. This check was added after a
 judge reported `noct` as a match for *insomnia* while justifying it as
 "directly named in both lists".
+
+Both generation and judging use GLM-5.2. `pilot/check_judge.py` pins the
+judge's behaviour with fixtures whose answers are known, because a pilot run
+only exercises whatever the generator happens to produce — in one run every
+agreement was an exact string match, so the variant handling that motivates
+having a judge at all went untested:
+
+```bash
+uv run python pilot/check_judge.py
+```
+
+It covers the accepting cases (`Japanese`/`japan`, `火山`/`volcano`) and each
+rejecting trap (Tokyo for Japan, `ceremony`/`matrim` for wedding, `noct` for
+insomnia, chess pieces for chess). All six behave as intended.
+
+One coupling to keep in mind: the same model writes the items and judges the
+readouts, so a blind spot shared between the two roles would not show up here.
+The judge compares two Qwen-derived lists rather than anything GLM wrote, which
+limits the exposure, but it is not zero.
 
 A concept is a *token*, and which token depends on casing: the model holds Japan
 as `" Japan"`, not `" japan"`. Every single-token surface form is scored and the

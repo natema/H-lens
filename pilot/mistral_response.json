@@ -2,8 +2,8 @@
   "model": "glm-5-2",
   "usage": {
     "prompt_tokens": 337,
-    "total_tokens": 739,
-    "completion_tokens": 402,
+    "total_tokens": 674,
+    "completion_tokens": 337,
     "prompt_tokens_details": {
       "cached_tokens": 0
     }
@@ -26,5 +26,5 @@
     "temperature": 0.7,
     "max_tokens": 1200
   },
-  "raw_content": "{\"items\": [{\"concept\": \"basketball\", \"probe_term\": \"dribbled\", \"sentence\": \"With three seconds left on the clock, he dribbled down the court and launched a shot from beyond the arc.\", \"rationale\": \"The countdown clock, court, shot, and arc terminology combined with the act of dribbling evoke basketball.\"}, {\"concept\": \"japan\", \"probe_term\": \"sushi\", \"sentence\": \"After landing in Tokyo and checking into our ryokan, we walked to a nearby sushi restaurant for dinner.\", \"rationale\": \"Tokyo, ryokan, and sushi together evoke Japan as the country being visited.\"}, {\"concept\": \"chess\", \"probe_term\": \"knight\", \"sentence\": \"After I moved my bishop to put his king in check, he sacrificed his knight to escape the threat.\", \"rationale\": \"The bishop, king, check, and knight are all chess pieces and game concepts that evoke chess.\"}, {\"concept\": \"wedding\", \"probe_term\": \"vows\", \"sentence\": \"Standing beside the altar in her white gown, she watched him slide the ring onto her finger before they exchanged vows.\", \"rationale\": \"The altar, white gown, ring exchange, and vows evoke a wedding ceremony.\"}, {\"concept\": \"volcano\", \"probe_term\": \"erupted\", \"sentence\": \"Beneath the smoking crater, molten lava bubbled upward through the vent until the mountain erupted violently.\", \"rationale\": \"The smoking crater, molten lava, and mountain erupting together evoke a volcano.\"}, {\"concept\": \"insomnia\", \"probe_term\": \"awake\", \"sentence\": \"After staring at the ceiling for hours and tossing in the sheets, she lay awake wondering if she would ever fall asleep.\", \"rationale\": \"Hours of ceiling-staring, tossing in bed, and being unable to sleep evoke insomnia.\"}]}"
+  "raw_content": "{\"items\": [{\"concept\": \"basketball\", \"probe_term\": \"court\", \"sentence\": \"He laced up his high-tops, grabbed the orange ball, and ran onto the court\", \"rationale\": \"High-top shoes and an orange ball combined with running onto a court evoke the sport of basketball.\"}, {\"concept\": \"japan\", \"probe_term\": \"temple\", \"sentence\": \"After bowing politely, the tourists in kimonos walked toward the temple\", \"rationale\": \"Bowing, kimonos, and a temple together evoke the country of Japan.\"}, {\"concept\": \"chess\", \"probe_term\": \"board\", \"sentence\": \"She advanced her bishop across the checkered board\", \"rationale\": \"A bishop moving across a checkred board evokes the game of chess.\"}, {\"concept\": \"wedding\", \"probe_term\": \"vows\", \"sentence\": \"The bride in white walked down the aisle to exchange her vows\", \"rationale\": \"A bride in white walking down an aisle to exchange vows evokes a wedding ceremony.\"}, {\"concept\": \"volcano\", \"probe_term\": \"eruption\", \"sentence\": \"Molten lava surged up the mountain before the eruption\", \"rationale\": \"Molten lava surging up a mountain before an eruption evokes a volcano.\"}, {\"concept\": \"insomnia\", \"probe_term\": \"hours\", \"sentence\": \"She stared at the ceiling again, unable to sleep for hours\", \"rationale\": \"Staring at the ceiling while unable to sleep for hours evokes insomnia.\"}]}"
 }
