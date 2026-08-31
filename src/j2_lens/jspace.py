@@ -292,7 +292,8 @@ another language or script; adjectival and demonymic forms; and exact synonyms \
 that denote the very same thing.
 
 PRESENT examples for target "japan": "Japan", "Japon", "Japanese", "\u65e5\u672c".
-PRESENT examples for target "wedding": "Wedding", "weddings", "nuptials".
+PRESENT examples for target "wedding": "Wedding", "weddings", "nuptials", \
+"matrimony", "marriage".
 
 ABSENT means no entry names it. Three specific traps, all ABSENT:
 
@@ -304,9 +305,15 @@ ABSENT means no entry names it. Three specific traps, all ABSENT:
    "wedding": "ceremony", "ceremonies", "ceremonial", "rites", "proceedings" \
    are ABSENT, because funerals and graduations are ceremonies too. For \
    "volcano": "mountain", "disaster" are ABSENT.
-3. Subword fragments. A truncated piece of a longer word does not name \
-   anything. For "insomnia": "noct", "insom" are ABSENT. For "volcano": \
-   "Vol" is ABSENT. Only a complete word counts.
+3. Uninformative fragments. Tokenizers split words, so a list may contain a \
+   truncated piece. Judge it in two steps. First, does the fragment have \
+   essentially one completion in English? "Vol" does not (volume, volatile, \
+   volcano, Voldemort) and names nothing, so it is ABSENT for any target. \
+   "matrim" does: every completion is matrimony or matrimonial. Second, if it \
+   does identify a word, apply the normal test to that word. So "matrim" is \
+   PRESENT for "wedding", because matrimony denotes the same thing. But \
+   "noct" identifies only "nocturnal", and nocturnal is not insomnia, so it \
+   is ABSENT for "insomnia" on meaning rather than on being a fragment.
 
 Two hard rules:
 

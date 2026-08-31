@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "note": "Every list here is real output recorded in pilot/observations.jsonl: lens_top10 is the J-lens readout at the probe position and self_report is what Qwen3.5-4B answered when asked directly. Only expected_agree is supplied by hand, as the ground truth the judge is scored against. Nothing is invented.",
+  "note": "Every list here is real output recorded in pilot/observations.jsonl: lens_top10 is the J-lens readout at the probe position and self_report is what Qwen3.5-4B answered when asked directly. Only expected_agree is supplied by hand, as the ground truth the judge is scored against. Nothing is invented. Labels are revised when shown to be wrong: the second wedding fixture was relabelled from reject to agree after checking that ' matrim' has no completion outside the matrimony family.",
   "fixtures": [
     {
       "concept": "japan",
@@ -169,8 +169,8 @@
         "partner",
         "commitment"
       ],
-      "expected_agree": false,
-      "exercises": "self-report names 'wedding' but the lens has only the superordinate 'ceremony' and the fragment ' matrim'",
+      "expected_agree": true,
+      "exercises": "relabelled: the lens fragment ' matrim' has no completion in the vocabulary outside the matrimony family (matrimon, matrimoni, matrimoniale, matrimonio), so it unambiguously names matrimony, which denotes a wedding. The original label treated every fragment as naming nothing, which was wrong and was also inconsistent with accepting 'nuptials'. The superordinate 'ceremony' in the same list still does not count.",
       "provenance": {
         "observations_jsonl_index": 3,
         "run_id": "20260831T-seed-from-results",

@@ -49,7 +49,25 @@ explicitly, each one observed in the pilot before it was fixed:
 |---|---|---|
 | association | `pawn`, `board`, `king` for *chess* | absent |
 | broader category | `ceremony`, `rites` for *wedding* | absent |
-| subword fragment | `noct` for *insomnia*, `Vol` for *volcano* | absent |
+| uninformative fragment | `Vol`, `tem` — no unique completion | absent |
+
+The fragment rule is two-step, and an earlier blanket version of it was wrong.
+Tokenizers split words, so a readout may legitimately carry a piece of one. The
+question is whether the piece identifies a word, which is checkable against the
+vocabulary:
+
+| fragment | completions in the vocabulary | identifies |
+|---|---|---|
+| `matrim` | `matrimon`, `matrimoni`, `matrimoniale`, `matrimonio` | matrimony |
+| `noct` | `noctur` | nocturnal |
+| `Vol` | `volatile`, `volcano`, `Voldemort`, `volant`, … (14) | nothing |
+| `tem` | `tema`, `temb`, `temel`, `tembre`, … (14) | nothing |
+
+If it identifies a word, the ordinary test applies to that word. So `matrim` is
+**present** for *wedding* — matrimony denotes the same thing, and `nuptials` was
+already accepted. But `noct` is **absent** for *insomnia*, because nocturnal is
+not insomnia; it fails on meaning, not on being a fragment. Only `Vol` and `tem`
+fail for naming nothing at all.
 
 The judge must also quote its match verbatim from the list it claims. Any
 `matched` value absent from that list is treated as a fabrication, recorded in
