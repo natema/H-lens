@@ -130,23 +130,35 @@ language model.
 
 Background. A "lens" reads out, at one token position inside a text, which \
 concepts the model is currently representing. Attention is causal: the model's \
-state at a token depends ONLY on that token and the text BEFORE it. Text after \
-the probe token cannot influence the readout and is ignored entirely.
+state at a token depends ONLY on that token and the text BEFORE it. Anything \
+after that token is invisible and will be deleted.
 
-Your job. Given a target concept, invent a natural sentence containing a probe \
-term, such that everything up to and including the probe term makes a competent \
-reader think of the target concept.
+Your job. Given a target concept, write a SENTENCE FRAGMENT that STOPS on a \
+probe term, such that reading the fragment makes a competent reader think of \
+the target concept.
 
-Hard requirements:
-- The probe term must NOT be the first word. It needs preceding context to do \
-any work.
-- The target concept must NOT appear anywhere in the text up to and including \
-the probe term. The concept has to be evoked, never stated.
-- The evocation must come from the text BEFORE the probe term plus the probe \
-term itself. Never rely on what follows; it will be deleted.
+THE SINGLE MOST IMPORTANT RULE: the fragment must END with the probe term. \
+The probe term is the LAST word. Do not write a complete sentence. Do not put \
+anything after the probe term, not even one more word, because every word \
+after it is thrown away before the model ever sees it.
+
+Wrong, because the words that do the work come after the probe:
+  concept "trombone", probe "case"
+  "He snapped open the case and slid out the long brass slide."
+  Only "He snapped open the case" survives, which does not evoke a trombone.
+
+Right, because the fragment stops on the probe and everything before it works:
+  concept "trombone", probe "slide"
+  "The brass player emptied the spit valve and worked oil along the long \
+telescoping slide"
+
+Also required:
+- The probe term must NOT be the first word. It needs preceding context.
+- The target concept must NOT appear anywhere in the fragment. It has to be \
+evoked, never stated.
 - The target concept must be a single common English word, lowercase.
-- The probe term must be a single word that appears verbatim exactly once.
-- Prefer specific, concrete associations a model would plausibly encode.
+- The probe term must be a single word appearing exactly once.
+- Aim for roughly 8 to 20 words before the probe, enough to set a scene.
 
 Answer with JSON only."""
 
@@ -305,9 +317,11 @@ def generate_items(
         "Build one item for each of these target concepts: "
         + ", ".join(repr(concept) for concept in concepts)
         + '.\n\nReturn {"items": [{"concept": ..., "probe_term": ..., '
-        '"sentence": ..., "rationale": ...}]}. The rationale states, in one '
-        "sentence, why the text up to and including the probe term evokes the "
-        "concept."
+        '"sentence": ..., "rationale": ...}]}, where "sentence" is the '
+        "fragment ending on the probe term. Check before answering that the "
+        "probe term is the last word of the fragment, and that everything "
+        "needed to evoke the concept comes before it. The rationale states in "
+        "one sentence why the fragment evokes the concept."
     )
     exchange = call_mistral(
         api_key,
@@ -564,6 +578,14 @@ def structural_problems(item: JSpaceItem, tokenizer: Any) -> list[str]:
     before = prefix[: prefix.rfind(item.probe_term)].strip()
     if not before:
         problems.append("probe term is at the start; the prefix has no context")
+
+    # Everything after the probe is discarded, so a generator that puts the
+    # evocative content there produces an item whose prefix evokes nothing.
+    # Instructions alone were not enough: 64% of a first batch did exactly
+    # that, e.g. prefix "The score" with "was tied at halftime" thrown away.
+    trailing = item.sentence[len(prefix) :].strip().strip(".!?,;:\"')")
+    if trailing:
+        problems.append(f"text after the probe would be discarded: {trailing!r}")
     if re.search(rf"\b{re.escape(item.concept)}", prefix, flags=re.IGNORECASE):
         problems.append(f"concept {item.concept!r} is stated in the prefix")
 

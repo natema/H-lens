@@ -89,3 +89,9 @@ I have worked 1h and a bit more on producing the dataset of J-lens possible fail
 I'm leveraging GLM5.2 as a judge. 
 Hopefully by tomorrow we have a first version of the dataset... we are still working on setting up the script that generates examples for a possible list of concepts. 
 We can now consider ourselves at 8h into the project (halfway through it). 
+
+## 2026-08-31 20:28
+8h40 into the project, and we are generating the dataset. 
+However, I'm inspecting the generated examples and I don't like them. 
+There is an important confusion regarding the fact that whatever follows the probe that we feed in the J-lens is lost (only the prefix counts). 
+So, we are trying to fix and rerun a better generative process. 

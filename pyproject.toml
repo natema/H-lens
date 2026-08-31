@@ -22,6 +22,7 @@ j2-evaluate = "j2_lens.evaluation:main"
 j2-screen = "j2_lens.screening:main"
 j2-merge = "j2_lens.merge:main"
 j2-concepts = "j2_lens.concepts:main"
+j2-dataset = "j2_lens.dataset:main"
 
 [dependency-groups]
 dev = ["pytest>=8.4", "ruff>=0.12"]
