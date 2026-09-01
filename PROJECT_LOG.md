@@ -138,9 +138,9 @@ I inspected more carefully the prompt used by the grader and it's not good IMO, 
 10h40 spent. 5h20 to go. 
 
 ## 2026-09-01 16:11
-10h50 spent. Let's make a break. In 15m the float32-precision dataset will be done, and we can benchmark the H-lens on it. 
+10h50 spent. We need to make a long break. In 15m the float32-precision dataset will be done, and we can benchmark the H-lens on it. 
 We will then decide if testing another idea that came out while working on this project, or just spend the rest of the time in refining the dataset. 
 Refining the dataset should be the wiser option. 
 
-## 2026-09-01 16:20
-
+## 2026-09-01 17:33
+We can resume for few minutes. Let's see if we have time to run H-lens on the new dataset. 
