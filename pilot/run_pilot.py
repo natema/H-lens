@@ -3,12 +3,18 @@
 Writes every intermediate artifact into this directory so the run can be
 audited by hand:
 
-    prompt_system.txt       system prompt sent to Mistral, verbatim
-    prompt_user.txt         user prompt sent to Mistral, verbatim
+    prompt_system.txt       system prompt sent to the generator, verbatim
+    prompt_user.txt         user prompt sent to the generator, verbatim
     mistral_response.json   the request payload, raw JSON reply, and usage
     items.json              parsed items plus the derived probe prefixes
     results.json            both validation checks, per item, in full
     self_report_raw/        the model's untouched answer for each item
+    observations.jsonl      appended across runs, the pool judge fixtures draw on
+    spend.json              running API cost ledger
+
+The generator is reached through the Mistral API but is not necessarily a
+Mistral model; ``GENERATOR_MODEL`` names it, and the response file records which
+model actually served the call.
 
 Usage:  uv run python pilot/run_pilot.py [--concepts a,b,c]
 """

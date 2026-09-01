@@ -14,8 +14,10 @@ handles, leaving no headroom and biasing any later comparison in its favour.
 
 Self-report generation is batched for throughput. An item's output then depends
 on which items share its batch, through padding width and reduction order, so
-the batch size and the item ordering are both recorded: a rerun with the same
-ordering and batch size reproduces the file exactly, rather than approximately.
+the batch size and the item ordering are both recorded. Reproducing the file
+requires both to match; two passes at the same batch size agreed item for item
+when measured, but that was checked at batch 1 only, so treat identical settings
+as necessary rather than proven sufficient.
 """
 
 from __future__ import annotations

@@ -1,4 +1,12 @@
-"""Fit a low-rank diagonal-Hessian lens and evaluate held-out probes."""
+"""Fit a diagonal-Hessian correction to the J-lens and evaluate held-out probes.
+
+The default estimator, ``forward``, computes the complete vector-valued
+``H[e_j, e_j]`` for every residual coordinate by nested forward-mode JVPs, so the
+operator is a dense ``d_model x d_model`` diagonal rather than a low-rank
+approximation. Two earlier estimators remain selectable: ``gaussian``, which is
+low rank and randomised, and ``coordinate``, which uses centred finite
+differences. Neither is used for the reported results.
+"""
 
 from __future__ import annotations
 

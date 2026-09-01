@@ -5,7 +5,9 @@ cases on the basis of J-lens, R-lens, or H-lens performance:
 
 1. the target text must be a single token of the pinned tokenizer;
 2. the probe span must resolve to exactly one token position;
-3. for the ``multihop`` and ``multilingual`` categories the model must answer
+3. the target string must not appear in the prompt, since a probe sitting after
+   the answer would test nothing about transport;
+4. for the ``multihop`` and ``multilingual`` categories the model must answer
    the surface question correctly, matching the R-lens filtering rule.
 
 Accepted cases are written to a frozen battery file in the schema that
