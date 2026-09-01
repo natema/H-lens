@@ -20,7 +20,13 @@ import torch
 from jlens import from_hf
 from transformers import AutoTokenizer, Qwen3_5ForConditionalGeneration
 
-from j2_lens.baselines import MODEL_ID, MODEL_REVISION, load_lens, rank_and_topk
+from j2_lens.baselines import (
+    MODEL_ID,
+    MODEL_REVISION,
+    describe_tokens,
+    load_lens,
+    rank_and_topk,
+)
 from j2_lens.dataset import append_jsonl, load_done, read_jsonl
 from j2_lens.evaluation import capture_activations, residual_methods
 from j2_lens.jspace import single_token_variants
@@ -92,16 +98,28 @@ def main() -> None:
         )
         variants = single_token_variants(row["concept"], tokenizer)
         scored: dict[str, int] = {}
+        # The cells are defined by a judge reading the top-10 list, not by the
+        # rank of one token, so the list has to be stored for every method or
+        # the same cell assignment cannot be applied to them.
+        listed: dict[str, list[str]] = {}
         for name, residual in methods.items():
             logits = model.unembed(residual[None]).float()[0]
-            scored[name] = min(
-                rank_and_topk(logits, token_id, args.top_k)[0]
-                for _, token_id in variants
+            best = min(
+                (
+                    rank_and_topk(logits, token_id, args.top_k)
+                    for _, token_id in variants
+                ),
+                key=lambda result: result[0],
             )
+            scored[name] = best[0]
+            listed[name] = [
+                token["decoded"] for token in describe_tokens(tokenizer, best[2])
+            ]
         buffer.append({
             "concept": row["concept"],
             "cell": row["cell"],
             "ranks": scored,
+            "top_k": listed,
         })
         if len(buffer) >= 64 or index == len(todo):
             append_jsonl(args.out, buffer)

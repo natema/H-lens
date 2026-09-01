@@ -95,3 +95,61 @@ statistically indistinguishable from no correction, and is not distinguishable
 from a version of itself with the coordinate structure destroyed. This is
 evidence against the primary hypothesis in `PROJECT_IDEA.md`, and consistent with
 its alternative that apparent gains come from rescaling rather than curvature.
+
+## Cell counts, the metric the dataset is built on
+
+Comparing methods by the rank of one token answers a different question from the
+one the cells ask. The cells are assigned by a judge deciding whether the top-k
+readout *names* the concept, which credits a variant (` trail` for *path*). So
+each method's own top-k list is put through the identical procedure: same judge,
+same prompt, same vocabulary evidence, same batch size. The self-report side
+cannot change, since it does not depend on any lens, so every change in the cells
+is a change in what the lens surfaced.
+
+`self_report_only` means the lens failed; lower is better.
+
+### Layer 12, quality `strong` (n = 826)
+
+| method | self_report_only | both | lens_only | neither |
+|---|---:|---:|---:|---:|
+| J-lens | 359 | 162 | 66 | 239 |
+| J² real | 359 (+0) | 162 (+0) | 68 (+2) | 237 (−2) |
+| J² shuffled | 353 (−6) | 168 (+6) | 72 (+6) | 233 (−6) |
+| R-lens | 366 (+7) | 155 (−7) | 70 (+4) | 235 (−4) |
+
+The correction moves **zero** items out of the failure cell, and leaves `both`
+unchanged. Its shuffled control moves six out.
+
+### Layer 6, quality `strong` (n = 826)
+
+| method | self_report_only | both | lens_only | neither |
+|---|---:|---:|---:|---:|
+| J-lens | 503 | 18 | 5 | 300 |
+| J² real | 506 (+3) | 15 (−3) | 4 (−1) | 301 (+1) |
+| J² shuffled | 505 (+2) | 16 (−2) | 4 (−1) | 301 (+1) |
+| **R-lens** | **463 (−40)** | **58 (+40)** | 24 (+19) | 281 (−19) |
+
+### All items
+
+| | J-lens | J² real | J² shuffled | R-lens |
+|---|---:|---:|---:|---:|
+| layer 6, failures | 1691 | 1689 (−2) | 1691 (+0) | **1550 (−141)** |
+| layer 12, failures | 1169 | 1178 (+9) | 1158 (−11) | 1256 (+87) |
+
+## The dataset validates itself
+
+R-lens reverses across layers: it removes 141 failures at layer 6 and adds 87 at
+layer 12 (40 removed and 7 added on `strong`). That independently reproduces the
+R-lens post's central claim of improved *early-layer* faithfulness, on 3,344
+items constructed without reference to it, and reproduces the direction of the
+reversal rather than a uniform preference.
+
+This matters for reading the negative result. On the same instrument, at the same
+layer, with the same judge, R-lens moves 141 items and J² moves 2. The correction
+is not failing because the measurement is blunt: the measurement demonstrably
+detects a real lens improvement roughly seventy times larger than anything the
+correction produces.
+
+At layer 6 the J-lens gets only 18 of 826 strong items into `both`, against 162
+at layer 12, which is a direct measure of how much harder early-layer readout is
+— the regime this project set out to improve.

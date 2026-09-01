@@ -1,13 +1,26 @@
 """Build and validate a J-space dataset of probe/concept pairs.
 
-An item is a sentence, a probe term inside it, and a target concept. The item
-is useful only if the concept is genuinely evoked at the probe position, so two
-independent checks are applied and must agree:
+An item is a sentence, a probe term inside it, and a target concept, read two
+independent ways at the probe position and at one fixed layer
+(``PRIMARY_LAYER``):
 
-1. **J-lens check** — is the concept token in the top-k of the J-lens readout at
-   the probe position, at any layer?
-2. **Self-report check** — asked directly, does the model itself list the
-   concept among the associations of that term in that context?
+1. **lens check** — does the top-k readout *name* the concept? Decided by a
+   judge rather than by token identity, so a variant counts: " trail" names
+   *path*, " Japanese" names *japan*.
+2. **self-report check** — asked directly, and shown exactly the same prefix,
+   does the model itself name the concept?
+
+The two outcomes are recorded **separately**, never required to agree. Every
+item is kept under one of four cells. Keeping only agreement would retain
+exactly the items the lens already handles, leaving no headroom for any
+comparison — selection on the outcome variable. The useful cell is the one where
+the self-report names the concept and the lens does not, because the self-report
+independently establishes the concept is there, so a lens miss is a real failure
+rather than an absent target.
+
+The layer is fixed rather than "best over all layers" so the label refers to the
+same place a correction is evaluated. All other layers are still recorded, since
+the readouts are free once the forward pass is done.
 
 Causality is what makes this well posed. Attention is causal, so the residual at
 the probe position depends only on the tokens up to and including the probe.
@@ -23,8 +36,10 @@ from __future__ import annotations
 import json
 import os
 import re
+import time
 import urllib.error
 import urllib.request
+from bisect import bisect_left
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -186,7 +201,13 @@ def fragment_completions(
     stem = token.strip().lower()
     if not stem:
         return []
-    return [w for w in words if w.startswith(stem) and w != stem][:limit]
+    # words is sorted, so a stem's completions form a contiguous run. The linear
+    # scan this replaces cost about 9 ms per lookup; annotating a full
+    # evaluation is ~10k tokens against a 40k-word vocabulary, which stalled the
+    # job-building loop for minutes before any request was sent.
+    start = bisect_left(words, stem)
+    end = bisect_left(words, stem + "\uffff")
+    return [w for w in words[start:end] if w != stem][:limit]
 
 
 def annotate_fragments(
@@ -297,11 +318,29 @@ def call_mistral(
             "Content-Type": "application/json",
         },
     )
-    try:
-        with urllib.request.urlopen(request, timeout=180) as response:
-            body = json.loads(response.read())
-    except urllib.error.HTTPError as error:
-        raise RuntimeError(f"Mistral {error.code}: {error.read()[:400]!r}") from error
+    # Retry throttling and transient server errors with exponential backoff.
+    # Without this, raising the worker count trades wall-clock for silently
+    # dropped chunks: a 429 propagates, the caller records the chunk as failed,
+    # and those items are only recovered by noticing and re-running.
+    delay = 2.0
+    for attempt in range(6):
+        try:
+            with urllib.request.urlopen(request, timeout=180) as response:
+                body = json.loads(response.read())
+            break
+        except urllib.error.HTTPError as error:
+            retryable = error.code == 429 or 500 <= error.code < 600
+            if not retryable or attempt == 5:
+                raise RuntimeError(
+                    f"Mistral {error.code}: {error.read()[:400]!r}"
+                ) from error
+            time.sleep(delay)
+            delay *= 2
+        except urllib.error.URLError as error:
+            if attempt == 5:
+                raise RuntimeError(f"Mistral transport: {error}") from error
+            time.sleep(delay)
+            delay *= 2
     return {
         "request": payload,
         "content": body["choices"][0]["message"]["content"],

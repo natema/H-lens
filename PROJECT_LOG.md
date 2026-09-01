@@ -157,3 +157,16 @@ Now resuming work. We can count 11h.
 We will check a bit more the creation of the dataset, while we start collecting what should go in the final writeup. 
 One option to leverage the dataset we just created is to benchmark the R-lens on it, on layer 6. 
 That's an interesting use of the dataset and we will probably do that. 
+
+## 2026-09-01 19:19
+While the experiments run (including the R-lens test), we are reading jspace.py to check Claude didn't make wrong assumptions.
+11h35 spent. 
+
+## 2026-09-01 19:46
+12h00 spent. 4h remaining. 
+
+## 2026-09-01 19:57
+12h10 spent. We got a good validation for the R-lens. Our dataset seems to have value!
+So far, we saw that the H-lens doesn't improve. To validate this, we created a dataset that might be useful. 
+The remaining 4 hourse will probably be spent checking the details of what we did and writing the results (for which we actually have extra hours). 
+The strong examples in the dataset are only around 800, so we will probably check them one by one. 

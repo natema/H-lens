@@ -25,8 +25,13 @@ reflects the mathematics; the bfloat16 residue is rounding, not leakage.
 
 ## The two checks
 
-1. **J-lens** — is the concept in the top-k readout at the probe, at any layer?
-2. **Self-report** — asked directly, does the model list the concept itself?
+1. **lens** — does the top-k readout at the probe, at one fixed layer, *name*
+   the concept? Decided by the judge below, so a variant counts.
+2. **self-report** — asked directly, does the model list the concept itself?
+
+The two are recorded separately and never required to agree; see
+`../data/README.md` for the four cells and why nothing is filtered on
+agreement.
 
 The self-report question asks what the *situation* is about, not what the probe
 word evokes. Asking about the word alone produced dictionary associations that
