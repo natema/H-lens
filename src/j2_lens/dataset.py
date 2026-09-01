@@ -123,6 +123,8 @@ def phase_read(
     batch: int,
     max_new_tokens: int,
     device: str,
+    dtype: str = "bfloat16",
+    reuse_self_report: Path | None = None,
 ) -> None:
     import torch
     from jlens import from_hf
@@ -139,7 +141,19 @@ def phase_read(
 
     done = load_done(out)
     todo = [row for row in items if row["concept"] not in done]
-    print(f"[read] {len(done)} done, {len(todo)} to do", flush=True)
+    # Reusing previously generated self-reports keeps the model dtype as the
+    # only variable that changed, so a difference in the result is attributable
+    # to precision rather than to regenerated text.
+    cached: dict[str, Any] = {}
+    if reuse_self_report is not None:
+        for row in read_jsonl(reuse_self_report):
+            if row.get("screened"):
+                cached[row["concept"]] = {
+                    "self_report": row.get("self_report"),
+                    "self_report_raw": row.get("self_report_raw", ""),
+                }
+        print(f"[read] reusing {len(cached)} cached self-reports", flush=True)
+    print(f"[read] {len(done)} done, {len(todo)} to do, dtype={dtype}", flush=True)
     if not todo:
         return
 
@@ -149,8 +163,9 @@ def phase_read(
     tokenizer.padding_side = "left"
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
+    torch_dtype = {"bfloat16": torch.bfloat16, "float32": torch.float32}[dtype]
     hf_model = Qwen3_5ForConditionalGeneration.from_pretrained(
-        MODEL_ID, revision=MODEL_REVISION, dtype=torch.bfloat16, local_files_only=True
+        MODEL_ID, revision=MODEL_REVISION, dtype=torch_dtype, local_files_only=True
     ).to(device)
     model = from_hf(hf_model, tokenizer, compile=False, force_bos=True)
     lenses = {name: load_lens(name, True)[0] for name in ("j_lens", "r_lens")}
@@ -179,7 +194,12 @@ def phase_read(
                 continue
             prepared.append((row, item, readout))
 
-        if prepared:
+        missing = [x for x in prepared if x[0]["concept"] not in cached]
+        if prepared and not missing:
+            answers = [
+                cached[row["concept"]]["self_report_raw"] for row, _, _ in prepared
+            ]
+        elif prepared:
             prompts = [
                 tokenizer.apply_chat_template(
                     [{"role": "user", "content": SELF_REPORT_TEMPLATE.format(
@@ -204,7 +224,10 @@ def phase_read(
 
         rows = list(rejected)
         for (row, item, readout), answer in zip(prepared, answers, strict=True):
-            reported = parse_concept_list(answer, top_k)
+            entry = cached.get(row["concept"])
+            reported = (
+                entry["self_report"] if entry else parse_concept_list(answer, top_k)
+            )
             rows.append({
                 **row,
                 "screened": True,
@@ -311,6 +334,10 @@ def main(argv: list[str] | None = None) -> None:
     parser.add_argument("--workers", type=int, default=4)
     parser.add_argument("--max-new-tokens", type=int, default=120)
     parser.add_argument("--device", default="cuda")
+    parser.add_argument("--dtype", choices=("bfloat16", "float32"),
+                        default="bfloat16")
+    parser.add_argument("--reuse-self-report", type=Path,
+                        help="take self-reports from an earlier readouts.jsonl")
     parser.add_argument(
         "--phase", choices=("all", "generate", "read", "judge"), default="all"
     )
@@ -353,7 +380,8 @@ def main(argv: list[str] | None = None) -> None:
         items = [r for r in read_jsonl(items_path) if r["concept"] in wanted]
         phase_read(items, reads_path, layer=args.layer, top_k=args.top_k,
                    batch=args.read_batch, max_new_tokens=args.max_new_tokens,
-                   device=args.device)
+                   device=args.device, dtype=args.dtype,
+                   reuse_self_report=args.reuse_self_report)
     if args.phase in ("all", "judge"):
         phase_judge(key, read_jsonl(reads_path), final_path, args.ledger,
                     batch=args.judge_batch, workers=args.workers)
@@ -369,6 +397,7 @@ def main(argv: list[str] | None = None) -> None:
         "primary_layer": args.layer,
         "top_k": args.top_k,
         "read_batch": args.read_batch,
+        "dtype": args.dtype,
         "judge_batch": args.judge_batch,
         "reproducibility": (
             "Self-report generation is batched, so an item's output depends on "

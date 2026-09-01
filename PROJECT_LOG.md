@@ -115,3 +115,5 @@ Lots of things to check.
 
 ## 2026-09-01 14:37
 Resuming work. 
+A subtle problem that is stealing some time is the fact that the J-lens ranking was using bfloat16 but that creates a lot of ties that make computing the top-10 rankings ambiguous, so we will probably spend 1h of GPU compute to recompute the J-lens rankings in float32. 
+9h30 spent. 
