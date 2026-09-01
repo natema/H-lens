@@ -104,6 +104,24 @@ failures are recoverable — which is the comparison the correction has to beat.
   concepts. Separately, three chunks had been lost whole to a `KeyError` when one
   malformed entry in a reply discarded the other nine concepts with it.
 
+## Prompts
+
+Every model-facing prompt is a module constant, so the pipeline can be audited
+and rerun from the repository alone:
+
+| prompt | location | role |
+|---|---|---|
+| `GENERATOR_SYSTEM` | `jspace.py` | writes the probe-final fragments |
+| `JUDGE_SYSTEM` | `jspace.py` | adjudicates whether each list names the concept |
+| `SELF_REPORT_TEMPLATE` | `jspace.py` | what Qwen3.5-4B is asked |
+| `FILTER_SYSTEM` | `concepts.py` | picks concrete nouns from the vocabulary |
+| `EXPLICIT_SCREEN_SYSTEM` | `concepts.py` | removes sexually explicit words |
+| `SCORER_SYSTEM` | `scoring.py` | grades evocation strength |
+
+`pilot/` additionally stores a verbatim request and response pair
+(`prompt_system.txt`, `prompt_user.txt`, `mistral_response.json`) so the exact
+bytes sent over the wire can be inspected, not only the templates.
+
 ## Item quality grades (`quality.jsonl`)
 
 The generator writes plausible-looking fragments of very uneven quality, so each

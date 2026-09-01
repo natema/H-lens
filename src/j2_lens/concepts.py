@@ -49,6 +49,68 @@ saying it.
 Answer with JSON only."""
 
 
+EXPLICIT_SCREEN_SYSTEM = """\
+You screen a word list for an interpretability dataset.
+
+Flag any word that is sexually explicit, pornographic, or names a sex act, a \
+sex worker, a sexual body part, or an adult-entertainment category. Also flag \
+slurs.
+
+Do NOT flag ordinary words merely because they can appear in an adult context: \
+body, bedroom, dating, romance, kiss, marriage are all fine.
+
+Answer with JSON only."""
+
+# The screen over-flags clinical and historical vocabulary, which is not what it
+# is for. These are kept even when flagged, and the decision is recorded here
+# rather than applied by hand so a rerun reproduces the same concept list.
+SCREEN_KEEP = frozenset({"uterus", "womb", "circumcision", "slave"})
+
+
+def screen_explicit(
+    api_key: str,
+    words: list[str],
+    ledger: Path | None = None,
+    batch_size: int = 200,
+) -> list[str]:
+    """Return the words to remove as sexually explicit.
+
+    Only words actually offered can be flagged, so the screen cannot invent an
+    entry, and anything in SCREEN_KEEP is retained regardless.
+    """
+    flagged: set[str] = set()
+    for start in range(0, len(words), batch_size):
+        chunk = words[start : start + batch_size]
+        exchange = call_mistral(
+            api_key,
+            [
+                {"role": "system", "content": EXPLICIT_SCREEN_SYSTEM},
+                {
+                    "role": "user",
+                    "content": json.dumps(
+                        {
+                            "words": chunk,
+                            "answer_format": {
+                                "flagged": ["the words to remove, verbatim"]
+                            },
+                        }
+                    ),
+                },
+            ],
+            max_tokens=1500,
+            temperature=0.0,
+        )
+        if ledger is not None:
+            record_spend(ledger, exchange, note="explicit screen")
+        try:
+            got = json.loads(exchange["content"]).get("flagged", [])
+        except json.JSONDecodeError:
+            got = []
+        offered = set(chunk)
+        flagged.update(w for w in got if w in offered and w not in SCREEN_KEEP)
+    return sorted(flagged)
+
+
 def frequency_table(
     tokenizer: Any, documents: list[str], batch: int = 200
 ) -> dict[str, int]:
@@ -173,6 +235,7 @@ def main(argv: list[str] | None = None) -> None:
     parser.add_argument("--output", type=Path, default=root / "configs/concepts.json")
     parser.add_argument("--ledger", type=Path, default=root / "pilot/spend.json")
     parser.add_argument("--offline", action="store_true")
+    parser.add_argument("--skip-explicit-screen", action="store_true")
     args = parser.parse_args(argv)
 
     tokenizer = AutoTokenizer.from_pretrained(
@@ -195,6 +258,11 @@ def main(argv: list[str] | None = None) -> None:
     accepted, rejected = filter_to_concepts(
         key, words, ledger=args.ledger, batch_size=args.batch_size
     )
+    removed: list[str] = []
+    if not args.skip_explicit_screen:
+        removed = screen_explicit(key, accepted, ledger=args.ledger)
+        accepted = [w for w in accepted if w not in set(removed)]
+        print(f"explicit screen removed {len(removed)}: {removed}", flush=True)
     counts = dict(candidates)
     payload = {
         "schema_version": 1,
@@ -207,6 +275,8 @@ def main(argv: list[str] | None = None) -> None:
         ),
         "n_candidates": len(words),
         "n_accepted": len(accepted),
+        "removed_adult_content": removed,
+        "screen_keep": sorted(SCREEN_KEEP),
         "concepts": [
             {"word": word, "pile_frequency": counts[word]} for word in accepted
         ],

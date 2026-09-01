@@ -18639,14 +18639,24 @@
       "completion_tokens": 795,
       "cost_usd": 0.004814560000000001,
       "priced": true
+    },
+    {
+      "at": "2026-09-01T13:55:30.401868+00:00",
+      "model": "glm-5-2",
+      "note": "explicit screen",
+      "prompt_tokens": 574,
+      "cached_tokens": 0,
+      "completion_tokens": 101,
+      "cost_usd": 0.001248,
+      "priced": true
     }
   ],
   "totals": {
-    "n_calls": 1864,
-    "prompt_tokens": 2008623,
-    "completion_tokens": 892808,
+    "n_calls": 1865,
+    "prompt_tokens": 2009197,
+    "completion_tokens": 892909,
     "cached_tokens": 628220,
-    "cost_usd": 5.936986,
+    "cost_usd": 5.938234,
     "unpriced_models": [],
     "budget_eur": 100.0,
     "note": "Token counts are exact, returned by the API per call. The Mistral API exposes no billing endpoint, so cost is tokens times the rates documented at docs.mistral.ai/models/<id>: mistral-large 0.5 in / 1.5 out, zai-glm-5-2 1.4 in / 0.14 cached in / 4.4 out, USD per million tokens. Cached input is billed separately at its lower rate. Any model listed in unpriced_models contributes nothing to cost_usd and needs a rate added. console.mistral.ai remains authoritative. No USD-to-EUR conversion is applied."
