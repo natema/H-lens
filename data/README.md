@@ -148,8 +148,7 @@ from the generator's framing and is wrong here — nothing follows the text, so
 there is no continuation to reason about. Adding the probe changed **32.3%** of
 grades, and the newly-weak items are exactly the pathology the structural screen
 cannot see: concept `program` with probe `code`, `design` with `blueprint`,
-`event` with `occasion`, `death` with `coffin`. The previous grades are kept in
-`quality_v1_no_probe.jsonl` for comparison.
+`event` with `occasion`, `death` with `coffin`.
 
 Typical `weak` verdicts catch what the structural screen cannot: *"The word
 'house' is already in the fragment, and 'home' is essentially a synonym here."*
