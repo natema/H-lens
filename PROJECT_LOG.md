@@ -112,3 +112,6 @@ Ideally we will get a decent candidate dataset for benchmarking alternatives to 
 Lunch break. 9h10 spent. 
 The dataset looks promising. 
 Lots of things to check. 
+
+## 2026-09-01 14:37
+Resuming work. 

@@ -42,12 +42,29 @@ recorded per item:
 - `lens_hit_judge` — does the top-10 readout *name* the concept? This is what
   defines the cells. It counts a variant or synonym, so ` trail` counts for
   *path* and ` warranty` for *guarantee*.
-- `lens_hit_rank` — is the concept's own token inside the top 10?
+- `lens_hit_topk` — does the concept's own token appear in the top-10 list?
+- `lens_hit_rank_optimistic` — was its computed rank <= 10? Kept only for
+  comparison; do not use it (see below).
 
-They disagree on 168 of 3,344 items (5.0%): 151 where the judge sees a variant
-the token rank misses, and 17 where the concept token is in the list and the
-judge overlooked it, almost all at rank exactly 10. `target_strict` marks the
-1,171 items both measures call a miss.
+They disagree on 158 of 3,344 items (4.7%), almost all in one direction: the
+judge sees a variant or synonym that the token itself does not supply, counting
+` trail` for *path* and ` warranty` for *guarantee*. Only 4 items now go the
+other way. `target_strict` marks the 1,181 items both measures call a miss.
+
+### Why rank <= 10 is the wrong test
+
+`rank_and_topk` computes `rank = count(logits > target) + 1`, which is
+**optimistic under ties**, and bfloat16 produces ties readily. For the *election*
+item, ` Election` and ` electronically` both round to logit 10.875000, so
+` Election` scores rank 10 while `topk` awards the tenth slot to the other token.
+The judge, shown the list, correctly reports no word naming an election. In
+float32 the tie dissolves: the logits are 10.844481 and 10.855117, and the rank
+is 11, genuinely outside the top 10.
+
+This accounted for every one of the 17 items previously described here as judge
+errors. They were rank errors; the judge was right in all of them. Membership in
+the actual top-k list is unambiguous and is what the judge is shown, so it is the
+mechanical measure the dataset uses.
 
 **The rank tables below are computed from `lens_hit_rank` data — the token's
 rank — while the set they are computed over is defined by the judge.** That is
