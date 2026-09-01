@@ -780,10 +780,19 @@ def lens_readout(
         # the one that is best somewhere else in the stack.
         local = min(scored, key=lambda s: scored[s]["layers"][key]["target_rank"])
         at_layer = scored[local]["layers"][key]
+        # The margin to the k-th token, so the top-k cutoff need not be treated
+        # as sharp. The median gap between the 10th and 11th token is about
+        # 0.06 logits, a probability ratio near 1.06, so an item sitting within
+        # a hair of the boundary carries almost no evidence either way and can
+        # be excluded downstream instead of being forced to one side.
+        kth_logit = at_layer["top_tokens"][-1]["logit"]
         primary[name] = {
             "variant": local,
             "target_rank": at_layer["target_rank"],
             "in_top_k": at_layer["target_rank"] <= top_k,
+            "target_logit": at_layer["target_logit"],
+            "kth_logit": kth_logit,
+            "margin_to_kth": at_layer["target_logit"] - kth_logit,
             "top_tokens": [tok["decoded"] for tok in at_layer["top_tokens"]],
         }
     return {

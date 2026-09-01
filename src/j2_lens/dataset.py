@@ -237,6 +237,8 @@ def phase_read(
                 "primary_layer": readout["primary_layer"],
                 "lens_top_k": readout["primary"]["j_lens"]["top_tokens"],
                 "j_lens_rank": readout["primary"]["j_lens"]["target_rank"],
+                "j_lens_margin_to_kth": readout["primary"]["j_lens"]["margin_to_kth"],
+                "j_lens_variant": readout["primary"]["j_lens"]["variant"],
                 "r_lens_rank": readout["primary"]["r_lens"]["target_rank"],
                 "logit_lens_rank": readout["primary"]["logit_lens"]["target_rank"],
                 "j_lens_best_rank_any_layer": readout["methods"]["j_lens"]["best_rank"],
