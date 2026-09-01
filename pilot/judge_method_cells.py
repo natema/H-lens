@@ -27,9 +27,9 @@ from j2_lens.jspace import (
     annotate_fragments,
     judge_batch,
     load_api_key,
-    record_spend,
     vocabulary_words,
 )
+from j2_lens.spend import record_spend
 
 HERE = Path(__file__).resolve().parents[1]
 

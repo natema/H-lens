@@ -14,8 +14,9 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 from j2_lens.dataset import LEDGER_LOCK, append_jsonl, load_done, read_jsonl
-from j2_lens.jspace import load_api_key, record_spend
+from j2_lens.jspace import load_api_key
 from j2_lens.scoring import score_batch
+from j2_lens.spend import record_spend
 
 HERE = Path(__file__).resolve().parents[1]
 

@@ -116,6 +116,12 @@ and rerun from the repository alone:
 | `SELF_REPORT_TEMPLATE` | `jspace.py` | what Qwen3.5-4B is asked |
 | `FILTER_SYSTEM` | `concepts.py` | picks concrete nouns from the vocabulary |
 | `EXPLICIT_SCREEN_SYSTEM` | `concepts.py` | removes sexually explicit words |
+
+API cost accounting lives in `spend.py`, separate from the pipeline modules: it
+is about billing rather than probes or lenses, and its pricing table has to be
+revised whenever a provider changes rates. The budget is read from
+`J2_BUDGET_EUR` and omitted from the ledger when unset, since it describes an
+account rather than this code.
 | `SCORER_SYSTEM` | `scoring.py` | grades evocation strength |
 
 `pilot/` additionally stores a verbatim request and response pair

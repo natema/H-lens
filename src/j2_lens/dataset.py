@@ -68,7 +68,8 @@ def phase_generate(
     from transformers import AutoTokenizer
 
     from j2_lens.baselines import MODEL_ID, MODEL_REVISION
-    from j2_lens.jspace import generate_items, record_spend, structural_problems
+    from j2_lens.jspace import generate_items, structural_problems
+    from j2_lens.spend import record_spend
 
     tokenizer = AutoTokenizer.from_pretrained(
         MODEL_ID, revision=MODEL_REVISION, local_files_only=True
@@ -265,6 +266,7 @@ def phase_judge(
 
     from j2_lens.baselines import MODEL_ID, MODEL_REVISION
     from j2_lens.jspace import annotate_fragments, judge_batch, vocabulary_words
+    from j2_lens.spend import record_spend
 
     done = load_done(out)
     todo = [r for r in rows if r.get("screened") and r["concept"] not in done]
@@ -294,8 +296,6 @@ def phase_judge(
             print(f"[judge] chunk failed: {error}", flush=True)
             return []
         with LEDGER_LOCK:
-            from j2_lens.jspace import record_spend
-
             record_spend(ledger, exchange, note=f"judge x{len(chunk)}")
         out_rows = []
         for row, verdict in zip(chunk, verdicts, strict=True):

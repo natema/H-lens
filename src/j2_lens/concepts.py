@@ -20,7 +20,8 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
-from j2_lens.jspace import call_mistral, record_spend
+from j2_lens.jspace import call_mistral
+from j2_lens.spend import record_spend
 
 # Leading space, lowercase, alphabetic, at least four characters. The leading
 # space is what makes it a word-initial token rather than a continuation piece.
