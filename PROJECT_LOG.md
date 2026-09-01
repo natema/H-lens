@@ -1,3 +1,6 @@
+This project journal will try to keep a log of the time I spent on the project, with notes on its advancement. 
+I have to carry on the project interleaved with my work, so the time spent on it will be rather fragmented, but hopefully I can realise the 16h in 4-5 days of sparse sessions. 
+
 ## 2026-08-29 16:12
 Starting to work on project PROJECT_IDEA.md. 
 Let's get the baselines. 
@@ -144,3 +147,13 @@ Refining the dataset should be the wiser option.
 
 ## 2026-09-01 17:33
 We can resume for few minutes. Let's see if we have time to run H-lens on the new dataset. 
+
+## 2026-09-01 18:46
+We had to interrupt after few minutes before. 
+Now resuming work. We can count 11h. 
+
+## 2026-09-01 19:04
+11h20 spent. The H-lens didn't provide meaningful improvements. We could spend more compute on estimating it more carefully perhaps, but it doesn't seem worth, there is no signal that it contributes a meaningful correction. 
+We will check a bit more the creation of the dataset, while we start collecting what should go in the final writeup. 
+One option to leverage the dataset we just created is to benchmark the R-lens on it, on layer 6. 
+That's an interesting use of the dataset and we will probably do that. 

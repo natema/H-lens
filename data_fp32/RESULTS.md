@@ -9,6 +9,23 @@ and regression to the mean flatters any alternative, including a worse one. The
 cells where J-lens does well are the only place a correction can be caught doing
 damage.
 
+## What the numbers are
+
+**Geometric-mean rank** is `exp(mean(log(rank)))` of the concept token in the
+readout, out of a 248,077-token vocabulary; lower is better. Geometric rather
+than arithmetic because ranks are heavy-tailed — on one set the arithmetic mean
+was 27,758 against a geometric mean of 1,249, the former being a handful of
+six-figure failures.
+
+**wins/losses** is a per-item paired comparison: for each item, the rank of the
+concept under the two methods, counting how often one is strictly lower. Ties are
+excluded, so the two numbers need not sum to n. On the 1,169-item
+`self_report_only` cell, J² versus J-lens is 601 wins, 510 losses, 58 ties. The
+p-value is a two-sided exact sign test on the wins and losses.
+
+**top-10** is the share of items whose concept token appears in the readout's
+first ten entries.
+
 `j2_shuffled` applies the same operator with its diagonal rows rolled by one
 coordinate. It destroys the correspondence between a coordinate and its curvature
 while preserving the row-norm distribution, so it is what the correction must
@@ -16,7 +33,7 @@ beat to claim the gain comes from curvature.
 
 ## All items (n = 3344)
 
-| method | geo-mean rank | median | top-10 | wins/losses vs J-lens | p |
+| method | geo-mean rank | median rank | top-10 | wins/losses vs J-lens | p |
 |---|---:|---:|---:|---:|---:|
 | logit lens | 5328.6 | 8732 | 2.5% | 194/3131 | ~0 |
 | J-lens | 103.5 | 78 | 25.5% | — | — |
@@ -30,14 +47,14 @@ carries does not depend on which curvature vector belongs to which coordinate.
 
 ## By cell
 
+Geometric-mean rank of the concept token, lower is better:
+
 | cell | n | J-lens | J² real | J² shuffled | R-lens |
 |---|---:|---:|---:|---:|---:|
 | `self_report_only` | 1169 | 252.6 | 248.6 | **244.2** | 321.3 |
 | `both` | 640 | **4.8** | 4.9 | 4.8 | 7.3 |
 | `lens_only` | 375 | **6.9** | 7.0 | 7.0 | 10.8 |
 | `neither` | 1160 | **548.2** | 550.1 | 546.4 | 689.9 |
-
-Geometric-mean rank; lower is better.
 
 ### The selection trap, demonstrated
 
