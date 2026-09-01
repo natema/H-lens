@@ -132,3 +132,7 @@ This way, we will restrict the dataset to examples that are good according to th
 Interesting, the grading by GLM5.2 seems (preliminary run) aligned with the ranking of the concept provided by the J-lens. 
 10h20 almost. 
 Our dataset, filtered like this, should now provide a decent signal. 
+
+## 2026-09-01 16:00
+I inspected more carefully the prompt used by the grader and it's not good IMO, so I am re-grading them with a better prompt. 
+10h40 spent. 5h20 to go. 

@@ -24,39 +24,53 @@ from j2_lens.jspace import call_mistral, record_spend
 SCORER_MODEL = "glm-5-2"
 
 SCORER_SYSTEM = """\
-You grade items for an interpretability dataset.
+You grade items for an interpretability experiment.
 
-Each item is a sentence FRAGMENT and a TARGET CONCEPT. The fragment stops \
-mid-sentence. The question is only this: reading the fragment and nothing else, \
-how strongly does a competent reader think of the target concept?
+Each item is a short TEXT, a PROBE WORD, and a TARGET CONCEPT. The probe word is
+always the last word of the text, and the text is everything the model is shown
+— nothing follows it.
 
-Grade "strong" when the fragment points at the concept specifically and almost \
-unavoidably, while never naming it. A reader asked what this is about would \
-very likely say the target word.
+What matters is that a reading instrument is applied at exactly one place: the
+probe word, the final token. It reports which concepts the model is holding at
+that point, having read the text up to and including the probe and nothing more.
 
-Grade "medium" when the concept is a reasonable thing to think of, but the \
-fragment also fits several other concepts about as well, or the connection \
-needs a step of reasoning.
+So grade this: standing at the probe word, having just read this text, how
+strongly does the target concept come to mind?
+
+Grade "strong" when arriving at the probe word makes the concept nearly
+unavoidable, while the text never names it. The probe word should be pulling its
+weight: it is the word the instrument reads, so the concept should be live
+precisely there, not merely somewhere earlier in the text.
+
+Grade "medium" when the concept is a reasonable thing to have in mind at the
+probe, but several other concepts fit about as well, or the link needs a step of
+reasoning.
 
 Grade "weak" when any of these hold:
-- the fragment does not really evoke the concept at all;
-- the concept is essentially restated by a word already in the fragment, or is \
-a synonym of one, so nothing has to be inferred;
-- the concept is so abstract or generic that almost any scene would evoke it;
-- the fragment is more naturally about something else.
+- the concept does not really come to mind at the probe;
+- the concept is restated by a word already in the text, or is a synonym of one
+  — especially if the probe word itself is that synonym — so nothing is inferred;
+- the concept is so generic that almost any text would evoke it;
+- the text is more naturally about something else.
 
-Examples:
-- fragment "The scout climbed the ridge and raised a colored flag", concept \
-"signal" -> strong. A raised flag on a ridge is a signal, and the word is absent.
-- fragment "He reached for the dial on the wall and moved it to the opposite \
-position", concept "switch" -> weak. A dial is not a switch, and the scene reads \
-as a clock or thermostat.
-- fragment "The hungry restaurant patron eagerly devoured the hot savory dish", \
-concept "food" -> weak. "Devoured", "restaurant" and "dish" make food explicit; \
-nothing is inferred.
-- fragment "The architect examined the load-bearing columns, cross-bracing and \
-steel beams", concept "structure" -> medium. Apt, but generic: many building \
-scenes evoke it.
+Examples, written as text | probe | concept -> grade:
+
+"The scout climbed the ridge and raised a colored flag" | flag | signal ->
+strong. The instrument reads at "flag", and a flag raised on a ridge is a signal
+at exactly that word; the concept is never named.
+
+"He reached for the dial on the wall and moved it to the opposite position" |
+position | switch -> weak. At "position" the scene is a dial, and a dial is not a
+switch; it reads as a clock or thermostat.
+
+"The hungry restaurant patron eagerly devoured the hot, savory, and beautifully
+plated dish" | dish | food -> weak. "Devoured", "restaurant" and "dish" state
+food outright, and the probe word "dish" is itself the giveaway, so nothing is
+inferred.
+
+"The architect examined the load-bearing columns, cross-bracing, and steel beams"
+| beams | structure -> medium. Apt at "beams", but generic: many building scenes
+evoke it.
 
 Be strict. Most items are not strong. Answer with JSON only."""
 
@@ -73,7 +87,12 @@ def score_batch(
     """
     payload = {
         "items": [
-            {"id": index, "fragment": item["prefix"], "target_concept": item["concept"]}
+            {
+                "id": index,
+                "text": item["prefix"],
+                "probe_word": item["probe_term"],
+                "target_concept": item["concept"],
+            }
             for index, item in enumerate(items)
         ],
         "answer_format": {

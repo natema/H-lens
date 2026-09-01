@@ -138,7 +138,18 @@ keyed by concept so they join onto any readout of the same items.
 uv run python pilot/score_dataset.py
 ```
 
-`strong 864, medium 1349, weak 1131`.
+`strong 826, medium 1590, weak 928`.
+
+The grader is told the probe word and that it is the final token, because the
+readout happens at exactly that position: the concept has to be live *there*, not
+merely somewhere earlier in the text. An earlier version of the prompt withheld
+the probe and described the text as stopping "mid-sentence", which was copied
+from the generator's framing and is wrong here — nothing follows the text, so
+there is no continuation to reason about. Adding the probe changed **32.3%** of
+grades, and the newly-weak items are exactly the pathology the structural screen
+cannot see: concept `program` with probe `code`, `design` with `blueprint`,
+`event` with `occasion`, `death` with `coffin`. The previous grades are kept in
+`quality_v1_no_probe.jsonl` for comparison.
 
 Typical `weak` verdicts catch what the structural screen cannot: *"The word
 'house' is already in the fragment, and 'home' is essentially a synonym here."*
@@ -148,24 +159,32 @@ synonym of the concept passes it.
 
 ### The grade predicts lens failure without seeing the lens
 
-| grade | n | J-lens geo-mean rank | median | share in target cell |
-|---|---:|---:|---:|---:|
-| strong | 864 | 129 | 100 | 44.3% |
-| medium | 1349 | 148 | 113 | 34.8% |
-| weak | 1131 | **54** | **36** | 29.3% |
+| grade | n | J-lens geo-mean rank | median |
+|---|---:|---:|---:|
+| strong | 826 | 102 | 79 |
+| medium | 1590 | 162 | 132 |
+| weak | 928 | **46** | **29** |
 
-Items graded `weak` are roughly 2.5x easier for the J-lens than the rest, and
+Items graded `weak` are roughly 2 to 3 times easier for the J-lens than the rest, and
 they cluster in the `both` and `lens_only` cells. That is what the mechanism
 predicts: a weak item has the concept sitting as a synonym of a word already in
 the fragment, so the lens surfaces it trivially. The grader saw none of this, so
 the agreement is evidence the grade measures something real rather than echoing
 the prompt.
 
-`strong` and `medium` are not separated by rank (129 versus 148), so the useful
-cut is `weak` versus the rest, not a three-way ordering.
+The grades are **not** ordered by lens difficulty: `medium` items are the hardest
+(geo-mean 162), harder than `strong` (102). That is coherent rather than
+contradictory. `strong` means the concept is nearly unavoidable at the probe, so
+the lens also has a better chance of surfacing it; `medium` means the link needs
+a step of reasoning, which is precisely what a linearised lens would struggle
+with. The grade measures how clearly the concept is evoked, not how hard it is to
+read out.
+
+So `strong` is the right filter for an evaluation set — a miss there is
+unambiguous — while `weak` is the set to discard.
 
 ### The restricted evaluation set
 
-Target cell restricted to `strong`: **383 items**, J-lens geometric-mean rank
-288. This is the set to use for a lens comparison — the concept is unambiguously
+Target cell restricted to `strong`: **362 items**, J-lens geometric-mean rank
+264. This is the set to use for a lens comparison — the concept is unambiguously
 evoked, the model demonstrably holds it, and the J-lens does not surface it.

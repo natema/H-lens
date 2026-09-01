@@ -30,13 +30,15 @@ def main() -> None:
     args = parser.parse_args()
 
     key = load_api_key(HERE.parent / ".env")
-    prefixes = {
-        r["concept"]: r["prefix"]
+    source = {
+        r["concept"]: {"prefix": r["prefix"], "probe_term": r["probe_term"]}
         for r in read_jsonl(args.readouts)
         if r.get("screened")
     }
     done = load_done(args.out)
-    todo = [{"concept": c, "prefix": p} for c, p in prefixes.items() if c not in done]
+    todo = [
+        {"concept": c, **fields} for c, fields in source.items() if c not in done
+    ]
     print(f"{len(done)} graded, {len(todo)} to do", flush=True)
     if not todo:
         return
@@ -51,7 +53,12 @@ def main() -> None:
         with LEDGER_LOCK:
             record_spend(args.ledger, exchange, note=f"quality score x{len(chunk)}")
         return [
-            {"concept": item["concept"], "quality": v["strength"], "why": v["why"]}
+            {
+                "concept": item["concept"],
+                "probe_term": item["probe_term"],
+                "quality": v["strength"],
+                "why": v["why"],
+            }
             for item, v in zip(chunk, verdicts, strict=True)
             if v["strength"] is not None
         ]

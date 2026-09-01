@@ -18649,14 +18649,1414 @@
       "completion_tokens": 101,
       "cost_usd": 0.001248,
       "priced": true
+    },
+    {
+      "at": "2026-09-01T14:00:47.433209+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1587,
+      "cached_tokens": 0,
+      "completion_tokens": 890,
+      "cost_usd": 0.0061378000000000005,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:00:48.117276+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1559,
+      "cached_tokens": 0,
+      "completion_tokens": 1009,
+      "cost_usd": 0.006622200000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:00:48.343477+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1589,
+      "cached_tokens": 0,
+      "completion_tokens": 987,
+      "cost_usd": 0.006567399999999999,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:00:49.127020+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1548,
+      "cached_tokens": 0,
+      "completion_tokens": 1059,
+      "cost_usd": 0.0068268,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:00:52.674163+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1544,
+      "cached_tokens": 0,
+      "completion_tokens": 858,
+      "cost_usd": 0.0059368,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:00:53.135943+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1565,
+      "cached_tokens": 0,
+      "completion_tokens": 852,
+      "cost_usd": 0.0059398,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:00:53.783987+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1574,
+      "cached_tokens": 0,
+      "completion_tokens": 1026,
+      "cost_usd": 0.006718,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:00:54.643441+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1556,
+      "cached_tokens": 512,
+      "completion_tokens": 1059,
+      "cost_usd": 0.00619288,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:00:57.938029+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1619,
+      "cached_tokens": 0,
+      "completion_tokens": 934,
+      "cost_usd": 0.006376200000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:00:58.232260+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1631,
+      "cached_tokens": 0,
+      "completion_tokens": 824,
+      "cost_usd": 0.005909,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:00:58.260232+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1567,
+      "cached_tokens": 0,
+      "completion_tokens": 1081,
+      "cost_usd": 0.006950200000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:01:01.039528+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1582,
+      "cached_tokens": 0,
+      "completion_tokens": 1098,
+      "cost_usd": 0.007046,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:01:02.917813+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1589,
+      "cached_tokens": 512,
+      "completion_tokens": 839,
+      "cost_usd": 0.00527108,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:01:04.370519+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1582,
+      "cached_tokens": 0,
+      "completion_tokens": 1031,
+      "cost_usd": 0.006751200000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:01:04.736927+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1592,
+      "cached_tokens": 0,
+      "completion_tokens": 1047,
+      "cost_usd": 0.006835600000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:01:06.579569+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1617,
+      "cached_tokens": 0,
+      "completion_tokens": 948,
+      "cost_usd": 0.006435,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:01:08.250383+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1613,
+      "cached_tokens": 512,
+      "completion_tokens": 991,
+      "cost_usd": 0.005973480000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:01:08.455066+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1544,
+      "cached_tokens": 0,
+      "completion_tokens": 824,
+      "cost_usd": 0.005787200000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:01:10.443373+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1551,
+      "cached_tokens": 0,
+      "completion_tokens": 1081,
+      "cost_usd": 0.0069278000000000005,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:01:11.573681+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1644,
+      "cached_tokens": 512,
+      "completion_tokens": 960,
+      "cost_usd": 0.0058804799999999996,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:01:14.269610+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1654,
+      "cached_tokens": 0,
+      "completion_tokens": 1058,
+      "cost_usd": 0.006970800000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:01:17.376750+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1598,
+      "cached_tokens": 0,
+      "completion_tokens": 1028,
+      "cost_usd": 0.006760400000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:01:17.725679+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1522,
+      "cached_tokens": 0,
+      "completion_tokens": 890,
+      "cost_usd": 0.006046800000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:01:18.880742+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1592,
+      "cached_tokens": 512,
+      "completion_tokens": 981,
+      "cost_usd": 0.005900080000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:01:22.260578+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1586,
+      "cached_tokens": 0,
+      "completion_tokens": 1010,
+      "cost_usd": 0.0066644,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:01:22.289189+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1537,
+      "cached_tokens": 512,
+      "completion_tokens": 1022,
+      "cost_usd": 0.00600348,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:01:22.708262+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1504,
+      "cached_tokens": 0,
+      "completion_tokens": 1028,
+      "cost_usd": 0.006628800000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:01:24.408468+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1601,
+      "cached_tokens": 0,
+      "completion_tokens": 1074,
+      "cost_usd": 0.006967,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:01:27.580953+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1570,
+      "cached_tokens": 512,
+      "completion_tokens": 962,
+      "cost_usd": 0.0057856800000000005,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:01:27.780557+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1567,
+      "cached_tokens": 512,
+      "completion_tokens": 882,
+      "cost_usd": 0.00542948,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:01:29.493461+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1596,
+      "cached_tokens": 0,
+      "completion_tokens": 954,
+      "cost_usd": 0.006432,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:01:29.863849+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1714,
+      "cached_tokens": 0,
+      "completion_tokens": 1144,
+      "cost_usd": 0.007433200000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:01:33.255932+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1582,
+      "cached_tokens": 512,
+      "completion_tokens": 1061,
+      "cost_usd": 0.006238080000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:01:34.170269+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1597,
+      "cached_tokens": 0,
+      "completion_tokens": 907,
+      "cost_usd": 0.0062266000000000005,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:01:34.409260+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1563,
+      "cached_tokens": 512,
+      "completion_tokens": 919,
+      "cost_usd": 0.00558668,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:01:35.046049+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1635,
+      "cached_tokens": 0,
+      "completion_tokens": 1107,
+      "cost_usd": 0.0071598,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:01:38.003965+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1678,
+      "cached_tokens": 512,
+      "completion_tokens": 757,
+      "cost_usd": 0.00503488,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:01:39.285265+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1615,
+      "cached_tokens": 512,
+      "completion_tokens": 865,
+      "cost_usd": 0.0054218800000000004,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:01:45.147909+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1664,
+      "cached_tokens": 0,
+      "completion_tokens": 915,
+      "cost_usd": 0.0063556,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:01:45.279239+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1594,
+      "cached_tokens": 0,
+      "completion_tokens": 1080,
+      "cost_usd": 0.0069836,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:01:48.514479+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1593,
+      "cached_tokens": 0,
+      "completion_tokens": 949,
+      "cost_usd": 0.0064058000000000006,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:01:49.995540+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1628,
+      "cached_tokens": 0,
+      "completion_tokens": 970,
+      "cost_usd": 0.0065471999999999995,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:01:50.374163+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1579,
+      "cached_tokens": 512,
+      "completion_tokens": 793,
+      "cost_usd": 0.005054680000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:01:51.221594+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1584,
+      "cached_tokens": 0,
+      "completion_tokens": 1061,
+      "cost_usd": 0.006886,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:01:55.087942+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1624,
+      "cached_tokens": 0,
+      "completion_tokens": 919,
+      "cost_usd": 0.006317200000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:01:56.209857+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1582,
+      "cached_tokens": 512,
+      "completion_tokens": 1015,
+      "cost_usd": 0.00603568,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:01:56.858408+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1601,
+      "cached_tokens": 512,
+      "completion_tokens": 916,
+      "cost_usd": 0.00562668,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:01:57.566877+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1653,
+      "cached_tokens": 0,
+      "completion_tokens": 1106,
+      "cost_usd": 0.0071806000000000005,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:00.459681+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1640,
+      "cached_tokens": 0,
+      "completion_tokens": 996,
+      "cost_usd": 0.0066784,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:01.882039+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1560,
+      "cached_tokens": 512,
+      "completion_tokens": 842,
+      "cost_usd": 0.0052436800000000006,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:02.221160+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1655,
+      "cached_tokens": 512,
+      "completion_tokens": 835,
+      "cost_usd": 0.00534588,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:04.486437+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1529,
+      "cached_tokens": 512,
+      "completion_tokens": 1035,
+      "cost_usd": 0.0060494799999999994,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:05.630188+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1570,
+      "cached_tokens": 512,
+      "completion_tokens": 1008,
+      "cost_usd": 0.005988080000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:06.482958+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1642,
+      "cached_tokens": 512,
+      "completion_tokens": 1085,
+      "cost_usd": 0.006427680000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:08.719906+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1630,
+      "cached_tokens": 0,
+      "completion_tokens": 1155,
+      "cost_usd": 0.007364,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:09.671167+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1600,
+      "cached_tokens": 0,
+      "completion_tokens": 962,
+      "cost_usd": 0.0064728,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:10.707341+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1597,
+      "cached_tokens": 0,
+      "completion_tokens": 879,
+      "cost_usd": 0.006103399999999999,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:11.613525+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1659,
+      "cached_tokens": 512,
+      "completion_tokens": 1007,
+      "cost_usd": 0.006108280000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:12.807702+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1632,
+      "cached_tokens": 512,
+      "completion_tokens": 813,
+      "cost_usd": 0.00521688,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:14.196182+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1646,
+      "cached_tokens": 512,
+      "completion_tokens": 1011,
+      "cost_usd": 0.00610768,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:17.976678+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1585,
+      "cached_tokens": 0,
+      "completion_tokens": 1070,
+      "cost_usd": 0.006927,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:18.272326+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1589,
+      "cached_tokens": 0,
+      "completion_tokens": 1008,
+      "cost_usd": 0.006659800000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:19.404147+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1594,
+      "cached_tokens": 0,
+      "completion_tokens": 1027,
+      "cost_usd": 0.006750399999999999,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:19.943679+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1652,
+      "cached_tokens": 512,
+      "completion_tokens": 979,
+      "cost_usd": 0.00597528,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:22.332836+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1576,
+      "cached_tokens": 512,
+      "completion_tokens": 904,
+      "cost_usd": 0.00553888,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:23.857943+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1549,
+      "cached_tokens": 512,
+      "completion_tokens": 812,
+      "cost_usd": 0.005096280000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:24.604687+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1648,
+      "cached_tokens": 0,
+      "completion_tokens": 932,
+      "cost_usd": 0.006408,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:26.873279+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1631,
+      "cached_tokens": 512,
+      "completion_tokens": 1068,
+      "cost_usd": 0.00633748,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:26.902814+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1616,
+      "cached_tokens": 512,
+      "completion_tokens": 946,
+      "cost_usd": 0.005779680000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:28.585831+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1564,
+      "cached_tokens": 512,
+      "completion_tokens": 873,
+      "cost_usd": 0.00538568,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:30.683545+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1628,
+      "cached_tokens": 0,
+      "completion_tokens": 926,
+      "cost_usd": 0.0063536,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:31.880140+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1635,
+      "cached_tokens": 512,
+      "completion_tokens": 944,
+      "cost_usd": 0.005797480000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:33.546171+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1657,
+      "cached_tokens": 512,
+      "completion_tokens": 964,
+      "cost_usd": 0.00591628,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:35.881029+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1636,
+      "cached_tokens": 512,
+      "completion_tokens": 1059,
+      "cost_usd": 0.00630488,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:35.899617+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1664,
+      "cached_tokens": 512,
+      "completion_tokens": 1117,
+      "cost_usd": 0.006599280000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:38.213827+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1631,
+      "cached_tokens": 512,
+      "completion_tokens": 944,
+      "cost_usd": 0.00579188,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:39.327678+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1576,
+      "cached_tokens": 512,
+      "completion_tokens": 874,
+      "cost_usd": 0.00540688,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:41.590127+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1589,
+      "cached_tokens": 512,
+      "completion_tokens": 860,
+      "cost_usd": 0.00536348,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:43.071746+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1631,
+      "cached_tokens": 512,
+      "completion_tokens": 1078,
+      "cost_usd": 0.00638148,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:43.984231+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1644,
+      "cached_tokens": 0,
+      "completion_tokens": 1094,
+      "cost_usd": 0.0071152,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:45.251544+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1598,
+      "cached_tokens": 512,
+      "completion_tokens": 1015,
+      "cost_usd": 0.0060580799999999995,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:47.656323+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1575,
+      "cached_tokens": 512,
+      "completion_tokens": 1038,
+      "cost_usd": 0.006127080000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:47.705577+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1654,
+      "cached_tokens": 512,
+      "completion_tokens": 979,
+      "cost_usd": 0.00597808,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:51.368677+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1592,
+      "cached_tokens": 0,
+      "completion_tokens": 1057,
+      "cost_usd": 0.0068796000000000005,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:52.416409+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1614,
+      "cached_tokens": 512,
+      "completion_tokens": 1062,
+      "cost_usd": 0.006287280000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:52.446168+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1647,
+      "cached_tokens": 0,
+      "completion_tokens": 1079,
+      "cost_usd": 0.0070534,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:55.679240+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1636,
+      "cached_tokens": 0,
+      "completion_tokens": 1057,
+      "cost_usd": 0.0069412,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:56.900191+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1661,
+      "cached_tokens": 512,
+      "completion_tokens": 996,
+      "cost_usd": 0.00606268,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:57.445755+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1596,
+      "cached_tokens": 0,
+      "completion_tokens": 895,
+      "cost_usd": 0.0061724,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:02:57.508349+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1623,
+      "cached_tokens": 512,
+      "completion_tokens": 909,
+      "cost_usd": 0.00562668,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:00.887353+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1624,
+      "cached_tokens": 512,
+      "completion_tokens": 965,
+      "cost_usd": 0.00587448,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:03.259982+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1667,
+      "cached_tokens": 512,
+      "completion_tokens": 1123,
+      "cost_usd": 0.006629880000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:03.317880+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1628,
+      "cached_tokens": 512,
+      "completion_tokens": 1209,
+      "cost_usd": 0.00695368,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:03.575643+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1582,
+      "cached_tokens": 512,
+      "completion_tokens": 1090,
+      "cost_usd": 0.00636568,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:06.232967+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1603,
+      "cached_tokens": 512,
+      "completion_tokens": 969,
+      "cost_usd": 0.00586268,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:08.541212+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1697,
+      "cached_tokens": 512,
+      "completion_tokens": 1034,
+      "cost_usd": 0.006280280000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:09.196655+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1634,
+      "cached_tokens": 512,
+      "completion_tokens": 925,
+      "cost_usd": 0.005712480000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:10.489930+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1619,
+      "cached_tokens": 512,
+      "completion_tokens": 975,
+      "cost_usd": 0.005911479999999999,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:11.243109+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1604,
+      "cached_tokens": 512,
+      "completion_tokens": 1034,
+      "cost_usd": 0.00615008,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:13.510259+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1663,
+      "cached_tokens": 512,
+      "completion_tokens": 962,
+      "cost_usd": 0.00591588,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:15.124035+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1648,
+      "cached_tokens": 512,
+      "completion_tokens": 1034,
+      "cost_usd": 0.006211680000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:16.490184+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1693,
+      "cached_tokens": 512,
+      "completion_tokens": 930,
+      "cost_usd": 0.00581708,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:19.769431+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1610,
+      "cached_tokens": 512,
+      "completion_tokens": 1156,
+      "cost_usd": 0.0066952800000000005,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:19.856089+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1613,
+      "cached_tokens": 512,
+      "completion_tokens": 1095,
+      "cost_usd": 0.00643108,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:19.918689+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1653,
+      "cached_tokens": 512,
+      "completion_tokens": 1017,
+      "cost_usd": 0.00614388,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:22.480471+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1591,
+      "cached_tokens": 0,
+      "completion_tokens": 1152,
+      "cost_usd": 0.0072962,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:25.281843+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1613,
+      "cached_tokens": 512,
+      "completion_tokens": 1019,
+      "cost_usd": 0.00609668,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:25.926037+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1616,
+      "cached_tokens": 0,
+      "completion_tokens": 1011,
+      "cost_usd": 0.0067108,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:27.088243+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1653,
+      "cached_tokens": 0,
+      "completion_tokens": 1121,
+      "cost_usd": 0.007246600000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:29.667604+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1640,
+      "cached_tokens": 0,
+      "completion_tokens": 1117,
+      "cost_usd": 0.0072108,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:31.695825+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1664,
+      "cached_tokens": 512,
+      "completion_tokens": 1032,
+      "cost_usd": 0.006225280000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:32.008823+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1604,
+      "cached_tokens": 512,
+      "completion_tokens": 761,
+      "cost_usd": 0.00494888,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:32.607627+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1621,
+      "cached_tokens": 512,
+      "completion_tokens": 1040,
+      "cost_usd": 0.00620028,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:35.574454+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1561,
+      "cached_tokens": 512,
+      "completion_tokens": 997,
+      "cost_usd": 0.0059270799999999995,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:37.322251+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1510,
+      "cached_tokens": 512,
+      "completion_tokens": 893,
+      "cost_usd": 0.0053980799999999995,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:38.198664+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1524,
+      "cached_tokens": 512,
+      "completion_tokens": 995,
+      "cost_usd": 0.0058664799999999994,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:41.901661+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1592,
+      "cached_tokens": 512,
+      "completion_tokens": 1074,
+      "cost_usd": 0.0063092800000000004,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:44.055720+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1511,
+      "cached_tokens": 512,
+      "completion_tokens": 870,
+      "cost_usd": 0.005298280000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:44.513655+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1659,
+      "cached_tokens": 512,
+      "completion_tokens": 988,
+      "cost_usd": 0.00602468,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:44.951734+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1497,
+      "cached_tokens": 512,
+      "completion_tokens": 797,
+      "cost_usd": 0.00495748,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:48.239019+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1632,
+      "cached_tokens": 512,
+      "completion_tokens": 1102,
+      "cost_usd": 0.0064884800000000005,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:48.987194+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1591,
+      "cached_tokens": 512,
+      "completion_tokens": 930,
+      "cost_usd": 0.00567428,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:50.500868+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1588,
+      "cached_tokens": 512,
+      "completion_tokens": 847,
+      "cost_usd": 0.0053048800000000005,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:53.128934+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1583,
+      "cached_tokens": 512,
+      "completion_tokens": 996,
+      "cost_usd": 0.005953480000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:53.573793+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1650,
+      "cached_tokens": 512,
+      "completion_tokens": 1237,
+      "cost_usd": 0.00710768,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:55.553145+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1563,
+      "cached_tokens": 512,
+      "completion_tokens": 1187,
+      "cost_usd": 0.00676588,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:55.592379+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1557,
+      "cached_tokens": 512,
+      "completion_tokens": 1127,
+      "cost_usd": 0.00649348,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:57.592488+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1604,
+      "cached_tokens": 512,
+      "completion_tokens": 746,
+      "cost_usd": 0.00488288,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:03:58.625945+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1705,
+      "cached_tokens": 512,
+      "completion_tokens": 977,
+      "cost_usd": 0.0060406800000000005,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:04:00.888300+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1610,
+      "cached_tokens": 512,
+      "completion_tokens": 846,
+      "cost_usd": 0.00533128,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:04:01.978585+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1612,
+      "cached_tokens": 0,
+      "completion_tokens": 1035,
+      "cost_usd": 0.0068108,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:04:02.891309+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1598,
+      "cached_tokens": 512,
+      "completion_tokens": 944,
+      "cost_usd": 0.00574568,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:04:03.686838+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1650,
+      "cached_tokens": 512,
+      "completion_tokens": 983,
+      "cost_usd": 0.005990080000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:04:05.665756+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1545,
+      "cached_tokens": 512,
+      "completion_tokens": 777,
+      "cost_usd": 0.004936680000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:04:07.482657+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1610,
+      "cached_tokens": 512,
+      "completion_tokens": 990,
+      "cost_usd": 0.0059648800000000005,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:04:07.548732+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1563,
+      "cached_tokens": 512,
+      "completion_tokens": 1011,
+      "cost_usd": 0.00599148,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:04:09.427215+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1588,
+      "cached_tokens": 512,
+      "completion_tokens": 960,
+      "cost_usd": 0.00580208,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:04:09.828179+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1632,
+      "cached_tokens": 512,
+      "completion_tokens": 989,
+      "cost_usd": 0.005991280000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:04:10.265723+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x8",
+      "prompt_tokens": 880,
+      "cached_tokens": 512,
+      "completion_tokens": 360,
+      "cost_usd": 0.00217088,
+      "priced": true
+    },
+    {
+      "at": "2026-09-01T14:04:14.052253+00:00",
+      "model": "glm-5-2",
+      "note": "quality score x24",
+      "prompt_tokens": 1599,
+      "cached_tokens": 512,
+      "completion_tokens": 953,
+      "cost_usd": 0.005786680000000001,
+      "priced": true
     }
   ],
   "totals": {
-    "n_calls": 1865,
-    "prompt_tokens": 2009197,
-    "completion_tokens": 892909,
-    "cached_tokens": 628220,
-    "cost_usd": 5.938234,
+    "n_calls": 2005,
+    "prompt_tokens": 2233268,
+    "completion_tokens": 1030256,
+    "cached_tokens": 673276,
+    "cost_usd": 6.79949,
     "unpriced_models": [],
     "budget_eur": 100.0,
     "note": "Token counts are exact, returned by the API per call. The Mistral API exposes no billing endpoint, so cost is tokens times the rates documented at docs.mistral.ai/models/<id>: mistral-large 0.5 in / 1.5 out, zai-glm-5-2 1.4 in / 0.14 cached in / 4.4 out, USD per million tokens. Cached input is billed separately at its lower rate. Any model listed in unpriced_models contributes nothing to cost_usd and needs a rate added. console.mistral.ai remains authoritative. No USD-to-EUR conversion is applied."
