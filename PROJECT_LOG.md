@@ -117,3 +117,18 @@ Lots of things to check.
 Resuming work. 
 A subtle problem that is stealing some time is the fact that the J-lens ranking was using bfloat16 but that creates a lot of ties that make computing the top-10 rankings ambiguous, so we will probably spend 1h of GPU compute to recompute the J-lens rankings in float32. 
 9h30 spent. 
+
+## 2026-09-01 15:09
+The precision error in the ranking is something we should keep in mind to report explicitly in the final report. 
+9h50 spent. 
+In the interest of time, we will accept some noise in the current version of the dataset. 
+
+## 2026-09-01 15:33
+10h10 into the project. 
+We have been inspecting manually some examples of our dataset and we are now calling GLM5.2 on the items to ask it to rate whether they are a good example of J-lens failing. 
+This way, we will restrict the dataset to examples that are good according to this filter. 
+
+## 2026-09-01 15:40
+Interesting, the grading by GLM5.2 seems (preliminary run) aligned with the ranking of the concept provided by the J-lens. 
+10h20 almost. 
+Our dataset, filtered like this, should now provide a decent signal. 

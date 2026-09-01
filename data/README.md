@@ -103,3 +103,51 @@ failures are recoverable — which is the comparison the correction has to beat.
   a fixed three-pass limit. It now continues while passes keep recovering
   concepts. Separately, three chunks had been lost whole to a `KeyError` when one
   malformed entry in a reply discarded the other nine concepts with it.
+
+## Item quality grades (`quality.jsonl`)
+
+The generator writes plausible-looking fragments of very uneven quality, so each
+item is graded `strong` / `medium` / `weak` on one question: reading the fragment
+alone, how strongly does a competent reader think of the target concept?
+
+The grader is **lens-blind** — it sees the fragment and the concept, never any
+readout. Showing it lens output would entangle item selection with the behaviour
+of a system under comparison, and a set filtered that way could not support a
+fair claim about which lens recovers more. The grades live in their own file
+keyed by concept so they join onto any readout of the same items.
+
+```bash
+uv run python pilot/score_dataset.py
+```
+
+`strong 864, medium 1349, weak 1131`.
+
+Typical `weak` verdicts catch what the structural screen cannot: *"The word
+'house' is already in the fragment, and 'home' is essentially a synonym here."*
+That item — `home`, probe `house`, in the target cell at rank 32 — is the case
+the grade exists for. The screen only rejects the literal concept string, so a
+synonym of the concept passes it.
+
+### The grade predicts lens failure without seeing the lens
+
+| grade | n | J-lens geo-mean rank | median | share in target cell |
+|---|---:|---:|---:|---:|
+| strong | 864 | 129 | 100 | 44.3% |
+| medium | 1349 | 148 | 113 | 34.8% |
+| weak | 1131 | **54** | **36** | 29.3% |
+
+Items graded `weak` are roughly 2.5x easier for the J-lens than the rest, and
+they cluster in the `both` and `lens_only` cells. That is what the mechanism
+predicts: a weak item has the concept sitting as a synonym of a word already in
+the fragment, so the lens surfaces it trivially. The grader saw none of this, so
+the agreement is evidence the grade measures something real rather than echoing
+the prompt.
+
+`strong` and `medium` are not separated by rank (129 versus 148), so the useful
+cut is `weak` versus the rest, not a three-way ordering.
+
+### The restricted evaluation set
+
+Target cell restricted to `strong`: **383 items**, J-lens geometric-mean rank
+288. This is the set to use for a lens comparison — the concept is unambiguously
+evoked, the model demonstrably holds it, and the J-lens does not surface it.
