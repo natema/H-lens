@@ -305,7 +305,7 @@ def main(argv: list[str] | None = None) -> None:
     parser.add_argument("--top-k", type=int, default=10)
     parser.add_argument("--limit", type=int, help="only the first N concepts")
     parser.add_argument("--generate-per-call", type=int, default=10)
-    parser.add_argument("--generate-passes", type=int, default=3)
+    parser.add_argument("--generate-passes", type=int, default=8)
     parser.add_argument("--read-batch", type=int, default=32)
     parser.add_argument("--judge-batch", type=int, default=8)
     parser.add_argument("--workers", type=int, default=4)
@@ -329,10 +329,19 @@ def main(argv: list[str] | None = None) -> None:
           f"read batch {args.read_batch}, judge batch {args.judge_batch}", flush=True)
 
     if args.phase in ("all", "generate"):
+        # Keep going while passes still recover concepts. A fixed pass count
+        # stopped a converging loop early: 3344 -> 624 -> 139 -> 42 left, which
+        # looked like 42 impossible concepts but was just the limit being hit.
+        previous = None
         for attempt in range(args.generate_passes):
             remaining = len(concepts) - len(load_done(items_path))
             if not remaining:
                 break
+            if previous is not None and remaining >= previous:
+                print(f"[generate] no progress, stopping with {remaining} left",
+                      flush=True)
+                break
+            previous = remaining
             print(
                 f"[generate] pass {attempt + 1}, {remaining} concepts left",
                 flush=True,

@@ -19,10 +19,12 @@ Built with `uv run j2-dataset`. See `manifest.json` for the exact settings.
 
 | cell | n | share | meaning |
 |---|---:|---:|---|
-| `self_report_only` | 1168 | 35.4% | **J-lens misses it, the model has it** |
-| `neither` | 1146 | 34.7% | the model does not hold the concept at the probe |
-| `both` | 625 | 18.9% | positive control |
-| `lens_only` | 363 | 11.0% | lens finds it, self-report does not |
+| `self_report_only` | 1183 | 35.4% | **J-lens misses it, the model has it** |
+| `neither` | 1160 | 34.7% | the model does not hold the concept at the probe |
+| `both` | 635 | 19.0% | positive control |
+| `lens_only` | 366 | 10.9% | lens finds it, self-report does not |
+
+Of the 1,183, **1,171** are also a miss by token rank (`target_strict`).
 
 Nothing is filtered on agreement. Keeping only `both` would retain exactly the
 items the J-lens already handles, leaving no headroom for a correction to show
@@ -32,13 +34,33 @@ present, so a J-lens miss there is a real failure rather than an absent target.
 `neither` is kept for the same reason it matters: without it there is no way to
 distinguish "the lens failed" from "there was nothing to find".
 
-## Layer-12 ranks on the 1,168-item target set
+## Two measures of "the J-lens surfaced it"
+
+The cell labels and the rank columns answer different questions, and both are
+recorded per item:
+
+- `lens_hit_judge` — does the top-10 readout *name* the concept? This is what
+  defines the cells. It counts a variant or synonym, so ` trail` counts for
+  *path* and ` warranty` for *guarantee*.
+- `lens_hit_rank` — is the concept's own token inside the top 10?
+
+They disagree on 168 of 3,344 items (5.0%): 151 where the judge sees a variant
+the token rank misses, and 17 where the concept token is in the list and the
+judge overlooked it, almost all at rank exactly 10. `target_strict` marks the
+1,171 items both measures call a miss.
+
+**The rank tables below are computed from `lens_hit_rank` data — the token's
+rank — while the set they are computed over is defined by the judge.** That is
+why J-lens shows a non-zero top-10 rate on a set defined as "the J-lens did not
+name it"; by the judge's own measure it is zero by construction.
+
+## Layer-12 ranks on the target set
 
 | lens | geometric mean | median | top-10 | top-100 |
 |---|---:|---:|---:|---:|
-| J-lens | 250 | 163 | 1.0% | 42.0% |
-| R-lens | 320 | 248 | 5.2% | 34.5% |
-| logit lens | 9,538 | 13,839 | 0.3% | 3.0% |
+| J-lens | 252 | 163 | 1.0% | 41.9% |
+| R-lens | 322 | 249 | 5.2% | 34.4% |
+| logit lens | 9,535 | 13,799 | 0.3% | 3.0% |
 
 The logit lens being two orders of magnitude worse is the sanity check that the
 readout means something. R-lens reaches the top 10 five times more often than
@@ -58,5 +80,9 @@ failures are recoverable — which is the comparison the correction has to beat.
 - **Batched self-report** introduces roughly 1.8% variation in whether a concept
   appears, measured against sequential generation. Reproducing the file exactly
   requires the same `read_batch` and the same concept ordering.
-- **42 concepts** produced no conforming fragment in three generation passes and
-  are absent.
+- **All 3,344 concepts** now have an item. An earlier build reported 42 as
+  having "produced no conforming fragment", which was wrong: the retry loop was
+  still converging (3344 → 624 → 139 → 42 concepts left per pass) and simply hit
+  a fixed three-pass limit. It now continues while passes keep recovering
+  concepts. Separately, three chunks had been lost whole to a `KeyError` when one
+  malformed entry in a reply discarded the other nine concepts with it.

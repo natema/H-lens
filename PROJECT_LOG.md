@@ -101,3 +101,14 @@ Ok enough for today.
 We fixed the previous problem: now the probe is always at the end of the sentence. 
 8h50. 7h10 to go before wrapping up. 
 We will refine the dataset and then test again our H-lens idea. 
+
+## 2026-09-01 12:00
+We are briefly resuming work. 
+The dataset generation finished and we plan to spend some time inspecting and curating it. 
+Today is Sept. 1st and the deadline is Sept. 4th so today afternoon we plan to consume most of the remaining 7h for the project so that we can wrap it up. 
+Ideally we will get a decent candidate dataset for benchmarking alternatives to the J-lens and make the failure of the current implementation of the H-lens idea more solid. 
+
+## 2026-09-01 12:21
+Lunch break. 9h10 spent. 
+The dataset looks promising. 
+Lots of things to check. 

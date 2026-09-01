@@ -331,15 +331,22 @@ def generate_items(
         ],
     )
     payload = json.loads(exchange["content"])
-    items = [
-        JSpaceItem(
-            concept=item["concept"].strip(),
-            probe_term=item["probe_term"].strip(),
-            sentence=item["sentence"].strip(),
-            rationale=item.get("rationale", "").strip(),
-        )
-        for item in payload["items"]
-    ]
+    # A single malformed entry must not discard the whole chunk: one reply
+    # missing a "sentence" key used to raise KeyError and lose all ten
+    # concepts in that call.
+    items = []
+    for item in payload.get("items", []):
+        try:
+            items.append(
+                JSpaceItem(
+                    concept=str(item["concept"]).strip(),
+                    probe_term=str(item["probe_term"]).strip(),
+                    sentence=str(item["sentence"]).strip(),
+                    rationale=str(item.get("rationale", "")).strip(),
+                )
+            )
+        except (KeyError, TypeError, AttributeError):
+            continue
     return items, exchange
 
 
