@@ -1,4 +1,17 @@
-"""Estimate coordinate-diagonal versus total downstream Hessian energy."""
+"""Estimate coordinate-diagonal versus total downstream Hessian energy.
+
+Historical diagnostic, retained for provenance. It informed the decision to
+estimate the full diagonal at all — coordinate-diagonal terms carry under 1% of
+the Hessian's Frobenius energy — but it constructs no operator and is not part
+of the reported pipeline. Nothing under ``src/`` or ``pilot/`` imports it; only
+its own test does.
+
+The randomized projections here are not the ones later removed from the lens.
+Estimating ``||H||_F`` without materialising a Hessian requires random probes,
+so randomization is intrinsic to this question. The lens itself is built in
+``evaluation.py`` by forward-mode autodiff, with no random component, no
+importance sampling and no ``w``-projection.
+"""
 
 from __future__ import annotations
 
