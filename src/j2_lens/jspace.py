@@ -603,21 +603,42 @@ def parse_concept_list(
     return words
 
 
+# Two worked examples do what four sentences of instruction could not: name the
+# implied thing rather than list its associates, prefer concrete nouns over
+# moods, and demonstrate the output format. Both demo concepts and all twenty
+# demo answer words are absent from the evaluation concept set, so nothing the
+# model is primed with can spuriously satisfy a real item. Measured on the 33
+# battery cases, whose targets come from the published J-lens and R-lens
+# examples rather than from this project: few-shot recovers 19, the earlier
+# taxonomy prompt 16, and a minimal question 13.
+#
+# The sentence comes last so that the probe is the final thing in context, with
+# nothing after it, which is the condition the lens itself reads in. Placing it
+# first left the model beginning its answer with the demo words as its most
+# recent context. The two orderings scored 19 and 18 on the battery, a
+# difference well inside noise, so this ordering rests on that structural
+# argument rather than on the measurement.
 SELF_REPORT_TEMPLATE = """\
-Read this text fragment. It breaks off mid-sentence, immediately after the word \
-"{term}".
+You will be shown a sentence that stops on a particular word. Say which \
+concepts you are thinking about as you reach that final word.
 
-{prefix}
+Two examples of the kind of answer wanted:
 
-Think about the whole fragment, not the word "{term}" on its own. What is the \
-situation about? Name the activity, event, place, domain, object or entity it \
-involves, including things that are strongly implied but never stated \
-anywhere in the text.
+  "...she twisted the circular metal tops until every jar was tightly sealed"
+  reading "sealed":
+  lid, jar, canning, preserve, airtight, screwtop, pickles, glass, twist, tight
 
-Give the {limit} concepts that come to mind. Do not simply list synonyms, parts \
-or properties of "{term}".
+  "...the smith heated the bar until it glowed and raised his hammer"
+  reading "hammer":
+  anvil, forge, blacksmith, smithy, horseshoe, bellows, sparks, hammering, \
+glowing, metalwork
 
-Reply with {limit} single lowercase words, one per line, nothing else."""
+Reply with {limit} single lowercase words, strongest first, one per line, \
+nothing else.
+
+Here is the sentence. It stops on the word "{term}":
+
+{prefix}"""
 
 
 def self_report_concepts(

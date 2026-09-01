@@ -170,3 +170,17 @@ While the experiments run (including the R-lens test), we are reading jspace.py 
 So far, we saw that the H-lens doesn't improve. To validate this, we created a dataset that might be useful. 
 The remaining 4 hourse will probably be spent checking the details of what we did and writing the results (for which we actually have extra hours). 
 The strong examples in the dataset are only around 800, so we will probably check them one by one. 
+
+## 2026-09-01 20:37
+12h50 spent. 
+We are still reviewing jspace.py and noticing that some prompts proposed by Claude are not fully satisfying. 
+
+## 2026-09-01 20:52
+13h10 spent. Testing a different prompt for Qwen3.5-4B. 
+
+## 2026-09-01 21:17
+13h35 spent. I got quite undecided on the best prompt to use for Qwen3.5-4B and have been testing different variants.
+
+## 2026-09-01 21:23
+Just launched a new prompt. 13h40 spent. 
+We stop here for today. Tomorrow we should be able to start writing our conclusions. 
