@@ -158,8 +158,8 @@ from a third-party aggregator, so it is approximate. Treat the console at
 **One fixed layer.** Adjudication uses the J-lens top-10 at **layer 12**, the
 layer an H-lens operator was fitted for, so the dataset's "J-lens misses this"
 label refers to the same layer the correction is evaluated at. Every other
-layer is still recorded — the readouts are free once the forward pass is done —
-so redesignating the layer later costs nothing. The concept variant is chosen by
+layer is computed by `lens_readout`, but only the primary one is written to the
+dataset, so redesignating the layer needs a fresh readout pass. The concept variant is chosen by
 its rank *at that layer*, not by its best rank somewhere else in the stack.
 
 **All four outcomes are kept.** The judge returns present-in-lens and

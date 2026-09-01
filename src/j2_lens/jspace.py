@@ -19,8 +19,10 @@ independently establishes the concept is there, so a lens miss is a real failure
 rather than an absent target.
 
 The layer is fixed rather than "best over all layers" so the label refers to the
-same place a correction is evaluated. All other layers are still recorded, since
-the readouts are free once the forward pass is done.
+same place a correction is evaluated. ``lens_readout`` computes every layer, but
+the dataset persists only the fixed layer, plus the J-lens best rank over layers
+and the layer achieving it as two summary scalars. Evaluating a different layer
+therefore needs a fresh readout pass.
 
 Causality is what makes this well posed. Attention is causal, so the residual at
 the probe position depends only on the tokens up to and including the probe.
@@ -796,9 +798,9 @@ def lens_readout(
     )[0]
 
     # Adjudication happens at one fixed layer, so the dataset label matches the
-    # layer the correction is evaluated at. Every other layer is still recorded,
-    # because the readouts are free once the forward pass is done and changing
-    # the designated layer later should not require recomputing anything.
+    # layer the correction is evaluated at. Every layer is returned here, but
+    # callers that persist a dataset keep only the primary one, so switching the
+    # designated layer does require a fresh pass over the corpus.
     methods: dict[str, Any] = {}
     primary: dict[str, Any] = {}
     key = str(primary_layer)
