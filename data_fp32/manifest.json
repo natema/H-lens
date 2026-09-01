@@ -1,0 +1,17 @@
+{
+  "created_at": "2026-09-01T14:42:32.614503+00:00",
+  "n_concepts": 3344,
+  "n_items": 3344,
+  "primary_layer": 12,
+  "top_k": 10,
+  "read_batch": 32,
+  "dtype": "bfloat16",
+  "judge_batch": 8,
+  "reproducibility": "Self-report generation is batched, so an item's output depends on which items share its batch. Rerunning with this read_batch and the concept ordering in items.jsonl reproduces the file exactly.",
+  "cells": {
+    "neither": 1160,
+    "self_report_only": 1169,
+    "lens_only": 375,
+    "both": 640
+  }
+}

@@ -136,3 +136,11 @@ Our dataset, filtered like this, should now provide a decent signal.
 ## 2026-09-01 16:00
 I inspected more carefully the prompt used by the grader and it's not good IMO, so I am re-grading them with a better prompt. 
 10h40 spent. 5h20 to go. 
+
+## 2026-09-01 16:11
+10h50 spent. Let's make a break. In 15m the float32-precision dataset will be done, and we can benchmark the H-lens on it. 
+We will then decide if testing another idea that came out while working on this project, or just spend the rest of the time in refining the dataset. 
+Refining the dataset should be the wiser option. 
+
+## 2026-09-01 16:20
+
