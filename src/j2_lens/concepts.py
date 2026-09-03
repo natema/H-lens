@@ -269,7 +269,7 @@ def main(argv: list[str] | None = None) -> None:
         flush=True,
     )
 
-    key = load_api_key(root.parent / ".env")
+    key = load_api_key(root / ".env")
     words = [word for word, _ in candidates]
     accepted, rejected = filter_to_concepts(
         key, words, ledger=args.ledger, batch_size=args.batch_size

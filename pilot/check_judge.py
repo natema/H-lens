@@ -32,7 +32,7 @@ LEDGER = HERE / "spend.json"
 
 
 def main() -> None:
-    key = load_api_key(HERE.parents[1] / ".env")
+    key = load_api_key(HERE.parent / ".env")
     fixtures = json.loads(FIXTURES.read_text())["fixtures"]
     tokenizer = AutoTokenizer.from_pretrained(
         MODEL_ID, revision=MODEL_REVISION, local_files_only=True

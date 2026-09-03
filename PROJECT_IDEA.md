@@ -206,7 +206,7 @@ Plan proposed by Claude:
 | Figures, reproducibility checks, and main write-up | 3.0 |
 | **Total counted project work** | **16.0** |
 
-The separate executive-summary allowance is not included. Work should normally be performed in 1–2 hour sessions.
+Work should normally be performed in 1–2 hour sessions.
 
 ## First counted session
 

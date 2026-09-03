@@ -347,7 +347,7 @@ def main(argv: list[str] | None = None) -> None:
     )
     args = parser.parse_args(argv)
 
-    key = load_api_key(root.parent / ".env")
+    key = load_api_key(root / ".env")
     concepts = [c["word"] for c in json.loads(args.concepts.read_text())["concepts"]]
     if args.limit:
         concepts = concepts[: args.limit]

@@ -1,8 +1,7 @@
 # Does a diagonal Hessian correction make the J-lens more faithful?
 
-*Draft for the MATS 12.0 application (Neel Nanda's stream). Executive summary
-first, main write-up after. Every number is traceable to a file under
-`j^2-lens/data/`, `results/` or `configs/`.*
+*Executive summary first, main body after. Every number is traceable to a
+file under `data/`, `results/` or `configs/` in this repository.*
 
 ---
 
@@ -52,13 +51,14 @@ a probe word with a target concept drawn from Qwen's own vocabulary. Two
 independent readings per item: does the lens's top-10 at the probe *name* the
 concept, and does the model itself name it when shown the same prefix and asked.
 Every item is kept under one of four cells; nothing is filtered on agreement.
-1,289 items are `self_report_only` — the model has the concept, the J-lens
-misses it — which is the set a better lens has to win on. A lens-blind quality
-grade marks 826 items `strong`.
+1,040 items are `self_report_only` — the model has the concept, the J-lens
+misses it even with its top-50 collapsed to ten distinct concepts — which is
+the set a better lens has to win on. A lens-blind quality grade marks 826 items
+`strong`, 319 of them in that cell.
 
-**Why this matters for the stream.** Neel's list asks directly: "what is J-Lens
-actually doing? How much better is it really than logit lens and why?" and
-warns "remember to compare to baselines." This project is a negative answer to
+**Why this matters.** The open questions about the J-lens are what it is
+actually doing, how much better it really is than the logit lens and why, and
+whether any proposed improvement beats its baselines. This project is a negative answer to
 one proposed improvement, a positive validation of a competing one, and a
 reusable instrument for asking the question about the next one. It also has a
 methodological result — the selection trap — that generalises to any evaluation
@@ -101,8 +101,8 @@ problem is attribution through RMSNorm and gated MLPs, which R-lens addresses;
 apparent gains come from rescaling or an intercept; the displacement is too large
 for a Taylor expansion.
 
-I chose it because it is a clean, falsifiable hypothesis about a method Neel's
-list singles out, it has an obvious control (destroy the coordinate structure),
+I chose it because it is a clean, falsifiable hypothesis about a method whose
+faithfulness is an open question, it has an obvious control (destroy the coordinate structure),
 and it forces the question "how would I know if a lens got better?" — which
 turned out to be the harder problem.
 
@@ -369,7 +369,7 @@ when a later batching constraint made no sense. I would have been unsurprised to
 find a major error there, and did. Lesson recorded in the log: "I trusted Codex
 too naively."
 
-**Claude (this session), everything after.** Wrote the pipeline, the dataset
+**Claude (Claude Code), everything after.** Wrote the pipeline, the dataset
 build, the analysis. My checking strategy was to read the code it wrote for the
 parts that determine a conclusion — `jspace.py`, `concepts.py`, the prompts —
 and to demand that every claimed number come from a stored file. Most of the
@@ -413,7 +413,7 @@ judge's reasons on items outside the fixtures and the ~120 I read by hand.
 
 | | |
 |---|---|
-| dataset, cells, grades, browse tables | `j^2-lens/data/` |
+| dataset, cells, grades, browse tables | `data/` |
 | the pre-collapse record (raw top-10 cells) | `data/dataset_raw_top10.jsonl` |
 | fitted operators (layers 6, 12) | `results/hessian_pile_l{6,12}_merged_qwen3.5-4b.pt` |
 | hand-built battery | `configs/battery_cases.json` |

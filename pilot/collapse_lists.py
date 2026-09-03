@@ -34,7 +34,7 @@ def main() -> None:
     args = parser.parse_args()
     methods = [m.strip() for m in args.methods.split(",") if m.strip()]
 
-    key = load_api_key(HERE.parent / ".env")
+    key = load_api_key(HERE / ".env")
     rows = read_jsonl(args.lists)
     done: dict[str, dict] = (
         {r["concept"]: r for r in read_jsonl(args.out)} if args.out.exists() else {}

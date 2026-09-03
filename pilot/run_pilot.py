@@ -66,7 +66,7 @@ def main() -> None:
     args = parser.parse_args()
     concepts = [c.strip() for c in args.concepts.split(",") if c.strip()]
 
-    key = load_api_key(Path(__file__).resolve().parents[2] / ".env")
+    key = load_api_key(Path(__file__).resolve().parents[1] / ".env")
     print(f"Generating {len(concepts)} items with {GENERATOR_MODEL} ...", flush=True)
     items, exchange = generate_items(key, concepts)
     totals = record_spend(

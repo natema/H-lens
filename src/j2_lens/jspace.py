@@ -203,14 +203,27 @@ class JSpaceItem:
 
 
 def load_api_key(env_path: Path) -> str:
+    """Return the Mistral API key from the environment or a ``.env`` file.
+
+    ``env_path`` is the repository's own ``.env``; a ``.env`` one directory
+    above it is also accepted, for a checkout nested inside a workspace that
+    keeps its secrets there.
+    """
     key = os.environ.get("MISTRAL_API_KEY")
     if key:
         return key
-    for line in env_path.read_text().splitlines():
-        name, _, value = line.partition("=")
-        if name.strip() == "MISTRAL_API_KEY":
-            return value.strip().strip("'\"")
-    raise RuntimeError(f"MISTRAL_API_KEY not in environment or {env_path}")
+    env_path = env_path.resolve()
+    candidates = [env_path, env_path.parent.parent / ".env"]
+    for candidate in candidates:
+        if not candidate.exists():
+            continue
+        for line in candidate.read_text().splitlines():
+            name, _, value = line.partition("=")
+            if name.strip() == "MISTRAL_API_KEY":
+                return value.strip().strip("'\"")
+    raise RuntimeError(
+        "MISTRAL_API_KEY not in environment or in " + ", ".join(map(str, candidates))
+    )
 
 
 def call_mistral(

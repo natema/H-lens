@@ -27,7 +27,7 @@ BATCH_SIZES = [1, 4, 8, 16]
 
 
 def main() -> None:
-    key = load_api_key(HERE.parents[1] / ".env")
+    key = load_api_key(HERE.parent / ".env")
     tokenizer = AutoTokenizer.from_pretrained(
         MODEL_ID, revision=MODEL_REVISION, local_files_only=True
     )

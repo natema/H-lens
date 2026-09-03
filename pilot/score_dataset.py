@@ -30,7 +30,7 @@ def main() -> None:
     parser.add_argument("--workers", type=int, default=4)
     args = parser.parse_args()
 
-    key = load_api_key(HERE.parent / ".env")
+    key = load_api_key(HERE / ".env")
     source = {
         r["concept"]: {"prefix": r["prefix"], "probe_term": r["probe_term"]}
         for r in read_jsonl(args.readouts)

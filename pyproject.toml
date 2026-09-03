@@ -5,7 +5,10 @@ build-backend = "hatchling.build"
 [project]
 name = "j2-lens"
 version = "0.1.0"
-description = "Reproducible baselines for the J-squared lens project"
+description = "H-lens: a diagonal Hessian correction to the Jacobian lens, and a dataset of J-lens successes and failures on Qwen3.5-4B"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "Emanuele Natale"}]
 requires-python = ">=3.11,<3.14"
 dependencies = [
   "huggingface-hub>=0.36",

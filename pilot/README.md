@@ -1,7 +1,11 @@
 # J-space pilot
 
-Generates candidate probe/concept items with an API model, then validates each
-one twice against Qwen3.5-4B and keeps only items where the two checks agree.
+Generates candidate probe/concept items with an API model, then reads each one
+twice against Qwen3.5-4B: the lens readout at the probe, and the model's own
+self-report on the same prefix. The two readings are recorded separately and
+nothing is filtered on their agreement. This directory holds the pilot that
+developed the procedure, the checks that validated its pieces, and the scripts
+that run it at scale; the resulting dataset is in `../data/`.
 
 ```bash
 uv run python pilot/run_pilot.py --concepts basketball,japan,chess
@@ -33,11 +37,12 @@ The two are recorded separately and never required to agree; see
 `../data/README.md` for the four cells and why nothing is filtered on
 agreement.
 
-The self-report question asks what the *situation* is about, not what the probe
-word evokes. Asking about the word alone produced dictionary associations that
-ignored the context entirely: for a prefix ending "tossing ... she lay awake"
-the model answered "consciousness, alertness, vigilance" while the J-lens had
-insomnia at rank 2.
+The self-report question shows the model the prefix and asks which concepts it
+is thinking about as it reaches the final word, with two worked examples
+(`SELF_REPORT_TEMPLATE` in `jspace.py`). An early version that asked about the
+probe word alone produced dictionary associations that ignored the context: for
+a prefix ending "tossing ... she lay awake" the model answered "consciousness,
+alertness, vigilance" while the J-lens had insomnia at rank 2.
 
 ### The judge
 
