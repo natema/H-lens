@@ -64,8 +64,8 @@ reusable instrument for asking the question about the next one. It also has a
 methodological result — the selection trap — that generalises to any evaluation
 of a lens on its predecessor's failures.
 
-**Cost.** ~14h40 of counted time (see `PROJECT_LOG.md`), ~28 H100 GPU-hours on
-Jean Zay for the operator fit, ~$45 of API calls (GLM-5.2 via Mistral) for
+**Cost.** ~15h of counted time (see `PROJECT_LOG.md`), ~28 H100 GPU-hours on
+Jean Zay for the operator fit, ~$61 of API calls (GLM-5.2 via Mistral) for
 generation, adjudication and grading.
 
 **Biggest limitations** (§7): one model, one primary layer, diagonal only (the
@@ -226,6 +226,24 @@ the shuffle is 1381 / 1242 (p = 0.007).
 That is the R-lens post's central claim, reproduced on 3,344 items built without
 reference to it. On the same instrument R-lens moves 161 items where J² moves 2.
 
+**Equalising the concept budget.** A lens's raw top-10 holds ~7.8 distinct
+concepts (` sushi`, ` Sushi`, `寿司` count three times) where the self-report
+holds 10, and the lenses differ (R-lens 8.2). On the 826 strong items I
+collapsed each lens's top-50 to its first 10 distinct concepts (GLM-5.2 merges
+spelling-level variants; a mechanical pass splits back out any different word
+it over-merged, e.g. *sneakers* from *shoe*) and re-judged. Failures fall for
+every lens — J-lens 399 → 307 at layer 12, 547 → 502 at layer 6 — so the raw
+tables understate all of them. The orderings do not move:
+
+| collapsed, failures vs J-lens | J² real | J² shuffled | R-lens |
+|---|---:|---:|---:|
+| layer 12 (J-lens 307) | +8 | +3 | **+38** |
+| layer 6 (J-lens 502) | +4 | +5 | **−49** |
+
+R-lens's layer-6 advantage holds at −49 (raw −48) and its layer-12 deficit
+*widens* to +38 (raw +4): it had less redundancy to begin with, so J-lens gained
+more from the fair budget. J² is +4/+8 and never beats its shuffle.
+
 **Robustness to the instrument.** Regenerating the self-reports with a
 materially different prompt moved the naming rate from 54.1% to 60.2% and every
 cell count — and **no lens ranking**. J² stayed at +0, R-lens went from −141 to
@@ -296,13 +314,16 @@ a *different* correction would hit the same ones.
   consistent with curvature mattering *off-diagonal* — a pre-registered
   alternative, not a refutation of it. Using all 2,947 pairs for D would have
   cost ~557 GPU-hours, beyond the allocation.
-- **The lens's budget is smaller than the self-report's.** A J-lens top-10 holds
-  7.8 distinct concepts on average (` sushi`, ` Sushi`, `寿司`), the R-lens's
-  8.2, the self-report's 10. This is a uniform tax within a lens but an *unequal*
-  one across lenses — worth ~0.4 concept slots in R-lens's favour. I identified
-  this on the last day, built and smoke-tested an LLM collapse step (top-50 →
-  first 10 distinct concepts), and did not complete the re-judging before the
-  deadline. It cannot overturn a −161 margin; it could shave it.
+- **The concept-budget correction is checked only on strong items, and its
+  collapser is imperfect.** The collapse (§4) was run on the 826 strong items,
+  not all 3,344. Its depth of 50 tokens is marginal: the 10th distinct concept
+  sits at median position 30, p90 46, and 6.6% (layer 12) / 16.4% (layer 6) of
+  lists still yield fewer than 10 concepts. GLM-5.2 over-merged different words
+  in 71% of lists before a mechanical un-merge corrected it; that un-merge
+  over-splits in known ways (*wear*/*wore*, Latin-script translations become
+  separate concepts) and leaves 34/83 duplicate-name merges per layer. The
+  orderings survived all of this, but the corrected absolute counts carry these
+  caveats.
 - **The judge is a model, and the same model wrote the items.** GLM-5.2
   generates fragments and adjudicates readouts. The judge compares two
   Qwen-derived lists, not GLM's own text, which limits the exposure, but a shared
