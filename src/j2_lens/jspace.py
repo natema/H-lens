@@ -322,6 +322,12 @@ PRESENT examples for target "japan": "Japan", "Japon", "Japanese", "\u65e5\u672c
 PRESENT examples for target "wedding": "Wedding", "weddings", "nuptials", \
 "matrimony", "marriage".
 
+Also PRESENT: regional spellings (aluminum / aluminium, colour / color); \
+singular and plural (sheet / sheets); and a gerund or verbal noun that denotes \
+the same thing as the target noun (advertising for advertisement, waiting for \
+wait). Apply exactly the same tolerance to list A and list B — a variant that \
+would count in one list counts in the other.
+
 ABSENT means no entry names it. Three specific traps, all ABSENT:
 
 1. Association. Entries merely caused by, part of, or found near the concept. \
