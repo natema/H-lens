@@ -30,6 +30,16 @@ def load_cells(path: Path) -> dict[str, dict[str, str]]:
 
 
 def main() -> None:
+    import argparse
+
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--variant", default="fixed",
+        help="which collapsed judging to compare: 'fixed' (mechanically un-merged, "
+        "the default) or '' for the original over-merged run",
+    )
+    args = parser.parse_args()
+    tag = f"_{args.variant}" if args.variant else ""
     strong = {
         json.loads(line)["concept"]
         for line in (HERE / "quality.jsonl").read_text().splitlines()
@@ -44,7 +54,7 @@ def main() -> None:
         raw = load_cells(HERE / f"method_cells{'' if layer == 12 else '_l6'}.jsonl")
         if layer == 12:
             raw["j_lens"] = dataset
-        col = load_cells(HERE / f"method_cells_collapsed_strong_l{layer}.jsonl")
+        col = load_cells(HERE / f"method_cells_collapsed{tag}_strong_l{layer}.jsonl")
         if not col:
             print(f"layer {layer}: no collapsed cells yet")
             continue
