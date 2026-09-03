@@ -98,14 +98,17 @@ def unmerge_nonvariants(
     ``raw_tokens``, so the "first k distinct concepts" semantics survive the
     correction. Purely mechanical, so it costs no API call and is auditable.
     """
+    # The collapser sometimes cites a token in normalized form ("onstage" for
+    # " onstage"), so ownership is keyed by normalized surface; an exact-string
+    # lookup silently dropped 2.5% (layer 12) and 7.1% (layer 6) of concepts.
     owner: dict[str, str] = {}
     for concept in concepts:
         for tok in concept["tokens"]:
-            owner.setdefault(tok, concept["name"])
+            owner.setdefault(_normal(tok), concept["name"])
     rebuilt: list[dict[str, Any]] = []
     index: dict[str, int] = {}
     for tok in raw_tokens:
-        name = owner.get(tok)
+        name = owner.get(_normal(tok))
         if name is None:
             continue
         if not _is_variant(tok, name):
