@@ -14,6 +14,6 @@ assembled without re-deriving anything.
 | `06-provenance.md` | compute, cost, artifacts, reproducibility |
 
 The rule applied throughout: every number here is measured and traceable to a
-file in `results/`, `data/`, or `data_fp32/`. Where a claim was made during the
+file in `results/`, `data/`, or `data/`. Where a claim was made during the
 work and later found wrong, the correction is recorded rather than the claim
 quietly replaced — those reversals are among the more useful content.

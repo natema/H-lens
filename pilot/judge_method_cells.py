@@ -36,7 +36,7 @@ HERE = Path(__file__).resolve().parents[1]
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    d = HERE / "data_fp32"
+    d = HERE / "data"
     parser.add_argument("--lists", type=Path, default=d / "hlens_lists.jsonl")
     parser.add_argument("--dataset", type=Path, default=d / "dataset.jsonl")
     parser.add_argument("--out", type=Path, default=d / "method_cells.jsonl")

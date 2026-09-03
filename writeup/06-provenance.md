@@ -6,11 +6,10 @@
 |---|---|
 | concept list, 3,344 | `configs/concepts.json` |
 | hand-built 33-case battery | `configs/battery_cases.json` |
-| J-space dataset, bfloat16 draft | `data/` |
-| J-space dataset, float32 | `data_fp32/` |
+| J-space dataset | `data/` |
 | item quality grades | `data/quality.jsonl` |
-| all-lens evaluation | `data_fp32/hlens.jsonl` |
-| results narrative | `data_fp32/RESULTS.md` |
+| all-lens evaluation | `data/hlens.jsonl` |
+| results narrative | `data/RESULTS.md` |
 | fitted layer-12 operator | `results/hessian_pile_l12_merged_qwen3.5-4b.pt` |
 | API cost ledger | `pilot/spend.json` |
 

@@ -37,14 +37,14 @@ HERE = Path(__file__).resolve().parents[1]
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
-        "--dataset", type=Path, default=HERE / "data_fp32/dataset.jsonl"
+        "--dataset", type=Path, default=HERE / "data/dataset.jsonl"
     )
     parser.add_argument(
         "--artifact",
         type=Path,
         default=HERE / "results/hessian_pile_l12_merged_qwen3.5-4b.pt",
     )
-    parser.add_argument("--out", type=Path, default=HERE / "data_fp32/hlens.jsonl")
+    parser.add_argument("--out", type=Path, default=HERE / "data/hlens.jsonl")
     parser.add_argument("--layer", type=int, default=12)
     parser.add_argument("--top-k", type=int, default=10)
     parser.add_argument("--device", default="cuda")

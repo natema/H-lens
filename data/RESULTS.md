@@ -1,5 +1,10 @@
 # H-lens versus J-lens on the J-space dataset
 
+> The tables here were computed with the earlier self-report prompt. The
+> current numbers, and the before/after comparison showing every ranking is
+> invariant to the prompt change, are in `README.md`. The narrative and the
+> selection-trap demonstration are unchanged in substance.
+
 Layer 12, 3,344 items, operator fitted on pile-10k with 128 Hessian pairs and
 2,947 moment pairs and no knowledge of these items.
 

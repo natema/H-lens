@@ -90,4 +90,4 @@ count but **no ranking**. J² vs J-lens failures at layer 12, all items: exactly
 +0; shuffled control −18. R-lens at layer 6: −161 (was −141). The comparisons
 are invariant to a six-point shift in the instrument, which is what one wants
 from a measurement of the lenses rather than of the prompt. Numbers in
-`data_v2/README.md`.
+`data/README.md`.
