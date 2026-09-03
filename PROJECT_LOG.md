@@ -190,3 +190,20 @@ We stop here for today. Tomorrow we should be able to start writing our conclusi
 
 ## 2026-09-03 18:20
 Deadline approaching. We will now check a bit more the dataset we are creating, and then start working on wrapping the project up. 
+
+## 2026-09-03 18:49
+We manually inspected a lot of datapoints. 
+One problem is that the j-lens tends to retrieve also e.g. typos and different ways to rewrite a word, while our prompt for Qwen3.5 exclude those, so a better comparison whould pull more entries from the j-lens and filter the first 10 concepts. 
+That's an important limitaiton. 
+14h20 spent. Pausing. 
+
+## 2026-09-03 19:42
+Resuming work. 
+
+## 2026-09-03 19:59
+We are leveraging again GLM5.2 to extract a list of concepts from the j-lens that is more comparable to those declared by Qwen3.5.
+14h40 spent. 
+We are starting to write the report in parallel. 
+
+## 2026-09-03 20:04
+We also improved the JUDGE_SYSTEM prompt to avoid errors we found in the lens_only cases. 
