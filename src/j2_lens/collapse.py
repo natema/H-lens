@@ -44,9 +44,13 @@ lowercase English word. Later tokens of the same concept are merged into it.
 Stop that list after its first {k} distinct concepts, then move to the next list.
 
 Rules:
-- Merge only genuine variants of one word. "sushi", " Sushi", "寿司" are one
-  concept. "volcan", " volcano", " volcanic" are one concept. "hammer" and
-  "anvil" are two: related, but different things.
+- Merge ONLY spelling-level variants of ONE word: casing, a leading space, a
+  plural or inflection, a fragment, a translation into another language or
+  script, a typo. "sushi", " Sushi", "寿司" are one concept.
+- Never merge different words, however related. Hyponyms, brands, materials,
+  parts and associates are all separate concepts. " shoes", " sneakers",
+  " sandals", " footwear", " Adidas" and " worn" are SIX concepts, not one
+  concept "shoe". "hammer" and "anvil" are two. If in doubt, do not merge.
 - A fragment that could complete to several unrelated words, or a token that is
   not a word at all (punctuation, code, a suffix like "ing"), is dropped rather
   than counted.
@@ -56,6 +60,63 @@ Rules:
 Answer with JSON only, exactly this form, one entry per input list id:
 {"lists": [{"id": <int>, "concepts": [{"name": <str>, "tokens": [<str>, ...]}]}]}
 """
+
+
+def _normal(token: str) -> str:
+    return token.strip().lower().lstrip("_-/(")
+
+
+def _is_variant(surface: str, name: str) -> bool:
+    """Is ``surface`` plausibly a spelling-level variant of ``name``?
+
+    Non-Latin text is accepted (a translation cannot be checked lexically),
+    as are very short fragments. A Latin-script word must share most of its
+    letters with the name: this passes shoes/shoe, volcanic/volcano,
+    matrimoniale/matrimony and aluminum/aluminium, and rejects
+    sneakers/shoe, Adidas/shoe, worn/shoe.
+    """
+    s, n = _normal(surface), name.strip().lower()
+    if not s or s == n:
+        return True
+    if not any(c.isascii() and c.isalpha() for c in s):
+        return True
+    if len(s) < 4:
+        return True
+    from difflib import SequenceMatcher
+
+    if s.startswith(n[:4]) or n.startswith(s[:4]):
+        return True
+    return SequenceMatcher(None, s, n).ratio() >= 0.75
+
+
+def unmerge_nonvariants(
+    raw_tokens: list[str], concepts: list[dict[str, Any]], k: int
+) -> list[dict[str, Any]]:
+    """Split back out tokens the collapser merged that are not variants.
+
+    Rebuilds the concept sequence in order of first appearance in
+    ``raw_tokens``, so the "first k distinct concepts" semantics survive the
+    correction. Purely mechanical, so it costs no API call and is auditable.
+    """
+    owner: dict[str, str] = {}
+    for concept in concepts:
+        for tok in concept["tokens"]:
+            owner.setdefault(tok, concept["name"])
+    rebuilt: list[dict[str, Any]] = []
+    index: dict[str, int] = {}
+    for tok in raw_tokens:
+        name = owner.get(tok)
+        if name is None:
+            continue
+        if not _is_variant(tok, name):
+            name = _normal(tok)
+        if name not in index:
+            if len(rebuilt) >= k:
+                continue
+            index[name] = len(rebuilt)
+            rebuilt.append({"name": name, "tokens": []})
+        rebuilt[index[name]]["tokens"].append(tok)
+    return rebuilt
 
 
 def collapse_batch(
@@ -124,6 +185,7 @@ def collapse_batch(
             verified.append({"name": name, "tokens": cited})
             if len(verified) >= k:
                 break
+        verified = unmerge_nonvariants(tokens, verified, k)
         if tokens and not verified:
             missing.append(index)
         results.append(verified)
