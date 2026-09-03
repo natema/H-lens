@@ -7,11 +7,19 @@
   "read_batch": 32,
   "dtype": "bfloat16",
   "judge_batch": 8,
-  "reproducibility": "Self-report generation is batched, so an item's output depends on which items share its batch. Rerunning with this read_batch and the concept ordering in items.jsonl reproduces the file exactly.",
+  "reproducibility": "Self-report generation is batched, so an item's output depends on which items share its batch. Rerunning with this read_batch and the concept ordering in items.jsonl reproduces the file exactly. The collapse is an LLM call at temperature 0 and is not bit-reproducible; collapsed_jlens_l12.jsonl is the artifact of record for it.",
   "cells": {
+    "self_report_only": 1040,
+    "both": 974,
+    "lens_only": 347,
+    "neither": 983
+  },
+  "lens_budget": "J-lens top-50 collapsed to its first 10 distinct concepts (GLM-5.2 merge of spelling-level variants, then mechanical un-merge of non-variants); see collapse.py",
+  "cells_raw_top10": {
     "neither": 1053,
     "both": 725,
     "self_report_only": 1289,
     "lens_only": 277
-  }
+  },
+  "promoted_at": "2026-09-03"
 }

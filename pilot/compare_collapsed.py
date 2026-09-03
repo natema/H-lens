@@ -47,7 +47,9 @@ def main() -> None:
     }
     dataset = {
         json.loads(line)["concept"]: json.loads(line)["cell"]
-        for line in (HERE / "dataset.jsonl").read_text().splitlines()
+        # dataset.jsonl now carries the collapsed J-lens cells; the raw
+        # top-10 cells this compares against are the pre-promotion record.
+        for line in (HERE / "dataset_raw_top10.jsonl").read_text().splitlines()
         if line.strip()
     }
     for layer in (12, 6):

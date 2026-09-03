@@ -6,14 +6,16 @@ an unequal budget. This takes the J-lens top-50 collapsed to its first 10
 distinct concepts, judged with the same procedure, and rewrites each item's
 cell from it.
 
-Three outputs, none of which overwrite the record:
+Reads the pre-collapse record data/dataset_raw_top10.jsonl and writes:
 
   1. a before/after cell table, overall and by quality grade
-  2. an over-merging audit of the new collapse (the reason it was re-run)
-  3. data/dataset_collapsed.jsonl — the dataset with collapsed cells, the
-     collapsed J-lens concepts, and the raw top-10 kept alongside for audit
+  2. an over-merging audit of the collapse
+  3. data/dataset.jsonl — the record: collapsed cells, the collapsed J-lens
+     concepts and their merges, with the raw top-10 tokens, raw cell and raw
+     judge verdict kept alongside on every row for audit
 
-Promote (3) to dataset.jsonl only after inspection.
+Promoted 2026-09-03 after inspection; dataset_raw_top10.jsonl is kept so the
+promotion is reproducible and the raw cells stay one `jq` away.
 """
 
 from __future__ import annotations
@@ -32,7 +34,7 @@ def jl(path: Path) -> list[dict]:
 
 
 def main() -> None:
-    dataset = {r["concept"]: r for r in jl(HERE / "dataset.jsonl")}
+    dataset = {r["concept"]: r for r in jl(HERE / "dataset_raw_top10.jsonl")}
     quality = {r["concept"]: r["quality"] for r in jl(HERE / "quality.jsonl")}
     collapsed = {r["concept"]: r for r in jl(HERE / "collapsed_jlens_l12.jsonl")}
     verdicts = {
@@ -80,7 +82,7 @@ def main() -> None:
           f"{short / n:.1%}\n")
 
     # 3. the dataset with collapsed cells, alongside the raw for audit
-    out = HERE / "dataset_collapsed.jsonl"
+    out = HERE / "dataset.jsonl"
     with out.open("w") as handle:
         for c in keep:
             row = dict(dataset[c])
@@ -95,7 +97,7 @@ def main() -> None:
             row["cell"] = v["cell"]
             row["lens_budget"] = "top-50 collapsed to first 10 distinct concepts"
             handle.write(json.dumps(row, ensure_ascii=False) + "\n")
-    print(f"wrote {out} ({len(keep)} rows); dataset.jsonl untouched")
+    print(f"wrote {out} ({len(keep)} rows); raw record in dataset_raw_top10.jsonl")
 
 
 if __name__ == "__main__":

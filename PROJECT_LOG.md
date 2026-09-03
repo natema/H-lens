@@ -207,3 +207,16 @@ We are starting to write the report in parallel.
 
 ## 2026-09-03 20:04
 We also improved the JUDGE_SYSTEM prompt to avoid errors we found in the lens_only cases. 
+
+## 2026-09-03 20:33
+15h10 spent. 
+Filling the online form. 
+
+## 2026-09-03 21:12
+15h50 spent. 
+Wow we are already at the project intended limit, so we only have 2h left for the writeup!
+
+## 2026-09-03 21:24
+16h02. The end. 
+The work on the dataset is still not complete. 
+But now it's time to write. 

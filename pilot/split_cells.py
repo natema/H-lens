@@ -22,7 +22,7 @@ ORDER = {"strong": 0, "medium": 1, "weak": 2, None: 3}
 
 HEADER = (
     "| quality | concept | probe | prefix | J | R "
-    "| self-report | lens top-10 | why (grade) |"
+    "| self-report | J-lens concepts (top-50 → 10) | why (grade) |"
 )
 RULE = "|---|---|---|---|---:|---:|---|---|---|"
 
@@ -70,7 +70,10 @@ def main() -> None:
             f"# `{cell}` — {len(sub)} items",
             "",
             f"{counts}. Ranks are the concept token's rank at layer 12, lower is "
-            "better. Both lists are shown in full.",
+            "better. The J-lens column is its top-50 collapsed to the first 10 "
+            "distinct concepts, which is what the judge saw; the raw top-10 "
+            "tokens are in `lens_top_k_raw` in the JSONL. Both lists are shown "
+            "in full.",
             "",
             HEADER,
             RULE,
@@ -83,8 +86,8 @@ def main() -> None:
         "# Browse the dataset",
         "",
         "One file per cell. `self_report_only` is the target set: the model names",
-        "the concept and the J-lens does not. Within each file, `strong` items come",
-        "first.",
+        "the concept and the J-lens does not, its top-50 collapsed to 10 distinct",
+        "concepts. Within each file, `strong` items come first.",
         "",
         "| cell | items | file |",
         "|---|---:|---|",

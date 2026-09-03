@@ -121339,14 +121339,54 @@
       "completion_tokens": 449,
       "cost_usd": 0.0033921199999999998,
       "priced": true
+    },
+    {
+      "at": "2026-09-03T19:11:58.588022+00:00",
+      "model": "glm-5-2",
+      "note": "collapse prompt-only audit",
+      "prompt_tokens": 2499,
+      "cached_tokens": 448,
+      "completion_tokens": 2634,
+      "cost_usd": 0.014523719999999999,
+      "priced": true
+    },
+    {
+      "at": "2026-09-03T19:12:06.032301+00:00",
+      "model": "glm-5-2",
+      "note": "collapse prompt-only audit",
+      "prompt_tokens": 2475,
+      "cached_tokens": 448,
+      "completion_tokens": 2645,
+      "cost_usd": 0.014538520000000001,
+      "priced": true
+    },
+    {
+      "at": "2026-09-03T19:12:12.207063+00:00",
+      "model": "glm-5-2",
+      "note": "collapse prompt-only audit",
+      "prompt_tokens": 2491,
+      "cached_tokens": 448,
+      "completion_tokens": 2307,
+      "cost_usd": 0.01307372,
+      "priced": true
+    },
+    {
+      "at": "2026-09-03T19:12:18.976533+00:00",
+      "model": "glm-5-2",
+      "note": "collapse prompt-only audit",
+      "prompt_tokens": 2492,
+      "cached_tokens": 448,
+      "completion_tokens": 2441,
+      "cost_usd": 0.013664720000000002,
+      "priced": true
     }
   ],
   "totals": {
-    "n_calls": 12134,
-    "prompt_tokens": 28957160,
-    "completion_tokens": 7728112,
-    "cached_tokens": 7282044,
-    "cost_usd": 65.356457,
+    "n_calls": 12138,
+    "prompt_tokens": 28967117,
+    "completion_tokens": 7738139,
+    "cached_tokens": 7283836,
+    "cost_usd": 65.412258,
     "unpriced_models": [],
     "budget_eur": null,
     "note": "Token counts are exact, returned by the API per call. The Mistral API exposes no billing endpoint, so cost is tokens times the rates documented at docs.mistral.ai/models/<id>: mistral-large 0.5 in / 1.5 out, zai-glm-5-2 1.4 in / 0.14 cached in / 4.4 out, USD per million tokens. Cached input is billed separately at its lower rate. Any model listed in unpriced_models contributes nothing to cost_usd and needs a rate added. console.mistral.ai remains authoritative. No USD-to-EUR conversion is applied."

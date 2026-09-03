@@ -1,8 +1,10 @@
 # H-lens versus J-lens on the J-space dataset
 
-> The tables here were computed with the earlier self-report prompt. The
-> current numbers, and the before/after comparison showing every ranking is
-> invariant to the prompt change, are in `README.md`. The narrative and the
+> The tables here were computed with the earlier self-report prompt and with
+> every method's *raw* top-10 list. Since 2026-09-03 the record's cells are
+> defined on the J-lens top-50 collapsed to 10 distinct concepts; the current
+> counts, the raw-versus-collapsed comparison, and the prompt-change comparison
+> showing every ranking invariant are in `README.md`. The narrative and the
 > selection-trap demonstration are unchanged in substance.
 
 Layer 12, 3,344 items, operator fitted on pile-10k with 128 Hessian pairs and

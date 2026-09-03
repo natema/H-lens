@@ -65,16 +65,17 @@ methodological result — the selection trap — that generalises to any evaluat
 of a lens on its predecessor's failures.
 
 **Cost.** ~15h of counted time (see `PROJECT_LOG.md`), ~28 H100 GPU-hours on
-Jean Zay for the operator fit, ~$61 of API calls (GLM-5.2 via Mistral) for
-generation, adjudication and grading.
+Jean Zay for the operator fit, ~$65 of API calls (GLM-5.2 via Mistral) for
+generation, adjudication, grading and the concept collapse.
 
 **Biggest limitations** (§7): one model, one primary layer, diagonal only (the
 diagonal carries <1% of Hessian Frobenius energy, so this is consistent with
-curvature mattering off-diagonal); the judge is a model; and a lens's top-10
-holds only ~7.8 distinct concepts against the self-report's 10. I corrected that
-budget asymmetry on the strong items by collapsing each lens's top-50 to its
-first 10 distinct concepts: every lens gains substantially and no conclusion
-changes (§4), though the collapser itself has residual limitations (§7).
+curvature mattering off-diagonal); the judge is a model; and a lens's raw
+top-10 holds only ~7.8 distinct concepts against the self-report's 10. The
+dataset's cells are therefore defined on the J-lens top-50 collapsed to its
+first 10 distinct concepts, on all 3,344 items; a strong-only check of the same
+collapse applied to every lens changes no conclusion (§4). The collapser itself
+has residual limitations (§7).
 
 ---
 
@@ -173,15 +174,21 @@ full-sentence readouts agree to 3.9×10⁻⁶ relative in float32.
   thinking about at the final word, with two worked examples. Both demo concepts
   and all 20 demo answer words are absent from the concept set.
 
-**Four cells, nothing filtered on agreement** (current counts; strong-only in
-parentheses):
+**Four cells, nothing filtered on agreement.** The J-lens side is its top-50
+collapsed to the first 10 distinct concepts, so both lists carry 10 concepts
+(strong-only in parentheses; the cell each item had under the raw top-10 is
+kept on the row):
 
-| cell | n | meaning |
-|---|---:|---|
-| `self_report_only` | 1289 (399) | model has it, J-lens misses it — **the target** |
-| `both` | 725 (167) | positive control |
-| `lens_only` | 277 (58) | lens finds it, self-report does not |
-| `neither` | 1053 (202) | model does not hold the concept at the probe |
+| cell | n, collapsed J-lens | n, raw top-10 | meaning |
+|---|---:|---:|---|
+| `self_report_only` | 1040 (319) | 1289 (399) | model has it, J-lens misses it — **the target** |
+| `both` | 974 (247) | 725 (167) | positive control |
+| `lens_only` | 347 (74) | 277 (58) | lens finds it, self-report does not |
+| `neither` | 983 (186) | 1053 (202) | model does not hold the concept at the probe |
+
+The fair budget moves 14% of items, almost all out of the failure cell: on the
+raw list the J-lens had spent slots on `狱`, `禁锢`, `獄` and ` imprison` for one
+concept. Of the 1,040 target items, 1,026 are also misses by token rank.
 
 Keeping only agreement would retain exactly the items the J-lens already
 handles, leaving no headroom — selection on the outcome. `neither` is what
@@ -200,7 +207,9 @@ of a word already present. Medium items are hardest (162), consistent with
 ## 4. Results
 
 Failures = `self_report_only` count; lower is better. Deltas are relative to
-J-lens on the same items.
+J-lens on the same items. Every method here is judged on its **raw top-10**, the
+same budget for each lens, so the deltas are fair between lenses; the collapsed
+budget is checked separately below.
 
 | | J² real | J² shuffled | R-lens |
 |---|---:|---:|---:|
@@ -230,12 +239,16 @@ reference to it. On the same instrument R-lens moves 161 items where J² moves 2
 
 **Equalising the concept budget.** A lens's raw top-10 holds ~7.8 distinct
 concepts (` sushi`, ` Sushi`, `寿司` count three times) where the self-report
-holds 10, and the lenses differ (R-lens 8.2). On the 826 strong items I
-collapsed each lens's top-50 to its first 10 distinct concepts (GLM-5.2 merges
-spelling-level variants; a mechanical pass splits back out any different word
-it over-merged, e.g. *sneakers* from *shoe*) and re-judged. Failures fall for
-every lens — J-lens 399 → 307 at layer 12, 547 → 502 at layer 6 — so the raw
-tables understate all of them. The orderings do not move:
+holds 10, and the lenses differ (R-lens 8.2). The dataset is about the J-lens,
+so its cells are defined on the J-lens top-50 collapsed to its first 10 distinct
+concepts on all 3,344 items (GLM-5.2 merges spelling-level variants; a mechanical
+pass splits back out any different word it over-merged, e.g. *sneakers* from
+*shoe*). That is the table in §3: J-lens failures 1289 → 1040 overall, 399 → 319
+on strong items. To check that the fair budget does not reorder the lenses, I
+also collapsed every method's list on the 826 strong items with an earlier
+version of the collapser prompt plus the same mechanical patch. Failures fall
+for every lens — J-lens 399 → 307 at layer 12, 547 → 502 at layer 6 — and the
+orderings do not move:
 
 | collapsed, failures vs J-lens | J² real | J² shuffled | R-lens |
 |---|---:|---:|---:|
@@ -316,16 +329,20 @@ a *different* correction would hit the same ones.
   consistent with curvature mattering *off-diagonal* — a pre-registered
   alternative, not a refutation of it. Using all 2,947 pairs for D would have
   cost ~557 GPU-hours, beyond the allocation.
-- **The concept-budget correction is checked only on strong items, and its
-  collapser is imperfect.** The collapse (§4) was run on the 826 strong items,
-  not all 3,344. Its depth of 50 tokens is marginal: the 10th distinct concept
-  sits at median position 30, p90 46, and 6.6% (layer 12) / 16.4% (layer 6) of
-  lists still yield fewer than 10 concepts. GLM-5.2 over-merged different words
-  in 71% of lists before a mechanical un-merge corrected it; that un-merge
-  over-splits in known ways (*wear*/*wore*, Latin-script translations become
-  separate concepts) and leaves 34/83 duplicate-name merges per layer. The
-  orderings survived all of this, but the corrected absolute counts carry these
-  caveats.
+- **The collapser that defines the cells is imperfect, and only the J-lens
+  gets the fair budget on all items.** The J-lens collapse covers all 3,344
+  items; the other lenses were collapsed only on the 826 strong items, with an
+  earlier prompt. The first prompt over-merged different words in 71% of lists
+  (*sneakers*, *sandals*, *Adidas* all into *shoe*). The tightened prompt still
+  does so in up to 58% of a 48-list sample with the mechanical un-merge switched
+  off — an upper bound, since the variant test itself over-splits pairs like
+  *rated*/*rating*; with the un-merge on, the surviving large merges I inspected
+  (*color* absorbing 43 casings, possessives and translations) are legitimate,
+  and genuine misses remain (*semester* and *annual* folded into *season*). A
+  depth of 50 tokens leaves 2.9% of J-lens lists with fewer than 10 concepts.
+  Every one of these errors removes a concept the J-lens *did* name, so the bias
+  runs one way: the collapsed cells still under-credit the J-lens, and the
+  cross-lens orderings survived every version of the collapser.
 - **The judge is a model, and the same model wrote the items.** GLM-5.2
   generates fragments and adjudicates readouts. The judge compares two
   Qwen-derived lists, not GLM's own text, which limits the exposure, but a shared
@@ -338,9 +355,9 @@ a *different* correction would hit the same ones.
   layer 12, yet putting the concept in its top-10 for 5.1% of the failure cell
   against J-lens's 0.2% (J² 1.7%) — is invisible in a win/loss column.
 
-Could I have addressed them? The collapse step and a multi-permutation shuffle
-control (the current control is one deterministic roll) are each an hour of
-work I ran out of time for. The off-diagonal question is a different project.
+Could I have addressed them? Collapsing the other lenses on all items and a
+multi-permutation shuffle control (the current control is one deterministic
+roll) are each an hour of work I ran out of time for. The off-diagonal question is a different project.
 
 ## 8. How I used LLMs, and how I checked them
 
@@ -366,13 +383,16 @@ then rank errors, before being traced to bfloat16); those reversals are in
 counts, less surprised by one in a prompt's wording having a residual bias.
 
 **GLM-5.2 (via Mistral API), as instrument.** Generator, concept filter, judge,
-quality grader, and the unfinished collapser. Every prompt is a module constant;
+quality grader, and the collapser. Every prompt is a module constant;
 every paid call is in a ledger with exact token counts. Checks: the judge is
 scored against seven recorded fixtures with hand-assigned answers; matches must
 be quoted verbatim; fragment evidence comes from the tokenizer, not the model;
 batching effects were measured (flat, ~4% on borderline items). The grader's
-validity is supported by predicting lens ranks it never saw. Where I could not
-verify — the collapse step's merges — I did not use the output.
+validity is supported by predicting lens ranks it never saw. The collapser's
+merges are the least checked: every concept must cite the input tokens it
+absorbed, fabricated citations are dropped, non-variants are split back out
+mechanically, and I audited a 48-list sample by hand (§7). Its output defines
+the current cells; the raw-top-10 cells stay on every row.
 
 What I did not check: individual self-report answers beyond spot checks; the
 judge's reasons on items outside the fixtures and the ~120 I read by hand.
@@ -386,7 +406,7 @@ judge's reasons on items outside the fixtures and the ~120 I read by hand.
 | R-lens layer reversal | high | same direction on the 33-case battery, on 3,344 items, and after budget collapse |
 | cell counts, absolute | moderate | judge and mechanical top-10 agree 95%; judge nondeterminism moved 25 labels between runs |
 | self-report prompt | moderate–low | three rewrites in one day; 32% of quality grades changed when the grader was told the probe. A residual bias in wording would not surprise me |
-| collapser (concept budget) | low | over-merged 71% of lists on first run and needed a mechanical patch; the corrected version is one day old |
+| collapser (concept budget) | low–moderate | over-merged 71% of lists on first run; the tightened prompt still merges different words in up to 58% of sampled lists before the mechanical un-merge, which catches the lexically obvious cases. The error runs one way (under-crediting the J-lens) |
 | concept list | n/a | known non-reproducible (Jaccard 0.74 run-to-run); the committed file is the artifact |
 
 ## 9. Artifacts
@@ -394,6 +414,7 @@ judge's reasons on items outside the fixtures and the ~120 I read by hand.
 | | |
 |---|---|
 | dataset, cells, grades, browse tables | `j^2-lens/data/` |
+| the pre-collapse record (raw top-10 cells) | `data/dataset_raw_top10.jsonl` |
 | fitted operators (layers 6, 12) | `results/hessian_pile_l{6,12}_merged_qwen3.5-4b.pt` |
 | hand-built battery | `configs/battery_cases.json` |
 | concept list (artifact of record) | `configs/concepts.json` |
