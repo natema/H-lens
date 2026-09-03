@@ -36,8 +36,8 @@ def esc(value: object) -> str:
 
 
 def row_markdown(r: dict) -> str:
-    self_report = ", ".join((r.get("self_report") or [])[:5])
-    lens = ", ".join(t.strip() for t in r["lens_top_k"][:5])
+    self_report = ", ".join(r.get("self_report") or [])
+    lens = ", ".join(t.strip() for t in r["lens_top_k"])
     return (
         f"| {r['quality'] or ''} | **{esc(r['concept'])}** | `{esc(r['probe_term'])}` "
         f"| {esc(r['prefix'])} | {r['j_lens_rank']} | {r['r_lens_rank']} "
@@ -70,7 +70,7 @@ def main() -> None:
             f"# `{cell}` — {len(sub)} items",
             "",
             f"{counts}. Ranks are the concept token's rank at layer 12, lower is "
-            "better. Lists show the first five entries.",
+            "better. Both lists are shown in full.",
             "",
             HEADER,
             RULE,
