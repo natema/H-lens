@@ -184,3 +184,9 @@ We are still reviewing jspace.py and noticing that some prompts proposed by Clau
 ## 2026-09-01 21:23
 Just launched a new prompt. 13h40 spent. 
 We stop here for today. Tomorrow we should be able to start writing our conclusions. 
+
+## 2026-09-01 21:34
+13h50 spent. I and Claude discussed a few more things I read in concepts.py and curvature.py: outdated docstrings, choice of parameters for querying GLM5.2 (how many words to judge at once, when picking those that are good for the dataset). 
+
+## 2026-09-03 18:20
+Deadline approaching. We will now check a bit more the dataset we are creating, and then start working on wrapping the project up. 

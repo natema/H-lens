@@ -46,6 +46,14 @@ Recorded in `manifest.json` per dataset:
   share its batch. Exact reproduction requires the same `read_batch` *and* the
   same concept ordering in `items.jsonl`.
 - Model dtype is recorded, and it matters at the top-k boundary.
+- **`configs/concepts.json` cannot be regenerated from the code.** The
+  concrete-noun filter is non-deterministic despite `temperature=0`: two
+  identical runs over the same 800 words agreed with Jaccard 0.74 and accepted
+  22.0% versus 19.0%. Batch size (10 to 80) made no difference, Jaccard 0.68 to
+  0.77. The acceptance rate is stable, the membership churns by about a quarter
+  per run. Treat the committed file as the artifact of record. This does not
+  bias the lens comparison, since no lens sees the concept list and every item
+  is validated downstream.
 - All six model-facing prompts are module constants (`GENERATOR_SYSTEM`,
   `JUDGE_SYSTEM`, `SELF_REPORT_TEMPLATE`, `FILTER_SYSTEM`,
   `EXPLICIT_SCREEN_SYSTEM`, `SCORER_SYSTEM`), so no filtering decision lives only

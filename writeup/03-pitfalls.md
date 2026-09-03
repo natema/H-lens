@@ -120,3 +120,21 @@ and misleading for a grader, since nothing follows the text at all.
   (~4%), with no growth in the rate. Malformed replies occur at every batch size
   including one, so `judge_batch` retries then bisects rather than silently
   returning fewer verdicts than items.
+
+## 8. A free-form list is not reproducible at temperature 0
+
+The concept filter returns a flat list of accepted words. Two runs over the same
+800 words, same order, same batch size, agreed with **Jaccard 0.74** and accepted
+22.0% and 19.0%. The initial suspicion — that 80-word batches were too large and
+the model was skimming the tail — was wrong: batch sizes from 10 to 80 agreed with
+each other at Jaccard 0.68–0.77, no better than a run agrees with itself.
+
+The judge, by contrast, was stable across runs. The difference is output shape: a
+per-item structured verdict is robust to small logit differences, a free-form
+list is not. Where reproducibility matters, ask for one verdict per item with an
+echoed id, and treat any free-form list as a single draw.
+
+A positional check on the original run showed acceptance *rising* from 18.6% in
+the first ten slots to 26.1% in the last ten — the opposite of skimming. That
+was a confound, not a finding: candidates were frequency-sorted, so later
+positions held rarer words, and rarer words are more often concrete nouns.

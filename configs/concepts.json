@@ -13402,5 +13402,6 @@
     "twink",
     "vagina",
     "voyeur"
-  ]
+  ],
+  "reproducibility": "Artifact of record. The model filter that produced this list is not reproducible: two identical runs at temperature 0 agreed with Jaccard 0.74 (accepting 22.0% and 19.0% of the same 800 words), and batch size from 10 to 80 made no difference (Jaccard 0.68-0.77). Rerunning j2-concepts yields a different list of similar size, not this one. Downstream validation of each item does not depend on which concepts were drawn."
 }

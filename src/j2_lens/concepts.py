@@ -10,6 +10,21 @@ single lowercase alphabetic tokens with a leading space, which is the form a
 readout actually emits. A model then picks out the concrete nouns, because
 whether " running" or " gentle" names a thing is a judgement no regular
 expression settles.
+
+The model stage is not reproducible. Two runs at ``temperature=0`` over the
+same 800 words in the same order and the same batch size agreed with Jaccard
+0.74 and accepted 22.0% and 19.0% respectively; runs at different batch sizes
+(10 to 80) agreed with Jaccard 0.68 to 0.77, so batch size is not the cause.
+The acceptance *rate* is stable at 19 to 22% while *membership* churns by
+roughly a quarter per run. A free-form list is more sensitive to small logit
+differences than the judge's structured per-item verdict, which was stable.
+
+Consequently ``configs/concepts.json`` is the artifact of record: rerunning
+``j2-concepts`` produces a different list of similar size and quality, not the
+same one. This does not bias the lens comparison, since no lens sees the
+concept list and every item is validated downstream regardless of which
+concepts were drawn, but it does mean the concept list cannot be regenerated
+from the code alone.
 """
 
 from __future__ import annotations
