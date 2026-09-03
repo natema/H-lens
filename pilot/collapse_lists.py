@@ -70,8 +70,14 @@ def main() -> None:
 
     merged: dict[str, dict] = {c: r for c, r in done.items()}
     written = 0
+    consecutive_failures = 0
     with ThreadPoolExecutor(max_workers=args.workers) as pool:
         for out in pool.map(run, chunks):
+            # A systematic failure must stop the run, not be paid for chunk by
+            # chunk: an earlier version spent through eight failing chunks.
+            consecutive_failures = 0 if out else consecutive_failures + 1
+            if consecutive_failures >= 3:
+                raise SystemExit("three consecutive chunks failed; aborting")
             for concept, method, tokens, verified in out:
                 entry = merged.setdefault(
                     concept,
