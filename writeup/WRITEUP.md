@@ -70,9 +70,11 @@ generation, adjudication and grading.
 
 **Biggest limitations** (§7): one model, one primary layer, diagonal only (the
 diagonal carries <1% of Hessian Frobenius energy, so this is consistent with
-curvature mattering off-diagonal); the judge is a model; and the lens's top-10
-holds ~7.8 distinct concepts against the self-report's 10, a budget asymmetry I
-found late and had not finished correcting at the deadline.
+curvature mattering off-diagonal); the judge is a model; and a lens's top-10
+holds only ~7.8 distinct concepts against the self-report's 10. I corrected that
+budget asymmetry on the strong items by collapsing each lens's top-50 to its
+first 10 distinct concepts: every lens gains substantially and no conclusion
+changes (§4), though the collapser itself has residual limitations (§7).
 
 ---
 
