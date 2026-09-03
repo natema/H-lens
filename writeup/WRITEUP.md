@@ -377,6 +377,18 @@ verify — the collapse step's merges — I did not use the output.
 What I did not check: individual self-report answers beyond spot checks; the
 judge's reasons on items outside the fixtures and the ~120 I read by hand.
 
+**How surprised I would be by a major error, part by part.**
+
+| part | surprise | why |
+|---|---|---|
+| Hessian estimator (forward-mode) | high | agrees with an independent finite-difference estimate at cosine 0.99987; sharding verified bit-identical |
+| the null result itself | high | survives 8→128 pairs, layers 6 and 12, two self-report prompts, raw and collapsed budgets, and a shuffled control |
+| R-lens layer reversal | high | same direction on the 33-case battery, on 3,344 items, and after budget collapse |
+| cell counts, absolute | moderate | judge and mechanical top-10 agree 95%; judge nondeterminism moved 25 labels between runs |
+| self-report prompt | moderate–low | three rewrites in one day; 32% of quality grades changed when the grader was told the probe. A residual bias in wording would not surprise me |
+| collapser (concept budget) | low | over-merged 71% of lists on first run and needed a mechanical patch; the corrected version is one day old |
+| concept list | n/a | known non-reproducible (Jaccard 0.74 run-to-run); the committed file is the artifact |
+
 ## 9. Artifacts
 
 | | |
