@@ -81,3 +81,13 @@ reproduces the R-lens post's own early-layer claim and is a useful check that th
 harness measures something real.
 
 The story is not a ranking. The lenses fail on different items.
+
+## Robustness to the self-report prompt
+
+Regenerating the self-reports with a materially different prompt (few-shot,
+sentence last, no synonym ban; naming rate 54.1% → 60.2%) moved every cell
+count but **no ranking**. J² vs J-lens failures at layer 12, all items: exactly
++0; shuffled control −18. R-lens at layer 6: −161 (was −141). The comparisons
+are invariant to a six-point shift in the instrument, which is what one wants
+from a measurement of the lenses rather than of the prompt. Numbers in
+`data_v2/README.md`.
