@@ -47,6 +47,13 @@ def main() -> None:
     )
     parser.add_argument("--batch", type=int, default=8)
     parser.add_argument("--workers", type=int, default=4)
+    parser.add_argument(
+        "--no-fragment-evidence",
+        action="store_true",
+        help="omit the vocabulary-completion evidence. Right for lists that have "
+        "already been collapsed to plain concept names: there are no fragments "
+        "left to resolve, and the evidence is ~40% of a judge call's input.",
+    )
     args = parser.parse_args()
     methods = [m.strip() for m in args.methods.split(",") if m.strip()]
 
@@ -77,8 +84,9 @@ def main() -> None:
                 "lens_tokens": row["top_k"][method],
                 "self_report": dataset[concept]["self_report"],
                 "in_self_report": dataset[concept]["in_self_report"],
-                "fragment_evidence": annotate_fragments(
-                    row["top_k"][method], vocabulary
+                "fragment_evidence": (
+                    {} if args.no_fragment_evidence
+                    else annotate_fragments(row["top_k"][method], vocabulary)
                 ),
             })
     print(f"{len(done)} done, {len(jobs)} judgements to make", flush=True)
