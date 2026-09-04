@@ -1,5 +1,10 @@
 # J²-lens: testing second-order corrections to the Jacobian lens
 
+*This is the project idea converged on while brainstorming with ChatGPT and
+Claude, written before the project started. It is kept as the pre-registered
+plan and has not been revised to match what was actually done; the README and
+`PROJECT_LOG.md` record that.*
+
 ## Research question
 
 Can a diagonal second-order correction make the Jacobian lens more faithful on early-layer examples where the ordinary J-lens fails?

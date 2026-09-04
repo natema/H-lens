@@ -17,7 +17,9 @@ H(x) = J·x + ½·D·((x − μ)² − Var[x]),      D[:, j] = E[∂²F/∂x_j²
 ```
 
 with `D` the same size as `J`, everything estimated on pretraining text, and no
-free parameter. The full account is in [`writeup/WRITEUP.md`](writeup/WRITEUP.md).
+free parameter. The results are laid out in [`data/RESULTS.md`](data/RESULTS.md)
+and [`data/README.md`](data/README.md); [`docs/STAGES.md`](docs/STAGES.md)
+covers the earlier stages.
 
 ## Findings
 
@@ -67,12 +69,11 @@ noise, and the reasoning behind each design choice; the per-cell tables under
 | `configs/` | the concept list (artifact of record), the 33-case battery, the frozen development/evaluation splits |
 | `results/` | JSON results with full provenance for every stage; the fitted operators (`*.pt`, 26 MB each) are regenerable and not tracked |
 | `pilot/` | the scripts that build, grade, collapse and evaluate the dataset, the judge fixtures, and the API spend ledger |
-| `writeup/` | the write-up |
 | `docs/STAGES.md` | stage-by-stage working notes, from the first three-case reproduction to the pretraining-fitted operator |
-| `PROJECT_IDEA.md`, `PROJECT_LOG.md`, `IDEAS.md` | the pre-registered plan, the time log, and side ideas |
+| `PROJECT_IDEA.md`, `PROJECT_LOG.md` | the plan converged on before starting, and the time log |
 
 The code predates the name: the package is `j2_lens`, the commands are `j2-*`,
-and the corrected lens appears as `J²` in result files and the write-up.
+and the corrected lens appears as `J²` in result files and notes.
 
 ## Reproducing
 
@@ -123,8 +124,10 @@ Model `Qwen/Qwen3.5-4B` and the J-lens/R-lens matrices from
 development corpus is `NeelNanda/pile-10k`, the corpus the published J-lens was
 fitted on, so first- and second-order operators come from the same distribution
 and no evaluation item informs the fit. Every model-facing prompt is a module
-constant. The write-up's section 8 records which parts were written by which
-model and how each was checked.
+constant. The code was written with Codex on the first day and with Claude Code
+afterwards, with GLM-5.2 as the instrument inside the pipeline; `PROJECT_LOG.md`
+records the timeline and `docs/STAGES.md` and `data/README.md` record how each
+part was checked, including the checks that overturned an earlier conclusion.
 
 ## License
 

@@ -2,7 +2,7 @@
 
 Working notes written as the project progressed, kept because they record how
 each stage was checked and what each intermediate result looked like. The
-[README](../README.md) and the [write-up](../writeup/WRITEUP.md) describe the
+[README](../README.md) and [`data/RESULTS.md`](../data/RESULTS.md) describe the
 final state; where a number here differs from them (the eight-sample fit, the
 33-case battery), the later documents supersede these notes. The SLURM script
 used on the cluster is site-specific and not included; the fit is the

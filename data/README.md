@@ -101,7 +101,7 @@ is the artifact of record.
 
 Only the J-lens is collapsed on all items — the dataset is about the J-lens. The
 other lenses were collapsed on the 826 strong items only, to check that a fair
-budget does not reorder them (it does not; see `RESULTS.md` and the write-up).
+budget does not reorder them (it does not; see `RESULTS.md`).
 
 ## Three measures of "the J-lens surfaced it"
 
