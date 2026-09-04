@@ -1,16 +1,13 @@
-# H-lens
+# On a H-lens hypothesis and a J-lens benchmark 
 
-**Does a diagonal Hessian correction make the Jacobian lens more faithful?**
-A controlled negative result on Qwen3.5-4B, and a 3,344-item dataset of
-Jacobian-lens successes and failures that any alternative lens can be scored on.
+This repository contain work I carried out over a 16h project aimed at
+- a controlled negative result on Qwen3.5-4B on whether a diagonal Hessian correction could improve the Jacobian lens, and 
+- a 3,344-item dataset of J-lens successes and failures that any alternative lens can be scored on.
 
 The [Jacobian lens](https://github.com/anthropics/jacobian-lens) (J-lens) reads
 intermediate concepts out of a transformer's residual stream by pushing the
-residual at a token through the *average Jacobian* of the downstream computation
-and unembedding the result. It fails on some early-layer cases where the
-R-lens does not. The H-lens adds the cheapest second-order term, a
-development-averaged **diagonal Hessian** correction in the spirit of Optimal
-Brain Damage:
+residual at a token through an *average Jacobian* of the downstream computation
+and unembedding the result. The H-lens adds the cheapest second-order term, an averaged **diagonal Hessian** correction in the spirit of Optimal Brain Damage (LeCun 1989):
 
 ```text
 H(x) = J·x + ½·D·((x − μ)² − Var[x]),      D[:, j] = E[∂²F/∂x_j²]
@@ -18,8 +15,7 @@ H(x) = J·x + ½·D·((x − μ)² − Var[x]),      D[:, j] = E[∂²F/∂x_j²
 
 with `D` the same size as `J`, everything estimated on pretraining text, and no
 free parameter. The results are laid out in [`data/RESULTS.md`](data/RESULTS.md)
-and [`data/README.md`](data/README.md); [`docs/STAGES.md`](docs/STAGES.md)
-covers the earlier stages.
+and [`data/README.md`](data/README.md).
 
 ## Findings
 
@@ -69,7 +65,7 @@ noise, and the reasoning behind each design choice; the per-cell tables under
 | `configs/` | the concept list (artifact of record), the 33-case battery, the frozen development/evaluation splits |
 | `results/` | JSON results with full provenance for every stage; the fitted operators (`*.pt`, 26 MB each) are regenerable and not tracked |
 | `pilot/` | the scripts that build, grade, collapse and evaluate the dataset, the judge fixtures, and the API spend ledger |
-| `docs/STAGES.md` | stage-by-stage working notes, from the first three-case reproduction to the pretraining-fitted operator |
+| `docs/STAGES.md` | working notes on the earlier stages, from the first three-case reproduction to the pretraining-fitted operator, before the dataset |
 | `PROJECT_IDEA.md`, `PROJECT_LOG.md` | the plan converged on before starting, and the time log |
 
 The code predates the name: the package is `j2_lens`, the commands are `j2-*`,

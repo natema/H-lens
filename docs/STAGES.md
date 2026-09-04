@@ -1,7 +1,13 @@
 # Stage-by-stage notes
 
-Working notes written as the project progressed, kept because they record how
-each stage was checked and what each intermediate result looked like. The
+This file covers the **earlier stages** of the project only: the baseline
+reproduction on the published failure cases, the curvature diagnostic, the
+first operator fits, the 33-case battery, and the pretraining-fitted operator.
+It stops before the 3,344-item dataset, which is documented in
+[`data/README.md`](../data/README.md) and [`data/RESULTS.md`](../data/RESULTS.md).
+
+These are working notes written as the project progressed, kept because they
+record how each stage was checked and what each intermediate result looked like. The
 [README](../README.md) and [`data/RESULTS.md`](../data/RESULTS.md) describe the
 final state; where a number here differs from them (the eight-sample fit, the
 33-case battery), the later documents supersede these notes. The SLURM script
